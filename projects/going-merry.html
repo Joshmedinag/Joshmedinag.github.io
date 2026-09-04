@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101211">
+  <meta name="description" content="Going Merry Ocean Simulation by Joshua Medina. A cinematic ocean simulation featuring the Going Merry ship inspired by One Piece.">
+  <title>Going Merry Ocean Simulation — Joshua Medina</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/site-config.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
+    <nav class="navigation" id="primary-navigation" aria-label="Main navigation">
+      <a href="../index.html#home">Home</a>
+      <a href="../index.html#showreel">Showreel</a>
+      <a href="../index.html#work" class="active">Selected work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#education">Education</a>
+      <a class="nav-contact" href="../index.html#contact">Let's talk <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main class="project-main" id="main">
+    <div class="project-intro wrap">
+      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
+      <p class="eyebrow"><span class="section-index">03 /</span> FX &amp; SIMULATION</p>
+      <div class="project-title-row"><h1>Going Merry<br>Ocean Simulation<span class="title-dot">.</span></h1><p class="project-lede">A cinematic ocean simulation featuring the Going Merry ship inspired by One Piece.</p></div>
+      <div class="project-meta">
+        <div><span class="meta-label">My contribution</span><p>Simulation, lighting, scene assembly &amp; technical implementation</p></div>
+        <div><span class="meta-label">Toolkit</span><p>Houdini · FLIP · Guided Ocean Layer · Ocean Spectrum · Ocean Evaluate · VDB · Solaris · Karma · USD</p></div>
+      </div>
+      <p class="project-context">Individual academic project · MSc, Bournemouth University</p>
+      
+    </div>
+    <figure class="project-video wrap">
+      <video controls playsinline preload="metadata" poster="../images/going-merry-main.jpg" width="1920" height="1080" aria-label="Going Merry ocean simulation by Joshua Medina">
+        <source src="../assets/video/going-merry.mp4" type="video/mp4">
+        Your browser does not support embedded video. <a href="../assets/video/going-merry.mp4">Open the Going Merry video</a>.
+      </video>
+      <figcaption>Going Merry ocean simulation · 53 seconds · Houdini / Solaris / Karma</figcaption>
+      <a class="inline-link" href="../assets/video/going-merry.mp4" target="_blank" rel="noopener noreferrer">Open the video <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+    </figure>
+
+    <section class="project-story wrap" aria-labelledby="overview-title">
+      <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
+      <div class="story-copy"><h2 id="overview-title">From a FLIP region to an open ocean.</h2>
+        <p>The goal was to create convincing interaction between a moving ship and a large ocean surface, exploring Houdini’s FLIP simulation tools, ocean workflows and Solaris/Karma rendering.</p>
+        <p>I was responsible for the simulation and technical setup, including preparing the existing ship asset as a collider, developing the ocean surface and assembling the scene for rendering.</p>
+      </div>
+    </section>
+
+    <section class="project-scope wrap" aria-labelledby="scope-title">
+      <h2 id="scope-title">What I did</h2>
+      <ul>
+        <li>Asset setup, ship collider preparation, VDB collision geometry and velocity from the moving collider.</li>
+        <li>FLIP simulation setup, Guided Ocean Layer techniques and procedural ocean development.</li>
+        <li>Merging the finite FLIP region with the surrounding ocean through displacement, surface behaviour and shading.</li>
+        <li>Fluid leakage and collision troubleshooting.</li>
+        <li>Solaris integration, scene assembly, camera setup, ocean shading, lighting and Karma rendering.</li>
+      </ul>
+    </section>
+
+    <section class="process-grid wrap" aria-label="Process, challenges and results">
+      <article class="process-step"><span>01 /</span><h3>Blending two surfaces</h3><p>I worked on matching displacement, surface behaviour and shading between the finite FLIP region and the much larger procedural ocean.</p></article>
+      <article class="process-step"><span>02 /</span><h3>Stabilising collisions</h3><p>I created and refined VDB collision geometry, then adjusted the simulation to stabilise the ship–water interaction and significantly reduce fluid leakage.</p></article>
+      <article class="process-step"><span>03 /</span><h3>Simulation to render</h3><p>The resulting setup combines a stable simulated FLIP region with a larger ocean surface. The Going Merry moves through the water in a scene assembled and rendered through Solaris/Karma.</p></article>
+    </section>
+
+    <section class="project-gallery wrap" aria-label="Project images and breakdowns">
+      <figure>
+        <img src="../images/going-merry-breakdown.jpg" alt="Overhead rendered view of the Going Merry moving through the ocean" width="1920" height="1080" loading="lazy">
+        <figcaption><h2>Ship–water interaction</h2><p>Overhead view from the project video, showing the ship within the ocean surface.</p></figcaption>
+      </figure>
+    </section>
+
+    <section class="project-credits wrap" aria-labelledby="credits-title">
+      <h2 id="credits-title">Credits</h2>
+      <p>Simulation, lighting, scene assembly and technical implementation: Joshua Medina.</p>
+      <p>The Going Merry is an existing One Piece ship design. The design and base 3D asset are not my original creation.</p>
+      <p>Exact 3D asset source and attribution: pending confirmation.</p>
+
+    </section>
+    <a class="next-project wrap" href="renderman.html"><div><small>NEXT PROJECT</small><h2>RenderMan — Orange Study</h2></div><span aria-hidden="true">↗</span></a>
+  </main>
+  <footer class="site-footer wrap">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <p>© <span data-year>2026</span> Joshua Medina</p>
+    <a class="back-top" href="../index.html#contact">Get in touch <span aria-hidden="true">↗</span></a>
+  </footer>
+</body>
+</html>

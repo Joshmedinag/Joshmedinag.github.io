@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101211">
+  <meta name="description" content="Joshua Medina's lighting, cinematography and render workflow for Broken Horizons, an Unreal Engine group cinematic inspired by Tout Quarry and Death Stranding.">
+  <title>Lighting &amp; Look Development — Joshua Medina</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/site-config.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
+    <nav class="navigation" id="primary-navigation" aria-label="Main navigation">
+      <a href="../index.html#home">Home</a>
+      <a href="../index.html#showreel">Showreel</a>
+      <a href="../index.html#work" class="active">Selected work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#education">Education</a>
+      <a class="nav-contact" href="../index.html#contact">Let's talk <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main class="project-main" id="main">
+    <div class="project-intro wrap">
+      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
+      <p class="eyebrow"><span class="section-index">02 /</span> LIGHTING &amp; LOOK DEVELOPMENT</p>
+      <div class="project-title-row"><h1>Lighting &amp;<br>Look Development<span class="title-dot">.</span></h1><p class="project-lede">Light, atmosphere and camera work that give an environment its emotional tone.</p></div>
+      <div class="project-meta">
+        <div><span class="meta-label">My contribution to Broken Horizons</span><p>Lighting, cinematography &amp; render workflow</p></div>
+        <div><span class="meta-label">Project toolkit</span><p>Unreal Engine · Lumen · Sequencer · Movie Render Queue</p></div>
+      </div>
+      <p class="project-context">Featured work: Broken Horizons · MSc group project, Bournemouth University</p>
+      <a class="inline-link" href="../index.html#showreel">Watch the showreel <span aria-hidden="true">↗</span></a>
+    </div>
+    <section class="featured-film wrap" aria-labelledby="film-title">
+      <p class="eyebrow"><span class="section-index">/</span> FEATURED FILM</p>
+      <h2 id="film-title">Broken Horizons<span class="title-dot">.</span></h2>
+      <p>A cinematic recreation of Tout Quarry Sculpture Park in Portland, Dorset.</p>
+      <nav class="project-jumps" aria-label="Broken Horizons sections">
+        <a href="#contribution">My contribution ↓</a><a href="#process">Process ↓</a><a href="#references">References ↓</a><a href="#credits">Team credits ↓</a>
+      </nav>
+    </section>
+    <figure class="project-video wrap">
+      <video controls playsinline preload="metadata" poster="../images/lighting-main.jpg" width="1920" height="1080" aria-label="Broken Horizons final group film">
+        <source src="../assets/video/broken-horizons.mp4" type="video/mp4">
+        Your browser does not support embedded video. <a href="../assets/video/broken-horizons.mp4">Open Broken Horizons</a>.
+      </video>
+      <figcaption>Final group film · 1 min 58 sec, including titles and credits · 1080p / 24 fps</figcaption>
+      <a class="inline-link" href="../assets/video/broken-horizons.mp4" target="_blank" rel="noopener noreferrer">Open the film <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+    </figure>
+
+    <section class="project-story wrap" aria-labelledby="overview-title">
+      <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
+      <div class="story-copy"><h2 id="overview-title">A landscape shaped by light.</h2>
+        <p>For Broken Horizons, I helped turn the team's recreation of Tout Quarry into a cinematic sequence with a sense of solitude and melancholy. Death Stranding informed the visual direction: open landscapes, diffuse light, atmospheric depth and a deliberate, trailer-like rhythm.</p>
+        <p>My contribution combined lighting and cinematography. I developed around twenty working shots, with fourteen selected for the cinematic, refining light and camera together so the environment and its sculptures became the visual focus.</p>
+      </div>
+    </section>
+
+    <section class="project-scope wrap" id="contribution" aria-labelledby="scope-title">
+      <h2 id="scope-title">My contribution</h2>
+      <ul>
+        <li>Lighting research and visual development: overcast weather, fog, skylight, exposure and the relationship between scale and isolation.</li>
+        <li>Environment and shot lighting using Directional Light, Skylight, Sky Atmosphere, Exponential Height Fog, Volumetric Fog, Post Process Volume and Lumen.</li>
+        <li>Camera creation, composition and movement, with manual control of exposure, aperture, focal length and focus.</li>
+        <li>Shot-by-shot refinement of fog, silhouette, depth separation and focal points, including camera tests and alternative lighting setups.</li>
+        <li>A custom Movie Render Queue preset and final EXR render workflow, plus investigation of colour interpretation differences between Unreal Engine, Photoshop and DaVinci Resolve.</li>
+      </ul>
+    </section>
+
+    <section class="process-grid wrap" id="process" aria-label="Process, challenges and results">
+      <article class="process-step"><span>01 /</span><h3>Establishing the mood</h3><p>I compared interactive and cinematic workflows, studied rainy and overcast lighting, and explored shot flow and camera movement. Early tests helped establish a cold, solitary visual language.</p></article>
+      <article class="process-step"><span>02 /</span><h3>Lighting through the camera</h3><p>I moved from a general environment setup to individual shots. Wide views, sculptural details and foreground flowers offered different scales, while fog and exposure helped maintain a coherent atmosphere.</p></article>
+      <article class="process-step"><span>03 /</span><h3>Checking the render</h3><p>When EXRs appeared darker in Resolve than in the Unreal viewport, I compared them in Photoshop and investigated colour interpretation in post-production. This helped distinguish display and colour-workflow issues from lighting decisions.</p></article>
+    </section>
+
+    <section class="project-gallery wrap" aria-label="Frames from the Broken Horizons group film">
+      <figure>
+        <img src="../images/broken-horizons-atmosphere.jpg" alt="A low camera view through grass and rocks into the bright, misty quarry in Broken Horizons" width="1920" height="1080" loading="lazy">
+        <figcaption><h2>Atmosphere and depth</h2><p>Foreground silhouettes and a bright, misty distance create layers within the landscape. Frame from the group film.</p></figcaption>
+      </figure>
+      <figure>
+        <img src="../images/broken-horizons-sculpture.jpg" alt="The Roy Dog sculpture framed by quarry vegetation in the final Broken Horizons film" width="1920" height="1080" loading="lazy">
+        <figcaption><h2>Giving the sculpture a frame</h2><p>Camera placement and light focus attention on the Roy Dog. Sculpture asset by Youyang Dong; my contribution was lighting, camera work and rendering.</p></figcaption>
+      </figure>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="workflow-title">
+      <p class="eyebrow"><span class="section-index">/</span> BEHIND THE SHOTS</p>
+      <h2 id="workflow-title">Inside the lighting workflow.</h2>
+      <div class="project-gallery document-gallery evidence-gallery">
+        <figure>
+          <a class="image-detail-link" href="../images/lighting-breakdown.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the Unreal Engine lighting setup at full size in a new tab"><img src="../images/lighting-breakdown.jpg" alt="Unreal Engine shot setup with Sequencer, a Cine Camera Actor and shot-specific lighting actors" width="1429" height="804" loading="lazy"></a>
+          <figcaption><h3>Shot-specific lighting</h3><p>An active Unreal shot showing the camera, sequence and lighting setup. From my individual contribution report.</p><span class="image-detail-hint">View full size ↗</span></figcaption>
+        </figure>
+        <figure>
+          <a class="image-detail-link" href="../images/broken-horizons-render-settings.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the Movie Render Queue preset at full size in a new tab"><img src="../images/broken-horizons-render-settings.jpg" alt="Four screenshots documenting Joshua's Movie Render Queue output, anti-aliasing, game overrides and console variables" width="1441" height="956" loading="lazy"></a>
+          <figcaption><h3>The render preset</h3><p>My Movie Render Queue configuration, documented alongside the final EXR workflow.</p><span class="image-detail-hint">View full size ↗</span></figcaption>
+        </figure>
+      </div>
+      <details class="technical-notes">
+        <summary>Render settings used for this project</summary>
+        <dl class="render-specs">
+          <div><dt>Output</dt><dd>1920 × 1080 · 24 fps</dd></div>
+          <div><dt>Image sequence</dt><dd>16-bit EXR · PIZ compression · multilayer enabled</dd></div>
+          <div><dt>Sampling</dt><dd>32 spatial samples · 16 temporal samples</dd></div>
+          <div><dt>Quality overrides</dt><dd>Cinematic Quality Settings · texture streaming disabled · LOD0 forced · HLODs disabled · r.ScreenPercentage = 150</dd></div>
+        </dl>
+        <p>These are the settings recorded in my contribution report. The emphasis was cinematic image quality, with render tests and shot-specific adjustments supporting the final sequence.</p>
+      </details>
+    </section>
+
+    <section class="project-evidence wrap" id="references" aria-labelledby="references-title">
+      <p class="eyebrow"><span class="section-index">/</span> VISUAL DEVELOPMENT</p>
+      <h2 id="references-title">References that shaped the mood.</h2>
+      <p class="reference-intro">Location studies and external imagery guided decisions about atmosphere, scale, diffuse light and composition.</p>
+      <div class="project-gallery document-gallery evidence-gallery">
+        <figure>
+          <a class="image-detail-link" href="../images/broken-horizons-location-reference.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the Tout Quarry location reference at full size in a new tab"><img src="../images/broken-horizons-location-reference.jpg" alt="Reference photograph of Tout Quarry's stone sculptures, paths and vegetation beneath an overcast sky" width="1159" height="772" loading="lazy"></a>
+          <figcaption><p class="reference-label">LOCATION REFERENCE</p><h3>Tout Quarry, Portland</h3><p>The real location grounded the environment's scale, sculptural forms and natural layout. Photograph reproduced from the contribution report.</p></figcaption>
+        </figure>
+        <figure>
+          <a class="image-detail-link" href="../images/broken-horizons-moodboard-reference.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the visual reference board at full size in a new tab"><img src="../images/broken-horizons-moodboard-reference.jpg" alt="External reference board studying open scale, melancholic weather, diffuse light and figures within landscapes" width="1370" height="921" loading="lazy"></a>
+          <figcaption><p class="reference-label">EXTERNAL VISUAL REFERENCES</p><h3>Solitude, weather and scale</h3><p>The reference board from my report explores mist, tonal depth and quiet compositions. Death Stranding was the main visual inspiration; these images are reference material.</p><a class="inline-link" href="https://www.playstation.com/en-us/games/death-stranding/" target="_blank" rel="noopener noreferrer">Death Stranding — official game page <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></figcaption>
+        </figure>
+      </div>
+      <details class="technical-notes">
+        <summary>Technical references — Epic Games documentation</summary>
+        <ul class="reference-links">
+          <li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/lumen-global-illumination-and-reflections-in-unreal-engine" target="_blank" rel="noopener noreferrer">Lumen Global Illumination and Reflections ↗<span class="sr-only"> (opens in a new tab)</span></a></li>
+          <li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/exponential-height-fog-in-unreal-engine" target="_blank" rel="noopener noreferrer">Exponential Height Fog ↗<span class="sr-only"> (opens in a new tab)</span></a></li>
+          <li><a href="https://dev.epicgames.com/documentation/unreal-engine/volumetric-fog-in-unreal-engine" target="_blank" rel="noopener noreferrer">Volumetric Fog ↗<span class="sr-only"> (opens in a new tab)</span></a></li>
+          <li><a href="https://dev.epicgames.com/documentation/en-us/unreal-engine/rendering-high-quality-frames-with-movie-render-queue-in-unreal-engine" target="_blank" rel="noopener noreferrer">Rendering High Quality Frames with Movie Render Queue ↗<span class="sr-only"> (opens in a new tab)</span></a></li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="project-credits wrap" id="credits" aria-labelledby="credits-title">
+      <h2 id="credits-title">Broken Horizons — team credits</h2>
+      <dl class="team-credits">
+        <div class="my-credit"><dt>Joshua Medina</dt><dd>Lighting Artist · Cinematographer · Rendering</dd></div>
+        <div><dt>Jessica Dong</dt><dd>Director · Environment Artist</dd></div>
+        <div><dt>Osher Shechter</dt><dd>Producer · Technical Artist · Foliage and flowers</dd></div>
+        <div><dt>Youyang Dong</dt><dd>Assets Artist · Technical Artist · Rocks and sculptures, including the Roy Dog</dd></div>
+        <div><dt>Kyle Galenzoga</dt><dd>Niagara VFX Artist · Birds and butterflies</dd></div>
+      </dl>
+      <p>Group Project and Industry Brief · MSc Computer Animation &amp; Visual Effects, Bournemouth University. Supervised by Valery Adzhiev.</p>
+      <p class="source-note">Roles follow the film credits and individual contribution report. Location photographs and the external reference board are reproduced from that report; reference imagery remains the work of its respective creators.</p>
+    </section>
+
+    <section class="project-credits wrap" aria-labelledby="more-lighting-title">
+      <h2 id="more-lighting-title">More lighting work</h2>
+      <p>My broader practice includes personal and academic lighting work and specialised training at Lost Boys | School of VFX, using Katana, Arnold and Nuke.</p>
+      <a class="inline-link" href="../index.html#showreel">Watch my lighting showreel <span aria-hidden="true">↗</span></a>
+    </section>
+    <a class="next-project wrap" href="going-merry.html"><div><small>NEXT PROJECT</small><h2>Going Merry Ocean Simulation</h2></div><span aria-hidden="true">↗</span></a>
+  </main>
+  <footer class="site-footer wrap">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <p>© <span data-year>2026</span> Joshua Medina</p>
+    <a class="back-top" href="../index.html#contact">Get in touch <span aria-hidden="true">↗</span></a>
+  </footer>
+</body>
+</html>

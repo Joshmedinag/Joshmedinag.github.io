@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101211">
+  <meta name="description" content="RenderMan — Orange Study by Joshua Medina. A physically based rendering study of an orange, built through Python-generated RIB.">
+  <title>RenderMan — Orange Study — Joshua Medina</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/site-config.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
+    <nav class="navigation" id="primary-navigation" aria-label="Main navigation">
+      <a href="../index.html#home">Home</a>
+      <a href="../index.html#showreel">Showreel</a>
+      <a href="../index.html#work" class="active">Selected work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#education">Education</a>
+      <a class="nav-contact" href="../index.html#contact">Let's talk <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main class="project-main" id="main">
+    <div class="project-intro wrap">
+      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
+      <p class="eyebrow"><span class="section-index">04 /</span> LIGHTING &amp; RENDERING</p>
+      <div class="project-title-row"><h1>RenderMan<br>Orange Study<span class="title-dot">.</span></h1><p class="project-lede">A physically based rendering study of an orange, built through Python-generated RIB.</p></div>
+      <div class="project-meta">
+        <div><span class="meta-label">My contribution</span><p>Procedural scene generation, materials &amp; rendering</p></div>
+        <div><span class="meta-label">Toolkit</span><p>Python · RenderMan · RIB · Physically Based Rendering · HDRI</p></div>
+      </div>
+      <p class="project-context">Individual academic project · MSc Computer Animation &amp; Visual Effects</p>
+      
+    </div>
+    <figure class="project-hero artwork-full wrap"><img src="../images/renderman-main.jpg" alt="Procedural RenderMan orange with displaced peel, a warm highlight and a soft tabletop shadow" width="1249" height="705" fetchpriority="high"><figcaption>Close-up render from the project report.</figcaption></figure>
+
+    <section class="project-story wrap" aria-labelledby="overview-title">
+      <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
+      <div class="story-copy"><h2 id="overview-title">Realism in the smallest details.</h2>
+        <p>I studied reference photographs of a real orange, then built the fruit procedurally using Python and RenderMan. The goal was to recreate its asymmetric silhouette, recessed pores and waxy highlights without a pre-made fruit model or bitmap peel texture.</p>
+        <p>The scene generates four camera views: close-up, wide, top and side texture. Together they show how geometry, surface detail and light contribute to the result from different angles.</p>
+      </div>
+    </section>
+
+    <section class="project-scope wrap" aria-labelledby="scope-title">
+      <h2 id="scope-title">What I did</h2>
+      <ul>
+        <li>Python-generated polygon meshes and RIB output, with a main body, side lobe and lower nub to create an irregular silhouette.</li>
+        <li>Cellular nearest-feature patterns for recessed pores, layered value noise for rind variation, and displacement applied directly to the mesh.</li>
+        <li>PxrSurface material development: diffuse colour, specular response and roughness balanced to suggest fresh citrus peel.</li>
+        <li>An HDRI dome, rectangular key and fill lights, and a subtle light to reveal surface texture.</li>
+        <li>Camera setup, depth of field and four reproducible 1920 × 1080 render outputs.</li>
+      </ul>
+    </section>
+
+    <section class="process-grid wrap" aria-label="Process, challenges and results">
+      <article class="process-step"><span>01 /</span><h3>From pores to displacement</h3><p>Early tests with disks and small spheres read as freckles, bumps or spikes. Replacing them with inward, bowl-like mesh displacement made the pores part of the peel itself.</p></article>
+      <article class="process-step"><span>02 /</span><h3>A waxy material response</h3><p>I tuned PxrSurface diffuse colour, specular response and roughness together. The displaced rind breaks up highlights, helping the surface avoid a uniformly dry or overly polished appearance.</p></article>
+      <article class="process-step"><span>03 /</span><h3>Detail versus readability</h3><p>Stronger displacement reveals the pores but can produce a cratered surface or visible bands. Softer detail can disappear under frontal lighting. The final settings balance those competing effects across four views.</p></article>
+    </section>
+
+    <section class="project-gallery render-gallery wrap" aria-label="Final RenderMan views">
+      <figure>
+        <img src="../images/renderman-breakdown.jpg" alt="Side view of the procedural orange revealing the displaced peel under angled light" width="1084" height="610" loading="lazy">
+        <figcaption><h2>Side texture view</h2><p>Angled light reveals the rind relief and the way highlights break across the pores.</p></figcaption>
+      </figure>
+      <figure>
+        <img src="../images/renderman-top.jpg" alt="Top view of the orange showing the asymmetric crown and procedural peel" width="1131" height="638" loading="lazy">
+        <figcaption><h2>Top view</h2><p>The irregular crown and silhouette, viewed from above.</p></figcaption>
+      </figure>
+      <figure>
+        <img src="../images/renderman-wide.jpg" alt="Wide composition of the orange on a neutral tabletop with its shadow" width="1225" height="691" loading="lazy">
+        <figcaption><h2>Wide composition</h2><p>A minimal setting keeps the focus on the fruit, its material and the contact shadow.</p></figcaption>
+      </figure>
+    </section>
+
+    <section class="project-credits wrap" aria-labelledby="credits-title">
+      <h2 id="credits-title">Credits</h2>
+      <p>Individual project by Joshua Medina.</p>
+      <p>Developed for the Simulation and Rendering unit at Bournemouth University. NCCA RenderMan lectures and examples provided learning and reference context; the mesh displacement, pore tuning, material, lighting and camera arrangement were developed for this project.</p>
+      <p class="source-note">Images and technical details reproduced from the project report. The report contains reduced-resolution copies of the original 1080p renders.</p>
+    </section>
+    <a class="next-project wrap" href="aovguard.html"><div><small>NEXT PROJECT</small><h2>AOVGuard</h2></div><span aria-hidden="true">↗</span></a>
+  </main>
+  <footer class="site-footer wrap">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <p>© <span data-year>2026</span> Joshua Medina</p>
+    <a class="back-top" href="../index.html#contact">Get in touch <span aria-hidden="true">↗</span></a>
+  </footer>
+</body>
+</html>

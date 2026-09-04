@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101211">
+  <meta name="description" content="AOVGuard by Joshua Medina. Automated EXR and AOV validation for VFX lighting and compositing pipelines.">
+  <title>AOVGuard — Joshua Medina</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/site-config.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
+    <nav class="navigation" id="primary-navigation" aria-label="Main navigation">
+      <a href="../index.html#home">Home</a>
+      <a href="../index.html#showreel">Showreel</a>
+      <a href="../index.html#work" class="active">Selected work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#education">Education</a>
+      <a class="nav-contact" href="../index.html#contact">Let's talk <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+  <main class="project-main" id="main">
+    <div class="project-intro wrap">
+      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
+      <p class="eyebrow"><span class="section-index">01 /</span> PIPELINE DEVELOPMENT</p>
+      <div class="project-title-row"><h1>AOVGuard<span class="title-dot">.</span></h1><p class="project-lede">Automated EXR and AOV validation for VFX lighting and compositing pipelines.</p></div>
+      <div class="project-meta">
+        <div><span class="meta-label">My contribution</span><p>Tool design &amp; development</p></div>
+        <div><span class="meta-label">Toolkit</span><p>Python · NumPy · OpenEXR · PySide6 · pytest</p></div>
+      </div>
+      <p class="project-context">Individual academic Master's project · Bournemouth University</p>
+      <a class="inline-link" href="https://github.com/Joshmedinag/NCCA-mastersproject" target="_blank" rel="noopener noreferrer">View the repository <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+    </div>
+    <figure class="project-hero document-figure wrap"><a class="image-detail-link" href="../images/aovguard-main.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard architecture diagram at full size in a new tab"><img src="../images/aovguard-main.jpg" alt="AOVGuard 2.0 architecture: discovery, reader and inspector, canonical frame model, frame-first analysis, rule engine and one report model shared by CLI, GUI and exporters" width="1249" height="682" fetchpriority="high"></a><figcaption>Shared processing architecture · Figure 2 from the MSc dissertation.<span class="image-detail-hint">Select the diagram to view full size ↗</span></figcaption></figure>
+
+    <section class="project-story wrap" aria-labelledby="overview-title">
+      <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
+      <div class="story-copy"><h2 id="overview-title">Technical checks, made repeatable.</h2>
+        <p>I designed and developed AOVGuard to inspect rendered EXR files and identify common technical problems before they reach later stages of a lighting or compositing pipeline. The goal is to reduce repetitive manual checking and help artists find potentially problematic renders more quickly.</p>
+        <p>AOVGuard 2.0 reorganises the workflow around automatic structure inspection, canonical RGB, configurable brightness metrics and frame-first processing. A shared report model serves the PySide6 interface, command line, JSON/HTML export and baseline comparison.</p>
+        <p>Developed for my MSc at Bournemouth University, the project is a focused validation prototype: it reports technical evidence for artists to interpret in the context of a shot.</p>
+      </div>
+    </section>
+
+    <section class="project-scope wrap" aria-labelledby="scope-title">
+      <h2 id="scope-title">What I did</h2>
+      <ul>
+        <li>Automatic structure inspection, named-channel grouping and broad colour, vector, depth and scalar AOV categorisation through an OpenEXR reader boundary.</li>
+        <li>Canonical RGB handling and centralised Rec.709, Rec.601 and custom weighted brightness metrics, with technical AOVs handled separately from colour passes.</li>
+        <li>AOV-aware rules for non-finite values, empty and near-empty colour contribution, required channels, resolution and AOV consistency; configurable through TOML or JSON.</li>
+        <li>Shared discovery for single files, numbered sequences and comparison sets, with frame-first incremental analysis and sequence-integrity checks.</li>
+        <li>One AnalysisReport model for CLI/GUI results, strict JSON, self-contained HTML and baseline report comparison.</li>
+        <li>A responsive PySide6 interface with worker-thread analysis, progress and cooperative cancellation; automated correctness and interface-equivalence tests.</li>
+      </ul>
+    </section>
+
+    <section class="process-grid wrap" aria-label="Process, challenges and results">
+      <article class="process-step"><span>01 /</span><h3>Structure before assumptions</h3><p>Channel names and roles establish how each AOV is handled. Colour brightness checks are separated from per-channel diagnostics for vectors and depth, and uncertain structures remain explicit.</p></article>
+      <article class="process-step"><span>02 /</span><h3>One analysis, every interface</h3><p>CLI, GUI and exporters consume the same models and findings. Integration tests compare canonical report payloads to check that the interfaces agree.</p></article>
+      <article class="process-step"><span>03 /</span><h3>Frame-first processing</h3><p>Instead of revisiting every frame for each pass, the processing loop reads a frame, updates all supported AOV accumulators and releases its arrays before continuing.</p></article>
+    </section>
+
+    <section class="project-gallery document-gallery wrap" aria-label="AOVGuard interface and validation results">
+      <figure>
+        <a class="image-detail-link" href="../images/aovguard-ui.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard interface image at full size in a new tab"><img src="../images/aovguard-ui.jpg" alt="AOVGuard 2.0 GUI showing a 61-frame analysis with seven contextual empty-AOV warnings" width="799" height="549" loading="lazy"></a>
+        <figcaption><h2>Graphical interface</h2><p>Automatic structure context, findings and shared report results. Figure 4 from the MSc dissertation.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+      </figure>
+      <figure>
+        <a class="image-detail-link" href="../images/aovguard-report.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the sequence validation results image at full size in a new tab"><img src="../images/aovguard-report.jpg" alt="Validation evidence showing aggregate colour metrics, technical channel diagnostics and a complete sequence of 61 Maya/Arnold EXRs" width="1249" height="824" loading="lazy"></a>
+        <figcaption><h2>Sequence validation</h2><p>61 Maya/Arnold frames, 51 channels and 18 inferred AOVs, with no missing frames, duplicates or read failures. Figure 6 from the dissertation.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="evidence-title">
+      <p class="eyebrow"><span class="section-index">/</span> EVALUATION</p>
+      <h2 id="evidence-title">Evidence from the MSc project.</h2>
+      <dl class="evidence-grid">
+        <div><dt>Automated tests passed</dt><dd>229</dd></div>
+        <div><dt>Combined statement / branch coverage</dt><dd>95.24%</dd></div>
+        <div><dt>Real sequence frames processed</dt><dd>61 / 61</dd></div>
+      </dl>
+      <p class="source-note">Results recorded in the MSc dissertation's final verification snapshot, 14 August 2026.</p>
+      <details class="technical-notes">
+        <summary>Benchmark conditions and current scope</summary>
+        <p>A controlled benchmark used 12 generated 320 × 180 frames, five AOVs and 30 repetitions per strategy on one Windows workstation. Frame-first processing reduced application-level reader calls from 60 to 12 while preserving the output checksum. Median elapsed time changed from 0.4387 s to 0.1181 s; Python-tracked peak memory increased from about 5.55 MB to 11.08 MB.</p>
+        <p>The result supports this processing change under those conditions. Native decoder allocations were not fully measured, and the timing ratio is not a general production-performance claim.</p>
+        <p>Current analysis supports the tested root-RGB and named single-part multilayer structures. Deep and multipart EXRs are detected but rejected by the analysis path. AOV typing is heuristic, and brightness coefficients are not a substitute for colour-space-aware interpretation. Empty or unusual passes require artistic context; direct DCC/render-farm integration remains future work.</p>
+      </details>
+    </section>
+
+    <section class="project-credits wrap" aria-labelledby="credits-title">
+      <h2 id="credits-title">Credits</h2>
+      <p>Individual project by Joshua Medina.</p>
+      <p>Developed as my Master’s project at Bournemouth University.</p>
+
+
+    </section>
+    <a class="next-project wrap" href="lighting.html"><div><small>NEXT PROJECT</small><h2>Lighting &amp; Look Development</h2></div><span aria-hidden="true">↗</span></a>
+  </main>
+  <footer class="site-footer wrap">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <p>© <span data-year>2026</span> Joshua Medina</p>
+    <a class="back-top" href="../index.html#contact">Get in touch <span aria-hidden="true">↗</span></a>
+  </footer>
+</body>
+</html>
