@@ -46,6 +46,34 @@
   }
 
   document.querySelectorAll('[data-year]').forEach(element => { element.textContent = new Date().getFullYear(); });
+
+  const heroCarousel = document.querySelector('[data-hero-carousel]');
+  if (heroCarousel) {
+    const slides = Array.from(heroCarousel.querySelectorAll('.hero-image'));
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const requestedInterval = Number.parseInt(heroCarousel.dataset.interval || '', 10);
+    const interval = Number.isFinite(requestedInterval) ? Math.max(requestedInterval, 3500) : 5600;
+    let current = Math.max(0, slides.findIndex(slide => slide.classList.contains('is-active')));
+    let timer = 0;
+    const showNext = () => {
+      const previous = slides[current];
+      current = (current + 1) % slides.length;
+      const next = slides[current];
+      slides.forEach(slide => slide.classList.remove('is-leaving'));
+      previous.classList.remove('is-active');
+      previous.classList.add('is-leaving');
+      next.classList.add('is-active');
+      window.setTimeout(() => previous.classList.remove('is-leaving'), 1500);
+    };
+    const stopCarousel = () => { if (timer) window.clearInterval(timer); timer = 0; };
+    const startCarousel = () => {
+      stopCarousel();
+      if (!reducedMotion && slides.length > 1 && !document.hidden) timer = window.setInterval(showNext, interval);
+    };
+    document.addEventListener('visibilitychange', () => { if (document.hidden) stopCarousel(); else startCarousel(); });
+    startCarousel();
+  }
+
   const safeExternal = value => {
     try { const url = new URL(value); return url.protocol === 'https:' ? url.href : null; } catch { return null; }
   };

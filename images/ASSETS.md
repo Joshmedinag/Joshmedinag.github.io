@@ -1,6 +1,6 @@
 # Imágenes y vídeo del portfolio
 
-El material de AOVGuard, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. Los originales no se modifican. Las imágenes extraídas de los PDF conservan su resolución disponible, sin ampliación artificial. Los números de página siguientes cuentan desde la primera página del PDF, incluida la portada.
+El material de AOVGuard, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. La presentación principal de AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para este portfolio. Los originales no se modifican. Las imágenes extraídas de los PDF conservan su resolución disponible, sin ampliación artificial. Los números de página siguientes cuentan desde la primera página del PDF, incluida la portada.
 
 ## AOVGuard
 
@@ -8,11 +8,14 @@ Fuente: `AOVGuard_MSc_Project_Joshua_Medina.pdf`.
 
 | Archivo | Fuente | Resolución |
 | --- | --- | --- |
-| `aovguard-main.jpg` | Página 19, figura 2: arquitectura | 1249 × 682 |
+| `brands/maya-original.svg` | Devicon: Autodesk Maya | Vectorial, viewBox 128 × 128 |
+| `brands/python-original.svg` | Devicon: Python | Vectorial, viewBox 128 × 128 |
+| `brands/aovs.svg` | Símbolo original de capas RGB/AOVs creado para el portfolio | Vectorial, viewBox 128 × 128 |
+| `aovguard-architecture.jpg` | Página 19, figura 2: arquitectura | 1249 × 682 |
 | `aovguard-ui.jpg` | Página 24, figura 4: GUI con ruta sanitizada | 799 × 549 |
 | `aovguard-report.jpg` | Página 27, figura 6: validación de secuencia Maya/Arnold | 1249 × 824 |
 
-Las figuras se extrajeron de sus imágenes incrustadas. Los PNG se convirtieron a JPEG de calidad alta sin recorte. `aovguard-report.jpg` muestra los diagnósticos de la secuencia, no una captura de un informe HTML. La galería permite abrir las imágenes a tamaño completo. El contenido y las cifras se atribuyen al informe; la comprobación del sitio no vuelve a ejecutar las pruebas de AOVGuard. No se publica la portada ni el PDF completo.
+Los SVG de Maya y Python proceden del proyecto Devicon y se guardan localmente para que la página no dependa de una CDN. Los nombres y logotipos pertenecen a sus respectivos propietarios y se utilizan para identificar las herramientas. El símbolo de AOVs representa capas RGB y un pass de imagen. Las figuras se extrajeron de sus imágenes incrustadas. Los PNG del informe se convirtieron a JPEG de calidad alta sin recorte. `aovguard-report.jpg` muestra los diagnósticos de la secuencia, no una captura de un informe HTML. La galería permite abrir las imágenes a tamaño completo. El contenido y las cifras se atribuyen al informe; la comprobación del sitio no vuelve a ejecutar las pruebas de AOVGuard. No se publica la portada ni el PDF completo.
 
 ## Going Merry
 
@@ -28,16 +31,16 @@ El vídeo web se codificó con libx264, CRF 23, límite de 5 Mb/s y audio AAC de
 
 ## RenderMan
 
-Fuente: `JoshuaMG_RendermanProject_Orange_Report.pdf`.
+Fuentes: renders refinados proporcionados en PNG y `JoshuaMG_RendermanProject_Orange_Report.pdf` para la información técnica.
 
 | Archivo | Fuente | Resolución |
 | --- | --- | --- |
-| `renderman-main.jpg` | Página 4: render close-up | 1249 × 705 |
-| `renderman-top.jpg` | Página 4: render top view | 1131 × 638 |
-| `renderman-breakdown.jpg` | Página 5: render side view | 1084 × 610 |
-| `renderman-wide.jpg` | Página 5: render wide view | 1225 × 691 |
+| `renderman-main.png` | `final_closeup_1920x1080.png` | 1920 × 1080 |
+| `renderman-top.png` | `final_top_1920x1080.png` | 1920 × 1080 |
+| `renderman-breakdown.png` | `final_left_texture_1920x1080.png` | 1920 × 1080 |
+| `renderman-wide.png` | `final_wide_1920x1080.png` | 1920 × 1080 |
 
-Los cuatro JPEG se copiaron directamente de las imágenes incrustadas del informe, sin recomprimir. El PDF contiene versiones reducidas de los renders de 1920 × 1080 originales. Las fotografías de referencia de las páginas 2–3 no se presentan como renders.
+Los cuatro PNG se copiaron sin recomprimir desde los renders refinados entregados. Sustituyen a las versiones de menor resolución extraídas anteriormente del informe. Las fotografías de referencia de las páginas 2–3 no se presentan como renders.
 
 ## Broken Horizons — Lighting & Look Development
 
@@ -60,13 +63,21 @@ Los renders son del proyecto grupal. La aportación de Joshua es iluminación, c
 
 Las fotografías de Tout Quarry y el tablero externo se identifican como **referencias**, no como renders de Joshua. El PDF no identifica al fotógrafo ni la procedencia individual de todas las imágenes del tablero; se atribuyen al material del informe sin inventar autoría. Death Stranding está identificado en el informe como inspiración principal, y la página enlaza al sitio oficial del juego. La bibliografía técnica enlaza a documentación oficial de Epic Games. No se publica la portada, la evaluación de compañeros ni el PDF completo.
 
-## Imagen pendiente
+## Carrusel de portada
 
-El JPEG de portada de 1600 × 900 es un marco neutro con rótulo de placeholder. No es una fotografía ni un render atribuido a Joshua. Para sustituirlo, exporta un JPEG real con el mismo nombre: el rótulo desaparece al reemplazar el archivo.
+Fuente: `JoshuaMedina_DemoReel_2026.mp4`, 1:55,85, 1920 × 1080 y 29,97 fps.
 
-| Archivo | Contenido que falta |
-| --- | --- |
-| `hero-main.jpg` | Mejor frame de lighting o VFX para la portada |
+| Archivo | Tiempo aproximado | Contenido | Resolución |
+| --- | --- | --- | --- |
+| `hero/hero-reel-01.jpg` | 00:07 | Exterior gótico con niebla | 1600 × 900 |
+| `hero/hero-reel-02.jpg` | 00:15 | Entorno industrial submarino | 1600 × 900 |
+| `hero/hero-reel-03.jpg` | 00:31 | Bosque nevado | 1600 × 900 |
+| `hero/hero-reel-04.jpg` | 00:56 | Cabaña en el bosque | 1600 × 900 |
+| `hero/hero-reel-05.jpg` | 01:04 | Bodegón iluminado con velas | 1600 × 900 |
+| `hero/hero-reel-06.jpg` | 01:36 | Retrato con iluminación de color | 1600 × 900 |
+| `hero/hero-reel-07.jpg` | 01:48 | Interior con luz cálida | 1600 × 900 |
+
+Cada fotograma se recortó desde el centro superior del original: 160 píxeles a cada lado y los 180 píxeles inferiores. El recorte elimina los rótulos de Unreal Engine, software y detalles de breakdown sin reconstruir píxeles, alterar el color ni modificar la iluminación. La selección evita la portada, los créditos, las comparativas y las vistas divididas.
 
 ## Recursos de la primera maqueta
 

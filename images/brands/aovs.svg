@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">AOVs</title>
+  <desc id="desc">Layered red, green and blue image channels forming an AOV symbol.</desc>
+  <g transform="translate(0 12)">
+    <rect x="17" y="12" width="82" height="62" rx="8" fill="#e55b63" opacity=".82"/>
+    <rect x="25" y="23" width="82" height="62" rx="8" fill="#65d18a" opacity=".82"/>
+    <rect x="33" y="34" width="82" height="62" rx="8" fill="#62aaf2" opacity=".86"/>
+    <path d="M44 47h60v36H44z" fill="#111613" stroke="#d8f59a" stroke-width="3"/>
+    <circle cx="60" cy="63" r="7" fill="#e55b63"/>
+    <circle cx="74" cy="63" r="7" fill="#65d18a"/>
+    <circle cx="88" cy="63" r="7" fill="#62aaf2"/>
+    <path d="m57 81 8-7 7 5 12-11 14 13" fill="none" stroke="#d8f59a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -16,12 +16,15 @@ Usa `python` en lugar de `py` si lo requiere tu instalación. Abre [la vista pre
 
 ## Sustituir las imágenes sin editar HTML
 
-Los JPG ya están conectados a sus ubicaciones. **Exporta tu imagen como JPEG y reemplaza el archivo con el mismo nombre**. No es necesario cambiar HTML, JavaScript ni ningún manifiesto. Los cuatro proyectos utilizan material real proporcionado por Joshua; solo la imagen de portada conserva un placeholder.
+Los recursos ya están conectados a sus ubicaciones. **Exporta cada imagen en el formato indicado y reemplaza el archivo con el mismo nombre**. No es necesario cambiar HTML, JavaScript ni ningún manifiesto. Los cuatro proyectos utilizan material real proporcionado por Joshua; la presentación de AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para el sitio. La portada utiliza una selección del demo reel.
 
 | Archivo en `images/` | Dónde aparece | Contenido previsto |
 | --- | --- | --- |
-| `hero-main.jpg` | Portada | Pendiente: tu mejor frame de lighting o VFX |
-| `aovguard-main.jpg` | Tarjeta y cabecera de AOVGuard | Diagrama de arquitectura del informe MSc |
+| `hero/hero-reel-01.jpg` a `hero-reel-07.jpg` | Carrusel de portada | Siete fotogramas limpios del demo reel 2026 |
+| `brands/maya-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Autodesk Maya |
+| `brands/python-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Python |
+| `brands/aovs.svg` | Tarjeta y cabecera de AOVGuard | Símbolo de AOVs creado para el portfolio |
+| `aovguard-architecture.jpg` | Sección System design de AOVGuard | Diagrama de arquitectura del informe MSc |
 | `aovguard-ui.jpg` | Galería de AOVGuard | Interfaz real del informe MSc |
 | `aovguard-report.jpg` | Galería de AOVGuard | Diagnósticos de una secuencia real |
 | `going-merry-main.jpg` | Tarjeta y póster del vídeo | Frame del vídeo a los 15 segundos |
@@ -33,14 +36,14 @@ Los JPG ya están conectados a sus ubicaciones. **Exporta tu imagen como JPEG y 
 | `broken-horizons-render-settings.jpg` | Proceso de Lighting | Preset de Movie Render Queue del informe |
 | `broken-horizons-location-reference.jpg` | Referencias de Lighting | Fotografía de Tout Quarry del informe |
 | `broken-horizons-moodboard-reference.jpg` | Referencias de Lighting | Tablero de referencias visuales externas del informe |
-| `renderman-main.jpg` | Tarjeta y cabecera de RenderMan | Render de la naranja en primer plano |
-| `renderman-breakdown.jpg` | Galería de RenderMan | Render lateral de la superficie |
-| `renderman-top.jpg` | Galería de RenderMan | Render desde arriba |
-| `renderman-wide.jpg` | Galería de RenderMan | Render de encuadre amplio |
+| `renderman-main.png` | Tarjeta y cabecera de RenderMan | Render refinado de la naranja en primer plano |
+| `renderman-breakdown.png` | Galería de RenderMan | Render refinado lateral de la superficie |
+| `renderman-top.png` | Galería de RenderMan | Render refinado desde arriba |
+| `renderman-wide.png` | Galería de RenderMan | Render refinado de encuadre amplio |
 
-El placeholder de portada lleva el rótulo dentro del propio JPG: al sustituirlo, desaparece automáticamente. No representa un render final.
+El carrusel cambia de imagen cada **5,6 segundos** con un desplazamiento suave. Se detiene cuando la pestaña queda en segundo plano y para usuarios que prefieren movimiento reducido. Los fotogramas proceden de `JoshuaMedina_DemoReel_2026.mp4`; se recortó la franja inferior que contenía nombres de software y detalles de breakdown, sin retocar la iluminación ni el color.
 
-Los fotogramas de Going Merry y Broken Horizons miden **1920 × 1080 px**. Las imágenes extraídas de los PDF conservan su resolución disponible, sin ampliación artificial; las galerías y cabeceras de estos proyectos muestran su proporción completa. Las tarjetas pueden recortar la imagen y la portada utiliza un recorte amplio: deja margen alrededor del sujeto. Para sustituir el placeholder de 1600 × 900 px, se recomienda una imagen panorámica de al menos 1600 px de ancho.
+Los fotogramas de Going Merry y Broken Horizons y los cuatro renders refinados de RenderMan miden **1920 × 1080 px**. Las imágenes extraídas de los PDF conservan su resolución disponible, sin ampliación artificial; las galerías y cabeceras de estos proyectos muestran su proporción completa. Las tarjetas pueden recortar la imagen y la portada utiliza un recorte amplio: deja margen alrededor del sujeto. Para sustituir el placeholder de 1600 × 900 px, se recomienda una imagen panorámica de al menos 1600 px de ancho.
 
 No renombres un PNG a `.jpg`: expórtalo realmente como JPEG. Después de sustituirlo, recarga con `Ctrl+F5` si el navegador conserva la versión anterior. No ejecutes el generador interno de placeholders después de añadir tus imágenes finales.
 
@@ -69,7 +72,7 @@ Lighting & Look Development presenta **Broken Horizons** con vídeo y material d
 
 `assets/video/broken-horizons.mp4` conserva los **118,29 segundos** del archivo entregado, incluidos títulos y créditos, a **1920 × 1080, 24 fps, H.264/AAC**, con faststart, controles y sin autoplay. La copia web pesa **36,8 MB** frente a los 219,5 MB del original. El informe describe una secuencia de unos 90 segundos; la web indica la duración real del archivo completo. Las capturas y referencias se abren a tamaño completo al seleccionarlas. Los ajustes de render y enlaces a documentación de Epic Games están en desplegables.
 
-La página de RenderMan utiliza los cuatro renders y la explicación del modelado por Python, los poros geométricos, PxrSurface y la iluminación del informe de la naranja. Las imágenes incrustadas en el PDF tienen menor resolución que los renders originales de 1080p.
+La página de RenderMan utiliza los cuatro renders refinados de 1920 × 1080 proporcionados por Joshua. La explicación del modelado por Python, los poros geométricos, PxrSurface y la iluminación procede del informe de la naranja.
 
 La página de AOVGuard describe la versión 2.0 documentada en el informe MSc, con arquitectura, GUI y validación de secuencias. Las cifras de 229 pruebas y 95,24 % de cobertura se atribuyen a la evaluación del **14 de agosto de 2026**; no son pruebas ejecutadas al comprobar esta web. Los detalles desplegables indican el alcance del benchmark y las limitaciones del prototipo.
 
@@ -94,7 +97,6 @@ No se han inventado responsabilidades por plano, colaboradores o fuentes de asse
 1. Confirmar si el MSc ya está completado o sigue en curso. Actualmente se muestra **September 2025 – 2026**, sin atribuir un estado definitivo.
 2. Créditos de cada plano del showreel. Broken Horizons ya tiene sus créditos de equipo.
 3. Fuente exacta del asset 3D de Going Merry y su atribución.
-4. Imagen de portada. Las cuatro páginas de proyecto ya contienen el material entregado.
 
 Las fechas confirmadas de educación ya están incorporadas: **Lost Boys, 2023–2024**; **UAG, agosto de 2019–diciembre de 2022**.
 
@@ -107,7 +109,8 @@ index.html                  Portada y siete secciones
 css/style.css               Diseño y adaptación a móvil
 js/site-config.js           Datos de contacto y reel
 js/main.js                  Menú, sección activa y reproductor
-images/*.jpg                Imágenes de proyectos y placeholder de portada
+images/*.{jpg,png}          Imágenes de proyectos y recursos de portada
+images/hero/*.jpg           Siete fotogramas del carrusel de portada
 images/ASSETS.md             Procedencia y mapa de recursos
 projects/aovguard.html       Herramienta de validación EXR/AOV
 projects/lighting.html       Lighting y look development

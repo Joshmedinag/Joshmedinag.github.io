@@ -7,9 +7,9 @@
   <meta name="description" content="Joshua Medina — Lighting Artist, Pipeline TD and VFX Artist. Watch my showreel and explore cinematic lighting, look development, Houdini simulation and AOVGuard.">
   <title>Joshua Medina — Lighting Artist · Pipeline TD · VFX Artist</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=20260905-hero">
   <script src="js/site-config.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <script src="js/main.js?v=20260905-hero" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -28,7 +28,15 @@
   </header>
   <main id="main">
     <section class="hero" id="home" aria-labelledby="hero-title">
-      <img class="hero-image" src="images/hero-main.jpg" alt="" width="1600" height="900" fetchpriority="high">
+      <div class="hero-carousel" data-hero-carousel data-interval="5600" aria-hidden="true">
+        <img class="hero-image is-active" src="images/hero/hero-reel-01.jpg" alt="" width="1600" height="900" fetchpriority="high" decoding="async" style="--hero-focus:50%">
+        <img class="hero-image" src="images/hero/hero-reel-02.jpg" alt="" width="1600" height="900" decoding="async" style="--hero-focus:50%">
+        <img class="hero-image" src="images/hero/hero-reel-03.jpg" alt="" width="1600" height="900" decoding="async" style="--hero-focus:56%">
+        <img class="hero-image" src="images/hero/hero-reel-04.jpg" alt="" width="1600" height="900" decoding="async" style="--hero-focus:48%">
+        <img class="hero-image" src="images/hero/hero-reel-05.jpg" alt="" width="1600" height="900" decoding="async" style="--hero-focus:50%">
+        <img class="hero-image" src="images/hero/hero-reel-06.jpg" alt="" width="1600" height="900" decoding="async" style="--hero-focus:60%">
+        <img class="hero-image" src="images/hero/hero-reel-07.jpg" alt="" width="1600" height="900" decoding="async" style="--hero-focus:55%">
+      </div>
       <div class="hero-shade"></div>
       <div class="hero-content wrap">
         <p class="eyebrow"><span class="accent-line"></span> LIGHTING · LOOK DEVELOPMENT · VFX</p>
@@ -74,7 +82,11 @@
       <div class="project-grid">
         <a class="project-card" href="projects/aovguard.html">
           <div class="card-media">
-            <img class="diagram-thumbnail" src="images/aovguard-main.jpg" alt="AOVGuard 2.0 shared processing architecture" width="1249" height="682" loading="lazy">
+            <div class="tool-logo-stage" role="img" aria-label="Autodesk Maya, Python and AOVs">
+              <span class="tool-logo-mark"><img src="images/brands/maya-original.svg" alt="" width="128" height="128"><span>Autodesk Maya</span></span>
+              <span class="tool-logo-mark"><img src="images/brands/python-original.svg" alt="" width="128" height="128"><span>Python</span></span>
+              <span class="tool-logo-mark"><img src="images/brands/aovs.svg" alt="" width="128" height="128"><span>AOVs</span></span>
+            </div>
             <span class="category-tag">PIPELINE DEVELOPMENT</span><span class="card-arrow" aria-hidden="true">↗</span>
           </div>
           <div class="card-heading"><h3>AOVGuard</h3><span class="project-number">01</span></div>
@@ -98,7 +110,7 @@
         </a>
         <a class="project-card" href="projects/renderman.html">
           <div class="card-media">
-            <img src="images/renderman-main.jpg" alt="Procedural RenderMan orange with displaced peel and a soft tabletop shadow" width="1249" height="705" loading="lazy">
+            <img src="images/renderman-main.png" alt="Refined procedural RenderMan orange with detailed peel, warm highlights and a soft tabletop shadow" width="1920" height="1080" loading="lazy">
             <span class="category-tag">LIGHTING &amp; RENDERING</span><span class="card-arrow" aria-hidden="true">↗</span>
           </div>
           <div class="card-heading"><h3>RenderMan — Orange Study</h3><span class="project-number">04</span></div>

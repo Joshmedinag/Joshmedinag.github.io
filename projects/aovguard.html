@@ -38,7 +38,14 @@
       <p class="project-context">Individual academic Master's project · Bournemouth University</p>
       <a class="inline-link" href="https://github.com/Joshmedinag/NCCA-mastersproject" target="_blank" rel="noopener noreferrer">View the repository <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
     </div>
-    <figure class="project-hero document-figure wrap"><a class="image-detail-link" href="../images/aovguard-main.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard architecture diagram at full size in a new tab"><img src="../images/aovguard-main.jpg" alt="AOVGuard 2.0 architecture: discovery, reader and inspector, canonical frame model, frame-first analysis, rule engine and one report model shared by CLI, GUI and exporters" width="1249" height="682" fetchpriority="high"></a><figcaption>Shared processing architecture · Figure 2 from the MSc dissertation.<span class="image-detail-hint">Select the diagram to view full size ↗</span></figcaption></figure>
+    <figure class="project-hero tool-hero wrap">
+      <div class="tool-logo-stage" role="img" aria-label="Autodesk Maya, Python and AOVs">
+        <span class="tool-logo-mark"><img src="../images/brands/maya-original.svg" alt="" width="128" height="128"><span>Autodesk Maya</span></span>
+        <span class="tool-logo-mark"><img src="../images/brands/python-original.svg" alt="" width="128" height="128"><span>Python</span></span>
+        <span class="tool-logo-mark"><img src="../images/brands/aovs.svg" alt="" width="128" height="128"><span>AOVs</span></span>
+      </div>
+      <figcaption>Core workflow · Autodesk Maya, Python and AOVs.</figcaption>
+    </figure>
 
     <section class="project-story wrap" aria-labelledby="overview-title">
       <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
@@ -59,6 +66,16 @@
         <li>One AnalysisReport model for CLI/GUI results, strict JSON, self-contained HTML and baseline report comparison.</li>
         <li>A responsive PySide6 interface with worker-thread analysis, progress and cooperative cancellation; automated correctness and interface-equivalence tests.</li>
       </ul>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="architecture-title">
+      <p class="eyebrow"><span class="section-index">/</span> SYSTEM DESIGN</p>
+      <h2 id="architecture-title">One report model, every interface.</h2>
+      <p class="reference-intro">The architecture keeps discovery, reading, analysis and presentation separate while the CLI, GUI and exporters share the same report.</p>
+      <figure class="architecture-figure">
+        <a class="image-detail-link" href="../images/aovguard-architecture.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard architecture diagram at full size in a new tab"><img src="../images/aovguard-architecture.jpg" alt="AOVGuard 2.0 architecture: discovery, reader and inspector, canonical frame model, frame-first analysis, rule engine and one report model shared by CLI, GUI and exporters" width="1249" height="682" loading="lazy"></a>
+        <figcaption>Shared processing architecture · Figure 2 from the MSc dissertation.<span class="image-detail-hint">Select the diagram to view full size ↗</span></figcaption>
+      </figure>
     </section>
 
     <section class="process-grid wrap" aria-label="Process, challenges and results">
