@@ -107,6 +107,7 @@ Las fechas desconocidas y los enlaces sin proporcionar se omiten del sitio. AOVG
 ```text
 index.html                  Portada y siete secciones
 css/style.css               Diseño y adaptación a móvil
+css/blue-theme.css          Paleta azul y blanca aplicada al sitio
 js/site-config.js           Datos de contacto y reel
 js/main.js                  Menú, sección activa y reproductor
 images/*.{jpg,png}          Imágenes de proyectos y recursos de portada

@@ -1,0 +1,104 @@
+:root {
+  --bg: #071426;
+  --surface: #0d2038;
+  --text: #f6fbff;
+  --muted: #a9b9cb;
+  --line: #28425f;
+  --accent: #5dbbff;
+}
+
+::selection { background: var(--accent); color: #04101f; }
+
+.site-header {
+  background: rgba(7, 20, 38, .9);
+  border-bottom-color: rgba(151, 203, 255, .14);
+}
+
+.navigation a { color: #bdcddd; }
+.navigation .nav-contact { border-color: #496986; }
+.nav-contact span,
+.title-dot,
+.section-index,
+.back-top span,
+.next-project > span { color: var(--accent); }
+
+.hero-carousel { background: #030a13; }
+.hero-shade {
+  background:
+    linear-gradient(90deg, rgba(3, 13, 28, .86), rgba(5, 24, 43, .4) 55%, rgba(5, 20, 36, .12)),
+    linear-gradient(0deg, #071426 0%, transparent 28%, rgba(3, 12, 23, .16));
+}
+.hero .eyebrow { color: #e9f5ff; }
+.hero-roles { color: #f4f9fd; }
+.hero-roles span { color: #7690a9; }
+.hero-description { color: #c1d0de; }
+.hero-bottom { color: #aac0d4; }
+.button-primary { color: #061525; }
+.button-primary:hover { background: #bfe6ff; }
+.muted-dot { color: #607991; }
+
+.reel-stage { background: #0b1b2e; }
+.reel-empty { background: linear-gradient(90deg, rgba(4, 14, 28, .84), rgba(7, 28, 49, .3)); }
+.reel-empty > p,
+.reel-status { color: #c6d5e3; }
+.reel-status { border-color: rgba(151, 203, 255, .28); background: rgba(10, 35, 59, .58); }
+.media-note { color: #edf7ff; background: rgba(4, 19, 34, .78); }
+
+.category-tag {
+  color: #eef8ff;
+  border-color: rgba(153, 205, 255, .32);
+  background: rgba(7, 28, 49, .76);
+}
+.card-arrow { background: rgba(5, 23, 41, .68); border-color: rgba(255, 255, 255, .24); }
+.project-card:hover .card-arrow { color: #061525; }
+.project-number { color: #83a4c2; }
+.card-description { color: #b3c3d3; }
+.card-tools { color: #91abc2; }
+.card-tools span { color: #58738c; }
+
+.about-section { background: #0a192b; }
+.about-copy .large-copy { color: #dce8f2; }
+.inline-link { border-bottom-color: #3d79a6; }
+.skill-tags li { border-color: #315372; background: #0d2239; color: #d4e5f3; }
+.education-number,
+.meta-label { color: #87a6c1; }
+.education-list .education-meta { color: #b7cee1; }
+
+.contact-section { background: #eaf6ff; color: #07192b; }
+.contact-section .section-index { color: #17699f; }
+.contact-bottom { border-top-color: rgba(7, 50, 83, .28); }
+.contact-links a { border-bottom-color: #245f8d; }
+.contact-pending { color: #3f6886; }
+.contact-section :focus-visible { outline-color: #075b94; }
+
+.project-lede,
+.story-copy > p,
+.project-scope ul { color: #b8cada; }
+.project-scope li::marker { color: var(--accent); }
+.process-step > span { color: var(--accent); }
+.project-note { background: #0c1e33; }
+.next-project small { color: #91abc2; }
+.credits-status { color: #9bb1c5; }
+.shot-credit-fields > div,
+.team-credits > div,
+.render-specs > div { border-left-color: #31506c; }
+.shot-credit-fields dt { color: #dce9f4; }
+.education-list .education-meta,
+.tool-logo-mark > span { color: #d4e6f4; }
+
+.project-hero.technical img { background: #0b1d31; }
+.project-video video { background: #020812; }
+.tool-logo-stage { background: radial-gradient(circle at 50% 44%, #173b5b 0, #0d2238 43%, #040c17 100%); }
+.evidence-gallery .reference-label,
+.image-detail-hint { color: var(--accent); }
+.evidence-grid > div { border-left-color: #315779; }
+.technical-notes summary { color: #d4e7f5; }
+
+@media (max-width: 760px) {
+  .navigation { background: #08172a; }
+  .hero-shade {
+    background:
+      linear-gradient(90deg, rgba(3, 14, 29, .9), rgba(5, 24, 43, .5)),
+      linear-gradient(0deg, #071426, transparent 32%);
+  }
+}
