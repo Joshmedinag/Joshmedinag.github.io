@@ -54,6 +54,12 @@
 .project-video video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#070a09;border-radius:4px}
 .project-video figcaption{font-size:.875rem;color:var(--muted);margin-top:13px}
 .project-video .inline-link{margin-top:12px}
+.project-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin-top:30px}
+.project-video-grid figure{min-width:0;margin:0}
+.project-video-grid video{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#070a09;border:1px solid var(--line);border-radius:4px}
+.project-video-grid figcaption{padding-top:16px}
+.project-video-grid h3{font-size:1.25rem;letter-spacing:-.03em}
+.project-video-grid p{font-size:.9375rem;color:var(--muted);margin-top:8px;line-height:1.7}
 .project-hero.artwork-full img,.project-hero.document-figure img{height:auto;aspect-ratio:auto;max-height:none;object-fit:contain}
 .tool-logo-stage{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;gap:clamp(18px,4vw,64px);padding:clamp(42px,7vw,94px);aspect-ratio:16/9;overflow:hidden;border:1px solid var(--line);border-radius:4px;background:radial-gradient(circle at 50% 44%,#263129 0,#151a17 42%,#090c0a 100%)}
 .tool-logo-mark{display:flex;min-width:0;flex-direction:column;align-items:center;gap:18px}
@@ -89,6 +95,7 @@
 .reference-links li+li{margin-top:14px}
 .reference-links a{overflow-wrap:anywhere}
 @media(max-width:760px){.team-credits,.render-specs{grid-template-columns:1fr}.evidence-gallery h3{font-size:1.25rem}}
+@media(max-width:760px){.project-video-grid{grid-template-columns:1fr;gap:32px}.project-video-grid h3{font-size:1.2rem}}
 @media(max-width:760px){.tool-logo-stage{gap:14px;padding:30px 18px}.tool-logo-mark{gap:11px}.tool-logo-mark img,.project-hero .tool-logo-mark img{width:68px;height:68px}.tool-logo-mark>span{font-size:.625rem;letter-spacing:.04em}.card-media>.tool-logo-stage{padding:30px 20px}}
 .image-detail-hint{display:block;margin-top:12px;font-size:.875rem;color:var(--accent)}
 .project-evidence{border-top:1px solid var(--line);padding-top:37px;margin-bottom:68px}

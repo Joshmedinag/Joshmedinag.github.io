@@ -1,8 +1,8 @@
 # Joshua Medina — Portfolio
 
-Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las cuatro páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua.
+Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las cinco páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua.
 
-No requiere instalar paquetes ni compilar. El sitio sigue siendo local; no se ha publicado ni subido a GitHub.
+No requiere instalar paquetes ni compilar. El sitio está publicado en [joshmedinag.github.io](https://joshmedinag.github.io/).
 
 ## Vista previa local
 
@@ -36,6 +36,10 @@ Los recursos ya están conectados a sus ubicaciones. **Exporta cada imagen en el
 | `broken-horizons-render-settings.jpg` | Proceso de Lighting | Preset de Movie Render Queue del informe |
 | `broken-horizons-location-reference.jpg` | Referencias de Lighting | Fotografía de Tout Quarry del informe |
 | `broken-horizons-moodboard-reference.jpg` | Referencias de Lighting | Tablero de referencias visuales externas del informe |
+| `snow-main.jpg` | Tarjeta y póster de Snowbound Environment | Fotograma del paneo final de invierno |
+| `snow-environment.jpg` | Galería y póster de Snowbound Environment | Vista del lago con capas de profundidad |
+| `snowfall.jpg` | Galería y póster de Snowbound Environment | Estudio de nevada intensa |
+| `snow-breakdown.jpg` | Póster del breakdown | Estado final de la transformación invernal |
 | `renderman-main.png` | Tarjeta y cabecera de RenderMan | Render refinado de la naranja en primer plano |
 | `renderman-breakdown.png` | Galería de RenderMan | Render refinado lateral de la superficie |
 | `renderman-top.png` | Galería de RenderMan | Render refinado desde arriba |
@@ -65,6 +69,8 @@ Para cambiarlo más adelante, actualiza `showreel` en `js/site-config.js`. Acept
 Vimeo carga recursos externos y debe permitir la inserción en el dominio donde publiques. Se utiliza el parámetro `dnt=1`; el sitio no incorpora analítica propia.
 
 Going Merry tiene un reproductor HTML nativo en `projects/going-merry.html` y un enlace directo al MP4. El archivo `assets/video/going-merry.mp4` es una copia optimizada del vídeo entregado: **53,5 segundos, 1920 × 1080, 24 fps, H.264 y audio AAC**, aproximadamente **31,6 MB** frente a los 97,3 MB del original. Incluye `faststart` para comenzar la reproducción sin descargar el archivo completo, controles, reproducción en línea en móvil y carga inicial de metadatos. No tiene autoplay. La marca de Houdini del material original se conserva.
+
+Snowbound Environment tiene cuatro reproductores HTML nativos: el paneo final, una vista ambiental, un estudio de nevada intensa y el breakdown de la transformación hacia invierno. Las copias web mantienen 1920 × 1080, H.264/AAC y `faststart`; pesan en conjunto aproximadamente **19,1 MB** frente a unos **391 MB** de los originales. La página atribuye a Joshua la iluminación del entorno, look development, cámara y corrección de color. El trabajo se realizó en Unreal Engine y el acabado de color en DaVinci Resolve.
 
 ## Material de los informes
 
@@ -115,11 +121,13 @@ images/hero/*.jpg           Siete fotogramas del carrusel de portada
 images/ASSETS.md             Procedencia y mapa de recursos
 projects/aovguard.html       Herramienta de validación EXR/AOV
 projects/lighting.html       Lighting y look development
+projects/snow-environment.html  Iluminación de entorno nevado
 projects/going-merry.html    Simulación de océano
 projects/renderman.html      Estudio de una naranja
 assets/favicon.svg          Monograma JM
 assets/video/going-merry.mp4  Vídeo optimizado de la simulación
 assets/video/broken-horizons.mp4  Corto grupal completo optimizado
+assets/video/snow-*.mp4      Cuatro clips optimizados del entorno nevado
 .nojekyll                   Publicación estática directa
 ```
 
@@ -146,7 +154,7 @@ git remote add origin https://github.com/Joshmedinag/JoshuaPortfolio.git
 git push -u origin main
 ```
 
-Estos comandos presuponen que has creado ese repositorio. Si le das otro nombre, cambia la URL. No se ha creado ni comprobado la existencia de un repositorio de portfolio remoto.
+Estos comandos son una referencia para otros repositorios. Este sitio ya está conectado a GitHub Pages y publica desde la rama `main`.
 
 Las rutas relativas funcionan tanto en un sitio de usuario como en un sitio de proyecto bajo `/JoshuaPortfolio/`. Conserva `.nojekyll`. Revisa los créditos y sustituye las imágenes antes de publicar la versión definitiva.
 

@@ -63,6 +63,23 @@ Los renders son del proyecto grupal. La aportación de Joshua es iluminación, c
 
 Las fotografías de Tout Quarry y el tablero externo se identifican como **referencias**, no como renders de Joshua. El PDF no identifica al fotógrafo ni la procedencia individual de todas las imágenes del tablero; se atribuyen al material del informe sin inventar autoría. Death Stranding está identificado en el informe como inspiración principal, y la página enlaza al sitio oficial del juego. La bibliografía técnica enlaza a documentación oficial de Epic Games. No se publica la portada, la evaluación de compañeros ni el PDF completo.
 
+## Snowbound Environment
+
+Fuentes: `estaciones.mp4`, `estacion3_00000000.mp4`, `nieve_breakdown.mp4` y `nieve_paneo00000000.mp4`, proporcionados por Joshua Medina.
+
+| Archivo | Fuente | Duración / resolución |
+| --- | --- | --- |
+| `snow-main.jpg` | `nieve_paneo00000000.mp4`, fotograma aproximado 00:07.5 | 1920 × 1080 |
+| `snow-environment.jpg` | `estaciones.mp4`, fotograma aproximado 00:05.5 | 1920 × 1080 |
+| `snowfall.jpg` | `estacion3_00000000.mp4`, fotograma aproximado 00:03.5 | 1920 × 1080 |
+| `snow-breakdown.jpg` | `nieve_breakdown.mp4`, fotograma aproximado 00:09 | 1920 × 1080 |
+| `../assets/video/snow-pan.mp4` | Paneo final optimizado | 20,01 s · 1920 × 1080 · 24 fps |
+| `../assets/video/snow-environment.mp4` | Vista ambiental optimizada | 13,76 s · 1920 × 1080 · 24 fps |
+| `../assets/video/snowfall.mp4` | Estudio de nevada optimizado | 7,94 s · 1920 × 1080 · 24 fps |
+| `../assets/video/snow-breakdown.mp4` | Breakdown optimizado | 12,12 s · 1920 × 1080 · 25 fps |
+
+Las copias web utilizan H.264/AAC con `faststart`, CRF 25 y un límite de 3 Mb/s. Pesan aproximadamente 19,1 MB en conjunto frente a unos 391 MB de los originales. No se alteró creativamente la iluminación ni la corrección de color durante la compresión; los pósteres se extrajeron de las copias web. La página describe la aportación confirmada por Joshua: iluminación del entorno, look development, cámara cinematográfica y corrección de color, realizada con Unreal Engine y DaVinci Resolve.
+
 ## Carrusel de portada
 
 Fuente: `JoshuaMedina_DemoReel_2026.mp4`, 1:55,85, 1920 × 1080 y 29,97 fps.
