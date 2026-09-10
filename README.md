@@ -16,7 +16,7 @@ Usa `python` en lugar de `py` si lo requiere tu instalación. Abre [la vista pre
 
 ## Sustituir las imágenes sin editar HTML
 
-Los recursos ya están conectados a sus ubicaciones. **Exporta cada imagen en el formato indicado y reemplaza el archivo con el mismo nombre**. No es necesario cambiar HTML, JavaScript ni ningún manifiesto. Los proyectos utilizan material real proporcionado por Joshua; la presentación de AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para el sitio. FarmFlow combina un beauty real de Arnold y un wireframe de Maya en la portada, conserva el diagrama técnico en HTML/CSS y añade capturas reales de ejecución. La portada general utiliza una selección del demo reel.
+Los recursos ya están conectados a sus ubicaciones. **Exporta cada imagen en el formato indicado y reemplaza el archivo con el mismo nombre**. No es necesario cambiar HTML, JavaScript ni ningún manifiesto. Los proyectos utilizan material real proporcionado por Joshua; la presentación de AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para el sitio. FarmFlow utiliza una portada de tres etapas construida exclusivamente con el wireframe de Maya, el beauty real de Arnold y la verificación EXR, conserva el diagrama técnico en HTML/CSS y añade capturas reales de ejecución. La portada general utiliza una selección del demo reel.
 
 | Archivo en `images/` | Dónde aparece | Contenido previsto |
 | --- | --- | --- |

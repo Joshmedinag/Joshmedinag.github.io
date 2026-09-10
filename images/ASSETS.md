@@ -6,7 +6,7 @@ El material de FarmFlow, AOVGuard, Norwegian Lakeside, Going Merry, RenderMan y 
 
 Fuente: `FarmFlow_documentacion_completa_1.9.0.docx`, versión documentada 1.9.0, con fecha de cierre 9 de septiembre de 2026.
 
-La portada combina `farmflow-beauty.png` y `farmflow-wireframe.png` mediante HTML/CSS. El beauty procede del archivo `farmflow_1.0001.exr`, renderizado por Arnold en ACEScg; se convirtió a PNG para visualización web y el EXR original, junto con sus metadatos internos, no se publica. El wireframe y las capturas `farmflow-render-run.png` y `farmflow-sequence-verified.png` proceden de las imágenes proporcionadas el 9 de septiembre de 2026. La página conserva además el diagrama HTML/CSS que representa Maya scene → Preflight → Arnold render → EXR + report.
+La portada utiliza únicamente material real en una composición HTML/CSS de tres etapas: `farmflow-wireframe.png`, `farmflow-beauty.png` y `farmflow-sequence-verified.png`. El beauty procede del archivo `farmflow_1.0001.exr`, renderizado por Arnold en ACEScg; se convirtió a PNG para visualización web y el EXR original, junto con sus metadatos internos, no se publica. El wireframe y las capturas `farmflow-render-run.png` y `farmflow-sequence-verified.png` proceden de las imágenes proporcionadas el 9 de septiembre de 2026. La página conserva además el diagrama HTML/CSS que representa Maya scene → Preflight → Arnold render → EXR + report.
 
 | Archivo | Contenido | Resolución |
 | --- | --- | --- |
