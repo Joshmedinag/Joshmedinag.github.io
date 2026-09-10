@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071426">
+  <meta name="description" content="FarmFlow by Joshua Medina — a Maya and Arnold pipeline for scene preflight, render execution, EXR verification, diagnostics and production handoff.">
+  <title>FarmFlow — Joshua Medina</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css?v=20260909-farmflow">
+  <link rel="stylesheet" href="../css/blue-theme.css?v=20260905-blue">
+  <script src="../js/site-config.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
+    <nav class="navigation" id="primary-navigation" aria-label="Main navigation">
+      <a href="../index.html#home">Home</a>
+      <a href="../index.html#showreel">Showreel</a>
+      <a href="../index.html#work" class="active">Selected work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#education">Education</a>
+      <a class="nav-contact" href="../index.html#contact">Let's talk <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main class="project-main" id="main">
+    <div class="project-intro wrap">
+      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
+      <p class="eyebrow"><span class="section-index">01 /</span> LIGHTING TD PIPELINE</p>
+      <div class="project-title-row">
+        <h1>FarmFlow<span class="title-dot">.</span></h1>
+        <p class="project-lede">A production-minded Maya and Arnold pipeline that validates scenes before render, verifies every EXR and leaves a traceable handoff.</p>
+      </div>
+      <div class="project-meta">
+        <div><span class="meta-label">My contribution</span><p>Architecture, Python development, Maya integration, validation &amp; render workflow</p></div>
+        <div><span class="meta-label">Toolkit</span><p>Python · Maya 2026 · Arnold · PySide6 · OpenImageIO · pytest · JSON · OCIO</p></div>
+      </div>
+      <p class="project-context">Independent pipeline engineering project · version 1.9.0 · August–September 2026</p>
+    </div>
+
+    <figure class="project-hero wrap">
+      <div class="farmflow-visual" role="img" aria-label="FarmFlow moves a Maya scene through preflight validation, Arnold rendering and EXR verification before queue and compositing handoff">
+        <div class="farmflow-heading"><span>FARMFLOW PIPELINE</span><small>MAYA 2026 · ARNOLD</small></div>
+        <div class="farmflow-track">
+          <span class="farmflow-node"><small>01 / INPUT</small><strong>Maya scene</strong></span><span class="farmflow-arrow" aria-hidden="true">→</span>
+          <span class="farmflow-node"><small>02 / CHECK</small><strong>Preflight</strong></span><span class="farmflow-arrow" aria-hidden="true">→</span>
+          <span class="farmflow-node"><small>03 / EXECUTE</small><strong>Arnold render</strong></span><span class="farmflow-arrow" aria-hidden="true">→</span>
+          <span class="farmflow-node"><small>04 / VERIFY</small><strong>EXR + report</strong></span>
+        </div>
+        <div class="farmflow-metrics" aria-hidden="true">
+          <span><strong>753</strong>tests passed</span>
+          <span><strong>90.40%</strong>documented coverage</span>
+          <span><strong>10 / 10</strong>frames verified</span>
+        </div>
+      </div>
+      <figcaption>Neutral core with DCC adapters, read-only preflight, per-frame execution and traceable results.</figcaption>
+    </figure>
+
+    <section class="project-story wrap" aria-labelledby="overview-title">
+      <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
+      <div class="story-copy">
+        <h2 id="overview-title">Catch the failure before the farm does.</h2>
+        <p>A scene can work on an artist's workstation and still fail elsewhere because of missing textures, local paths, incomplete sequences, the wrong camera, unsupported render layers, incompatible Arnold settings or unexpected output names. FarmFlow turns those conditions into explicit checks before render time is spent.</p>
+        <p>The project evolved from a neutral Python architecture into a working Maya plug-in and dockable panel. It reads the scene without silently repairing it, blocks critical errors, renders Arnold sequences one frame at a time, verifies the generated EXRs and records diagnostics that can be inspected later.</p>
+      </div>
+    </section>
+
+    <section class="project-scope wrap" aria-labelledby="scope-title">
+      <h2 id="scope-title">What I built</h2>
+      <ul>
+        <li>A DCC-neutral core with serializable models for scenes, dependencies, render settings, submissions, jobs and validation results.</li>
+        <li>A Maya 2026 plug-in and dockable PySide6 panel for reading scenes, choosing cameras and frame ranges, validating, rendering and reviewing results.</li>
+        <li>Read-only preflight rules for scene state, textures, references, UDIMs, sequences, output paths, cameras, layers, AOVs, disk space and local constraints.</li>
+        <li>Arnold execution by frame with immediate output verification, safe stopping between frames and restoration of temporary Maya state.</li>
+        <li>OpenImageIO checks for EXR readability, resolution, channels, parts and metadata, with JSON manifests and diagnostics for each run.</li>
+        <li>A persistent local queue, simulated Qube adapter, Nuke handoff generation, OCIO auditing and key, fill and rim light-group AOVs.</li>
+      </ul>
+    </section>
+
+    <section class="process-grid wrap" aria-label="FarmFlow engineering process">
+      <article class="process-step"><span>01 /</span><h3>Extract without changing</h3><p>DCC adapters translate Maya or Houdini scene data into neutral models. The core can then validate most rules in standard Python without importing a DCC.</p></article>
+      <article class="process-step"><span>02 /</span><h3>Render with restoration</h3><p>FarmFlow applies the temporary settings required for a selected frame, camera and layer, calls Arnold, verifies the output and restores the previous Maya state even after cancellation or failure.</p></article>
+      <article class="process-step"><span>03 /</span><h3>Diagnose with evidence</h3><p>Results record timings, scene snapshots, probable causes and suggested actions. EXRs and JSON reports remain connected to the frame and execution that produced them.</p></article>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="evidence-title">
+      <p class="eyebrow"><span class="section-index">/</span> VERIFIED RESULTS</p>
+      <h2 id="evidence-title">Measured, packaged and tested.</h2>
+      <div class="evidence-grid">
+        <div><dt>Automated tests</dt><dd>753</dd></div>
+        <div><dt>Documented coverage</dt><dd>90.40%</dd></div>
+        <div><dt>Maya acceptance render</dt><dd>10 / 10</dd></div>
+      </div>
+      <p class="source-note">Version 1.9.0 records 753 passing tests and two skipped tests that require a real Qube environment. The documented Maya 2026 acceptance run rendered and verified frames 1–10 with Arnold in 29.7 seconds, reported no execution error and restored the scene state correctly.</p>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="architecture-title">
+      <p class="eyebrow"><span class="section-index">/</span> PRODUCTION DESIGN</p>
+      <h2 id="architecture-title">Built around the artist's scene.</h2>
+      <div class="farmflow-capabilities">
+        <article><h3>Preflight</h3><p>Errors block execution; warnings remain visible for an informed decision. FarmFlow reports the rule, evidence and a suggested correction without modifying the scene.</p></article>
+        <article><h3>Render and verification</h3><p>Each frame is rendered and checked before the sequence continues. Real output paths reported by Maya are used instead of relying only on expected filename patterns.</p></article>
+        <article><h3>Production handoff</h3><p>Flat render folders, manifests, job state, Arnold statistics, OCIO context and light-group data prepare the result for queueing, diagnosis and compositing.</p></article>
+      </div>
+      <details class="technical-notes">
+        <summary>Version 1.9.0 highlights</summary>
+        <dl class="render-specs">
+          <div><dt>Maya and Arnold</dt><dd>Multiple cameras and layers, render sequence, AOVs, EXR and state restoration</dd></div>
+          <div><dt>Diagnostics</dt><dd>Stage timings, snapshots, A/B comparison and bounded Arnold statistics</dd></div>
+          <div><dt>Compositing</dt><dd>Beauty reconstruction, self-contained Nuke script and structural verification</dd></div>
+          <div><dt>Colour and lighting</dt><dd>OCIO audit plus key, fill and rim groups translated to RGB LPE AOVs</dd></div>
+        </dl>
+      </details>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="status-title">
+      <p class="eyebrow"><span class="section-index">/</span> CURRENT STATUS</p>
+      <h2 id="status-title">Clear about what has been exercised.</h2>
+      <div class="status-grid">
+        <article class="status-card verified"><span class="status-label">VERIFIED</span><h3>Local Maya and Arnold flow</h3><p>Installation, plug-in loading, preflight, camera selection, Arnold sequence rendering, EXR checks, light-group assignment and state restoration.</p></article>
+        <article class="status-card simulated"><span class="status-label">SIMULATED</span><h3>Queue and farm behaviour</h3><p>Persistent local jobs, per-frame work, priority, retries, cancellation and the Qube adapter were exercised without contacting a real Supervisor.</p></article>
+        <article class="status-card pending"><span class="status-label">PENDING</span><h3>Studio environment acceptance</h3><p>Real Qube submission, native Nuke acceptance, Linux, multi-host scale and final visual OCIO/light-group review require the corresponding licensed environment.</p></article>
+      </div>
+    </section>
+
+    <section class="project-credits wrap" aria-labelledby="credits-title">
+      <h2 id="credits-title">Project credits</h2>
+      <p>Project architecture, development, Maya integration, testing and documentation: Joshua Medina.</p>
+      <p>FarmFlow version 1.9.0 is documented for Maya 2026 and Arnold. Results and limitations shown here follow the project's technical report dated 9 September 2026.</p>
+    </section>
+
+    <a class="next-project wrap" href="aovguard.html"><div><small>NEXT PROJECT</small><h2>AOVGuard</h2></div><span aria-hidden="true">↗</span></a>
+  </main>
+
+  <footer class="site-footer wrap">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <p>© <span data-year>2026</span> Joshua Medina</p>
+    <a class="back-top" href="../index.html#contact">Get in touch <span aria-hidden="true">↗</span></a>
+  </footer>
+</body>
+</html>

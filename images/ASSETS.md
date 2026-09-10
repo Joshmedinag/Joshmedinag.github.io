@@ -1,6 +1,14 @@
 # Imágenes y vídeo del portfolio
 
-El material de AOVGuard, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. La presentación principal de AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para este portfolio. Los originales no se modifican. Las imágenes extraídas de los PDF conservan su resolución disponible, sin ampliación artificial. Los números de página siguientes cuentan desde la primera página del PDF, incluida la portada.
+El material de FarmFlow, AOVGuard, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. La presentación principal de FarmFlow se construye con HTML y CSS. AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para este portfolio. Los originales no se modifican. Las imágenes extraídas de los PDF conservan su resolución disponible, sin ampliación artificial. Los números de página siguientes cuentan desde la primera página del PDF, incluida la portada.
+
+## FarmFlow
+
+Fuente: `FarmFlow_documentacion_completa_1.9.0.docx`, versión documentada 1.9.0, con fecha de cierre 9 de septiembre de 2026.
+
+La tarjeta y la cabecera usan un diagrama original construido directamente en HTML/CSS que representa el recorrido Maya scene → Preflight → Arnold render → EXR + report. No se generó una captura falsa de la interfaz. La única imagen incrustada en el documento es una captura real de aceptación en Maya 2026, pero contiene rutas locales personales; por esa razón no forma parte de los archivos públicos del portfolio.
+
+La página reproduce únicamente afirmaciones documentadas: 753 pruebas aprobadas, 2 omitidas, 90,40 % de cobertura y una aceptación local de 10 frames verificados en 29,7 segundos. También conserva la clasificación del informe entre funciones comprobadas, simuladas y pendientes.
 
 ## AOVGuard
 

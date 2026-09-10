@@ -1,6 +1,6 @@
 # Joshua Medina — Portfolio
 
-Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las cinco páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua.
+Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las seis páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua.
 
 No requiere instalar paquetes ni compilar. El sitio está publicado en [joshmedinag.github.io](https://joshmedinag.github.io/).
 
@@ -16,7 +16,7 @@ Usa `python` en lugar de `py` si lo requiere tu instalación. Abre [la vista pre
 
 ## Sustituir las imágenes sin editar HTML
 
-Los recursos ya están conectados a sus ubicaciones. **Exporta cada imagen en el formato indicado y reemplaza el archivo con el mismo nombre**. No es necesario cambiar HTML, JavaScript ni ningún manifiesto. Los cuatro proyectos utilizan material real proporcionado por Joshua; la presentación de AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para el sitio. La portada utiliza una selección del demo reel.
+Los recursos ya están conectados a sus ubicaciones. **Exporta cada imagen en el formato indicado y reemplaza el archivo con el mismo nombre**. No es necesario cambiar HTML, JavaScript ni ningún manifiesto. Los proyectos utilizan material real proporcionado por Joshua; la presentación de AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para el sitio. FarmFlow utiliza un diagrama HTML/CSS sin publicar capturas con rutas locales. La portada utiliza una selección del demo reel.
 
 | Archivo en `images/` | Dónde aparece | Contenido previsto |
 | --- | --- | --- |
@@ -74,6 +74,8 @@ Snowbound Environment tiene cuatro reproductores HTML nativos: el paneo final, u
 
 ## Material de los informes
 
+La página de FarmFlow resume `FarmFlow_documentacion_completa_1.9.0.docx`. Presenta la arquitectura neutral al DCC, el plug-in para Maya 2026, preflight, render Arnold por frame, verificación EXR, diagnósticos, cola y handoff. Las cifras publicadas —**753 pruebas**, **90,40 % de cobertura documentada** y **10 de 10 frames verificados**— proceden de ese informe. La web distingue el flujo Maya/Arnold comprobado, el comportamiento de cola/Qube simulado y las integraciones pendientes. La captura incluida en el DOCX no se publica porque muestra rutas personales del equipo local.
+
 Lighting & Look Development presenta **Broken Horizons** con vídeo y material de `JoshuaMG_IndividualContribution.pdf`. La aportación de Joshua se describe como iluminación, cinematografía y preparación del render en Unreal Engine. Incluye capturas del setup y de Movie Render Queue, fotogramas, referencias de Tout Quarry y un tablero visual externo inspirado en Death Stranding. Los créditos del equipo proceden del vídeo y del informe; no se publica la evaluación académica de los compañeros ni el PDF completo.
 
 `assets/video/broken-horizons.mp4` conserva los **118,29 segundos** del archivo entregado, incluidos títulos y créditos, a **1920 × 1080, 24 fps, H.264/AAC**, con faststart, controles y sin autoplay. La copia web pesa **36,8 MB** frente a los 219,5 MB del original. El informe describe una secuencia de unos 90 segundos; la web indica la duración real del archivo completo. Las capturas y referencias se abren a tamaño completo al seleccionarlas. Los ajustes de render y enlaces a documentación de Epic Games están en desplegables.
@@ -120,6 +122,7 @@ images/*.{jpg,png}          Imágenes de proyectos y recursos de portada
 images/hero/*.jpg           Siete fotogramas del carrusel de portada
 images/ASSETS.md             Procedencia y mapa de recursos
 projects/aovguard.html       Herramienta de validación EXR/AOV
+projects/farmflow.html       Pipeline Maya/Arnold para Lighting TD
 projects/lighting.html       Lighting y look development
 projects/snow-environment.html  Iluminación de entorno nevado
 projects/going-merry.html    Simulación de océano
@@ -131,7 +134,7 @@ assets/video/snow-*.mp4      Cuatro clips optimizados del entorno nevado
 .nojekyll                   Publicación estática directa
 ```
 
-La navegación y el pie se mantienen en los cinco HTML. Si cambias su estructura, actualiza todos. El contenido sigue disponible sin JavaScript; las funciones de menú móvil y actualización automática de contacto utilizan JavaScript.
+La navegación y el pie se mantienen en los siete HTML. Si cambias su estructura, actualiza todos. El contenido sigue disponible sin JavaScript; las funciones de menú móvil y actualización automática de contacto utilizan JavaScript.
 
 `.verification/` contiene herramientas de comprobación local y no se incluye en Git. Los WebP y el SVG de la primera maqueta se conservan como recursos anteriores, pero ya no se usan en los HTML.
 
