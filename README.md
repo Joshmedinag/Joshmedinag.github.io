@@ -1,6 +1,6 @@
 # Joshua Medina — Portfolio
 
-Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las siete páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua.
+Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las siete páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua. La tipografía principal es **Neue Montreal**, integrada localmente con sus pesos Regular, Medium, Bold e Italic.
 
 No requiere instalar paquetes ni compilar. El sitio está publicado en [joshmedinag.github.io](https://joshmedinag.github.io/).
 
@@ -136,6 +136,7 @@ projects/snow-environment.html  Iluminación de entorno nevado
 projects/going-merry.html    Simulación de océano
 projects/renderman.html      Estudio de una naranja
 assets/favicon.svg          Monograma JM
+assets/fonts/neue-montreal/  Neue Montreal y licencia del paquete entregado
 assets/video/going-merry.mp4  Vídeo optimizado de la simulación
 assets/video/broken-horizons.mp4  Corto grupal completo optimizado
 assets/video/nordic-*.mp4    Cinco planos de Norwegian Lakeside

@@ -132,4 +132,8 @@ Estos archivos se conservan, pero los HTML ya no los utilizan:
 - `renderman-placeholder.webp`: esferas ilustrativas generadas con imagegen; no corresponden al estudio real de la naranja.
 - `aovguard-placeholder.svg`: diagrama original de flujo, no una captura de la herramienta.
 
-Ninguna de esas imágenes se presenta como trabajo de Joshua Medina. `assets/favicon.svg` es el monograma tipográfico JM. Las fuentes de la interfaz son del sistema.
+Ninguna de esas imágenes se presenta como trabajo de Joshua Medina. `assets/favicon.svg` es el monograma tipográfico JM.
+
+## Tipografía
+
+La interfaz utiliza Neue Montreal Regular, Medium, Bold e Italic desde `assets/fonts/neue-montreal/`. Los archivos proceden de `neue-montreal-font-family.zip`, proporcionado por Joshua, y conservan el aviso `LICENSE.txt` incluido en el paquete. Se utiliza Arial como respaldo si el navegador no puede cargar la fuente.
