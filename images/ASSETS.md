@@ -1,6 +1,6 @@
 # Imágenes y vídeo del portfolio
 
-El material de FarmFlow, AOVGuard, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. La presentación principal de FarmFlow se construye con HTML y CSS. AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para este portfolio. Los originales no se modifican. Las imágenes extraídas de los PDF conservan su resolución disponible, sin ampliación artificial. Los números de página siguientes cuentan desde la primera página del PDF, incluida la portada.
+El material de FarmFlow, AOVGuard, Norwegian Lakeside, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. La presentación principal de FarmFlow se construye con HTML y CSS. AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para este portfolio. Los originales no se modifican. Las imágenes extraídas de los PDF conservan su resolución disponible, sin ampliación artificial. Los números de página siguientes cuentan desde la primera página del PDF, incluida la portada.
 
 ## FarmFlow
 
@@ -70,6 +70,25 @@ El vídeo conserva los 118,29 segundos completos, incluidos títulos y créditos
 Los renders son del proyecto grupal. La aportación de Joshua es iluminación, cinematografía y render; Jessica Dong: dirección y entorno; Osher Shechter: producción, trabajo técnico, follaje y flores; Youyang Dong: assets y trabajo técnico, incluidos rocas y Roy Dog; Kyle Galenzoga: VFX Niagara, aves y mariposas. La supervisión corresponde a Valery Adzhiev. Los nombres y roles se contrastaron con los créditos del vídeo y el informe.
 
 Las fotografías de Tout Quarry y el tablero externo se identifican como **referencias**, no como renders de Joshua. El PDF no identifica al fotógrafo ni la procedencia individual de todas las imágenes del tablero; se atribuyen al material del informe sin inventar autoría. Death Stranding está identificado en el informe como inspiración principal, y la página enlaza al sitio oficial del juego. La bibliografía técnica enlaza a documentación oficial de Epic Games. No se publica la portada, la evaluación de compañeros ni el PDF completo.
+
+## Norwegian Lakeside
+
+Fuentes: `nordic_breakdown.mp4`, `nordic8.mp4`, `nordic9.mp4`, `nordic10.mp4` y `nordic11.mp4`, proporcionados por Joshua Medina.
+
+| Archivo | Contenido | Duración / resolución |
+| --- | --- | --- |
+| `nordic-main.jpg` | Fotograma del plano principal de la cabaña junto al lago | 1920 × 1080 |
+| `nordic-exterior.jpg` | Fotograma del exterior de la terraza | 1920 × 1080 |
+| `nordic-interior.jpg` | Fotograma del interior de la cabaña | 1920 × 1080 |
+| `nordic-wide.jpg` | Fotograma de la vista amplia desde el lago | 1920 × 1080 |
+| `nordic-cabin.jpg` | Fotograma de la aproximación a la cabaña | 1920 × 1080 |
+| `../assets/video/nordic-breakdown.mp4` | Plano principal | 9,12 s · 1920 × 1080 |
+| `../assets/video/nordic-exterior.mp4` | Exterior de la terraza | 9,34 s · 1920 × 1080 |
+| `../assets/video/nordic-interior.mp4` | Interior de la cabaña | 8,34 s · 1920 × 1080 |
+| `../assets/video/nordic-wide.mp4` | Vista amplia desde el lago | 8,34 s · 1920 × 1080 |
+| `../assets/video/nordic-cabin.mp4` | Aproximación a la cabaña | 10,43 s · 1920 × 1080 |
+
+Los cinco MP4 se optimizaron para web con H.264, CRF 21, límite de 6 Mb/s y `faststart`; mantienen la resolución y el encuadre originales. Pesan en conjunto 23,2 MiB frente a 128,7 MiB de los originales. Los pósteres se extrajeron de esos videos sin modificar la iluminación ni el color. La página presenta el trabajo visible de iluminación, look development, composición y continuidad entre interior y exterior; no atribuye el modelado ni la creación de los assets porque esa información no fue proporcionada.
 
 ## Snowbound Environment
 

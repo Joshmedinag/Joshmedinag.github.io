@@ -1,6 +1,6 @@
 # Joshua Medina — Portfolio
 
-Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las seis páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua.
+Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las siete páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua.
 
 No requiere instalar paquetes ni compilar. El sitio está publicado en [joshmedinag.github.io](https://joshmedinag.github.io/).
 
@@ -36,6 +36,11 @@ Los recursos ya están conectados a sus ubicaciones. **Exporta cada imagen en el
 | `broken-horizons-render-settings.jpg` | Proceso de Lighting | Preset de Movie Render Queue del informe |
 | `broken-horizons-location-reference.jpg` | Referencias de Lighting | Fotografía de Tout Quarry del informe |
 | `broken-horizons-moodboard-reference.jpg` | Referencias de Lighting | Tablero de referencias visuales externas del informe |
+| `nordic-main.jpg` | Tarjeta y póster principal de Norwegian Lakeside | Cabaña junto al lago en luz cálida |
+| `nordic-exterior.jpg` | Galería y póster de Norwegian Lakeside | Exterior de la terraza y el lago |
+| `nordic-interior.jpg` | Galería y póster de Norwegian Lakeside | Interior iluminado desde puertas y ventanas |
+| `nordic-wide.jpg` | Galería y póster de Norwegian Lakeside | Vista amplia desde el agua |
+| `nordic-cabin.jpg` | Póster de Norwegian Lakeside | Aproximación a la cabaña desde el lago |
 | `snow-main.jpg` | Tarjeta y póster de Snowbound Environment | Fotograma del paneo final de invierno |
 | `snow-environment.jpg` | Galería y póster de Snowbound Environment | Vista del lago con capas de profundidad |
 | `snowfall.jpg` | Galería y póster de Snowbound Environment | Estudio de nevada intensa |
@@ -71,6 +76,8 @@ Vimeo carga recursos externos y debe permitir la inserción en el dominio donde 
 Going Merry tiene un reproductor HTML nativo en `projects/going-merry.html` y un enlace directo al MP4. El archivo `assets/video/going-merry.mp4` es una copia optimizada del vídeo entregado: **53,5 segundos, 1920 × 1080, 24 fps, H.264 y audio AAC**, aproximadamente **31,6 MB** frente a los 97,3 MB del original. Incluye `faststart` para comenzar la reproducción sin descargar el archivo completo, controles, reproducción en línea en móvil y carga inicial de metadatos. No tiene autoplay. La marca de Houdini del material original se conserva.
 
 Snowbound Environment tiene cuatro reproductores HTML nativos: el paneo final, una vista ambiental, un estudio de nevada intensa y el breakdown de la transformación hacia invierno. Las copias web mantienen 1920 × 1080, H.264/AAC y `faststart`; pesan en conjunto aproximadamente **19,1 MB** frente a unos **391 MB** de los originales. La página atribuye a Joshua la iluminación del entorno, look development, cámara y corrección de color. El trabajo se realizó en Unreal Engine y el acabado de color en DaVinci Resolve.
+
+Norwegian Lakeside tiene cinco reproductores HTML nativos para el plano principal, el exterior de la terraza, el interior, la vista amplia del lago y la aproximación a la cabaña. Las copias web mantienen 1920 × 1080, utilizan H.264/AAC y `faststart`, y pesan en conjunto **23,2 MiB** frente a **128,7 MiB** de los originales. Los clips duran entre 8,34 y 10,43 segundos. La página se limita a las responsabilidades visuales confirmadas por el material y no atribuye el modelado ni la creación de assets.
 
 ## Material de los informes
 
@@ -124,17 +131,19 @@ images/ASSETS.md             Procedencia y mapa de recursos
 projects/aovguard.html       Herramienta de validación EXR/AOV
 projects/farmflow.html       Pipeline Maya/Arnold para Lighting TD
 projects/lighting.html       Lighting y look development
+projects/norwegian-lakeside.html  Iluminación de entorno nórdico
 projects/snow-environment.html  Iluminación de entorno nevado
 projects/going-merry.html    Simulación de océano
 projects/renderman.html      Estudio de una naranja
 assets/favicon.svg          Monograma JM
 assets/video/going-merry.mp4  Vídeo optimizado de la simulación
 assets/video/broken-horizons.mp4  Corto grupal completo optimizado
+assets/video/nordic-*.mp4    Cinco planos de Norwegian Lakeside
 assets/video/snow-*.mp4      Cuatro clips optimizados del entorno nevado
 .nojekyll                   Publicación estática directa
 ```
 
-La navegación y el pie se mantienen en los siete HTML. Si cambias su estructura, actualiza todos. El contenido sigue disponible sin JavaScript; las funciones de menú móvil y actualización automática de contacto utilizan JavaScript.
+La navegación y el pie se mantienen en los ocho HTML. Si cambias su estructura, actualiza todos. El contenido sigue disponible sin JavaScript; las funciones de menú móvil y actualización automática de contacto utilizan JavaScript.
 
 `.verification/` contiene herramientas de comprobación local y no se incluye en Git. Los WebP y el SVG de la primera maqueta se conservan como recursos anteriores, pero ya no se usan en los HTML.
 
