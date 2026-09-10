@@ -41,10 +41,10 @@ Los recursos ya están conectados a sus ubicaciones. **Exporta cada imagen en el
 | `nordic-interior.jpg` | Galería y póster de Norwegian Lakeside | Interior iluminado desde puertas y ventanas |
 | `nordic-wide.jpg` | Galería y póster de Norwegian Lakeside | Vista amplia desde el agua |
 | `nordic-cabin.jpg` | Póster de Norwegian Lakeside | Aproximación a la cabaña desde el lago |
-| `snow-main.jpg` | Tarjeta y póster de Snowbound Environment | Fotograma del paneo final de invierno |
+| `snow-main.jpg` | Póster de la secuencia final de Snowbound Environment | Fotograma del paneo final de invierno |
 | `snow-environment.jpg` | Galería y póster de Snowbound Environment | Vista del lago con capas de profundidad |
 | `snowfall.jpg` | Galería y póster de Snowbound Environment | Estudio de nevada intensa |
-| `snow-breakdown.jpg` | Póster del breakdown | Estado final de la transformación invernal |
+| `snow-breakdown.jpg` | Tarjeta y póster principal de Snowbound Environment | Estado final de la transformación invernal |
 | `renderman-main.png` | Tarjeta y cabecera de RenderMan | Render refinado de la naranja en primer plano |
 | `renderman-breakdown.png` | Galería de RenderMan | Render refinado lateral de la superficie |
 | `renderman-top.png` | Galería de RenderMan | Render refinado desde arriba |
@@ -75,7 +75,7 @@ Vimeo carga recursos externos y debe permitir la inserción en el dominio donde 
 
 Going Merry tiene un reproductor HTML nativo en `projects/going-merry.html` y un enlace directo al MP4. El archivo `assets/video/going-merry.mp4` es una copia optimizada del vídeo entregado: **53,5 segundos, 1920 × 1080, 24 fps, H.264 y audio AAC**, aproximadamente **31,6 MB** frente a los 97,3 MB del original. Incluye `faststart` para comenzar la reproducción sin descargar el archivo completo, controles, reproducción en línea en móvil y carga inicial de metadatos. No tiene autoplay. La marca de Houdini del material original se conserva.
 
-Snowbound Environment tiene cuatro reproductores HTML nativos: el paneo final, una vista ambiental, un estudio de nevada intensa y el breakdown de la transformación hacia invierno. Las copias web mantienen 1920 × 1080, H.264/AAC y `faststart`; pesan en conjunto aproximadamente **19,1 MB** frente a unos **391 MB** de los originales. La página atribuye a Joshua la iluminación del entorno, look development, cámara y corrección de color. El trabajo se realizó en Unreal Engine y el acabado de color en DaVinci Resolve.
+Snowbound Environment abre con el breakdown de la transformación hacia invierno y utiliza su estado final como portada. Después presenta el paneo final, una vista ambiental y un estudio de nevada intensa. Las copias web mantienen 1920 × 1080, H.264/AAC y `faststart`; pesan en conjunto aproximadamente **19,1 MB** frente a unos **391 MB** de los originales. La página atribuye a Joshua la iluminación del entorno, look development, cámara y corrección de color. El trabajo se realizó en Unreal Engine y el acabado de color en DaVinci Resolve.
 
 Norwegian Lakeside tiene cinco reproductores HTML nativos para el plano principal, el exterior de la terraza, el interior, la vista amplia del lago y la aproximación a la cabaña. Las copias web mantienen 1920 × 1080, utilizan H.264/AAC y `faststart`, y pesan en conjunto **23,2 MiB** frente a **128,7 MiB** de los originales. Los clips duran entre 8,34 y 10,43 segundos. La página se limita a las responsabilidades visuales confirmadas por el material y no atribuye el modelado ni la creación de assets.
 

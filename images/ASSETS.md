@@ -96,10 +96,10 @@ Fuentes: `estaciones.mp4`, `estacion3_00000000.mp4`, `nieve_breakdown.mp4` y `ni
 
 | Archivo | Fuente | Duración / resolución |
 | --- | --- | --- |
-| `snow-main.jpg` | `nieve_paneo00000000.mp4`, fotograma aproximado 00:07.5 | 1920 × 1080 |
+| `snow-main.jpg` | `nieve_paneo00000000.mp4`, fotograma aproximado 00:07.5; póster de la secuencia final | 1920 × 1080 |
 | `snow-environment.jpg` | `estaciones.mp4`, fotograma aproximado 00:05.5 | 1920 × 1080 |
 | `snowfall.jpg` | `estacion3_00000000.mp4`, fotograma aproximado 00:03.5 | 1920 × 1080 |
-| `snow-breakdown.jpg` | `nieve_breakdown.mp4`, fotograma aproximado 00:09 | 1920 × 1080 |
+| `snow-breakdown.jpg` | `nieve_breakdown.mp4`, fotograma aproximado 00:09; tarjeta y póster principal | 1920 × 1080 |
 | `../assets/video/snow-pan.mp4` | Paneo final optimizado | 20,01 s · 1920 × 1080 · 24 fps |
 | `../assets/video/snow-environment.mp4` | Vista ambiental optimizada | 13,76 s · 1920 × 1080 · 24 fps |
 | `../assets/video/snowfall.mp4` | Estudio de nevada optimizado | 7,94 s · 1920 × 1080 · 24 fps |
