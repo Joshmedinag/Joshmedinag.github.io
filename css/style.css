@@ -22,7 +22,7 @@
 .shot-credit-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 30px;margin:24px 0 0}
 .shot-credit-fields>div{border-left:1px solid #45533b;padding-left:15px}
 .shot-credit-fields dt{font-size:.875rem;color:#d3ddcb}.shot-credit-fields dd{margin:6px 0 0;font-size:.875rem;color:var(--muted)}
-.career-details{margin-top:25px}.career-details p{margin-top:14px;font-size:.9375rem;color:var(--muted);line-height:1.9}
+.career-details{margin-top:25px}.career-details h3{font-size:.9375rem;font-weight:600;color:var(--text)}.career-details p{margin-top:14px;font-size:.9375rem;color:var(--muted);line-height:1.9}
 .education-list .education-meta{font-family:var(--mono);font-size:.75rem;color:#b9c8aa;margin-top:12px}
 .education-list .education-tools{font-size:.875rem}.education-details{margin-top:15px}
 .education-details ul{padding-left:20px;color:var(--muted);font-size:.875rem;line-height:1.8}
