@@ -78,6 +78,9 @@
 .card-media>.farmflow-visual{height:100%;border:0;border-radius:0;padding:42px 34px;transition:transform .65s cubic-bezier(.2,.65,.25,1),filter .5s}
 .card-media>.farmflow-visual .farmflow-heading{margin-bottom:42px}.card-media>.farmflow-visual .farmflow-node{min-height:76px;padding:12px}.card-media>.farmflow-visual .farmflow-node strong{font-size:.75rem}.card-media>.farmflow-visual .farmflow-arrow{font-size:1rem}
 .project-card:hover .farmflow-visual{transform:scale(1.035);filter:brightness(1.08)}
+.cover-title{position:absolute;top:24px;left:24px;z-index:1;font-family:var(--display);font-size:clamp(1.35rem,2.2vw,2rem);font-weight:600;letter-spacing:.08em;color:#fff;text-shadow:0 2px 22px #020a14}
+.farmflow-cover-card .category-tag{top:auto;bottom:20px}
+.farmflow-cover-card .card-media>img{object-position:center}
 .farmflow-capabilities,.status-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
 .farmflow-capabilities{margin:30px 0 68px}.farmflow-capabilities article,.status-card{border-top:1px solid var(--line);padding-top:22px}
 .farmflow-capabilities h3,.status-card h3{font-size:1.25rem}.farmflow-capabilities p,.status-card p{margin-top:10px;font-size:.9375rem;color:var(--muted);line-height:1.75}
@@ -120,6 +123,7 @@
 @media(max-width:760px){.team-credits,.render-specs{grid-template-columns:1fr}.evidence-gallery h3{font-size:1.25rem}}
 @media(max-width:760px){.project-video-grid{grid-template-columns:1fr;gap:32px}.project-video-grid h3{font-size:1.2rem}}
 @media(max-width:760px){.farmflow-visual{padding:28px 18px}.farmflow-heading{margin-bottom:30px}.farmflow-track{grid-template-columns:1fr 1fr;gap:10px}.farmflow-arrow{display:none}.farmflow-node{min-height:82px;padding:13px}.farmflow-metrics,.farmflow-capabilities,.status-grid{grid-template-columns:1fr}.farmflow-metrics{gap:14px}.farmflow-capabilities{gap:24px;margin-bottom:45px}.status-grid{gap:24px}.card-media>.farmflow-visual{padding:36px 22px}.card-media>.farmflow-visual .farmflow-heading{margin-bottom:25px}.card-media>.farmflow-visual .farmflow-node{min-height:58px}}
+@media(max-width:760px){.cover-title{top:18px;left:18px;font-size:1.3rem}.farmflow-cover-card .category-tag{bottom:15px}}
 @media(max-width:760px){.tool-logo-stage{gap:14px;padding:30px 18px}.tool-logo-mark{gap:11px}.tool-logo-mark img,.project-hero .tool-logo-mark img{width:68px;height:68px}.tool-logo-mark>span{font-size:.625rem;letter-spacing:.04em}.card-media>.tool-logo-stage{padding:30px 20px}}
 .image-detail-hint{display:block;margin-top:12px;font-size:.875rem;color:var(--accent)}
 .project-evidence{border-top:1px solid var(--line);padding-top:37px;margin-bottom:68px}

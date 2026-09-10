@@ -7,7 +7,7 @@
   <meta name="description" content="FarmFlow by Joshua Medina — a Maya and Arnold pipeline for scene preflight, render execution, EXR verification, diagnostics and production handoff.">
   <title>FarmFlow — Joshua Medina</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../css/style.css?v=20260909-neue">
+  <link rel="stylesheet" href="../css/style.css?v=20260909-farmflow-cover">
   <link rel="stylesheet" href="../css/blue-theme.css?v=20260905-blue">
   <script src="../js/site-config.js" defer></script>
   <script src="../js/main.js" defer></script>
@@ -43,6 +43,20 @@
       <p class="project-context">Independent pipeline engineering project · version 1.9.0 · August–September 2026</p>
     </div>
 
+    <figure class="project-hero artwork-full wrap">
+      <img src="../images/farmflow-cover.png" alt="FarmFlow cover artwork showing a production environment moving from wireframe and automated validation to final rendering and multilayer EXR output" width="1672" height="941">
+      <figcaption>Cinematic visualization of the FarmFlow journey from scene inspection to verified render output.</figcaption>
+    </figure>
+
+    <section class="project-story wrap" aria-labelledby="overview-title">
+      <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
+      <div class="story-copy">
+        <h2 id="overview-title">Catch the failure before the farm does.</h2>
+        <p>A scene can work on an artist's workstation and still fail elsewhere because of missing textures, local paths, incomplete sequences, the wrong camera, unsupported render layers, incompatible Arnold settings or unexpected output names. FarmFlow turns those conditions into explicit checks before render time is spent.</p>
+        <p>The project evolved from a neutral Python architecture into a working Maya plug-in and dockable panel. It reads the scene without silently repairing it, blocks critical errors, renders Arnold sequences one frame at a time, verifies the generated EXRs and records diagnostics that can be inspected later.</p>
+      </div>
+    </section>
+
     <figure class="project-hero wrap">
       <div class="farmflow-visual" role="img" aria-label="FarmFlow moves a Maya scene through preflight validation, Arnold rendering and EXR verification before queue and compositing handoff">
         <div class="farmflow-heading"><span>FARMFLOW PIPELINE</span><small>MAYA 2026 · ARNOLD</small></div>
@@ -58,17 +72,8 @@
           <span><strong>10 / 10</strong>frames verified</span>
         </div>
       </div>
-      <figcaption>Neutral core with DCC adapters, read-only preflight, per-frame execution and traceable results.</figcaption>
+      <figcaption>Technical flow: neutral core with DCC adapters, read-only preflight, per-frame execution and traceable results.</figcaption>
     </figure>
-
-    <section class="project-story wrap" aria-labelledby="overview-title">
-      <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
-      <div class="story-copy">
-        <h2 id="overview-title">Catch the failure before the farm does.</h2>
-        <p>A scene can work on an artist's workstation and still fail elsewhere because of missing textures, local paths, incomplete sequences, the wrong camera, unsupported render layers, incompatible Arnold settings or unexpected output names. FarmFlow turns those conditions into explicit checks before render time is spent.</p>
-        <p>The project evolved from a neutral Python architecture into a working Maya plug-in and dockable panel. It reads the scene without silently repairing it, blocks critical errors, renders Arnold sequences one frame at a time, verifies the generated EXRs and records diagnostics that can be inspected later.</p>
-      </div>
-    </section>
 
     <section class="project-scope wrap" aria-labelledby="scope-title">
       <h2 id="scope-title">What I built</h2>
