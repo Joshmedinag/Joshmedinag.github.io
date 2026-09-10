@@ -127,8 +127,12 @@ Fuente: `JoshuaMedina_DemoReel_2026.mp4`, 1:55,85, 1920 × 1080 y 29,97 fps.
 | `hero/hero-reel-05.jpg` | 01:04 | Bodegón iluminado con velas | 1600 × 900 |
 | `hero/hero-reel-06.jpg` | 01:36 | Retrato con iluminación de color | 1600 × 900 |
 | `hero/hero-reel-07.jpg` | 01:48 | Interior con luz cálida | 1600 × 900 |
+| `hero/hero-norwegian-01.jpg` | Fotograma del proyecto | Norwegian Lakeside: cabaña y lago | 1600 × 900 |
+| `hero/hero-norwegian-02.jpg` | Fotograma del proyecto | Norwegian Lakeside: interior con luz cálida | 1600 × 900 |
+| `hero/hero-snowbound-01.jpg` | Fotograma del proyecto | Snowbound Environment: camino nevado | 1600 × 900 |
+| `hero/hero-snowbound-02.jpg` | Fotograma del proyecto | Snowbound Environment: nevada entre montañas | 1600 × 900 |
 
-Cada fotograma se recortó desde el centro superior del original: 160 píxeles a cada lado y los 180 píxeles inferiores. El recorte elimina los rótulos de Unreal Engine, software y detalles de breakdown sin reconstruir píxeles, alterar el color ni modificar la iluminación. La selección evita la portada, los créditos, las comparativas y las vistas divididas.
+Los siete fotogramas del demo reel se recortaron desde el centro superior del original: 160 píxeles a cada lado y los 180 píxeles inferiores. El recorte elimina los rótulos de Unreal Engine, software y detalles de breakdown sin reconstruir píxeles, alterar el color ni modificar la iluminación. Los cuatro fotogramas recientes proceden de los shots finales de Norwegian Lakeside y Snowbound Environment y se redimensionaron a 1600 × 900 sin alterar creativamente su color o iluminación.
 
 ## Recursos de la primera maqueta
 

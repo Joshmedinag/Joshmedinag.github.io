@@ -21,6 +21,8 @@ Los recursos ya están conectados a sus ubicaciones. **Exporta cada imagen en el
 | Archivo en `images/` | Dónde aparece | Contenido previsto |
 | --- | --- | --- |
 | `hero/hero-reel-01.jpg` a `hero-reel-07.jpg` | Carrusel de portada | Siete fotogramas limpios del demo reel 2026 |
+| `hero/hero-norwegian-01.jpg` y `hero-norwegian-02.jpg` | Carrusel de portada | Dos fotogramas de Norwegian Lakeside |
+| `hero/hero-snowbound-01.jpg` y `hero-snowbound-02.jpg` | Carrusel de portada | Dos fotogramas de Snowbound Environment |
 | `brands/maya-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Autodesk Maya |
 | `brands/python-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Python |
 | `brands/aovs.svg` | Tarjeta y cabecera de AOVGuard | Símbolo de AOVs creado para el portfolio |
