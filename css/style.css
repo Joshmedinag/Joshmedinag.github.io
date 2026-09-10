@@ -80,7 +80,17 @@
 .project-card:hover .farmflow-visual{transform:scale(1.035);filter:brightness(1.08)}
 .cover-title{position:absolute;top:24px;left:24px;z-index:1;font-family:var(--display);font-size:clamp(1.35rem,2.2vw,2rem);font-weight:600;letter-spacing:.08em;color:#fff;text-shadow:0 2px 22px #020a14}
 .farmflow-cover-card .category-tag{top:auto;bottom:20px}
-.farmflow-cover-card .card-media>img{object-position:center}
+.farmflow-real-cover{position:relative;overflow:hidden;width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:4px;background:#06111f}
+.farmflow-cover-beauty{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.88) brightness(.78)}
+.farmflow-real-cover::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#04111fee 0,#06152699 31%,transparent 60%),linear-gradient(0deg,#03101c99,transparent 42%);pointer-events:none}
+.farmflow-cover-wireframe{position:absolute;z-index:1;left:4%;top:29%;width:29%;height:48%;overflow:hidden;border:1px solid #5dbbff88;border-radius:2px;background:#071426;box-shadow:0 18px 44px #0009}
+.farmflow-cover-wireframe img{width:100%;height:100%;object-fit:cover;object-position:center 56%;filter:grayscale(1) contrast(1.4) brightness(1.5) sepia(.3) hue-rotate(155deg) saturate(3)}
+.farmflow-cover-status{position:absolute;z-index:1;top:8%;right:3%;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.farmflow-cover-status small{display:block;padding:5px 9px;border:1px solid #5dbbff66;border-radius:2px;background:#061525cc;font-family:var(--mono);font-size:.625rem;letter-spacing:.07em;color:#dff3ff;box-shadow:0 8px 24px #0007}
+.farmflow-cover-status small::before{content:'✓';margin-right:7px;color:#64d9a0}
+.card-media>.farmflow-real-cover{height:100%;aspect-ratio:auto;border:0;border-radius:0;transition:transform .65s cubic-bezier(.2,.65,.25,1),filter .5s}
+.project-card:hover .farmflow-real-cover{transform:scale(1.035);filter:brightness(1.08)}
+.farmflow-cover-card .cover-title{z-index:2}.farmflow-cover-card .category-tag,.farmflow-cover-card .card-arrow{z-index:2}
 .farmflow-capabilities,.status-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
 .farmflow-capabilities{margin:30px 0 68px}.farmflow-capabilities article,.status-card{border-top:1px solid var(--line);padding-top:22px}
 .farmflow-capabilities h3,.status-card h3{font-size:1.25rem}.farmflow-capabilities p,.status-card p{margin-top:10px;font-size:.9375rem;color:var(--muted);line-height:1.75}
@@ -123,7 +133,7 @@
 @media(max-width:760px){.team-credits,.render-specs{grid-template-columns:1fr}.evidence-gallery h3{font-size:1.25rem}}
 @media(max-width:760px){.project-video-grid{grid-template-columns:1fr;gap:32px}.project-video-grid h3{font-size:1.2rem}}
 @media(max-width:760px){.farmflow-visual{padding:28px 18px}.farmflow-heading{margin-bottom:30px}.farmflow-track{grid-template-columns:1fr 1fr;gap:10px}.farmflow-arrow{display:none}.farmflow-node{min-height:82px;padding:13px}.farmflow-metrics,.farmflow-capabilities,.status-grid{grid-template-columns:1fr}.farmflow-metrics{gap:14px}.farmflow-capabilities{gap:24px;margin-bottom:45px}.status-grid{gap:24px}.card-media>.farmflow-visual{padding:36px 22px}.card-media>.farmflow-visual .farmflow-heading{margin-bottom:25px}.card-media>.farmflow-visual .farmflow-node{min-height:58px}}
-@media(max-width:760px){.cover-title{top:18px;left:18px;font-size:1.3rem}.farmflow-cover-card .category-tag{bottom:15px}}
+@media(max-width:760px){.cover-title{top:18px;left:18px;font-size:1.3rem}.farmflow-cover-card .category-tag{bottom:15px}.farmflow-cover-wireframe{left:4%;top:31%;width:31%;height:45%}.farmflow-cover-status{top:6%;right:3%;gap:5px}.farmflow-cover-status small{padding:3px 5px;font-size:.5rem}.project-hero .farmflow-cover-status small{font-size:.4375rem}}
 @media(max-width:760px){.tool-logo-stage{gap:14px;padding:30px 18px}.tool-logo-mark{gap:11px}.tool-logo-mark img,.project-hero .tool-logo-mark img{width:68px;height:68px}.tool-logo-mark>span{font-size:.625rem;letter-spacing:.04em}.card-media>.tool-logo-stage{padding:30px 20px}}
 .image-detail-hint{display:block;margin-top:12px;font-size:.875rem;color:var(--accent)}
 .project-evidence{border-top:1px solid var(--line);padding-top:37px;margin-bottom:68px}

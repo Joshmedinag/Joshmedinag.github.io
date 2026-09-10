@@ -7,7 +7,7 @@
   <meta name="description" content="FarmFlow by Joshua Medina — a Maya and Arnold pipeline for scene preflight, render execution, EXR verification, diagnostics and production handoff.">
   <title>FarmFlow — Joshua Medina</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../css/style.css?v=20260909-farmflow-cover">
+  <link rel="stylesheet" href="../css/style.css?v=20260909-farmflow-real">
   <link rel="stylesheet" href="../css/blue-theme.css?v=20260905-blue">
   <script src="../js/site-config.js" defer></script>
   <script src="../js/main.js" defer></script>
@@ -43,9 +43,13 @@
       <p class="project-context">Independent pipeline engineering project · version 1.9.0 · August–September 2026</p>
     </div>
 
-    <figure class="project-hero artwork-full wrap">
-      <img src="../images/farmflow-cover.png" alt="FarmFlow cover artwork showing a production environment moving from wireframe and automated validation to final rendering and multilayer EXR output" width="1672" height="941">
-      <figcaption>Cinematic visualization of the FarmFlow journey from scene inspection to verified render output.</figcaption>
+    <figure class="project-hero wrap">
+      <div class="farmflow-real-cover" role="img" aria-label="Actual FarmFlow test scene progressing from Maya wireframe through Arnold rendering to verified EXR output">
+        <img class="farmflow-cover-beauty" src="../images/farmflow-beauty.png" alt="" width="960" height="540">
+        <span class="farmflow-cover-wireframe"><img src="../images/farmflow-wireframe.png" alt="" width="1413" height="1038"></span>
+        <span class="farmflow-cover-status" aria-hidden="true"><small>01 · SCENE READY</small><small>02 · ARNOLD RENDER</small><small>03 · EXR VERIFIED</small></span>
+      </div>
+      <figcaption>Actual FarmFlow test material: Maya scene, Arnold beauty render and verified EXR output.</figcaption>
     </figure>
 
     <section class="project-story wrap" aria-labelledby="overview-title">
@@ -91,6 +95,30 @@
       <article class="process-step"><span>01 /</span><h3>Extract without changing</h3><p>DCC adapters translate Maya or Houdini scene data into neutral models. The core can then validate most rules in standard Python without importing a DCC.</p></article>
       <article class="process-step"><span>02 /</span><h3>Render with restoration</h3><p>FarmFlow applies the temporary settings required for a selected frame, camera and layer, calls Arnold, verifies the output and restores the previous Maya state even after cancellation or failure.</p></article>
       <article class="process-step"><span>03 /</span><h3>Diagnose with evidence</h3><p>Results record timings, scene snapshots, probable causes and suggested actions. EXRs and JSON reports remain connected to the frame and execution that produced them.</p></article>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="maya-evidence-title">
+      <p class="eyebrow"><span class="section-index">/</span> IN MAYA</p>
+      <h2 id="maya-evidence-title">Scene, render and verification.</h2>
+      <p class="reference-intro">These production captures show the same test scene moving through FarmFlow inside Maya 2026: from scene inspection to Arnold output and sequence verification.</p>
+      <div class="project-gallery evidence-gallery">
+        <figure>
+          <img src="../images/farmflow-beauty.png" alt="Arnold beauty render generated from the FarmFlow test scene" width="960" height="540" loading="lazy">
+          <figcaption><p class="reference-label">ARNOLD BEAUTY</p><h3>Verified render output</h3><p>The cleaned display conversion of frame 1 from the original ACEScg EXR.</p></figcaption>
+        </figure>
+        <figure>
+          <img src="../images/farmflow-wireframe.png" alt="Wireframe view of the character test scene used with FarmFlow" width="1413" height="1038" loading="lazy">
+          <figcaption><p class="reference-label">SCENE INPUT</p><h3>Wireframe inspection</h3><p>The Maya test scene before FarmFlow validation and Arnold execution.</p></figcaption>
+        </figure>
+        <figure>
+          <img src="../images/farmflow-render-run.png" alt="FarmFlow panel in Maya showing an Arnold render and verified output" width="2048" height="1228" loading="lazy">
+          <figcaption><p class="reference-label">RENDER EXECUTION</p><h3>Frame rendered and checked</h3><p>FarmFlow drives Arnold, checks the resulting file and reports restoration of the Maya scene state.</p></figcaption>
+        </figure>
+        <figure>
+          <img src="../images/farmflow-sequence-verified.png" alt="FarmFlow panel in Maya after completing and verifying a ten-frame Arnold sequence" width="2048" height="1228" loading="lazy">
+          <figcaption><p class="reference-label">SEQUENCE RESULT</p><h3>10 outputs verified</h3><p>The completed camera sequence with the render view and local execution history visible in Maya.</p></figcaption>
+        </figure>
+      </div>
     </section>
 
     <section class="project-evidence wrap" aria-labelledby="evidence-title">

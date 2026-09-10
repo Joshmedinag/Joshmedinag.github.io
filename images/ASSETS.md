@@ -1,12 +1,19 @@
 # Imágenes y vídeo del portfolio
 
-El material de FarmFlow, AOVGuard, Norwegian Lakeside, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. FarmFlow combina una portada cinematográfica generada para el portfolio con un diagrama técnico construido en HTML y CSS. AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para este portfolio. Los originales no se modifican. Las imágenes extraídas de los PDF conservan su resolución disponible, sin ampliación artificial. Los números de página siguientes cuentan desde la primera página del PDF, incluida la portada.
+El material de FarmFlow, AOVGuard, Norwegian Lakeside, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. FarmFlow combina material real de Maya y Arnold con un diagrama técnico construido en HTML y CSS. AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para este portfolio. Los originales no se modifican. Las imágenes extraídas de los PDF conservan su resolución disponible, sin ampliación artificial. Los números de página siguientes cuentan desde la primera página del PDF, incluida la portada.
 
 ## FarmFlow
 
 Fuente: `FarmFlow_documentacion_completa_1.9.0.docx`, versión documentada 1.9.0, con fecha de cierre 9 de septiembre de 2026.
 
-`farmflow-cover.png` es una visualización cinematográfica original generada con ImageGen para representar el recorrido desde wireframe y validación hasta beauty render y salida EXR/AOV. No se presenta como captura de la herramienta ni como un render producido por FarmFlow. La portada deja espacio para el título, que se añade como HTML en la tarjeta. La página conserva además un diagrama construido directamente en HTML/CSS que representa Maya scene → Preflight → Arnold render → EXR + report. La única imagen incrustada en el documento es una captura real de aceptación en Maya 2026, pero contiene rutas locales personales; por esa razón no forma parte de los archivos públicos del portfolio.
+La portada combina `farmflow-beauty.png` y `farmflow-wireframe.png` mediante HTML/CSS. El beauty procede del archivo `farmflow_1.0001.exr`, renderizado por Arnold en ACEScg; se convirtió a PNG para visualización web y el EXR original, junto con sus metadatos internos, no se publica. El wireframe y las capturas `farmflow-render-run.png` y `farmflow-sequence-verified.png` proceden de las imágenes proporcionadas el 9 de septiembre de 2026. La página conserva además el diagrama HTML/CSS que representa Maya scene → Preflight → Arnold render → EXR + report.
+
+| Archivo | Contenido | Resolución |
+| --- | --- | --- |
+| `farmflow-beauty.png` | Beauty real de Arnold convertido de ACEScg a una imagen de visualización | 960 × 540 |
+| `farmflow-wireframe.png` | Wireframe de la escena de prueba | 1413 × 1038 |
+| `farmflow-render-run.png` | FarmFlow ejecutando y verificando un frame en Maya | 2048 × 1228 |
+| `farmflow-sequence-verified.png` | Render view y diez salidas verificadas | 2048 × 1228 |
 
 La página reproduce únicamente afirmaciones documentadas: 753 pruebas aprobadas, 2 omitidas, 90,40 % de cobertura y una aceptación local de 10 frames verificados en 29,7 segundos. También conserva la clasificación del informe entre funciones comprobadas, simuladas y pendientes.
 

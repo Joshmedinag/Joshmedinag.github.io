@@ -16,7 +16,7 @@ Usa `python` en lugar de `py` si lo requiere tu instalación. Abre [la vista pre
 
 ## Sustituir las imágenes sin editar HTML
 
-Los recursos ya están conectados a sus ubicaciones. **Exporta cada imagen en el formato indicado y reemplaza el archivo con el mismo nombre**. No es necesario cambiar HTML, JavaScript ni ningún manifiesto. Los proyectos utilizan material real proporcionado por Joshua; la presentación de AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para el sitio. FarmFlow combina una portada cinematográfica generada para el proyecto con un diagrama técnico en HTML/CSS, sin publicar capturas con rutas locales. La portada general utiliza una selección del demo reel.
+Los recursos ya están conectados a sus ubicaciones. **Exporta cada imagen en el formato indicado y reemplaza el archivo con el mismo nombre**. No es necesario cambiar HTML, JavaScript ni ningún manifiesto. Los proyectos utilizan material real proporcionado por Joshua; la presentación de AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para el sitio. FarmFlow combina un beauty real de Arnold y un wireframe de Maya en la portada, conserva el diagrama técnico en HTML/CSS y añade capturas reales de ejecución. La portada general utiliza una selección del demo reel.
 
 | Archivo en `images/` | Dónde aparece | Contenido previsto |
 | --- | --- | --- |
@@ -24,7 +24,10 @@ Los recursos ya están conectados a sus ubicaciones. **Exporta cada imagen en el
 | `brands/maya-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Autodesk Maya |
 | `brands/python-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Python |
 | `brands/aovs.svg` | Tarjeta y cabecera de AOVGuard | Símbolo de AOVs creado para el portfolio |
-| `farmflow-cover.png` | Tarjeta y cabecera de FarmFlow | Visualización cinematográfica del flujo wireframe, validación, beauty render y EXR |
+| `farmflow-beauty.png` | Portada y evidencia de FarmFlow | Conversión limpia del beauty ACEScg generado por Arnold |
+| `farmflow-wireframe.png` | Portada y evidencia de FarmFlow | Wireframe de la escena de prueba en Maya |
+| `farmflow-render-run.png` | Evidencia de FarmFlow | Render de Arnold ejecutado y comprobado desde el panel |
+| `farmflow-sequence-verified.png` | Evidencia de FarmFlow | Secuencia de diez archivos verificada dentro de Maya |
 | `aovguard-architecture.jpg` | Sección System design de AOVGuard | Diagrama de arquitectura del informe MSc |
 | `aovguard-ui.jpg` | Galería de AOVGuard | Interfaz real del informe MSc |
 | `aovguard-report.jpg` | Galería de AOVGuard | Diagnósticos de una secuencia real |
