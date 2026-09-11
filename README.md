@@ -18,6 +18,8 @@ Usa `python` en lugar de `py` si lo requiere tu instalación. Abre [la vista pre
 
 Los recursos ya están conectados a sus ubicaciones. **Exporta cada imagen en el formato indicado y reemplaza el archivo con el mismo nombre**. No es necesario cambiar HTML, JavaScript ni ningún manifiesto. Los proyectos utilizan material real proporcionado por Joshua; la presentación de AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para el sitio. FarmFlow utiliza una portada de tres etapas construida exclusivamente con el wireframe de Maya, el beauty real de Arnold y la verificación EXR, conserva el diagrama técnico en HTML/CSS y añade capturas reales de ejecución. La portada general utiliza una selección del demo reel.
 
+El CV público se encuentra en `assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf` y se abre desde la sección CV o desde la navegación principal.
+
 | Archivo en `images/` | Dónde aparece | Contenido previsto |
 | --- | --- | --- |
 | `hero/hero-reel-01.jpg` a `hero-reel-07.jpg` | Carrusel de portada | Siete fotogramas limpios del demo reel 2026 |
