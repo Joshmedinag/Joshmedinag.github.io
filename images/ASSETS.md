@@ -1,6 +1,6 @@
 # Imágenes y vídeo del portfolio
 
-El material de FarmFlow, AOVGuard, Norwegian Lakeside, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. FarmFlow combina material real de Maya y Arnold con un diagrama técnico construido en HTML y CSS. AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para este portfolio. Los originales no se modifican. Las imágenes extraídas de los PDF conservan su resolución disponible, sin ampliación artificial. Los números de página siguientes cuentan desde la primera página del PDF, incluida la portada.
+El material de FarmFlow, AOVGuard, Realtime Raytracer, Norwegian Lakeside, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. FarmFlow combina material real de Maya y Arnold con un diagrama técnico construido en HTML y CSS. AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para este portfolio. Los originales no se modifican. Las imágenes extraídas de los documentos conservan su resolución disponible, sin ampliación artificial. Los números de página indicados para los PDF cuentan desde la primera página, incluida la portada.
 
 ## FarmFlow
 
@@ -56,6 +56,20 @@ Fuentes: renders refinados proporcionados en PNG y `JoshuaMG_RendermanProject_Or
 | `renderman-wide.png` | `final_wide_1920x1080.png` | 1920 × 1080 |
 
 Los cuatro PNG se copiaron sin recomprimir desde los renders refinados entregados. Sustituyen a las versiones de menor resolución extraídas anteriormente del informe. Las fotografías de referencia de las páginas 2–3 no se presentan como renders.
+
+## Realtime Raytracer — Triforce
+
+Fuentes: `triforce_final_premium_256.png` y `Joshua_Raytracer_Development_Report.docx`, proporcionados por Joshua Medina.
+
+| Archivo | Fuente | Resolución |
+| --- | --- | --- |
+| `raytracer-main.png` | Render final entregado por separado | 1920 × 1080 |
+| `raytracer-early.png` | Imagen incrustada 3 del informe | 960 × 540 |
+| `raytracer-junction-upper.png` | Imagen incrustada 4 del informe | 1160 × 580 |
+| `raytracer-junction-lower.png` | Imagen incrustada 5 del informe | 1240 × 630 |
+| `raytracer-reflections.png` | Imagen incrustada 7 del informe | 1920 × 1080 |
+
+Los cinco PNG se copiaron sin recomprimir. La página distingue el render final de las etapas de desarrollo y reproduce únicamente especificaciones y mediciones documentadas. No se publica la imagen de referencia externa incluida en el informe. La Trifuerza y The Legend of Zelda pertenecen a Nintendo; el proyecto se presenta como un estudio educativo independiente sin afiliación.
 
 ## Broken Horizons — Lighting & Look Development
 

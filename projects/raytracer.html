@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071426">
+  <meta name="description" content="Realtime Raytracer — Triforce by Joshua Medina. A Python CPU ray tracer with physically based metallic shading, HDRI lighting and Numba acceleration.">
+  <title>Realtime Raytracer — Triforce — Joshua Medina</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css?v=20260909-farmflow-real">
+  <link rel="stylesheet" href="../css/blue-theme.css?v=20260905-blue">
+  <script src="../js/site-config.js" defer></script>
+  <script src="../js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
+    <nav class="navigation" id="primary-navigation" aria-label="Main navigation">
+      <a href="../index.html#home">Home</a>
+      <a href="../index.html#showreel">Showreel</a>
+      <a href="../index.html#work" class="active">Selected work</a>
+      <a href="../index.html#about">About</a>
+      <a href="../index.html#skills">Skills</a>
+      <a href="../index.html#education">Education</a>
+      <a href="../index.html#cv">CV</a>
+      <a class="nav-contact" href="../index.html#contact">Let's talk <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main class="project-main" id="main">
+    <div class="project-intro wrap">
+      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
+      <p class="eyebrow"><span class="section-index">03 /</span> RENDERING ENGINEERING</p>
+      <div class="project-title-row">
+        <h1>Realtime<br>Raytracer<span class="title-dot">.</span></h1>
+        <p class="project-lede">A CPU renderer transformed into a physically based Triforce showcase through geometry, metallic shading, HDR sampling and performance engineering.</p>
+      </div>
+      <div class="project-meta">
+        <div><span class="meta-label">My contribution</span><p>Ray tracer development, geometry, PBR shading, sampling, acceleration &amp; look development</p></div>
+        <div><span class="meta-label">Toolkit</span><p>Python 3.13 · NumPy · Numba · PySide6 · OpenGL · EXR / HDRI</p></div>
+      </div>
+      <p class="project-context">Independent rendering engineering project · Completed September 2026</p>
+    </div>
+
+    <figure class="project-hero artwork-full wrap">
+      <img src="../images/raytracer-main.png" alt="Final gold Triforce with metallic reflections on a dark green background, rendered by Joshua Medina's CPU ray tracer" width="1920" height="1080" fetchpriority="high">
+      <figcaption>Final 1920 × 1080 output · 256 stratified samples per pixel · four reflection bounces.</figcaption>
+    </figure>
+
+    <section class="project-story wrap" aria-labelledby="overview-title">
+      <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
+      <div class="story-copy">
+        <h2 id="overview-title">From educational renderer to a controlled PBR image.</h2>
+        <p>I developed an existing CPU ray tracer into a focused look-development renderer and used the Triforce as its final test scene. The symbol is built from three connected triangular prisms around true negative space, with shared points, closed geometry and bevels that catch light along the edges.</p>
+        <p>The final material uses a Cook–Torrance model with GGX distribution, Schlick Fresnel and Smith masking. An EXR environment supplies reflections and image-based light while a separate dark green backdrop keeps the composition graphic and controlled.</p>
+      </div>
+    </section>
+
+    <section class="project-scope wrap" aria-labelledby="scope-title">
+      <h2 id="scope-title">What I built</h2>
+      <ul>
+        <li>Three mathematically connected, watertight triangular prisms with face and bevel material groups.</li>
+        <li>Metallic Cook–Torrance shading, area lights, recursive rough reflections and a six-level roughness-aware HDR environment pyramid.</li>
+        <li>Importance sampling with GGX proposals and multiple importance sampling for direct and environment light.</li>
+        <li>A float32 HDR pipeline with guided A-Trous denoising, bloom, ACES-style tone mapping and sRGB output.</li>
+        <li>A Numba parallel render kernel, progressive interactive viewer and a separate high-quality offline render path.</li>
+      </ul>
+    </section>
+
+    <section class="process-grid wrap" aria-label="Raytracer development process">
+      <article class="process-step"><span>01 /</span><h3>Connected geometry</h3><p>The three pieces share exact coordinates at their junctions. Bevels shape the highlight response without closing the inverted triangular void at the centre.</p></article>
+      <article class="process-step"><span>02 /</span><h3>Metal and environment</h3><p>Roughness, Fresnel response, area lights and HDRI reflections were tuned together so the gold reads as a material rather than a flat yellow surface.</p></article>
+      <article class="process-step"><span>03 /</span><h3>Speed and stability</h3><p>The optimized kernel keeps the original reference path for comparison while accelerating primary rays, shadows, recursive reflections and environment sampling.</p></article>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="results-title">
+      <p class="eyebrow"><span class="section-index">/</span> FINAL VALIDATION</p>
+      <h2 id="results-title">Measured, rendered and tested.</h2>
+      <dl class="evidence-grid">
+        <div><dt>Final sampling</dt><dd>256 SPP</dd></div>
+        <div><dt>Automated checks passed</dt><dd>19</dd></div>
+        <div><dt>Compiled speed-up at 320 × 180</dt><dd>≈75×</dd></div>
+      </dl>
+      <p class="source-note">The final 1920 × 1080 image rendered in 258.8 seconds with 40 shadow samples, 20 GGX samples, 20 HDRI samples and four bounces. The speed comparison used the report's low-quality 320 × 180 benchmark: approximately 0.3 seconds compiled versus 22.6 seconds on the scalar reference path.</p>
+    </section>
+
+    <section class="project-gallery document-gallery wrap" aria-label="Raytracer development images">
+      <figure>
+        <img src="../images/raytracer-early.png" alt="Early raytracer output with three separate flat gold triangles" width="960" height="540" loading="lazy">
+        <figcaption><h2>Early renderer output</h2><p>The first pass exposed the need for solid depth, shared geometry and more controlled reflections.</p></figcaption>
+      </figure>
+      <figure>
+        <img src="../images/raytracer-reflections.png" alt="Intermediate Triforce render during HDRI reflection and material development" width="1920" height="1080" loading="lazy">
+        <figcaption><h2>Reflection development</h2><p>HDR environment sampling gave the metal readable variation before the final material and framing pass.</p></figcaption>
+      </figure>
+      <figure>
+        <img src="../images/raytracer-junction-upper.png" alt="Close inspection of the upper connection between beveled triangular prisms" width="1160" height="580" loading="lazy">
+        <figcaption><h2>Upper junction</h2><p>A close check of bevel continuity, contact and the clean edge around the central negative space.</p></figcaption>
+      </figure>
+      <figure>
+        <img src="../images/raytracer-junction-lower.png" alt="Close inspection of a lower Triforce junction and its specular highlight" width="1240" height="630" loading="lazy">
+        <figcaption><h2>Lower contact</h2><p>Specular highlights reveal the relationship between the connected faces and rounded bevels.</p></figcaption>
+      </figure>
+    </section>
+
+    <section class="project-credits wrap" aria-labelledby="credits-title">
+      <h2 id="credits-title">Project notes</h2>
+      <p>Independent project by Joshua Medina. The renderer, scene construction, shading, sampling, optimization, validation and final look development were produced for this project.</p>
+      <p>The Triforce and The Legend of Zelda are properties of Nintendo. This independent educational rendering study is unaffiliated with and not endorsed by Nintendo.</p>
+      <details class="technical-notes">
+        <summary>Current renderer scope and limitations</summary>
+        <p class="source-note">The optimized backend is specialized for this scene, uses coarse per-mesh bounds instead of a global SAH BVH, has no OBJ or glTF import, and does not yet implement full global-illumination path tracing.</p>
+      </details>
+    </section>
+
+    <a class="next-project wrap" href="lighting.html"><div><small>NEXT PROJECT</small><h2>Lighting &amp; Look Development</h2></div><span aria-hidden="true">↗</span></a>
+  </main>
+
+  <footer class="site-footer wrap">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <p>© <span data-year>2026</span> Joshua Medina</p>
+    <a class="back-top" href="../index.html#contact">Get in touch <span aria-hidden="true">↗</span></a>
+  </footer>
+</body>
+</html>

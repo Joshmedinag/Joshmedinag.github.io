@@ -1,6 +1,6 @@
 # Joshua Medina — Portfolio
 
-Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las siete páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua. La tipografía principal es **Neue Montreal**, integrada localmente con sus pesos Regular, Medium, Bold e Italic.
+Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las ocho páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua. La tipografía principal es **Neue Montreal**, integrada localmente con sus pesos Regular, Medium, Bold e Italic.
 
 No requiere instalar paquetes ni compilar. El sitio está publicado en [joshmedinag.github.io](https://joshmedinag.github.io/).
 
@@ -53,6 +53,11 @@ El CV público se encuentra en `assets/documents/Joshua_Medina_Lighting_Artist_C
 | `snow-environment.jpg` | Galería y póster de Snowbound Environment | Vista del lago con capas de profundidad |
 | `snowfall.jpg` | Galería y póster de Snowbound Environment | Estudio de nevada intensa |
 | `snow-breakdown.jpg` | Tarjeta y póster principal de Snowbound Environment | Estado final de la transformación invernal |
+| `raytracer-main.png` | Tarjeta y cabecera del raytracer | Render final de la Trifuerza a 1920 × 1080 |
+| `raytracer-early.png` | Galería del raytracer | Primera etapa con triángulos planos separados |
+| `raytracer-reflections.png` | Galería del raytracer | Desarrollo de reflejos HDRI y material metálico |
+| `raytracer-junction-upper.png` | Galería del raytracer | Inspección de la unión superior |
+| `raytracer-junction-lower.png` | Galería del raytracer | Inspección del contacto inferior |
 | `renderman-main.png` | Tarjeta y cabecera de RenderMan | Render refinado de la naranja en primer plano |
 | `renderman-breakdown.png` | Galería de RenderMan | Render refinado lateral de la superficie |
 | `renderman-top.png` | Galería de RenderMan | Render refinado desde arriba |
@@ -96,6 +101,8 @@ Lighting & Look Development presenta **Broken Horizons** con vídeo y material d
 `assets/video/broken-horizons.mp4` conserva los **118,29 segundos** del archivo entregado, incluidos títulos y créditos, a **1920 × 1080, 24 fps, H.264/AAC**, con faststart, controles y sin autoplay. La copia web pesa **36,8 MB** frente a los 219,5 MB del original. El informe describe una secuencia de unos 90 segundos; la web indica la duración real del archivo completo. Las capturas y referencias se abren a tamaño completo al seleccionarlas. Los ajustes de render y enlaces a documentación de Epic Games están en desplegables.
 
 La página de RenderMan utiliza los cuatro renders refinados de 1920 × 1080 proporcionados por Joshua. La explicación del modelado por Python, los poros geométricos, PxrSurface y la iluminación procede del informe de la naranja.
+
+La página Realtime Raytracer — Triforce resume `Joshua_Raytracer_Development_Report.docx`. Presenta la geometría cerrada y biselada, el modelo Cook–Torrance/GGX, la iluminación y los reflejos HDRI, el pipeline HDR y la aceleración con Numba. Las cifras de 256 SPP, cuatro bounces, 19 pruebas aprobadas, 258,8 segundos de render final y una mejora aproximada de 75× proceden de las mediciones del informe. Se publica el render final entregado y cuatro imágenes de desarrollo extraídas del documento; la referencia externa de The Legend of Zelda no se incluye.
 
 La página de AOVGuard describe la versión 2.0 documentada en el informe MSc, con arquitectura, GUI y validación de secuencias. Las cifras de 229 pruebas y 95,24 % de cobertura se atribuyen a la evaluación del **14 de agosto de 2026**; no son pruebas ejecutadas al comprobar esta web. Los detalles desplegables indican el alcance del benchmark y las limitaciones del prototipo.
 
@@ -143,6 +150,7 @@ projects/norwegian-lakeside.html  Iluminación de entorno nórdico
 projects/snow-environment.html  Iluminación de entorno nevado
 projects/going-merry.html    Simulación de océano
 projects/renderman.html      Estudio de una naranja
+projects/raytracer.html      Raytracer PBR y estudio de la Trifuerza
 assets/favicon.svg          Monograma JM
 assets/fonts/neue-montreal/  Neue Montreal y licencia del paquete entregado
 assets/video/going-merry.mp4  Vídeo optimizado de la simulación
