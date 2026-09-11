@@ -32,10 +32,12 @@
   const sectionLinks = new Set(Array.from(document.querySelectorAll('.navigation a'), link => link.getAttribute('href')));
   const sections = Array.from(document.querySelectorAll('main > section[id]')).filter(section => sectionLinks.has('#' + section.id));
   if ('IntersectionObserver' in window && sections.length) {
+    const sectionVisibility = new Map(sections.map(section => [section, 0]));
     const observer = new IntersectionObserver(entries => {
-      const visible = entries.filter(entry => entry.isIntersecting).sort((a,b) => b.intersectionRatio - a.intersectionRatio);
+      entries.forEach(entry => sectionVisibility.set(entry.target, entry.isIntersecting ? entry.intersectionRatio : 0));
+      const visible = Array.from(sectionVisibility.entries()).filter(([, ratio]) => ratio > 0).sort((a, b) => b[1] - a[1]);
       if (!visible.length) return;
-      const current = '#' + visible[0].target.id;
+      const current = '#' + visible[0][0].id;
       document.querySelectorAll('.navigation a').forEach(link => {
         const active = link.getAttribute('href') === current;
         link.classList.toggle('active', active);
