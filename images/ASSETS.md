@@ -57,7 +57,7 @@ Fuentes: renders refinados proporcionados en PNG y `JoshuaMG_RendermanProject_Or
 
 Los cuatro PNG se copiaron sin recomprimir desde los renders refinados entregados. Sustituyen a las versiones de menor resolución extraídas anteriormente del informe. Las fotografías de referencia de las páginas 2–3 no se presentan como renders.
 
-## Realtime Raytracer — Triforce
+## Physically Based CPU Raytracer — Triforce
 
 Fuentes: `triforce_final_premium_256.png` y `Joshua_Raytracer_Development_Report.docx`, proporcionados por Joshua Medina.
 

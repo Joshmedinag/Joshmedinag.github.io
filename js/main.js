@@ -1,5 +1,6 @@
 (() => {
   'use strict';
+  document.documentElement.classList.add('has-js');
   const config = window.PORTFOLIO_CONFIG || {};
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.navigation');
@@ -18,15 +19,23 @@
       toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
       nav.classList.toggle('is-open', open);
       document.body.classList.toggle('menu-open', open);
+      if (open) nav.querySelector('a')?.focus();
     });
     nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => closeMenu()));
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') closeMenu(true);
+      if (event.key === 'Tab' && toggle.getAttribute('aria-expanded') === 'true') {
+        const controls = Array.from(document.querySelectorAll('.site-header a, .site-header button')).filter(element => element.getClientRects().length);
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
     });
     document.addEventListener('focusin', event => {
       if (toggle.getAttribute('aria-expanded') === 'true' && !event.target.closest('.site-header')) closeMenu();
     });
-    window.matchMedia('(min-width: 761px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
+    window.matchMedia('(min-width: 1051px)').addEventListener('change', event => { if (event.matches) closeMenu(); });
   }
 
   const sectionLinks = new Set(Array.from(document.querySelectorAll('.navigation a'), link => link.getAttribute('href')));
@@ -51,29 +60,108 @@
 
   const heroCarousel = document.querySelector('[data-hero-carousel]');
   if (heroCarousel) {
-    const slides = Array.from(heroCarousel.querySelectorAll('.hero-image'));
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const deferredSlides = heroCarousel.querySelector('[data-carousel-slides]');
+    const slides = [...heroCarousel.querySelectorAll('.hero-image'), ...(deferredSlides?.content.querySelectorAll('.hero-image') || [])];
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const controls = document.querySelector('.carousel-controls');
+    const pauseButton = controls?.querySelector('[data-carousel-pause]');
+    const count = controls?.querySelector('[data-carousel-count]');
     const requestedInterval = Number.parseInt(heroCarousel.dataset.interval || '', 10);
     const interval = Number.isFinite(requestedInterval) ? Math.max(requestedInterval, 3500) : 5600;
     let current = Math.max(0, slides.findIndex(slide => slide.classList.contains('is-active')));
     let timer = 0;
-    const showNext = () => {
+    let pausedByUser = motionPreference.matches;
+    let inView = true;
+    let slideRequest = 0;
+    const prepareSlide = slide => {
+      if (!slide.isConnected) heroCarousel.append(slide);
+      if (slide.complete && slide.naturalWidth) return Promise.resolve(true);
+      return slide.decode().then(() => true, () => false);
+    };
+    const updateControls = () => {
+      if (count) count.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+      if (pauseButton) {
+        pauseButton.textContent = pausedByUser ? 'Resume' : 'Pause';
+        pauseButton.setAttribute('aria-pressed', String(pausedByUser));
+        pauseButton.setAttribute('aria-label', (pausedByUser ? 'Resume' : 'Pause') + ' background slideshow');
+      }
+    };
+    const showSlide = async direction => {
+      if (slides.length < 2) return;
+      const target = (current + direction + slides.length) % slides.length;
+      const request = ++slideRequest;
+      if (!await prepareSlide(slides[target]) || request !== slideRequest) return;
       const previous = slides[current];
-      current = (current + 1) % slides.length;
+      current = target;
       const next = slides[current];
       slides.forEach(slide => slide.classList.remove('is-leaving'));
       previous.classList.remove('is-active');
       previous.classList.add('is-leaving');
       next.classList.add('is-active');
       window.setTimeout(() => previous.classList.remove('is-leaving'), 1500);
+      updateControls();
+      prepareSlide(slides[(current + 1) % slides.length]);
     };
     const stopCarousel = () => { if (timer) window.clearInterval(timer); timer = 0; };
     const startCarousel = () => {
       stopCarousel();
-      if (!reducedMotion && slides.length > 1 && !document.hidden) timer = window.setInterval(showNext, interval);
+      if (!pausedByUser && inView && slides.length > 1 && !document.hidden) timer = window.setInterval(() => showSlide(1), interval);
     };
+    if (controls && slides.length > 1) {
+      controls.hidden = false;
+      controls.querySelector('[data-carousel-prev]')?.addEventListener('click', () => { pausedByUser = true; stopCarousel(); updateControls(); showSlide(-1); });
+      controls.querySelector('[data-carousel-next]')?.addEventListener('click', () => { pausedByUser = true; stopCarousel(); updateControls(); showSlide(1); });
+      pauseButton?.addEventListener('click', () => { pausedByUser = !pausedByUser; updateControls(); startCarousel(); });
+    }
+    if ('IntersectionObserver' in window) {
+      const heroObserver = new IntersectionObserver(entries => {
+        inView = entries[0].isIntersecting;
+        startCarousel();
+      }, { threshold: 0.1 });
+      heroObserver.observe(heroCarousel);
+    }
+    motionPreference.addEventListener('change', event => {
+      if (event.matches) pausedByUser = true;
+      updateControls();
+      startCarousel();
+    });
     document.addEventListener('visibilitychange', () => { if (document.hidden) stopCarousel(); else startCarousel(); });
+    updateControls();
+    if (slides.length > 1) prepareSlide(slides[(current + 1) % slides.length]);
     startCarousel();
+  }
+
+  const localVideos = Array.from(document.querySelectorAll('video'));
+  localVideos.forEach(video => video.addEventListener('play', () => {
+    localVideos.forEach(other => { if (other !== video && !other.paused) other.pause(); });
+  }));
+
+  const workToolbar = document.querySelector('[data-work-filters]');
+  if (workToolbar) {
+    const buttons = Array.from(workToolbar.querySelectorAll('[data-filter]'));
+    const cards = Array.from(document.querySelectorAll('.project-card[data-category]'));
+    const status = workToolbar.querySelector('[data-filter-status]');
+    const categories = new Set(buttons.map(button => button.dataset.filter));
+    const labels = { all: 'projects', lighting: 'lighting & look development projects', pipeline: 'pipeline projects', rendering: 'rendering & FX projects' };
+    const filterWork = (category, updateUrl = false) => {
+      if (!categories.has(category)) category = 'all';
+      let visible = 0;
+      cards.forEach(card => {
+        const matches = category === 'all' || card.dataset.category.split(' ').includes(category);
+        card.hidden = !matches;
+        if (matches) visible++;
+      });
+      buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === category)));
+      if (status) status.textContent = visible + ' ' + labels[category];
+      if (updateUrl) {
+        const url = new URL(window.location.href);
+        if (category === 'all') url.searchParams.delete('category'); else url.searchParams.set('category', category);
+        window.history.replaceState(window.history.state, '', url);
+      }
+    };
+    workToolbar.hidden = false;
+    buttons.forEach(button => button.addEventListener('click', () => filterWork(button.dataset.filter, true)));
+    filterWork(new URLSearchParams(window.location.search).get('category') || 'all');
   }
 
   const safeExternal = value => {

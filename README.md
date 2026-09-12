@@ -102,25 +102,27 @@ Lighting & Look Development presenta **Broken Horizons** con vídeo y material d
 
 La página de RenderMan utiliza los cuatro renders refinados de 1920 × 1080 proporcionados por Joshua. La explicación del modelado por Python, los poros geométricos, PxrSurface y la iluminación procede del informe de la naranja.
 
-La página Realtime Raytracer — Triforce resume `Joshua_Raytracer_Development_Report.docx`. Presenta la geometría cerrada y biselada, el modelo Cook–Torrance/GGX, la iluminación y los reflejos HDRI, el pipeline HDR y la aceleración con Numba. Las cifras de 256 SPP, cuatro bounces, 19 pruebas aprobadas, 258,8 segundos de render final y una mejora aproximada de 75× proceden de las mediciones del informe. Se publica el render final entregado y cuatro imágenes de desarrollo extraídas del documento; la referencia externa de The Legend of Zelda no se incluye.
+La página Physically Based CPU Raytracer — Triforce resume `Joshua_Raytracer_Development_Report.docx`. Presenta la geometría cerrada y biselada, el modelo Cook–Torrance/GGX, la iluminación y los reflejos HDRI, el pipeline HDR y la aceleración con Numba. Las cifras de 256 SPP, cuatro bounces, 19 pruebas aprobadas, 258,8 segundos de render final y una mejora aproximada de 75× proceden de las mediciones del informe. Se publica el render final entregado y cuatro imágenes de desarrollo extraídas del documento; la referencia externa de The Legend of Zelda no se incluye.
 
 La página de AOVGuard describe la versión 2.0 documentada en el informe MSc, con arquitectura, GUI y validación de secuencias. Las cifras de 229 pruebas y 95,24 % de cobertura se atribuyen a la evaluación del **14 de agosto de 2026**; no son pruebas ejecutadas al comprobar esta web. Los detalles desplegables indican el alcance del benchmark y las limitaciones del prototipo.
 
 Consulta `images/ASSETS.md` para la procedencia exacta. Los originales entregados no se modifican y los PDF completos no forman parte de los archivos públicos del sitio.
 
-## Créditos por plano
+## Responsabilidades y revisión de proyectos
 
-La sección **Shot credits** bajo el reel incluye campos para:
+El reel enlaza a los casos documentados de Broken Horizons, Norwegian Lakeside y Snowbound Environment. Las tarjetas muestran el rol de Joshua, y las páginas detallan responsabilidades, herramientas, referencias y créditos. No se muestran campos vacíos ni se atribuyen responsabilidades por plano sin confirmar.
 
-- Project / shot
-- My role
-- Software used
-- Other artists / collaborators
-- Asset credits
+La lista completa de créditos del showreel, con tiempos y fuentes de assets, sigue pendiente de recibir. Mantener ese pendiente fuera de la interfaz no sustituye su recopilación antes de una candidatura.
 
-Está plegada inicialmente para mantener la portada breve. Dentro de `index.html`, busca `shot-credit-fields`, duplica la lista por cada plano y sustituye los valores pendientes. La página `projects/lighting.html` ya tiene los créditos de Broken Horizons, con responsabilidades de Joshua y del equipo.
+## Navegación y filtros
 
-No se han inventado responsabilidades por plano, colaboradores o fuentes de assets. En Going Merry se distingue expresamente el trabajo de Joshua del diseño de One Piece y del asset base de terceros.
+La portada prioriza lighting y look development, seguida de herramientas de pipeline y rendering. Los filtros permiten ver All work, Lighting & look development, Pipeline tools o Rendering & FX. El parámetro `?category=lighting#work` conserva una selección compartible; sin JavaScript se muestran los ocho proyectos.
+
+El CV se abre directamente desde la portada y desde la navegación de cualquier página. La sección CV también permite descargarlo. Skills y Education siguen disponibles mediante enlaces en About. El menú móvil funciona en tablet y teléfono, mantiene el foco dentro de la navegación y se cierra con Escape.
+
+El carrusel incluye anterior, siguiente y pausa. La navegación manual pausa la rotación; Resume la activa de nuevo. Se inicia pausado para movimiento reducido y deja de rotar cuando sale de pantalla o la pestaña queda oculta. Las imágenes de las galerías se pueden abrir a tamaño completo.
+
+Solo se cargan dos imágenes del carrusel al inicio, y los demás fotogramas se preparan progresivamente antes de mostrarlos. La carga inicial de esos recursos baja de 2.340.821 a 370.460 bytes, un 84 %. Los vídeos secundarios conservan sus pósteres sin precargar el MP4; al reproducir otro vídeo local se pausa el anterior.
 
 ## Información pendiente
 
@@ -135,13 +137,13 @@ Las fechas desconocidas y los enlaces sin proporcionar se omiten del sitio. AOVG
 ## Archivos principales
 
 ```text
-index.html                  Portada y siete secciones
+index.html                  Portada y secciones profesionales
 css/style.css               Diseño y adaptación a móvil
 css/blue-theme.css          Paleta azul y blanca aplicada al sitio
 js/site-config.js           Datos de contacto y reel
 js/main.js                  Menú, sección activa y reproductor
 images/*.{jpg,png}          Imágenes de proyectos y recursos de portada
-images/hero/*.jpg           Siete fotogramas del carrusel de portada
+images/hero/*.jpg           Once fotogramas del carrusel de portada
 images/ASSETS.md             Procedencia y mapa de recursos
 projects/aovguard.html       Herramienta de validación EXR/AOV
 projects/farmflow.html       Pipeline Maya/Arnold para Lighting TD
@@ -160,7 +162,7 @@ assets/video/snow-*.mp4      Cuatro clips optimizados del entorno nevado
 .nojekyll                   Publicación estática directa
 ```
 
-La navegación y el pie se mantienen en los ocho HTML. Si cambias su estructura, actualiza todos. El contenido sigue disponible sin JavaScript; las funciones de menú móvil y actualización automática de contacto utilizan JavaScript.
+La navegación y el pie se mantienen en los nueve HTML. Si cambias su estructura, actualiza todos. El contenido sigue disponible sin JavaScript; las funciones de menú móvil y actualización automática de contacto utilizan JavaScript.
 
 `.verification/` contiene herramientas de comprobación local y no se incluye en Git. Los WebP y el SVG de la primera maqueta se conservan como recursos anteriores, pero ya no se usan en los HTML.
 
