@@ -8,7 +8,7 @@ Fuente: `C:\r2d2lighting\portfolio\R2D2_Lighting_TD_Case_Study`, proporcionada p
 
 | Archivo | Uso | Resolución |
 | --- | --- | --- |
-| `r2d2-main.jpg` | Carrusel, tarjeta y plano final del proyecto | 1800 × 765 |
+| `r2d2-main.jpg` | Último fotograma corregido de color del breakdown; carrusel, tarjeta y plano final | 1800 × 765 |
 | `r2d2/pipeline.png` | Diagrama de Maya/Alembic a Katana, RenderMan y Nuke | 1800 × 540 |
 | `r2d2/dome_before_after.jpg` | Comparación del material del domo | 890 × 348 |
 | `r2d2/weathering_clean_vs_dirty.jpg` | Comparación de weathering | 1324 × 881 |
@@ -18,7 +18,7 @@ Fuente: `C:\r2d2lighting\portfolio\R2D2_Lighting_TD_Case_Study`, proporcionada p
 | `r2d2/render_vs_comp.jpg` | Comparación RenderMan/Nuke | 780 × 540 |
 | `../assets/video/r2d2-breakdown.mp4` | Breakdown de lighting, look development y composición | 8,88 s · 1920 × 1080 · 25 fps |
 
-Los archivos se copiaron sin recomprimir desde el paquete del caso de estudio. El breakdown se copió sin recomprimir desde `C:\Users\josha\Videos\r2d2_breakdown.mp4`; conserva la resolución y el encuadre entregados y utiliza el plano final como póster. `assets/documents/R2D2_Lighting_TD_Case_Study.pdf` es la versión final de nueve páginas incluida en `qa_render_v003`. La página mantiene la declaración de autoría del documento: Joshua no modeló el asset base; su contribución comienza con la ingestión y comprende scene assembly, entorno, look development, weathering, lighting, rendering, compositing y automatización.
+Las imágenes del caso se copiaron sin recomprimir desde el paquete original. El breakdown se copió sin recomprimir desde `C:\Users\josha\Videos\r2d2_breakdown.mp4`; conserva la resolución y el encuadre entregados. `r2d2-main.jpg` se extrajo de su último fotograma válido, eliminando únicamente las bandas negras y redimensionando el área 2.35:1 a 1800 × 765 para sustituir la portada anterior y funcionar como póster. `assets/documents/R2D2_Lighting_TD_Case_Study.pdf` es la versión final de nueve páginas incluida en `qa_render_v003`. La página mantiene la declaración de autoría del documento: Joshua no modeló el asset base; su contribución comienza con la ingestión y comprende scene assembly, entorno, look development, weathering, lighting, rendering, compositing y automatización.
 
 ## FarmFlow
 

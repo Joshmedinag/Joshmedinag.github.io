@@ -25,7 +25,7 @@ El CV público se encuentra en `assets/documents/Joshua_Medina_Lighting_Artist_C
 | `hero/hero-reel-01.jpg` a `hero-reel-07.jpg` | Carrusel de portada | Siete fotogramas limpios del demo reel 2026 |
 | `hero/hero-norwegian-01.jpg` y `hero-norwegian-02.jpg` | Carrusel de portada | Dos fotogramas de Norwegian Lakeside |
 | `hero/hero-snowbound-01.jpg` y `hero-snowbound-02.jpg` | Carrusel de portada | Dos fotogramas de Snowbound Environment |
-| `r2d2-main.jpg` | Carrusel, tarjeta y cabecera | Plano final de R2-D2 Desert Look Development and Lighting |
+| `r2d2-main.jpg` | Carrusel, tarjeta y cabecera | Último estado corregido de color del breakdown de R2-D2, recortado al formato 2.35:1 |
 | `brands/maya-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Autodesk Maya |
 | `brands/python-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Python |
 | `brands/aovs.svg` | Tarjeta y cabecera de AOVGuard | Símbolo de AOVs creado para el portfolio |
