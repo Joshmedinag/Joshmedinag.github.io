@@ -16,8 +16,9 @@ Fuente: `C:\r2d2lighting\portfolio\R2D2_Lighting_TD_Case_Study`, proporcionada p
 | `r2d2/feet_contact_detail.jpg` | Revisión del contacto con el terreno | 365 × 145 |
 | `r2d2/aov_mask_board.jpg` | AOVs, light group y máscaras de weathering | 1650 × 930 |
 | `r2d2/render_vs_comp.jpg` | Comparación RenderMan/Nuke | 780 × 540 |
+| `../assets/video/r2d2-breakdown.mp4` | Breakdown de lighting, look development y composición | 8,88 s · 1920 × 1080 · 25 fps |
 
-Los archivos se copiaron sin recomprimir desde el paquete del caso de estudio. `assets/documents/R2D2_Lighting_TD_Case_Study.pdf` es la versión final de nueve páginas incluida en `qa_render_v003`. La página mantiene la declaración de autoría del documento: Joshua no modeló el asset base; su contribución comienza con la ingestión y comprende scene assembly, entorno, look development, weathering, lighting, rendering, compositing y automatización.
+Los archivos se copiaron sin recomprimir desde el paquete del caso de estudio. El breakdown se copió sin recomprimir desde `C:\Users\josha\Videos\r2d2_breakdown.mp4`; conserva la resolución y el encuadre entregados y utiliza el plano final como póster. `assets/documents/R2D2_Lighting_TD_Case_Study.pdf` es la versión final de nueve páginas incluida en `qa_render_v003`. La página mantiene la declaración de autoría del documento: Joshua no modeló el asset base; su contribución comienza con la ingestión y comprende scene assembly, entorno, look development, weathering, lighting, rendering, compositing y automatización.
 
 ## FarmFlow
 
