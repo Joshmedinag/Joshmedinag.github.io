@@ -5,6 +5,6 @@ window.PORTFOLIO_CONFIG = Object.freeze({
   email: "Joshalexmedina@hotmail.com",
   linkedin: "https://www.linkedin.com/in/joshua-alexander-medina-gracia-3561981a3/",
   github: "https://github.com/Joshmedinag",
-  vimeo: "https://vimeo.com/1213395733",
-  showreel: "https://vimeo.com/1213395733"
+  vimeo: "https://vimeo.com/1226809535",
+  showreel: "https://vimeo.com/1226809535"
 });

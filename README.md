@@ -76,7 +76,7 @@ No renombres un PNG a `.jpg`: expórtalo realmente como JPEG. Después de sustit
 
 - Correo: **Joshalexmedina@hotmail.com**
 - GitHub: [Joshmedinag](https://github.com/Joshmedinag)
-- Vimeo/showreel: [Demo Reel Lighting Joshua Medina](https://vimeo.com/1213395733)
+- Vimeo/showreel principal: [Showreel Lighting Joshua Medina 2026](https://vimeo.com/1226809535)
 - LinkedIn: [Joshua Alexander Medina Gracia](https://www.linkedin.com/in/joshua-alexander-medina-gracia-3561981a3/).
 
 Los datos públicos de contacto se limitan al correo y los enlaces profesionales. No se muestran teléfono, dirección particular ni ubicación personal.
