@@ -1,6 +1,23 @@
 # Imágenes y vídeo del portfolio
 
-El material de FarmFlow, AOVGuard, Realtime Raytracer, Norwegian Lakeside, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. FarmFlow combina material real de Maya y Arnold con un diagrama técnico construido en HTML y CSS. AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para este portfolio. Los originales no se modifican. Las imágenes extraídas de los documentos conservan su resolución disponible, sin ampliación artificial. Los números de página indicados para los PDF cuentan desde la primera página, incluida la portada.
+El material de R2-D2, FarmFlow, AOVGuard, Realtime Raytracer, Norwegian Lakeside, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. FarmFlow combina material real de Maya y Arnold con un diagrama técnico construido en HTML y CSS. AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para este portfolio. Los originales no se modifican. Las imágenes extraídas de los documentos conservan su resolución disponible, sin ampliación artificial. Los números de página indicados para los PDF cuentan desde la primera página, incluida la portada.
+
+## R2-D2 Desert Look Development & Lighting
+
+Fuente: `C:\r2d2lighting\portfolio\R2D2_Lighting_TD_Case_Study`, proporcionada por Joshua Medina el 14 de septiembre de 2026.
+
+| Archivo | Uso | Resolución |
+| --- | --- | --- |
+| `r2d2-main.jpg` | Carrusel, tarjeta y plano final del proyecto | 1800 × 765 |
+| `r2d2/pipeline.png` | Diagrama de Maya/Alembic a Katana, RenderMan y Nuke | 1800 × 540 |
+| `r2d2/dome_before_after.jpg` | Comparación del material del domo | 890 × 348 |
+| `r2d2/weathering_clean_vs_dirty.jpg` | Comparación de weathering | 1324 × 881 |
+| `r2d2/upper_material_review.jpg` | Crop de revisión de material e iluminación | 585 × 576 |
+| `r2d2/feet_contact_detail.jpg` | Revisión del contacto con el terreno | 365 × 145 |
+| `r2d2/aov_mask_board.jpg` | AOVs, light group y máscaras de weathering | 1650 × 930 |
+| `r2d2/render_vs_comp.jpg` | Comparación RenderMan/Nuke | 780 × 540 |
+
+Los archivos se copiaron sin recomprimir desde el paquete del caso de estudio. `assets/documents/R2D2_Lighting_TD_Case_Study.pdf` es la versión final de nueve páginas incluida en `qa_render_v003`. La página mantiene la declaración de autoría del documento: Joshua no modeló el asset base; su contribución comienza con la ingestión y comprende scene assembly, entorno, look development, weathering, lighting, rendering, compositing y automatización.
 
 ## FarmFlow
 

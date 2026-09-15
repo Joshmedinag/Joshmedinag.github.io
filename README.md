@@ -1,6 +1,6 @@
 # Joshua Medina — Portfolio
 
-Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las ocho páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua. La tipografía principal es **Neue Montreal**, integrada localmente con sus pesos Regular, Medium, Bold e Italic.
+Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las nueve páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua. La tipografía principal es **Neue Montreal**, integrada localmente con sus pesos Regular, Medium, Bold e Italic.
 
 No requiere instalar paquetes ni compilar. El sitio está publicado en [joshmedinag.github.io](https://joshmedinag.github.io/).
 
@@ -25,6 +25,7 @@ El CV público se encuentra en `assets/documents/Joshua_Medina_Lighting_Artist_C
 | `hero/hero-reel-01.jpg` a `hero-reel-07.jpg` | Carrusel de portada | Siete fotogramas limpios del demo reel 2026 |
 | `hero/hero-norwegian-01.jpg` y `hero-norwegian-02.jpg` | Carrusel de portada | Dos fotogramas de Norwegian Lakeside |
 | `hero/hero-snowbound-01.jpg` y `hero-snowbound-02.jpg` | Carrusel de portada | Dos fotogramas de Snowbound Environment |
+| `r2d2-main.jpg` | Carrusel, tarjeta y cabecera | Plano final de R2-D2 Desert Look Development and Lighting |
 | `brands/maya-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Autodesk Maya |
 | `brands/python-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Python |
 | `brands/aovs.svg` | Tarjeta y cabecera de AOVGuard | Símbolo de AOVs creado para el portfolio |
@@ -106,6 +107,8 @@ La página Physically Based CPU Raytracer — Triforce resume `Joshua_Raytracer_
 
 La página de AOVGuard describe la versión 2.0 documentada en el informe MSc, con arquitectura, GUI y validación de secuencias. Las cifras de 229 pruebas y 95,24 % de cobertura se atribuyen a la evaluación del **14 de agosto de 2026**; no son pruebas ejecutadas al comprobar esta web. Los detalles desplegables indican el alcance del benchmark y las limitaciones del prototipo.
 
+La página R2-D2 Desert Look Development & Lighting resume el caso de estudio entregado en `C:\r2d2lighting\portfolio`. Presenta la ingestión Maya/Alembic, el scene assembly en Katana, look development y weathering procedural con OSL, lighting y AOVs en RenderMan, acabado en Nuke y automatización con Python. Publica el plano final, el pipeline, comparaciones de materiales, una tabla de AOVs y la comparación RenderMan/Nuke, además del PDF completo. La página aclara que Joshua no modeló el asset de R2-D2 y delimita su contribución desde la ingestión de escena.
+
 Consulta `images/ASSETS.md` para la procedencia exacta. Los originales entregados no se modifican y los PDF completos no forman parte de los archivos públicos del sitio.
 
 ## Responsabilidades y revisión de proyectos
@@ -147,6 +150,7 @@ images/hero/*.jpg           Once fotogramas del carrusel de portada
 images/ASSETS.md             Procedencia y mapa de recursos
 projects/aovguard.html       Herramienta de validación EXR/AOV
 projects/farmflow.html       Pipeline Maya/Arnold para Lighting TD
+projects/r2d2-lighting.html  Look development, lighting y comp de R2-D2
 projects/lighting.html       Lighting y look development
 projects/norwegian-lakeside.html  Iluminación de entorno nórdico
 projects/snow-environment.html  Iluminación de entorno nevado
