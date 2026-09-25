@@ -109,22 +109,34 @@
       </ol>
     </section>
 
-    <section class="project-gallery document-gallery wrap" aria-label="AOVGuard interface and validation results">
+    <section class="project-gallery document-gallery wrap" aria-label="AOVGuard interface documentation and validation results">
       <figure>
-        <a class="image-detail-link" href="../images/aovguard-current-ui.png" target="_blank" rel="noopener noreferrer" aria-label="Open the current AOVGuard interface image at full size in a new tab"><img src="../images/aovguard-current-ui.png" alt="Current AOVGuard PySide6 interface showing an EXR comparison set, colour and technical AOV summary, warning status, findings filters and report actions" width="1764" height="1325" loading="lazy"></a>
-        <figcaption><h2>Current graphical interface</h2><p>Structure inspection, configurable rules, findings-first review, technical diagnostics, baseline comparison and JSON/HTML export from one PySide6 application.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+        <a class="image-detail-link" href="../images/aovguard-corrupt-frame.png" target="_blank" rel="noopener noreferrer" aria-label="Open the corrupt-frame finding at full size in a new tab"><img src="../images/aovguard-corrupt-frame.png" alt="AOVGuard Findings tab reporting one unreadable EXR as a read-frame error while completing the rest of a 302-frame sequence" width="1767" height="1353" loading="lazy"></a>
+        <figcaption><h2>Findings and recovery</h2><p>An unreadable EXR becomes a precise <code>read_frame</code> finding. Analysis continues across the remaining 301 frames and exposes the failed file path for review.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+      </figure>
+      <figure>
+        <a class="image-detail-link" href="../images/aovguard-temporal-chart.png" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard temporal luminance chart at full size in a new tab"><img src="../images/aovguard-temporal-chart.png" alt="AOVGuard Metrics tab plotting average beauty luminance over a 301-frame render sequence with a median and normal range" width="1767" height="1353" loading="lazy"></a>
+        <figcaption><h2>Temporal metrics</h2><p>The Metrics view plots beauty luminance against the sequence median and normal range, while the table preserves aggregate values for each AOV.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+      </figure>
+      <figure>
+        <a class="image-detail-link" href="../images/aovguard-frame-navigation.png" target="_blank" rel="noopener noreferrer" aria-label="Open the exact-frame navigation example at full size in a new tab"><img src="../images/aovguard-frame-navigation.png" alt="AOVGuard temporal chart tooltip showing the exact EXR path and beauty luminance for frame 150" width="1767" height="1353" loading="lazy"></a>
+        <figcaption><h2>Evidence at the exact frame</h2><p>Interactive chart points reveal the source path and measured value, then connect the temporal signal back to the corresponding EXR.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+      </figure>
+      <figure>
+        <a class="image-detail-link" href="../images/aovguard-frame-table.png" target="_blank" rel="noopener noreferrer" aria-label="Open the per-frame metrics table at full size in a new tab"><img src="../images/aovguard-frame-table.png" alt="AOVGuard Frames tab showing per-file measurements for beauty, Cryptomatte and lighting AOV channels" width="2559" height="1518" loading="lazy"></a>
+        <figcaption><h2>Per-frame inspection</h2><p>The Frames view keeps file-level measurements available for targeted investigation across beauty, lighting and encoded data channels.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
       </figure>
       <figure>
         <a class="image-detail-link" href="../images/aovguard-technical-channels.png" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard technical-channel diagnostics at full size in a new tab"><img src="../images/aovguard-technical-channels.png" alt="AOVGuard Technical tab showing separate per-channel statistics for normal components and depth across a render sequence" width="2559" height="1528" loading="lazy"></a>
         <figcaption><h2>Technical channels</h2><p>Normal components and depth receive min, average, max, non-finite and negative-value diagnostics without entering colour-luminance calculations.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
       </figure>
       <figure>
-        <a class="image-detail-link" href="../images/aovguard-corrupt-frame.png" target="_blank" rel="noopener noreferrer" aria-label="Open the corrupt-frame diagnostic at full size in a new tab"><img src="../images/aovguard-corrupt-frame.png" alt="AOVGuard reporting one unreadable EXR as a read-frame error while completing the rest of a 302-frame sequence" width="2559" height="1527" loading="lazy"></a>
-        <figcaption><h2>Corrupt-frame recovery</h2><p>An unreadable EXR becomes a precise <code>read_frame</code> finding. The remaining 301 frames continue through analysis and the failed file stays directly accessible.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+        <a class="image-detail-link" href="../images/aovguard-sequence-table.png" target="_blank" rel="noopener noreferrer" aria-label="Open the sequence discovery table at full size in a new tab"><img src="../images/aovguard-sequence-table.png" alt="AOVGuard Sequences tab showing a detected EXR sequence, frame range, present count and padding" width="2559" height="1527" loading="lazy"></a>
+        <figcaption><h2>Sequence discovery</h2><p>The sequence record makes the detected pattern, inclusive range, file count, missing frames, duplicates and padding explicit before publishing.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
       </figure>
       <figure>
-        <a class="image-detail-link" href="../images/aovguard-temporal-chart.png" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard temporal luminance chart at full size in a new tab"><img src="../images/aovguard-temporal-chart.png" alt="AOVGuard Metrics tab plotting average beauty luminance over a render sequence with a median and normal range" width="1767" height="1353" loading="lazy"></a>
-        <figcaption><h2>Temporal review</h2><p>The interactive series connects luminance, median, normal range, robust outliers and read errors to the exact frame and source path.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+        <a class="image-detail-link" href="../images/aovguard-cryptomatte-regression.png" target="_blank" rel="noopener noreferrer" aria-label="Open the historical Cryptomatte regression capture at full size in a new tab"><img src="../images/aovguard-cryptomatte-regression.png" alt="Historical AOVGuard regression capture showing encoded Cryptomatte values incorrectly ranked as luminance outliers before metadata-aware classification" width="2559" height="1519" loading="lazy"></a>
+        <figcaption><h2>Regression evidence: Cryptomatte</h2><p>This development capture records the false-positive behaviour that motivated metadata-aware classification. The current implementation excludes encoded Cryptomatte IDs from luminance and temporal-outlier calculations.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
       </figure>
     </section>
 

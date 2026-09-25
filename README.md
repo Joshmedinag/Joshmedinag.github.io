@@ -39,6 +39,10 @@ El CV público se encuentra en `assets/documents/Joshua_Medina_Lighting_Artist_C
 | `aovguard-technical-channels.png` | Galería de AOVGuard | Diagnóstico independiente de normales y profundidad |
 | `aovguard-corrupt-frame.png` | Galería de AOVGuard | Recuperación y localización de un EXR ilegible dentro de una secuencia |
 | `aovguard-temporal-chart.png` | Galería de AOVGuard | Curva temporal de luminancia, mediana y rango normal |
+| `aovguard-frame-navigation.png` | Galería de AOVGuard | Navegación desde una métrica temporal al frame exacto |
+| `aovguard-frame-table.png` | Galería de AOVGuard | Mediciones por archivo y AOV |
+| `aovguard-sequence-table.png` | Galería de AOVGuard | Patrón, rango, archivos presentes y padding de una secuencia |
+| `aovguard-cryptomatte-regression.png` | Galería de AOVGuard | Caso histórico que documenta el falso positivo corregido para Cryptomatte |
 | `aovguard-ui.jpg` | Material histórico de AOVGuard | Interfaz documentada en el informe MSc |
 | `aovguard-report.jpg` | Galería de AOVGuard | Diagnósticos de una secuencia real |
 | `going-merry-main.jpg` | Tarjeta y póster del vídeo | Frame del vídeo a los 15 segundos |
