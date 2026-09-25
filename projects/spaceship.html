@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Spaceship by Joshua Medina — a Lighting TD case study built with Blender, USD, Katana, RenderMan and Nuke, from shot design and look development to AOV compositing.">
+  <title>Spaceship — Lighting TD Case Study — Joshua Medina</title>
+  <link rel="canonical" href="https://joshmedinag.github.io/projects/spaceship.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Spaceship — Lighting TD Case Study — Joshua Medina">
+  <meta property="og:description" content="A 15-second space shot developed across Blender, USD, Katana, RenderMan and Nuke.">
+  <meta property="og:url" content="https://joshmedinag.github.io/projects/spaceship.html">
+  <meta property="og:image" content="https://joshmedinag.github.io/images/spaceship-main.png">
+  <meta property="og:image:alt" content="Circular space station travelling past the Moon in Joshua Medina's final composition">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css?v=20260924-spaceship">
+  <script src="../js/site-config.js?v=20260914-showreel" defer></script>
+  <script src="../js/main.js?v=20260912-portfolio" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open menu"><span></span><span></span></button>
+    <nav class="navigation" id="site-navigation" aria-label="Primary navigation">
+      <a href="../index.html#showreel">Showreel</a><a href="../index.html#work">Work</a><a href="../index.html#about">About</a><a href="../index.html#skills">Skills</a><a href="../index.html#cv">CV</a><a class="nav-contact" href="../index.html#contact">Let's talk <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main class="project-main" id="main">
+    <div class="project-intro wrap">
+      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
+      <p class="eyebrow"><span class="section-index">02 /</span> LIGHTING TD · LOOK DEVELOPMENT</p>
+      <div class="project-title-row">
+        <h1>Spaceship<span class="title-dot">.</span></h1>
+        <p class="project-lede">A 15-second station-and-Moon shot developed from camera and motion design through USD assembly, RenderMan lighting and AOV delivery, and a controlled Nuke composite.</p>
+      </div>
+      <div class="project-meta">
+        <div><span class="meta-label">My contribution</span><p>Visual direction · camera &amp; motion · look development · lighting · rendering · compositing · pipeline diagnosis</p></div>
+        <div><span class="meta-label">Toolkit</span><p>Blender · USD · Katana 9.0v3 · RenderMan 27.3 · Nuke · Python · EXR</p></div>
+      </div>
+      <p class="project-context">Personal Lighting TD study · 15 seconds · 360 frames · 1920 × 858 · 24 fps</p>
+    </div>
+
+    <figure class="project-hero wrap spaceship-shot">
+      <a class="image-detail-link" href="../images/spaceship-main.png" target="_blank" rel="noopener noreferrer" aria-label="Open the final Spaceship composition at full size in a new tab"><img src="../images/spaceship-main.png" alt="Final Spaceship composition with a detailed ring station travelling beside the Moon" width="1920" height="858" fetchpriority="high"></a>
+      <figcaption>Final composition · station rendered in RenderMan · Moon and star field integrated as a 2D Nuke plate.</figcaption>
+    </figure>
+
+    <section class="featured-film wrap" aria-labelledby="final-shot-title">
+      <p class="eyebrow"><span class="section-index">/</span> FINAL SHOT</p>
+      <h2 id="final-shot-title">A slow orbital passage built for scale and silhouette.</h2>
+      <p>The restrained camera and station motion keep the dense structure readable while the Moon establishes distance, direction and visual weight.</p>
+      <figure class="project-video spaceship-final-video">
+        <video controls playsinline preload="metadata" poster="../images/spaceship-main.png" width="1920" height="858" aria-label="Spaceship final 15-second shot by Joshua Medina">
+          <source src="../assets/video/spaceship-final.mp4" type="video/mp4">
+          Your browser does not support HTML video. <a href="../assets/video/spaceship-final.mp4">Open the final shot MP4</a>.
+        </video>
+        <figcaption>Final shot · 15 seconds · 360 frames · 1920 × 858 · 24 fps.</figcaption>
+        <a class="inline-link" href="../assets/video/spaceship-final.mp4" target="_blank" rel="noopener noreferrer">Open video directly <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </figure>
+    </section>
+
+    <section class="project-story wrap" aria-labelledby="overview-title">
+      <div><p class="eyebrow"><span class="section-index">/</span> THE BRIEF</p></div>
+      <div class="story-copy">
+        <h2 id="overview-title">Give a dense asset a clear cinematic read.</h2>
+        <p>The station contains hundreds of interlocking forms, repeated structures and reflective surfaces. I designed a controlled side-on composition that preserves the circular silhouette and creates a strong scale relationship with the Moon.</p>
+        <p>I was responsible for the visual direction, shot design, material distribution and tuning, lighting, render-pass strategy, Nuke integration and delivery checks. The base station geometry and several texture packs were supplied assets.</p>
+      </div>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="shot-design-title">
+      <p class="eyebrow"><span class="section-index">/</span> SHOT DESIGN &amp; USD</p>
+      <h2 id="shot-design-title">Small motion, large scale.</h2>
+      <p class="reference-intro">A 140 mm camera compresses depth and keeps the station graphic against negative space. Across the shot, the station rotates seven degrees on its local longitudinal axis and advances while the camera follows 42 percent of its translation with a two-unit dolly.</p>
+      <div class="evidence-grid">
+        <div><dt>USD meshes</dt><dd>223</dd></div>
+        <div><dt>Motion samples</dt><dd>360</dd></div>
+        <div><dt>Camera</dt><dd>140 mm</dd></div>
+      </div>
+      <div class="process-grid spaceship-process">
+        <article class="process-step"><span>01 /</span><h3>Silhouette first</h3><p>Blender reviews established the station's readable profile, framing and motion before the lighting build.</p></article>
+        <article class="process-step"><span>02 /</span><h3>USD handoff</h3><p>The scene transfer was checked for 223 mesh paths and a complete 360-frame motion range before look development.</p></article>
+        <article class="process-step"><span>03 /</span><h3>Shot continuity</h3><p>Camera follow and restrained rotation avoid distracting parallax while maintaining a deliberate sense of travel.</p></article>
+      </div>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="lookdev-title">
+      <p class="eyebrow"><span class="section-index">/</span> LOOK DEVELOPMENT</p>
+      <h2 id="lookdev-title">Separate material families without losing cohesion.</h2>
+      <p class="reference-intro">I rebuilt the RenderMan response in Katana because the source FBX did not carry the original vendor shader graph. PxrSurface networks define painted metal, brushed iron, structural weave and solar panels; PxrCurvature introduces controlled edge wear and cavity dirt.</p>
+      <figure class="r2d2-wide-figure spaceship-stage-board">
+        <a class="image-detail-link" href="../images/spaceship/material-stages.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Spaceship material and compositing stages at full size in a new tab"><img src="../images/spaceship/material-stages.png" alt="Nine aligned Spaceship stages from clay and material zones to Moon integration and final composite" width="1920" height="2088" loading="lazy"></a>
+        <figcaption>Material and finishing progression: clay, material zones, colour maps, roughness, microdetail, AOV response, station finish, Moon plate and final composite.</figcaption>
+      </figure>
+      <div class="project-video-grid spaceship-video-grid">
+        <figure>
+          <video controls playsinline preload="none" poster="../images/spaceship/05-microdetail-solar.png" width="1920" height="858" aria-label="Spaceship material detail study">
+            <source src="../assets/video/spaceship-material-detail.mp4" type="video/mp4">
+            Your browser does not support HTML video. <a href="../assets/video/spaceship-material-detail.mp4">Open the material detail video</a>.
+          </video>
+          <figcaption><h3>Material detail</h3><p>Close review of metallic response, roughness variation, solar surfaces and small emissive accents.</p></figcaption>
+        </figure>
+        <figure>
+          <a class="image-detail-link" href="../images/spaceship/06-aov-reflections.png" target="_blank" rel="noopener noreferrer" aria-label="Open the AOV and reflection stage at full size in a new tab"><img src="../images/spaceship/06-aov-reflections.png" alt="Station finish assembled from diffuse, specular and emission components" width="1920" height="858" loading="lazy"></a>
+          <figcaption><h3>Material response in light</h3><p>Diffuse, specular and emission contributions retain the structure of the asset without flattening its layered surfaces.</p></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-story wrap" aria-labelledby="lighting-title">
+      <div><p class="eyebrow"><span class="section-index">/</span> LIGHTING &amp; RENDERING</p></div>
+      <div class="story-copy">
+        <h2 id="lighting-title">Warm direction, cool separation and efficient diagnostics.</h2>
+        <p>A warm key defines the station's large forms, a cooler edge separates the silhouette, and localized fill preserves machinery inside the rings. Small emissions create scale cues without competing with the principal lighting.</p>
+        <p>RenderMan produced a beauty, a multichannel AOV file and an object Cryptomatte for every frame: 1,080 EXRs across the 360-frame shot. The package includes albedo, diffuse, specular, emission, normal, depth and motion-vector data for controlled downstream work.</p>
+      </div>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="breakdown-title">
+      <p class="eyebrow"><span class="section-index">/</span> BREAKDOWN</p>
+      <h2 id="breakdown-title">One frame, nine traceable decisions.</h2>
+      <p class="reference-intro">The breakdown locks frame 541 so the effect of each lighting, material and compositing decision can be compared without motion obscuring the change.</p>
+      <figure class="project-video spaceship-breakdown-video">
+        <video controls playsinline preload="metadata" poster="../images/spaceship/nine-stages.png" aria-label="Spaceship lighting, look development and compositing breakdown">
+          <source src="../assets/video/spaceship-breakdown.mp4" type="video/mp4">
+          Your browser does not support HTML video. <a href="../assets/video/spaceship-breakdown.mp4">Open the Spaceship breakdown MP4</a>.
+        </video>
+        <figcaption>Shot breakdown supplied by Joshua Medina · clay through final composite.</figcaption>
+        <a class="inline-link" href="../assets/video/spaceship-breakdown.mp4" target="_blank" rel="noopener noreferrer">Open breakdown directly <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </figure>
+    </section>
+
+    <section class="project-gallery wrap spaceship-gallery" aria-label="Spaceship fixed-frame progression">
+      <figure><a class="image-detail-link" href="../images/spaceship/01-clay.png" target="_blank" rel="noopener noreferrer" aria-label="Open clay stage at full size"><img src="../images/spaceship/01-clay.png" alt="Clay render establishing the station's form and light direction" width="1920" height="858" loading="lazy"></a><figcaption><h2>01 · Clay</h2><p>Form, silhouette and primary light direction.</p></figcaption></figure>
+      <figure><a class="image-detail-link" href="../images/spaceship/02-material-zones.png" target="_blank" rel="noopener noreferrer" aria-label="Open material zones stage at full size"><img src="../images/spaceship/02-material-zones.png" alt="Station divided into controlled material zones" width="1920" height="858" loading="lazy"></a><figcaption><h2>02 · Material zones</h2><p>Broad surface families establish visual hierarchy.</p></figcaption></figure>
+      <figure><a class="image-detail-link" href="../images/spaceship/03-colour-maps.png" target="_blank" rel="noopener noreferrer" aria-label="Open colour maps stage at full size"><img src="../images/spaceship/03-colour-maps.png" alt="Colour maps added to the station materials" width="1920" height="858" loading="lazy"></a><figcaption><h2>03 · Colour maps</h2><p>Muted colour variation and small functional accents.</p></figcaption></figure>
+      <figure><a class="image-detail-link" href="../images/spaceship/04-colour-roughness.png" target="_blank" rel="noopener noreferrer" aria-label="Open colour and roughness stage at full size"><img src="../images/spaceship/04-colour-roughness.png" alt="Colour and roughness response across the station" width="1920" height="858" loading="lazy"></a><figcaption><h2>04 · Colour + roughness</h2><p>Reflection breakup differentiates painted and bare metal.</p></figcaption></figure>
+      <figure><a class="image-detail-link" href="../images/spaceship/05-microdetail-solar.png" target="_blank" rel="noopener noreferrer" aria-label="Open microdetail and solar stage at full size"><img src="../images/spaceship/05-microdetail-solar.png" alt="Microdetail and solar panel response added to the station" width="1920" height="858" loading="lazy"></a><figcaption><h2>05 · Microdetail + solar</h2><p>Surface wear and solar response support scale.</p></figcaption></figure>
+      <figure><a class="image-detail-link" href="../images/spaceship/06-aov-reflections.png" target="_blank" rel="noopener noreferrer" aria-label="Open AOV reflections stage at full size"><img src="../images/spaceship/06-aov-reflections.png" alt="Diffuse, specular and emission response in the station render" width="1920" height="858" loading="lazy"></a><figcaption><h2>06 · AOV response</h2><p>Diffuse, specular and emission contributions.</p></figcaption></figure>
+      <figure><a class="image-detail-link" href="../images/spaceship/07-station-finish.png" target="_blank" rel="noopener noreferrer" aria-label="Open finished station stage at full size"><img src="../images/spaceship/07-station-finish.png" alt="Finished station render before background integration" width="1920" height="858" loading="lazy"></a><figcaption><h2>07 · Station finish</h2><p>The approved rendered asset before environment integration.</p></figcaption></figure>
+      <figure><a class="image-detail-link" href="../images/spaceship/08-moon-stars.png" target="_blank" rel="noopener noreferrer" aria-label="Open Moon and stars stage at full size"><img src="../images/spaceship/08-moon-stars.png" alt="Station integrated with a Moon and star field plate" width="1920" height="858" loading="lazy"></a><figcaption><h2>08 · Moon + stars</h2><p>The 2D Nuke plate establishes scale and location.</p></figcaption></figure>
+      <figure><a class="image-detail-link" href="../images/spaceship/09-final-composite.png" target="_blank" rel="noopener noreferrer" aria-label="Open final composite at full size"><img src="../images/spaceship/09-final-composite.png" alt="Final Spaceship composition after Nuke integration" width="1920" height="858" loading="lazy"></a><figcaption><h2>09 · Final composite</h2><p>Light wrap, highlight control, vignette and grain.</p></figcaption></figure>
+    </section>
+
+    <section class="project-story wrap" aria-labelledby="comp-title">
+      <div><p class="eyebrow"><span class="section-index">/</span> NUKE FINISH</p></div>
+      <div class="story-copy">
+        <h2 id="comp-title">AOV control without rewriting the render.</h2>
+        <p>The composite uses the real diffuse, specular and emission components in linear space. Light wrap, highlight control, vignette and grain integrate the station with a static Moon-and-stars EXR plate created in Nuke.</p>
+        <p>The Moon is a 2D element and therefore has no physical parallax. The project does not claim a documented ACES or OCIO pipeline; the intermediate was linear EXR and the final delivery was a 16-bit sRGB PNG sequence.</p>
+      </div>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="delivery-title">
+      <p class="eyebrow"><span class="section-index">/</span> DELIVERY &amp; QA</p>
+      <h2 id="delivery-title">A resumable render and a verified delivery.</h2>
+      <div class="evidence-grid">
+        <div><dt>Render outputs</dt><dd>1,080 EXRs</dd></div>
+        <div><dt>Final sequence</dt><dd>360 PNGs</dd></div>
+        <div><dt>Delivery</dt><dd>H.264 + ProRes</dd></div>
+      </div>
+      <p class="reference-intro">A Windows bridge issue was solved with raw EXR output and a signature, lock and decode workflow that made interrupted renders safe to resume. FFmpeg decoded the final outputs successfully, and five distributed points in the shot were visually sampled for delivery review.</p>
+    </section>
+
+    <section class="project-credits wrap" aria-labelledby="credits-title">
+      <h2 id="credits-title">Credits &amp; disclosure</h2>
+      <p>Visual direction, camera and motion design, material distribution and tuning, lighting, RenderMan pass strategy, Nuke compositing, pipeline diagnosis and delivery validation: Joshua Medina.</p>
+      <p>The base station model and several texture packs were supplied third-party assets; I did not model the station. Their original licenses remain applicable. AI assistance supported scripting and automation tasks.</p>
+      <p>This is a personal portfolio study and was not produced by or for Industrial Light &amp; Magic.</p>
+    </section>
+
+    <a class="next-project wrap" href="lighting.html"><div><small>NEXT PROJECT</small><h2>Broken Horizons</h2></div><span aria-hidden="true">↗</span></a>
+  </main>
+
+  <footer class="site-footer wrap">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <p>© <span data-year>2026</span> Joshua Medina</p>
+    <div class="footer-actions"><a href="../assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="View CV PDF in a new tab">View CV <span aria-hidden="true">↗</span></a><a class="back-top" href="mailto:Joshalexmedina@hotmail.com">Email Joshua <span aria-hidden="true">↗</span></a></div>
+  </footer>
+</body>
+</html>

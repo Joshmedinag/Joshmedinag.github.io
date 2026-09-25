@@ -1,6 +1,22 @@
 # Imágenes y vídeo del portfolio
 
-El material de R2-D2, FarmFlow, AOVGuard, Realtime Raytracer, Norwegian Lakeside, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. FarmFlow combina material real de Maya y Arnold con un diagrama técnico construido en HTML y CSS. AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para este portfolio. Los originales no se modifican. Las imágenes extraídas de los documentos conservan su resolución disponible, sin ampliación artificial. Los números de página indicados para los PDF cuentan desde la primera página, incluida la portada.
+El material de Spaceship, R2-D2, FarmFlow, AOVGuard, Realtime Raytracer, Norwegian Lakeside, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. FarmFlow combina material real de Maya y Arnold con un diagrama técnico construido en HTML y CSS. AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para este portfolio. Los originales no se modifican. Las imágenes extraídas de los documentos conservan su resolución disponible, sin ampliación artificial. Los números de página indicados para los PDF cuentan desde la primera página, incluida la portada.
+
+## Spaceship — Lighting TD Case Study
+
+Fuentes: `CASE_STUDY_EN.md`, `final_shot_15s.mp4`, `material_detail.mp4`, nueve PNG de etapas y `spaceship_breakdown.mp4`, proporcionados por Joshua Medina el 24 de septiembre de 2026.
+
+| Archivo | Uso | Duración / resolución |
+| --- | --- | --- |
+| `spaceship-main.png` | Carrusel, tarjeta, cabecera y póster del plano final | 1920 × 858 |
+| `spaceship/01-clay.png` a `09-final-composite.png` | Nueve estados alineados del frame 541 | 1920 × 858 |
+| `spaceship/material-stages.png` | Tablero 3 × 3 del proceso | 1920 × 2088 |
+| `spaceship/nine-stages.png` | Tablero vertical y póster del breakdown | 1920 × 2435 |
+| `../assets/video/spaceship-final.mp4` | Plano final | 15 s · 1920 × 858 |
+| `../assets/video/spaceship-breakdown.mp4` | Breakdown entregado por Joshua | 25,8 s · 1920 × 1080 |
+| `../assets/video/spaceship-material-detail.mp4` | Revisión de materiales | 6 s · 1920 × 858 |
+
+Los recursos se copiaron sin recomprimir. La información técnica se resume del caso de estudio en inglés: 360 frames, 223 meshes USD, 1.080 EXR de render y 360 PNG finales. La página distingue el trabajo de Joshua de los recursos suministrados: la geometría base y varios paquetes de texturas no fueron creados por él. La Luna y el campo estelar forman una placa 2D creada en Nuke; no se atribuye parallax 3D. El proyecto no documenta una canalización ACES/OCIO. Las primeras cuatro etapas del breakdown son renders diagnósticos controlados, no capturas históricas del desarrollo.
 
 ## R2-D2 Desert Look Development & Lighting
 

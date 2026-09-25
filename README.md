@@ -26,6 +26,7 @@ El CV público se encuentra en `assets/documents/Joshua_Medina_Lighting_Artist_C
 | `hero/hero-norwegian-01.jpg` y `hero-norwegian-02.jpg` | Carrusel de portada | Dos fotogramas de Norwegian Lakeside |
 | `hero/hero-snowbound-01.jpg` y `hero-snowbound-02.jpg` | Carrusel de portada | Dos fotogramas de Snowbound Environment |
 | `r2d2-main.jpg` | Carrusel, tarjeta y cabecera | Último estado corregido de color del breakdown de R2-D2, recortado al formato 2.35:1 |
+| `spaceship-main.png` | Carrusel, tarjeta y cabecera | Composición final del proyecto Spaceship, estación renderizada frente a la Luna |
 | `brands/maya-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Autodesk Maya |
 | `brands/python-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Python |
 | `brands/aovs.svg` | Tarjeta y cabecera de AOVGuard | Símbolo de AOVs creado para el portfolio |
@@ -109,17 +110,19 @@ La página de AOVGuard describe la versión 2.0 documentada en el informe MSc, c
 
 La página R2-D2 Desert Look Development & Lighting resume el caso de estudio entregado en `C:\r2d2lighting\portfolio`. Presenta la ingestión Maya/Alembic, el scene assembly en Katana, look development y weathering procedural con OSL, lighting y AOVs en RenderMan, acabado en Nuke y automatización con Python. Publica el plano final, un breakdown de 8,88 segundos, el pipeline, comparaciones de materiales, una tabla de AOVs y la comparación RenderMan/Nuke, además del PDF completo. La página aclara que Joshua no modeló el asset de R2-D2 y delimita su contribución desde la ingestión de escena.
 
+La página Spaceship presenta un caso de Lighting TD de 15 segundos y 360 frames realizado con Blender, USD, Katana, RenderMan y Nuke. Incluye el plano final, el breakdown de 25,8 segundos entregado por Joshua, un vídeo de detalle de materiales y nueve estados alineados del frame 541. Las cifras de 223 meshes, 1.080 EXR de render y 360 PNG finales proceden de `CASE_STUDY_EN.md`. La página declara que el modelo base y varias texturas son recursos suministrados, que la Luna es un elemento 2D de Nuke y que no existe una canalización ACES/OCIO documentada para el proyecto.
+
 Consulta `images/ASSETS.md` para la procedencia exacta. Los originales entregados no se modifican y los PDF completos no forman parte de los archivos públicos del sitio.
 
 ## Responsabilidades y revisión de proyectos
 
-El reel enlaza a los casos documentados de Broken Horizons, Norwegian Lakeside y Snowbound Environment. Las tarjetas muestran el rol de Joshua, y las páginas detallan responsabilidades, herramientas, referencias y créditos. No se muestran campos vacíos ni se atribuyen responsabilidades por plano sin confirmar.
+El reel enlaza a los casos documentados de Spaceship, Broken Horizons, Norwegian Lakeside y Snowbound Environment. Las tarjetas muestran el rol de Joshua, y las páginas detallan responsabilidades, herramientas, referencias y créditos. No se muestran campos vacíos ni se atribuyen responsabilidades por plano sin confirmar.
 
 La lista completa de créditos del showreel, con tiempos y fuentes de assets, sigue pendiente de recibir. Mantener ese pendiente fuera de la interfaz no sustituye su recopilación antes de una candidatura.
 
 ## Navegación y filtros
 
-La portada prioriza lighting y look development, seguida de herramientas de pipeline y rendering. Los filtros permiten ver All work, Lighting & look development, Pipeline tools o Rendering & FX. El parámetro `?category=lighting#work` conserva una selección compartible; sin JavaScript se muestran los ocho proyectos.
+La portada prioriza lighting y look development, seguida de herramientas de pipeline y rendering. Los filtros permiten ver All work, Lighting & look development, Pipeline tools o Rendering & FX. El parámetro `?category=lighting#work` conserva una selección compartible; sin JavaScript se muestran los diez proyectos.
 
 El CV se abre directamente desde la portada y desde la navegación de cualquier página. La sección CV también permite descargarlo. Skills y Education siguen disponibles mediante enlaces en About. El menú móvil funciona en tablet y teléfono, mantiene el foco dentro de la navegación y se cierra con Escape.
 
@@ -146,11 +149,14 @@ css/blue-theme.css          Paleta azul y blanca aplicada al sitio
 js/site-config.js           Datos de contacto y reel
 js/main.js                  Menú, sección activa y reproductor
 images/*.{jpg,png}          Imágenes de proyectos y recursos de portada
-images/hero/*.jpg           Once fotogramas del carrusel de portada
+images/hero/*.jpg           Once fotogramas del demo reel y entornos en el carrusel
+images/spaceship-main.png   Plano final de Spaceship en portada y página
+images/spaceship/*.png      Nueve etapas y tableros del caso Spaceship
 images/ASSETS.md             Procedencia y mapa de recursos
 projects/aovguard.html       Herramienta de validación EXR/AOV
 projects/farmflow.html       Pipeline Maya/Arnold para Lighting TD
 projects/r2d2-lighting.html  Look development, lighting y comp de R2-D2
+projects/spaceship.html      Lighting TD, RenderMan AOVs y comp del plano espacial
 projects/lighting.html       Lighting y look development
 projects/norwegian-lakeside.html  Iluminación de entorno nórdico
 projects/snow-environment.html  Iluminación de entorno nevado
@@ -161,6 +167,7 @@ assets/favicon.svg          Monograma JM
 assets/fonts/neue-montreal/  Neue Montreal y licencia del paquete entregado
 assets/video/going-merry.mp4  Vídeo optimizado de la simulación
 assets/video/broken-horizons.mp4  Corto grupal completo optimizado
+assets/video/spaceship-*.mp4  Plano final, breakdown y detalle de materiales
 assets/video/nordic-*.mp4    Cinco planos de Norwegian Lakeside
 assets/video/snow-*.mp4      Cuatro clips optimizados del entorno nevado
 .nojekyll                   Publicación estática directa
