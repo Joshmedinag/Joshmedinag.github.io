@@ -4,18 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#071426">
-  <meta name="description" content="AOVGuard by Joshua Medina. Automated EXR and AOV validation for VFX lighting and compositing pipelines.">
+  <meta name="description" content="AOVGuard 1.2.1 by Joshua Medina. Open-source OpenEXR structure inspection, AOV validation and render-sequence quality control for VFX pipelines.">
   <title>AOVGuard — Joshua Medina</title>
   <link rel="canonical" href="https://joshmedinag.github.io/projects/aovguard.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="AOVGuard — Joshua Medina">
-  <meta property="og:description" content="AOVGuard by Joshua Medina. Automated EXR and AOV validation for VFX lighting and compositing pipelines.">
+  <meta property="og:description" content="Open-source OpenEXR structure inspection, AOV validation and render-sequence quality control for VFX pipelines.">
   <meta property="og:url" content="https://joshmedinag.github.io/projects/aovguard.html">
-  <meta property="og:image" content="https://joshmedinag.github.io/images/aovguard-ui.jpg">
-  <meta property="og:image:alt" content="AOVGuard — Joshua Medina">
+  <meta property="og:image" content="https://joshmedinag.github.io/images/aovguard-current-ui.png">
+  <meta property="og:image:alt" content="AOVGuard interface showing EXR and AOV validation results">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../css/style.css?v=20260912-portfolio">
+  <link rel="stylesheet" href="../css/style.css?v=20260924-aovguard">
   <link rel="stylesheet" href="../css/blue-theme.css?v=20260905-blue">
   <script src="../js/site-config.js?v=20260914-showreel" defer></script>
   <script src="../js/main.js?v=20260912-portfolio" defer></script>
@@ -38,13 +38,16 @@
     <div class="project-intro wrap">
       <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
       <p class="eyebrow"><span class="section-index">08 /</span> PIPELINE DEVELOPMENT</p>
-      <div class="project-title-row"><h1>AOVGuard<span class="title-dot">.</span></h1><p class="project-lede">Automated EXR and AOV validation for VFX lighting and compositing pipelines.</p></div>
+      <div class="project-title-row"><h1>AOVGuard<span class="title-dot">.</span></h1><p class="project-lede">Open-source quality control for OpenEXR files, AOVs and render sequences before compositing or publishing.</p></div>
       <div class="project-meta">
-        <div><span class="meta-label">My contribution</span><p>Tool design &amp; development</p></div>
-        <div><span class="meta-label">Toolkit</span><p>Python · NumPy · OpenEXR · PySide6 · pytest</p></div>
+        <div><span class="meta-label">My contribution</span><p>Product design · pipeline architecture · Python development</p></div>
+        <div><span class="meta-label">Toolkit</span><p>Python 3.11/3.12 · OpenEXR · NumPy · PySide6 · pytest</p></div>
       </div>
-      <p class="project-context">Individual academic Master's project · Bournemouth University</p>
-      <a class="inline-link" href="https://github.com/Joshmedinag/NCCA-mastersproject" target="_blank" rel="noopener noreferrer">View the repository <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+      <p class="project-context">Open-source MSc project · stable release 1.2.1 · MIT License</p>
+      <div class="project-actions">
+        <a class="button button-primary" href="https://github.com/Joshmedinag/AOVGuard" target="_blank" rel="noopener noreferrer">View source on GitHub <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+        <a class="button button-secondary" href="https://github.com/Joshmedinag/AOVGuard/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Review changelog <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
     </div>
     <figure class="project-hero tool-hero wrap">
       <div class="tool-logo-stage" role="img" aria-label="Autodesk Maya, Python and AOVs">
@@ -59,20 +62,20 @@
       <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
       <div class="story-copy"><h2 id="overview-title">Technical checks, made repeatable.</h2>
         <p>I designed and developed AOVGuard to inspect rendered EXR files and identify common technical problems before they reach later stages of a lighting or compositing pipeline. The goal is to reduce repetitive manual checking and help artists find potentially problematic renders more quickly.</p>
-        <p>AOVGuard 2.0 reorganises the workflow around automatic structure inspection, canonical RGB, configurable brightness metrics and frame-first processing. A shared report model serves the PySide6 interface, command line, JSON/HTML export and baseline comparison.</p>
-        <p>Developed for my MSc at Bournemouth University, the project is a focused validation prototype: it reports technical evidence for artists to interpret in the context of a shot.</p>
+        <p>The current public implementation automatically inspects EXR parts and channels, normalises colour passes to a canonical RGB convention and diagnoses technical AOVs per channel. Standard Cryptomatte metadata keeps encoded IDs out of luminance and temporal-outlier calculations while preserving integrity checks.</p>
+        <p>A shared report model serves the PySide6 interface, command line, strict JSON and self-contained HTML exports. Stable release 1.2.1 adds temporal charts, robust outlier review and direct frame navigation; the current repository also verifies expected frame ranges and Cryptomatte-aware analysis.</p>
       </div>
     </section>
 
     <section class="project-scope wrap" aria-labelledby="scope-title">
       <h2 id="scope-title">What I did</h2>
       <ul>
-        <li>Automatic structure inspection, named-channel grouping and broad colour, vector, depth and scalar AOV categorisation through an OpenEXR reader boundary.</li>
-        <li>Canonical RGB handling and centralised Rec.709, Rec.601 and custom weighted brightness metrics, with technical AOVs handled separately from colour passes.</li>
-        <li>AOV-aware rules for non-finite values, empty and near-empty colour contribution, required channels, resolution and AOV consistency; configurable through TOML or JSON.</li>
-        <li>Shared discovery for single files, numbered sequences and comparison sets, with frame-first incremental analysis and sequence-integrity checks.</li>
-        <li>One AnalysisReport model for CLI/GUI results, strict JSON, self-contained HTML and baseline report comparison.</li>
-        <li>A responsive PySide6 interface with worker-thread analysis, progress and cooperative cancellation; automated correctness and interface-equivalence tests.</li>
+        <li>Automatic inspection of regular and multilayer EXRs, with colour, scalar, vector, mask, depth, Cryptomatte and unknown AOV categories.</li>
+        <li>Frame-first processing that opens each compatible frame once, accumulates colour metrics in float64 and keeps technical diagnostics separate from luminance.</li>
+        <li>Configurable checks for NaN/Inf, negative and extreme values, empty passes, constant channels, missing AOVs, mixed resolutions and structural changes.</li>
+        <li>Sequence discovery with filename patterns, recursive search, bounded depth, frame limits and inclusive expected ranges for missing heads, tails and internal gaps.</li>
+        <li>Median/MAD temporal analysis, luminance and change charts, score-ordered outlier review and direct navigation to the exact frame evidence.</li>
+        <li>One canonical report for GUI, CLI, JSON and HTML output, plus baseline comparison, strict exit codes and confirmation-gated AOV classification presets.</li>
       </ul>
     </section>
 
@@ -81,21 +84,21 @@
       <h2 id="architecture-title">One report model, every interface.</h2>
       <p class="reference-intro">The architecture keeps discovery, reading, analysis and presentation separate while the CLI, GUI and exporters share the same report.</p>
       <figure class="architecture-figure">
-        <a class="image-detail-link" href="../images/aovguard-architecture.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard architecture diagram at full size in a new tab"><img src="../images/aovguard-architecture.jpg" alt="AOVGuard 2.0 architecture: discovery, reader and inspector, canonical frame model, frame-first analysis, rule engine and one report model shared by CLI, GUI and exporters" width="1249" height="682" loading="lazy"></a>
-        <figcaption>Shared processing architecture · Figure 2 from the MSc dissertation.<span class="image-detail-hint">Select the diagram to view full size ↗</span></figcaption>
+        <a class="image-detail-link" href="../images/aovguard-architecture.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard architecture diagram at full size in a new tab"><img src="../images/aovguard-architecture.jpg" alt="AOVGuard architecture: discovery, OpenEXR reading, canonical models, frame-first analysis, rule engine and one report model shared by CLI, GUI and exporters" width="1249" height="682" loading="lazy"></a>
+        <figcaption>Shared processing architecture · Figure 2 from the MSc dissertation. The dissertation names this redesign “AOVGuard 2.0”; the current public package release is 1.2.1.<span class="image-detail-hint">Select the diagram to view full size ↗</span></figcaption>
       </figure>
     </section>
 
     <section class="process-grid wrap" aria-label="Process, challenges and results">
-      <article class="process-step"><span>01 /</span><h3>Structure before assumptions</h3><p>Channel names and roles establish how each AOV is handled. Colour brightness checks are separated from per-channel diagnostics for vectors and depth, and uncertain structures remain explicit.</p></article>
-      <article class="process-step"><span>02 /</span><h3>One analysis, every interface</h3><p>CLI, GUI and exporters consume the same models and findings. Integration tests compare canonical report payloads to check that the interfaces agree.</p></article>
-      <article class="process-step"><span>03 /</span><h3>Frame-first processing</h3><p>Instead of revisiting every frame for each pass, the processing loop reads a frame, updates all supported AOV accumulators and releases its arrays before continuing.</p></article>
+      <article class="process-step"><span>01 /</span><h3>Structure before assumptions</h3><p>Channels and metadata establish how each AOV is handled. Colour, technical, Cryptomatte and unknown data retain appropriate diagnostics without forcing one interpretation onto every pass.</p></article>
+      <article class="process-step"><span>02 /</span><h3>Find the exact frame</h3><p>Robust temporal statistics expose unusual luminance changes. Charts, an ordered Outliers view and Locate Selected Frame connect an aggregate warning to its evidence.</p></article>
+      <article class="process-step"><span>03 /</span><h3>Ready for automation</h3><p>GUI and CLI share the same typed models, while strict reports, baseline comparison, deterministic exit codes and bounded discovery support publishing checks.</p></article>
     </section>
 
     <section class="project-gallery document-gallery wrap" aria-label="AOVGuard interface and validation results">
       <figure>
-        <a class="image-detail-link" href="../images/aovguard-ui.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard interface image at full size in a new tab"><img src="../images/aovguard-ui.jpg" alt="AOVGuard 2.0 GUI showing a 61-frame analysis with seven contextual empty-AOV warnings" width="799" height="549" loading="lazy"></a>
-        <figcaption><h2>Graphical interface</h2><p>Automatic structure context, findings and shared report results. Figure 4 from the MSc dissertation.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+        <a class="image-detail-link" href="../images/aovguard-current-ui.png" target="_blank" rel="noopener noreferrer" aria-label="Open the current AOVGuard interface image at full size in a new tab"><img src="../images/aovguard-current-ui.png" alt="Current AOVGuard PySide6 interface showing an EXR comparison set, colour and technical AOV summary, warning status, findings filters and report actions" width="1764" height="1325" loading="lazy"></a>
+        <figcaption><h2>Current graphical interface</h2><p>Structure inspection, configurable rules, findings-first review, technical diagnostics, baseline comparison and JSON/HTML export from one PySide6 application.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
       </figure>
       <figure>
         <a class="image-detail-link" href="../images/aovguard-report.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the sequence validation results image at full size in a new tab"><img src="../images/aovguard-report.jpg" alt="Validation evidence showing aggregate colour metrics, technical channel diagnostics and a complete sequence of 61 Maya/Arnold EXRs" width="1249" height="824" loading="lazy"></a>
@@ -107,16 +110,17 @@
       <p class="eyebrow"><span class="section-index">/</span> EVALUATION</p>
       <h2 id="evidence-title">Evidence from the MSc project.</h2>
       <dl class="evidence-grid">
-        <div><dt>Automated tests passed</dt><dd>229</dd></div>
-        <div><dt>Combined statement / branch coverage</dt><dd>95.24%</dd></div>
-        <div><dt>Real sequence frames processed</dt><dd>61 / 61</dd></div>
+        <div><dt>Automated tests passed</dt><dd>282</dd></div>
+        <div><dt>Statement / branch coverage</dt><dd>95.37%</dd></div>
+        <div><dt>Controlled frame-first speed-up</dt><dd>3.72×</dd></div>
       </dl>
-      <p class="source-note">Results recorded in the MSc dissertation's final verification snapshot, 14 August 2026.</p>
+      <p class="source-note">Current-main verification recorded in the public repository on 24 September 2026. Stable release: 1.2.1. The speed figure comes from the documented 12-frame, five-AOV controlled benchmark and is not a production-throughput claim.</p>
       <details class="technical-notes">
         <summary>Benchmark conditions and current scope</summary>
         <p>A controlled benchmark used 12 generated 320 × 180 frames, five AOVs and 30 repetitions per strategy on one Windows workstation. Frame-first processing reduced application-level reader calls from 60 to 12 while preserving the output checksum. Median elapsed time changed from 0.4387 s to 0.1181 s; Python-tracked peak memory increased from about 5.55 MB to 11.08 MB.</p>
         <p>The result supports this processing change under those conditions. Native decoder allocations were not fully measured, and the timing ratio is not a general production-performance claim.</p>
-        <p>Current analysis supports the tested root-RGB and named single-part multilayer structures. Deep and multipart EXRs are detected but rejected by the analysis path. AOV typing is heuristic, and brightness coefficients are not a substitute for colour-space-aware interpretation. Empty or unusual passes require artistic context; direct DCC/render-farm integration remains future work.</p>
+        <p>A separate in-memory scalability check processed 100, 500 and 1,000 frames in approximately linear time for its small 64 × 36 fixture, reaching 0.505 seconds and 2.206 MB of Python-tracked peak memory at 1,000 frames. It excludes OpenEXR decoding, filesystem I/O and full-resolution native allocations.</p>
+        <p>Current analysis supports regular RGB/RGBA and named multilayer EXRs. Deep and multipart files are detected but not analyzed. Cryptomatte classification depends on standard metadata or an explicit preset; renderer-specific artistic interpretation and show-calibrated thresholds remain the user's responsibility.</p>
       </details>
     </section>
 
@@ -124,8 +128,7 @@
       <h2 id="credits-title">Credits</h2>
       <p>Individual project by Joshua Medina.</p>
       <p>Developed as my Master’s project at Bournemouth University.</p>
-
-
+      <p>Source code, documentation and release history: <a class="inline-link" href="https://github.com/Joshmedinag/AOVGuard" target="_blank" rel="noopener noreferrer">github.com/Joshmedinag/AOVGuard <span aria-hidden="true">↗</span></a></p>
     </section>
     <a class="next-project wrap" href="raytracer.html"><div><small>NEXT PROJECT</small><h2>CPU Raytracer — Triforce</h2></div><span aria-hidden="true">↗</span></a>
   </main>

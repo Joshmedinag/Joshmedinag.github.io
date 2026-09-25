@@ -35,7 +35,8 @@ El CV público se encuentra en `assets/documents/Joshua_Medina_Lighting_Artist_C
 | `farmflow-render-run.png` | Evidencia de FarmFlow | Render de Arnold ejecutado y comprobado desde el panel |
 | `farmflow-sequence-verified.png` | Evidencia de FarmFlow | Secuencia de diez archivos verificada dentro de Maya |
 | `aovguard-architecture.jpg` | Sección System design de AOVGuard | Diagrama de arquitectura del informe MSc |
-| `aovguard-ui.jpg` | Galería de AOVGuard | Interfaz real del informe MSc |
+| `aovguard-current-ui.png` | Galería y vista previa social de AOVGuard | Interfaz actual del repositorio público |
+| `aovguard-ui.jpg` | Material histórico de AOVGuard | Interfaz documentada en el informe MSc |
 | `aovguard-report.jpg` | Galería de AOVGuard | Diagnósticos de una secuencia real |
 | `going-merry-main.jpg` | Tarjeta y póster del vídeo | Frame del vídeo a los 15 segundos |
 | `going-merry-breakdown.jpg` | Galería de Going Merry | Vista superior del vídeo a los 25 segundos |
@@ -106,7 +107,7 @@ La página de RenderMan utiliza los cuatro renders refinados de 1920 × 1080 pro
 
 La página Physically Based CPU Raytracer — Triforce resume `Joshua_Raytracer_Development_Report.docx`. Presenta la geometría cerrada y biselada, el modelo Cook–Torrance/GGX, la iluminación y los reflejos HDRI, el pipeline HDR y la aceleración con Numba. Las cifras de 256 SPP, cuatro bounces, 19 pruebas aprobadas, 258,8 segundos de render final y una mejora aproximada de 75× proceden de las mediciones del informe. Se publica el render final entregado y cuatro imágenes de desarrollo extraídas del documento; la referencia externa de The Legend of Zelda no se incluye.
 
-La página de AOVGuard describe la versión 2.0 documentada en el informe MSc, con arquitectura, GUI y validación de secuencias. Las cifras de 229 pruebas y 95,24 % de cobertura se atribuyen a la evaluación del **14 de agosto de 2026**; no son pruebas ejecutadas al comprobar esta web. Los detalles desplegables indican el alcance del benchmark y las limitaciones del prototipo.
+La página de AOVGuard presenta la versión estable 1.2.1 y las correcciones actuales del repositorio público, con arquitectura, GUI, validación de secuencias, Cryptomatte, métricas temporales y revisión de outliers. Las cifras de 282 pruebas y 95,37 % de cobertura proceden de la verificación documentada en `main` el **24 de septiembre de 2026**; no son pruebas ejecutadas al comprobar esta web. Los detalles desplegables delimitan el benchmark y las limitaciones del prototipo.
 
 La página R2-D2 Desert Look Development & Lighting resume el caso de estudio entregado en `C:\r2d2lighting\portfolio`. Presenta la ingestión Maya/Alembic, el scene assembly en Katana, look development y weathering procedural con OSL, lighting y AOVs en RenderMan, acabado en Nuke y automatización con Python. Publica el plano final, un breakdown de 8,88 segundos, el pipeline, comparaciones de materiales, una tabla de AOVs y la comparación RenderMan/Nuke, además del PDF completo. La página aclara que Joshua no modeló el asset de R2-D2 y delimita su contribución desde la ingestión de escena.
 
@@ -138,7 +139,7 @@ Solo se cargan dos imágenes del carrusel al inicio, y los demás fotogramas se 
 
 Las fechas confirmadas de educación ya están incorporadas: **Lost Boys, 2023–2024**; **UAG, agosto de 2019–diciembre de 2022**.
 
-Las fechas desconocidas y los enlaces sin proporcionar se omiten del sitio. AOVGuard enlaza al repositorio indicado: [NCCA-mastersproject](https://github.com/Joshmedinag/NCCA-mastersproject).
+Las fechas desconocidas y los enlaces sin proporcionar se omiten del sitio. AOVGuard enlaza a su repositorio público oficial: [Joshmedinag/AOVGuard](https://github.com/Joshmedinag/AOVGuard).
 
 ## Archivos principales
 
