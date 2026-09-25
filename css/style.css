@@ -273,6 +273,7 @@
 .spaceship-stage-board{max-width:960px}
 .spaceship-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
 .spaceship-gallery figure:only-child{grid-column:auto}
+.project-gallery.spaceship-gallery img{aspect-ratio:1920/858;object-fit:contain;background:#000}
 .spaceship-gallery h2{font-size:1.15rem}
 .spaceship-gallery p{font-size:.875rem}
 .r2d2-gallery img{width:100%;height:auto;aspect-ratio:auto!important}
