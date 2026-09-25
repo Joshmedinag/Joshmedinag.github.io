@@ -10,13 +10,14 @@ Fuentes: `CASE_STUDY_EN.md`, `spaceship_1st_version.mp4`, `material_detail.mp4`,
 | --- | --- | --- |
 | `spaceship-main.png` | Carrusel, tarjeta, cabecera y póster del plano final | 1920 × 858 |
 | `spaceship/01-clay.png` a `09-final-composite.png` | Nueve estados alineados del frame 541 | 1920 × 858 |
-| `spaceship/material-stages.png` | Tablero 3 × 3 del proceso | 1920 × 2088 |
-| `spaceship/nine-stages.png` | Tablero vertical y póster del breakdown | 1920 × 2435 |
+| `spaceship/material-stages.png` | Tablero 3 × 3 reconstruido con todas las etiquetas en inglés | 1920 × 2088 |
+| `spaceship/nine-stages.png` | Tablero vertical y póster del breakdown, reconstruido en inglés | 1920 × 2435 |
+| `spaceship/material-detail-en-1.png` a `material-detail-en-3.png` | Tres placas en inglés que forman el vídeo de detalle | 1920 × 858 |
 | `../assets/video/spaceship-final.mp4` | Plano final | 15 s · 1920 × 858 |
 | `../assets/video/spaceship-breakdown.mp4` | Breakdown entregado por Joshua | 25,8 s · 1920 × 1080 |
-| `../assets/video/spaceship-material-detail.mp4` | Revisión de materiales | 6 s · 1920 × 858 |
+| `../assets/video/spaceship-material-detail.mp4` | Revisión de materiales reconstruida con títulos, descripciones y etiquetas en inglés | 1920 × 858 |
 
-Los recursos se copiaron sin recomprimir. La información técnica se resume del caso de estudio en inglés: 360 frames, 223 meshes USD, 1.080 EXR de render y 360 PNG finales. La página distingue el trabajo de Joshua de los recursos suministrados: la geometría base y varios paquetes de texturas no fueron creados por él. La Luna y el campo estelar forman una placa 2D creada en Nuke; no se atribuye parallax 3D. El proyecto no documenta una canalización ACES/OCIO. Las primeras cuatro etapas del breakdown son renders diagnósticos controlados, no capturas históricas del desarrollo.
+Las nueve imágenes individuales se copiaron sin recomprimir. Los dos tableros y el vídeo corto de materiales se reconstruyeron a partir de esas imágenes con Neue Montreal y textos íntegramente en inglés; no se alteró el render de cada etapa. La información técnica se resume del caso de estudio en inglés: 360 frames, 223 meshes USD, 1.080 EXR de render y 360 PNG finales. La página distingue el trabajo de Joshua de los recursos suministrados: la geometría base y varios paquetes de texturas no fueron creados por él. La Luna y el campo estelar forman una placa 2D creada en Nuke; no se atribuye parallax 3D. El proyecto no documenta una canalización ACES/OCIO. Las primeras cuatro etapas del breakdown son renders diagnósticos controlados, no capturas históricas del desarrollo.
 
 ## R2-D2 Desert Look Development & Lighting
 
