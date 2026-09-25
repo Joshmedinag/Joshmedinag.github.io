@@ -15,7 +15,7 @@
   <meta property="og:image:alt" content="AOVGuard interface showing EXR and AOV validation results">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="../css/style.css?v=20260924-aovguard">
+  <link rel="stylesheet" href="../css/style.css?v=20260924-aovguard-report">
   <link rel="stylesheet" href="../css/blue-theme.css?v=20260905-blue">
   <script src="../js/site-config.js?v=20260914-showreel" defer></script>
   <script src="../js/main.js?v=20260912-portfolio" defer></script>
@@ -95,26 +95,59 @@
       <article class="process-step"><span>03 /</span><h3>Ready for automation</h3><p>GUI and CLI share the same typed models, while strict reports, baseline comparison, deterministic exit codes and bounded discovery support publishing checks.</p></article>
     </section>
 
+    <section class="project-evidence wrap" aria-labelledby="workflow-title">
+      <p class="eyebrow"><span class="section-index">/</span> REVIEW WORKFLOW</p>
+      <h2 id="workflow-title">From an EXR source to reviewable evidence.</h2>
+      <ol class="aovguard-workflow">
+        <li><span>01</span><p>Select a file or render folder.</p></li>
+        <li><span>02</span><p>Inspect channels, parts and inferred AOVs.</p></li>
+        <li><span>03</span><p>Set rules, discovery limits and the expected range.</p></li>
+        <li><span>04</span><p>Analyze and filter findings by severity or text.</p></li>
+        <li><span>05</span><p>Review metrics, temporal changes and outliers.</p></li>
+        <li><span>06</span><p>Export canonical JSON or self-contained HTML.</p></li>
+        <li><span>07</span><p>Compare the result with a previous baseline.</p></li>
+      </ol>
+    </section>
+
     <section class="project-gallery document-gallery wrap" aria-label="AOVGuard interface and validation results">
       <figure>
         <a class="image-detail-link" href="../images/aovguard-current-ui.png" target="_blank" rel="noopener noreferrer" aria-label="Open the current AOVGuard interface image at full size in a new tab"><img src="../images/aovguard-current-ui.png" alt="Current AOVGuard PySide6 interface showing an EXR comparison set, colour and technical AOV summary, warning status, findings filters and report actions" width="1764" height="1325" loading="lazy"></a>
         <figcaption><h2>Current graphical interface</h2><p>Structure inspection, configurable rules, findings-first review, technical diagnostics, baseline comparison and JSON/HTML export from one PySide6 application.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
       </figure>
       <figure>
-        <a class="image-detail-link" href="../images/aovguard-report.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the sequence validation results image at full size in a new tab"><img src="../images/aovguard-report.jpg" alt="Validation evidence showing aggregate colour metrics, technical channel diagnostics and a complete sequence of 61 Maya/Arnold EXRs" width="1249" height="824" loading="lazy"></a>
-        <figcaption><h2>Sequence validation</h2><p>61 Maya/Arnold frames, 51 channels and 18 inferred AOVs, with no missing frames, duplicates or read failures. Figure 6 from the dissertation.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+        <a class="image-detail-link" href="../images/aovguard-technical-channels.png" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard technical-channel diagnostics at full size in a new tab"><img src="../images/aovguard-technical-channels.png" alt="AOVGuard Technical tab showing separate per-channel statistics for normal components and depth across a render sequence" width="2559" height="1528" loading="lazy"></a>
+        <figcaption><h2>Technical channels</h2><p>Normal components and depth receive min, average, max, non-finite and negative-value diagnostics without entering colour-luminance calculations.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+      </figure>
+      <figure>
+        <a class="image-detail-link" href="../images/aovguard-corrupt-frame.png" target="_blank" rel="noopener noreferrer" aria-label="Open the corrupt-frame diagnostic at full size in a new tab"><img src="../images/aovguard-corrupt-frame.png" alt="AOVGuard reporting one unreadable EXR as a read-frame error while completing the rest of a 302-frame sequence" width="2559" height="1527" loading="lazy"></a>
+        <figcaption><h2>Corrupt-frame recovery</h2><p>An unreadable EXR becomes a precise <code>read_frame</code> finding. The remaining 301 frames continue through analysis and the failed file stays directly accessible.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+      </figure>
+      <figure>
+        <a class="image-detail-link" href="../images/aovguard-temporal-chart.png" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard temporal luminance chart at full size in a new tab"><img src="../images/aovguard-temporal-chart.png" alt="AOVGuard Metrics tab plotting average beauty luminance over a render sequence with a median and normal range" width="1767" height="1353" loading="lazy"></a>
+        <figcaption><h2>Temporal review</h2><p>The interactive series connects luminance, median, normal range, robust outliers and read errors to the exact frame and source path.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
       </figure>
     </section>
 
+    <section class="project-evidence wrap" aria-labelledby="documentation-title">
+      <p class="eyebrow"><span class="section-index">/</span> PUBLIC DOCUMENTATION</p>
+      <h2 id="documentation-title">Documented in English and Spanish.</h2>
+      <p class="reference-intro">The public repository includes installation, GUI and CLI workflows, presets, reports, baselines, Cryptomatte handling, troubleshooting, limitations and verification evidence in both languages.</p>
+      <div class="project-actions">
+        <a class="button button-secondary" href="https://github.com/Joshmedinag/AOVGuard/blob/main/website/documentation.html" target="_blank" rel="noopener noreferrer">English documentation <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+        <a class="button button-secondary" href="https://github.com/Joshmedinag/AOVGuard/blob/main/website/documentacion.html" target="_blank" rel="noopener noreferrer">Documentación en español <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+    </section>
+
     <section class="project-evidence wrap" aria-labelledby="evidence-title">
-      <p class="eyebrow"><span class="section-index">/</span> EVALUATION</p>
-      <h2 id="evidence-title">Evidence from the MSc project.</h2>
-      <dl class="evidence-grid">
+      <p class="eyebrow"><span class="section-index">/</span> VERIFICATION</p>
+      <h2 id="evidence-title">Verified repository status.</h2>
+      <dl class="evidence-grid aovguard-evidence">
         <div><dt>Automated tests passed</dt><dd>282</dd></div>
         <div><dt>Statement / branch coverage</dt><dd>95.37%</dd></div>
+        <div><dt>CI matrices passing</dt><dd>4 / 4</dd></div>
         <div><dt>Controlled frame-first speed-up</dt><dd>3.72×</dd></div>
       </dl>
-      <p class="source-note">Current-main verification recorded in the public repository on 24 September 2026. Stable release: 1.2.1. The speed figure comes from the documented 12-frame, five-AOV controlled benchmark and is not a production-throughput claim.</p>
+      <p class="source-note">Verification recorded on 24 September 2026: Python 3.11 and 3.12 on Windows and Linux, with core and GUI paths covered by CI. Stable release: 1.2.1. The speed figure comes from the documented 12-frame, five-AOV controlled benchmark and is not a production-throughput claim.</p>
       <details class="technical-notes">
         <summary>Benchmark conditions and current scope</summary>
         <p>A controlled benchmark used 12 generated 320 × 180 frames, five AOVs and 30 repetitions per strategy on one Windows workstation. Frame-first processing reduced application-level reader calls from 60 to 12 while preserving the output checksum. Median elapsed time changed from 0.4387 s to 0.1181 s; Python-tracked peak memory increased from about 5.55 MB to 11.08 MB.</p>
