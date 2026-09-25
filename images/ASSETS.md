@@ -4,7 +4,7 @@ El material de Spaceship, R2-D2, FarmFlow, AOVGuard, Realtime Raytracer, Norwegi
 
 ## Spaceship — Lighting TD Case Study
 
-Fuentes: `CASE_STUDY_EN.md`, `final_shot_15s.mp4`, `material_detail.mp4`, nueve PNG de etapas y `spaceship_breakdown.mp4`, proporcionados por Joshua Medina el 24 de septiembre de 2026.
+Fuentes: `CASE_STUDY_EN.md`, `spaceship_1st_version.mp4`, `material_detail.mp4`, nueve PNG de etapas y `spaceship_breakdown.mp4`, proporcionados por Joshua Medina el 24 de septiembre de 2026. Joshua seleccionó `spaceship_1st_version.mp4` como vídeo principal del proyecto.
 
 | Archivo | Uso | Duración / resolución |
 | --- | --- | --- |
