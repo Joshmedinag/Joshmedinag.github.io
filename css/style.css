@@ -265,7 +265,7 @@
 .r2d2-wide-figure{margin:30px 0 0}
 .r2d2-wide-figure img{width:100%;height:auto;border:1px solid var(--line);border-radius:3px}
 .r2d2-wide-figure figcaption{padding-top:14px;font-size:.8125rem;line-height:1.6;color:var(--muted)}
-.spaceship-card .card-media img{object-position:43% center}
+.spaceship-card .card-media img{object-position:10% center}
 .project-hero.spaceship-shot img{height:auto;max-height:none;aspect-ratio:auto;object-fit:contain}
 .spaceship-final-video video{aspect-ratio:1920/858;object-fit:contain}
 .spaceship-video-grid video{aspect-ratio:1920/858;object-fit:contain}
