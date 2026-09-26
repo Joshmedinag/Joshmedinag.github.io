@@ -142,7 +142,7 @@
     const cards = Array.from(document.querySelectorAll('.project-card[data-category]'));
     const status = workToolbar.querySelector('[data-filter-status]');
     const categories = new Set(buttons.map(button => button.dataset.filter));
-    const labels = { all: 'projects', lighting: 'lighting & look development projects', pipeline: 'pipeline projects', rendering: 'rendering & FX projects' };
+    const labels = { all: '', lighting: 'lighting & look development ', cinematography: 'cinematography ', pipeline: 'pipeline ', rendering: 'rendering & FX ' };
     const filterWork = (category, updateUrl = false) => {
       if (!categories.has(category)) category = 'all';
       let visible = 0;
@@ -152,7 +152,7 @@
         if (matches) visible++;
       });
       buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === category)));
-      if (status) status.textContent = visible + ' ' + labels[category];
+      if (status) status.textContent = visible + ' ' + labels[category] + (visible === 1 ? 'project' : 'projects');
       if (updateUrl) {
         const url = new URL(window.location.href);
         if (category === 'all') url.searchParams.delete('category'); else url.searchParams.set('category', category);

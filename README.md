@@ -1,6 +1,6 @@
 # Joshua Medina — Portfolio
 
-Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las nueve páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua. La tipografía principal es **Neue Montreal**, integrada localmente con sus pesos Regular, Medium, Bold e Italic.
+Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua. La tipografía principal es **Neue Montreal**, integrada localmente con sus pesos Regular, Medium, Bold e Italic.
 
 No requiere instalar paquetes ni compilar. El sitio está publicado en [joshmedinag.github.io](https://joshmedinag.github.io/).
 
@@ -26,6 +26,7 @@ El CV público se encuentra en `assets/documents/Joshua_Medina_Lighting_Artist_C
 | `hero/hero-norwegian-01.jpg` y `hero-norwegian-02.jpg` | Carrusel de portada | Dos fotogramas de Norwegian Lakeside |
 | `hero/hero-snowbound-01.jpg` y `hero-snowbound-02.jpg` | Carrusel de portada | Dos fotogramas de Snowbound Environment |
 | `r2d2-main.jpg` | Carrusel, tarjeta y cabecera | Último estado corregido de color del breakdown de R2-D2, recortado al formato 2.35:1 |
+| `cinematography-sunset.jpg`, `cinematography-daylight.jpg`, `cinematography-portrait.jpg`, `cinematography-rimlight.jpg` | Tarjeta y galería de Cinematography Showreel | Fotogramas extraídos del showreel de acción real entregado por Joshua; conservan su imagen y proporción originales |
 | `spaceship-main.png` | Carrusel, tarjeta y cabecera | Composición final del proyecto Spaceship, estación renderizada frente a la Luna |
 | `brands/maya-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Autodesk Maya |
 | `brands/python-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Python |
@@ -95,6 +96,8 @@ El Vimeo está incrustado en `index.html`, funciona sin JavaScript y tiene un en
 Para cambiarlo más adelante, actualiza `showreel` en `js/site-config.js`. Acepta Vimeo, YouTube o una ruta a un MP4/WebM/OGV local. Si necesitas conservar la versión sin JavaScript, actualiza también el iframe y enlace estáticos en `index.html`. Los enlaces estáticos de contacto sirven igualmente como respaldo sin JavaScript.
 
 Vimeo carga recursos externos y debe permitir la inserción en el dominio donde publiques. Se utiliza el parámetro `dnt=1`; el sitio no incorpora analítica propia.
+
+El proyecto `projects/cinematography.html` incrusta [Showreel CINEMATOGRAPHY Joshua Medina](https://vimeo.com/1230422221), con un enlace alternativo a Vimeo. La portada y la galería usan cuatro fotogramas extraídos del archivo original proporcionado por Joshua; el MP4 de 547 MB no se incluye en el repositorio.
 
 Going Merry tiene un reproductor HTML nativo en `projects/going-merry.html` y un enlace directo al MP4. El archivo `assets/video/going-merry.mp4` es una copia optimizada del vídeo entregado: **53,5 segundos, 1920 × 1080, 24 fps, H.264 y audio AAC**, aproximadamente **31,6 MB** frente a los 97,3 MB del original. Incluye `faststart` para comenzar la reproducción sin descargar el archivo completo, controles, reproducción en línea en móvil y carga inicial de metadatos. No tiene autoplay. La marca de Houdini del material original se conserva.
 
