@@ -26,7 +26,7 @@ El CV público se encuentra en `assets/documents/Joshua_Medina_Lighting_Artist_C
 | `hero/hero-norwegian-01.jpg` y `hero-norwegian-02.jpg` | Carrusel de portada | Dos fotogramas de Norwegian Lakeside |
 | `hero/hero-snowbound-01.jpg` y `hero-snowbound-02.jpg` | Carrusel de portada | Dos fotogramas de Snowbound Environment |
 | `r2d2-main.jpg` | Carrusel, tarjeta y cabecera | Último estado corregido de color del breakdown de R2-D2, recortado al formato 2.35:1 |
-| `cinematography-sunset.jpg`, `cinematography-daylight.jpg`, `cinematography-portrait.jpg`, `cinematography-rimlight.jpg` | Tarjeta y galería de Cinematography Showreel | Fotogramas extraídos del showreel de acción real entregado por Joshua; conservan su imagen y proporción originales |
+| `cinematography-*.jpg` | Tarjeta y galería de Cinematography Showreel | 14 fotogramas extraídos directamente del MP4 original entregado por Joshua; las capturas de referencia no se incluyen en el sitio |
 | `spaceship-main.png` | Carrusel, tarjeta y cabecera | Composición final del proyecto Spaceship, estación renderizada frente a la Luna |
 | `brands/maya-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Autodesk Maya |
 | `brands/python-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Python |
@@ -97,7 +97,7 @@ Para cambiarlo más adelante, actualiza `showreel` en `js/site-config.js`. Acept
 
 Vimeo carga recursos externos y debe permitir la inserción en el dominio donde publiques. Se utiliza el parámetro `dnt=1`; el sitio no incorpora analítica propia.
 
-El proyecto `projects/cinematography.html` incrusta [Showreel CINEMATOGRAPHY Joshua Medina](https://vimeo.com/1230422221), con un enlace alternativo a Vimeo. La portada y la galería usan cuatro fotogramas extraídos del archivo original proporcionado por Joshua; el MP4 de 547 MB no se incluye en el repositorio.
+El proyecto `projects/cinematography.html` presenta primero [Showreel CINEMATOGRAPHY Joshua Medina](https://vimeo.com/1230422221), con un enlace alternativo a Vimeo. La portada y la galería usan 14 fotogramas extraídos del archivo original proporcionado por Joshua; el MP4 de 547 MB y las capturas de referencia no se incluyen en el repositorio.
 
 Going Merry tiene un reproductor HTML nativo en `projects/going-merry.html` y un enlace directo al MP4. El archivo `assets/video/going-merry.mp4` es una copia optimizada del vídeo entregado: **53,5 segundos, 1920 × 1080, 24 fps, H.264 y audio AAC**, aproximadamente **31,6 MB** frente a los 97,3 MB del original. Incluye `faststart` para comenzar la reproducción sin descargar el archivo completo, controles, reproducción en línea en móvil y carga inicial de metadatos. No tiene autoplay. La marca de Houdini del material original se conserva.
 
