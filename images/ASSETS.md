@@ -175,6 +175,8 @@ Fuente: `JoshuaMedina_DemoReel_2026.mp4`, 1:55,85, 1920 × 1080 y 29,97 fps.
 
 | Archivo | Tiempo aproximado | Contenido | Resolución |
 | --- | --- | --- | --- |
+| `venator/cover-from-breakdown.webp` | 00:58 del breakdown Venator | Primer plano del carrusel: composición final sobre Coruscant | 1920 × 810 |
+| `spaceship-main.png` | Frame 541 del proyecto Spaceship | Segundo plano del carrusel: estación frente a la Luna | 1920 × 858 |
 | `hero/hero-reel-01.jpg` | 00:07 | Exterior gótico con niebla | 1600 × 900 |
 | `hero/hero-reel-02.jpg` | 00:15 | Entorno industrial submarino | 1600 × 900 |
 | `hero/hero-reel-03.jpg` | 00:31 | Bosque nevado | 1600 × 900 |

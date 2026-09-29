@@ -74,7 +74,7 @@ El CV público se encuentra en `assets/documents/Joshua_Medina_Lighting_Artist_C
 | `renderman-top.png` | Galería de RenderMan | Render refinado desde arriba |
 | `renderman-wide.png` | Galería de RenderMan | Render refinado de encuadre amplio |
 
-El carrusel cambia de imagen cada **5,6 segundos** con un desplazamiento suave. Se detiene cuando la pestaña queda en segundo plano y para usuarios que prefieren movimiento reducido. Los fotogramas proceden de `JoshuaMedina_DemoReel_2026.mp4`; se recortó la franja inferior que contenía nombres de software y detalles de breakdown, sin retocar la iluminación ni el color.
+El carrusel cambia de imagen cada **5,6 segundos** con un desplazamiento suave. Se detiene cuando la pestaña queda en segundo plano y para usuarios que prefieren movimiento reducido. Sus dos primeras imágenes proceden de los planos finales de Venator y Spaceship. Siete fotogramas adicionales proceden de `JoshuaMedina_DemoReel_2026.mp4`; se recortó la franja inferior que contenía nombres de software y detalles de breakdown, sin retocar la iluminación ni el color.
 
 Los fotogramas de Going Merry y Broken Horizons y los cuatro renders refinados de RenderMan miden **1920 × 1080 px**. Las imágenes extraídas de los PDF conservan su resolución disponible, sin ampliación artificial; las galerías y cabeceras de estos proyectos muestran su proporción completa. Las tarjetas pueden recortar la imagen y la portada utiliza un recorte amplio: deja margen alrededor del sujeto. Para sustituir el placeholder de 1600 × 900 px, se recomienda una imagen panorámica de al menos 1600 px de ancho.
 
@@ -135,13 +135,13 @@ La lista completa de créditos del showreel, con tiempos y fuentes de assets, si
 
 ## Navegación y filtros
 
-La portada prioriza lighting y look development, seguida de herramientas de pipeline y rendering. Los filtros permiten ver All work, Lighting & look development, Pipeline tools o Rendering & FX. El parámetro `?category=lighting#work` conserva una selección compartible; sin JavaScript se muestran los doce proyectos.
+La portada prioriza lighting y look development, seguida de herramientas de pipeline y rendering. El carrusel principal muestra primero el plano final del Venator y después el plano de Spaceship; ambos se muestran completos en escritorio y usan un encuadre cercano como fondo en móvil. Los filtros permiten ver All work, Lighting & look development, Pipeline tools o Rendering & FX. El parámetro `?category=lighting#work` conserva una selección compartible; sin JavaScript se muestran los doce proyectos.
 
 El CV se abre directamente desde la portada y desde la navegación de cualquier página. La sección CV también permite descargarlo. Skills y Education siguen disponibles mediante enlaces en About. El menú móvil funciona en tablet y teléfono, mantiene el foco dentro de la navegación y se cierra con Escape.
 
 El carrusel incluye anterior, siguiente y pausa. La navegación manual pausa la rotación; Resume la activa de nuevo. Se inicia pausado para movimiento reducido y deja de rotar cuando sale de pantalla o la pestaña queda oculta. Las imágenes de las galerías se pueden abrir a tamaño completo.
 
-Solo se cargan dos imágenes del carrusel al inicio, y los demás fotogramas se preparan progresivamente antes de mostrarlos. La carga inicial de esos recursos baja de 2.340.821 a 370.460 bytes, un 84 %. Los vídeos secundarios conservan sus pósteres sin precargar el MP4; al reproducir otro vídeo local se pausa el anterior.
+Solo se inserta la primera imagen del carrusel en el HTML inicial; JavaScript prepara la siguiente y carga las demás progresivamente antes de mostrarlas. Los vídeos secundarios conservan sus pósteres sin precargar el MP4; al reproducir otro vídeo local se pausa el anterior.
 
 ## Información pendiente
 

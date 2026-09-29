@@ -279,6 +279,8 @@
 .project-hero.venator-shot img{height:auto;max-height:none;aspect-ratio:auto;object-fit:contain;background:#05080e}
 .project-gallery.venator-gallery img{aspect-ratio:1920/810;object-fit:contain;background:#05080e}
 .project-gallery.venator-gallery h3{font-size:1.2rem;letter-spacing:-.03em}
+.hero-image--wide{object-fit:contain;background:#030a13}
+@media(max-width:760px){.hero-image--wide{object-fit:cover}.hero-image--spaceship{object-position:7% center}}
 .cinematography-film iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;border:0;border-radius:4px;background:#020812}
 .spaceship-gallery h2{font-size:1.15rem}
 .spaceship-gallery p{font-size:.875rem}
