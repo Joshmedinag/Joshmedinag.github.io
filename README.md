@@ -135,7 +135,7 @@ La lista completa de créditos del showreel, con tiempos y fuentes de assets, si
 
 ## Navegación y filtros
 
-La portada prioriza lighting y look development, seguida de herramientas de pipeline y rendering. El carrusel principal muestra primero el plano final del Venator y después el plano de Spaceship; ambos se muestran completos en escritorio y usan un encuadre cercano como fondo en móvil. Los filtros permiten ver All work, Lighting & look development, Pipeline tools o Rendering & FX. El parámetro `?category=lighting#work` conserva una selección compartible; sin JavaScript se muestran los doce proyectos.
+La portada prioriza lighting y look development, seguida de herramientas de pipeline y rendering. Las primeras tarjetas de proyectos son Venator, Spaceship y R2-D2, en ese orden. El carrusel principal muestra primero el plano final del Venator y después el plano de Spaceship; ambos se muestran completos en escritorio y usan un encuadre cercano como fondo en móvil. Los filtros permiten ver All work, Lighting & look development, Pipeline tools o Rendering & FX. El parámetro `?category=lighting#work` conserva una selección compartible; sin JavaScript se muestran los doce proyectos.
 
 El CV se abre directamente desde la portada y desde la navegación de cualquier página. La sección CV también permite descargarlo. Skills y Education siguen disponibles mediante enlaces en About. El menú móvil funciona en tablet y teléfono, mantiene el foco dentro de la navegación y se cierra con Escape.
 
