@@ -275,21 +275,17 @@
 .spaceship-gallery figure:only-child{grid-column:auto}
 .project-gallery.spaceship-gallery img{aspect-ratio:1920/858;object-fit:contain;background:#000}
 .venator-card .card-media{background:#05080e}
-.venator-card .card-media img{object-fit:contain}
 .project-hero.venator-shot img{height:auto;max-height:none;aspect-ratio:auto;object-fit:contain;background:#05080e}
 .project-gallery.venator-gallery img{aspect-ratio:1920/810;object-fit:contain;background:#05080e}
 .project-gallery.venator-gallery h3{font-size:1.2rem;letter-spacing:-.03em}
-.hero-image--wide{object-fit:contain;background:#030a13}
-.venator-card .card-media{aspect-ratio:1920/810}
-.spaceship-card .card-media{aspect-ratio:1920/858;background:#05080e}
-.venator-card .card-media img,.spaceship-card .card-media img{position:absolute;inset:3%;width:94%;height:94%;object-fit:contain;object-position:center}
-.venator-card:hover .card-media img,.spaceship-card:hover .card-media img{transform:none}
-.hero-image--venator{width:78%;left:11%}
-.hero-image--spaceship{width:66%;left:31%}
+.hero-image--wide{inset:0;width:100%;height:100%;object-fit:cover}
+.venator-card .card-media,.spaceship-card .card-media{aspect-ratio:2.25}
+.venator-card .card-media img,.spaceship-card .card-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 @media(max-width:760px){
   .hero{min-height:790px;align-items:flex-start}
   .hero-content{padding-top:92px;padding-bottom:0}
-  .hero-image--wide{inset:auto 20px 95px;width:calc(100% - 40px);height:auto;object-fit:contain;aspect-ratio:auto;z-index:1}
+  .hero-image--wide{inset:auto 0 70px;width:100%;height:190px;object-fit:cover;z-index:1}
+  .hero-image--spaceship{object-position:18% center}
   .hero-content,.hero-bottom{z-index:2}
 }
 .cinematography-film iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;border:0;border-radius:4px;background:#020812}
