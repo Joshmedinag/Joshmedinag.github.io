@@ -280,7 +280,18 @@
 .project-gallery.venator-gallery img{aspect-ratio:1920/810;object-fit:contain;background:#05080e}
 .project-gallery.venator-gallery h3{font-size:1.2rem;letter-spacing:-.03em}
 .hero-image--wide{object-fit:contain;background:#030a13}
-@media(max-width:760px){.hero-image--wide{object-fit:cover}.hero-image--spaceship{object-position:7% center}}
+.venator-card .card-media{aspect-ratio:1920/810}
+.spaceship-card .card-media{aspect-ratio:1920/858;background:#05080e}
+.venator-card .card-media img,.spaceship-card .card-media img{position:absolute;inset:3%;width:94%;height:94%;object-fit:contain;object-position:center}
+.venator-card:hover .card-media img,.spaceship-card:hover .card-media img{transform:none}
+.hero-image--venator{width:78%;left:11%}
+.hero-image--spaceship{width:66%;left:31%}
+@media(max-width:760px){
+  .hero{min-height:790px;align-items:flex-start}
+  .hero-content{padding-top:92px;padding-bottom:0}
+  .hero-image--wide{inset:auto 20px 95px;width:calc(100% - 40px);height:auto;object-fit:contain;aspect-ratio:auto;z-index:1}
+  .hero-content,.hero-bottom{z-index:2}
+}
 .cinematography-film iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;border:0;border-radius:4px;background:#020812}
 .spaceship-gallery h2{font-size:1.15rem}
 .spaceship-gallery p{font-size:.875rem}
