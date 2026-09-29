@@ -123,6 +123,8 @@ La página R2-D2 Desert Look Development & Lighting resume el caso de estudio en
 
 La página Spaceship presenta un caso de Lighting TD de 15 segundos y 360 frames realizado con Blender, USD, Katana, RenderMan y Nuke. El vídeo principal utiliza `spaceship_1st_version.mp4`, seleccionado por Joshua; también incluye el breakdown de 25,8 segundos, un vídeo de detalle de materiales y nueve estados alineados del frame 541. Las cifras de 223 meshes, 1.080 EXR de render y 360 PNG finales proceden de `CASE_STUDY_EN.md`. La página declara que el modelo base y varias texturas son recursos suministrados, que la Luna es un elemento 2D de Nuke y que no existe una canalización ACES/OCIO documentada para el proyecto.
 
+La página Venator Above Coruscant presenta un estudio de iluminación, look development, render y composición de un solo frame (1113, 1920 × 810) en Katana, RenderMan y Nuke. Incluye el vídeo de breakdown de aproximadamente 60 segundos y quince vistas de materiales, luz, planeta y composición. La portada se extrajo directamente del plano final del vídeo proporcionado por Joshua, recortando las bandas y el rótulo del propio breakdown. Por petición de Joshua, los créditos de autores del modelo y los assets quedan fuera de la página por ahora; el texto atribuye únicamente su aportación al plano.
+
 Consulta `images/ASSETS.md` para la procedencia exacta. Los originales entregados no se modifican y los PDF completos no forman parte de los archivos públicos del sitio.
 
 ## Responsabilidades y revisión de proyectos
@@ -133,7 +135,7 @@ La lista completa de créditos del showreel, con tiempos y fuentes de assets, si
 
 ## Navegación y filtros
 
-La portada prioriza lighting y look development, seguida de herramientas de pipeline y rendering. Los filtros permiten ver All work, Lighting & look development, Pipeline tools o Rendering & FX. El parámetro `?category=lighting#work` conserva una selección compartible; sin JavaScript se muestran los diez proyectos.
+La portada prioriza lighting y look development, seguida de herramientas de pipeline y rendering. Los filtros permiten ver All work, Lighting & look development, Pipeline tools o Rendering & FX. El parámetro `?category=lighting#work` conserva una selección compartible; sin JavaScript se muestran los doce proyectos.
 
 El CV se abre directamente desde la portada y desde la navegación de cualquier página. La sección CV también permite descargarlo. Skills y Education siguen disponibles mediante enlaces en About. El menú móvil funciona en tablet y teléfono, mantiene el foco dentro de la navegación y se cierra con Escape.
 
@@ -163,11 +165,13 @@ images/*.{jpg,png}          Imágenes de proyectos y recursos de portada
 images/hero/*.jpg           Once fotogramas del demo reel y entornos en el carrusel
 images/spaceship-main.png   Plano final de Spaceship en portada y página
 images/spaceship/*.png      Nueve etapas y tableros del caso Spaceship
+images/venator/*.webp       Portada extraída del breakdown y etapas del frame
 images/ASSETS.md             Procedencia y mapa de recursos
 projects/aovguard.html       Herramienta de validación EXR/AOV
 projects/farmflow.html       Pipeline Maya/Arnold para Lighting TD
 projects/r2d2-lighting.html  Look development, lighting y comp de R2-D2
 projects/spaceship.html      Lighting TD, RenderMan AOVs y comp del plano espacial
+projects/venator.html        Lighting y composición del Venator sobre Coruscant
 projects/lighting.html       Lighting y look development
 projects/norwegian-lakeside.html  Iluminación de entorno nórdico
 projects/snow-environment.html  Iluminación de entorno nevado
@@ -179,12 +183,13 @@ assets/fonts/neue-montreal/  Neue Montreal y licencia del paquete entregado
 assets/video/going-merry.mp4  Vídeo optimizado de la simulación
 assets/video/broken-horizons.mp4  Corto grupal completo optimizado
 assets/video/spaceship-*.mp4  Plano final, breakdown y detalle de materiales
+assets/video/venator-breakdown.mp4  Breakdown del frame Venator
 assets/video/nordic-*.mp4    Cinco planos de Norwegian Lakeside
 assets/video/snow-*.mp4      Cuatro clips optimizados del entorno nevado
 .nojekyll                   Publicación estática directa
 ```
 
-La navegación y el pie se mantienen en los nueve HTML. Si cambias su estructura, actualiza todos. El contenido sigue disponible sin JavaScript; las funciones de menú móvil y actualización automática de contacto utilizan JavaScript.
+La navegación y el pie se mantienen en los trece HTML. Si cambias su estructura, actualiza todos. El contenido sigue disponible sin JavaScript; las funciones de menú móvil y actualización automática de contacto utilizan JavaScript.
 
 `.verification/` contiene herramientas de comprobación local y no se incluye en Git. Los WebP y el SVG de la primera maqueta se conservan como recursos anteriores, pero ya no se usan en los HTML.
 

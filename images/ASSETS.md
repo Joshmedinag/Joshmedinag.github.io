@@ -163,6 +163,12 @@ Fuentes: `estaciones.mp4`, `estacion3_00000000.mp4`, `nieve_breakdown.mp4` y `ni
 
 Las copias web utilizan H.264/AAC con `faststart`, CRF 25 y un límite de 3 Mb/s. Pesan aproximadamente 19,1 MB en conjunto frente a unos 391 MB de los originales. No se alteró creativamente la iluminación ni la corrección de color durante la compresión; los pósteres se extrajeron de las copias web. La página describe la aportación confirmada por Joshua: iluminación del entorno, look development, cámara cinematográfica y corrección de color, realizada con Unreal Engine y DaVinci Resolve.
 
+## Venator Above Coruscant
+
+La portada `venator/cover-from-breakdown.webp` proviene del fotograma 00:58 de `C:\Users\josha\Videos\Venator_breakdown_1.mp4`. Se recortó la zona de 1920 × 810 píxeles del plano final (sin bandas negras ni rótulo). `../assets/video/venator-breakdown.mp4` es una copia remultiplexada del vídeo entregado, con H.264/AAC y `faststart`; conserva la imagen y el audio originales.
+
+Las quince etapas `venator/{clay-neutral,base-color,roughness,clay-lit,sun-key,directional-fill,deck-bounce,right-bounce,ship-diffuse,ship-specular,planet-plate,city-emission,atmosphere,clean-master,previous-v13}-{960,1920}.webp` proceden de `D:\venator\venator_web_project\package\assets` y conservan las leyendas en inglés de `site_content.json`. La reconstrucción AOV del paquete era idéntica al máster limpio y se omitió para no presentar dos veces la misma imagen.
+
 ## Carrusel de portada
 
 Fuente: `JoshuaMedina_DemoReel_2026.mp4`, 1:55,85, 1920 × 1080 y 29,97 fps.

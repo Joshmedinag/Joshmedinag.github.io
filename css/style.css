@@ -274,6 +274,11 @@
 .spaceship-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
 .spaceship-gallery figure:only-child{grid-column:auto}
 .project-gallery.spaceship-gallery img{aspect-ratio:1920/858;object-fit:contain;background:#000}
+.venator-card .card-media{background:#05080e}
+.venator-card .card-media img{object-fit:contain}
+.project-hero.venator-shot img{height:auto;max-height:none;aspect-ratio:auto;object-fit:contain;background:#05080e}
+.project-gallery.venator-gallery img{aspect-ratio:1920/810;object-fit:contain;background:#05080e}
+.project-gallery.venator-gallery h3{font-size:1.2rem;letter-spacing:-.03em}
 .cinematography-film iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;border:0;border-radius:4px;background:#020812}
 .spaceship-gallery h2{font-size:1.15rem}
 .spaceship-gallery p{font-size:.875rem}
