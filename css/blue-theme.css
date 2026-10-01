@@ -1,16 +1,17 @@
 :root {
-  --bg: #071426;
-  --surface: #0d2038;
-  --text: #f6fbff;
-  --muted: #a9b9cb;
-  --line: #28425f;
-  --accent: #5dbbff;
+  --bg: #07111d;
+  --surface: #0f2030;
+  --text: #f4f8fa;
+  --muted: #a9bdcc;
+  --line: #294257;
+  --accent: #68c5f5;
+  --warm: #c99468;
 }
 
 ::selection { background: var(--accent); color: #04101f; }
 
 .site-header {
-  background: rgba(7, 20, 38, .9);
+  background: rgba(7, 17, 29, .9);
   border-bottom-color: rgba(151, 203, 255, .14);
 }
 
@@ -22,16 +23,16 @@
 .back-top span,
 .next-project > span { color: var(--accent); }
 
-.hero-carousel { background: #030a13; }
+.hero-carousel { background: #07111d; }
 .hero-shade {
   background:
-    linear-gradient(90deg, rgba(3, 13, 28, .86), rgba(5, 24, 43, .4) 55%, rgba(5, 20, 36, .12)),
-    linear-gradient(0deg, #071426 0%, transparent 28%, rgba(3, 12, 23, .16));
+    linear-gradient(90deg, rgba(3, 13, 26, .9) 0%, rgba(3, 13, 26, .68) 25%, rgba(3, 13, 26, .18) 58%, transparent 78%),
+    linear-gradient(0deg, #07111d 0%, transparent 24%);
 }
 .hero .eyebrow { color: #e9f5ff; }
 .hero-roles { color: #f4f9fd; }
 .hero-roles span { color: #7690a9; }
-.hero-description { color: #c1d0de; }
+.hero-description { color: #c4d4df; }
 .hero-bottom { color: #aac0d4; }
 .button-primary { color: #061525; }
 .button-primary:hover { background: #bfe6ff; }
@@ -46,12 +47,12 @@
 
 .category-tag {
   color: #eef8ff;
-  border-color: rgba(153, 205, 255, .32);
-  background: rgba(7, 28, 49, .76);
+  border-color: rgba(153, 205, 255, .18);
+  background: rgba(5, 21, 35, .8);
 }
 .card-arrow { background: rgba(5, 23, 41, .68); border-color: rgba(255, 255, 255, .24); }
 .project-card:hover .card-arrow { color: #061525; }
-.project-number { color: #83a4c2; }
+.project-number { color: var(--warm); }
 .card-description { color: #b3c3d3; }
 .card-tools { color: #91abc2; }
 .card-tools span { color: #58738c; }
@@ -64,7 +65,7 @@
 .meta-label { color: #87a6c1; }
 .education-list .education-meta { color: #b7cee1; }
 
-.contact-section { background: #eaf6ff; color: #07192b; }
+.contact-section { background: #eaf5fb; color: #0a2235; }
 .contact-section .section-index { color: #17699f; }
 .contact-bottom { border-top-color: rgba(7, 50, 83, .28); }
 .contact-links a { border-bottom-color: #245f8d; }
@@ -99,6 +100,6 @@
   .hero-shade {
     background:
       linear-gradient(90deg, rgba(3, 14, 29, .9), rgba(5, 24, 43, .5)),
-      linear-gradient(0deg, #071426, transparent 32%);
+      linear-gradient(0deg, #07111d, transparent 32%);
   }
 }

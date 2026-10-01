@@ -66,6 +66,10 @@
     const controls = document.querySelector('.carousel-controls');
     const pauseButton = controls?.querySelector('[data-carousel-pause]');
     const count = controls?.querySelector('[data-carousel-count]');
+    const projectLink = document.querySelector('[data-carousel-project]');
+    const projectIndex = projectLink?.querySelector('[data-carousel-project-index]');
+    const projectTitle = projectLink?.querySelector('[data-carousel-project-title]');
+    const projectRole = projectLink?.querySelector('[data-carousel-project-role]');
     const requestedInterval = Number.parseInt(heroCarousel.dataset.interval || '', 10);
     const interval = Number.isFinite(requestedInterval) ? Math.max(requestedInterval, 3500) : 5600;
     let current = Math.max(0, slides.findIndex(slide => slide.classList.contains('is-active')));
@@ -80,10 +84,15 @@
     };
     const updateControls = () => {
       if (count) count.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(slides.length).padStart(2, '0');
+      const slide = slides[current];
+      if (projectLink && slide?.dataset.projectHref) projectLink.href = slide.dataset.projectHref;
+      if (projectIndex) projectIndex.textContent = String(current + 1).padStart(2, '0');
+      if (projectTitle) projectTitle.textContent = slide?.dataset.projectTitle || '';
+      if (projectRole) projectRole.textContent = slide?.dataset.projectRole || '';
       if (pauseButton) {
         pauseButton.textContent = pausedByUser ? 'Resume' : 'Pause';
         pauseButton.setAttribute('aria-pressed', String(pausedByUser));
-        pauseButton.setAttribute('aria-label', (pausedByUser ? 'Resume' : 'Pause') + ' background slideshow');
+        pauseButton.setAttribute('aria-label', (pausedByUser ? 'Resume' : 'Pause') + ' featured project slideshow');
       }
     };
     const showSlide = async direction => {
@@ -141,18 +150,34 @@
     const buttons = Array.from(workToolbar.querySelectorAll('[data-filter]'));
     const cards = Array.from(document.querySelectorAll('.project-card[data-category]'));
     const status = workToolbar.querySelector('[data-filter-status]');
+    const moreContainer = document.querySelector('[data-more-work-container]');
+    const moreButton = moreContainer?.querySelector('[data-more-work]');
+    const moreLabel = moreButton?.querySelector('[data-more-work-label]');
+    const moreArrow = moreButton?.querySelector('[data-more-work-arrow]');
+    const allWorkLabel = workToolbar.querySelector('[data-all-work-label]');
+    const allWorkCount = workToolbar.querySelector('[data-all-work-count]');
     const categories = new Set(buttons.map(button => button.dataset.filter));
     const labels = { all: '', lighting: 'lighting & look development ', cinematography: 'cinematography ', pipeline: 'pipeline ', rendering: 'rendering & FX ' };
+    let currentCategory = 'all';
+    let expanded = false;
     const filterWork = (category, updateUrl = false) => {
       if (!categories.has(category)) category = 'all';
+      currentCategory = category;
       let visible = 0;
       cards.forEach(card => {
         const matches = category === 'all' || card.dataset.category.split(' ').includes(category);
-        card.hidden = !matches;
-        if (matches) visible++;
+        const show = matches && (category !== 'all' || expanded || card.hasAttribute('data-featured'));
+        card.hidden = !show;
+        if (show) visible++;
       });
       buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === category)));
-      if (status) status.textContent = visible + ' ' + labels[category] + (visible === 1 ? 'project' : 'projects');
+      if (allWorkLabel) allWorkLabel.textContent = expanded ? 'All work' : 'Featured work';
+      if (allWorkCount) allWorkCount.textContent = String(expanded ? cards.length : cards.filter(card => card.hasAttribute('data-featured')).length);
+      if (status) status.textContent = category === 'all' && !expanded ? visible + ' featured projects shown' : visible + ' ' + labels[category] + (visible === 1 ? 'project' : 'projects');
+      if (moreContainer) moreContainer.hidden = category !== 'all' || cards.every(card => card.hasAttribute('data-featured'));
+      if (moreButton) moreButton.setAttribute('aria-expanded', String(expanded));
+      if (moreLabel) moreLabel.textContent = expanded ? 'Show featured projects' : 'View all ' + cards.length + ' projects';
+      if (moreArrow) moreArrow.textContent = expanded ? '↑' : '↓';
       if (updateUrl) {
         const url = new URL(window.location.href);
         if (category === 'all') url.searchParams.delete('category'); else url.searchParams.set('category', category);
@@ -161,6 +186,7 @@
     };
     workToolbar.hidden = false;
     buttons.forEach(button => button.addEventListener('click', () => filterWork(button.dataset.filter, true)));
+    moreButton?.addEventListener('click', () => { expanded = !expanded; filterWork(currentCategory); });
     filterWork(new URLSearchParams(window.location.search).get('category') || 'all');
   }
 
