@@ -165,7 +165,7 @@ Las copias web utilizan H.264/AAC con `faststart`, CRF 25 y un límite de 3 Mb/s
 
 ## Venator Above Coruscant
 
-La portada `venator/cover-from-breakdown.webp` proviene del fotograma 00:58 de `C:\Users\josha\Videos\Venator_breakdown_1.mp4`. Se recortó la zona de 1920 × 810 píxeles del plano final (sin bandas negras ni rótulo). `../assets/video/venator-breakdown.mp4` es una copia remultiplexada del vídeo entregado, con H.264/AAC y `faststart`; conserva la imagen y el audio originales.
+La portada `venator/cover-from-breakdown.webp` proviene del fotograma 00:58 de `C:\Users\josha\Videos\Venator_breakdown_1.mp4`. Se recortó la zona de 1920 × 810 píxeles del plano final (sin bandas negras ni rótulo). El vídeo publicado `../assets/video/venator-breakdown.mp4` fue sustituido por `C:\Users\josha\Videos\venator_breakdown_2.mp4`: dura 61,92 segundos, usa H.264/AAC a 1920 × 1080 y 25 fps, y fue remultiplexado con `faststart` sin recomprimir la imagen ni el audio.
 
 Las quince etapas `venator/{clay-neutral,base-color,roughness,clay-lit,sun-key,directional-fill,deck-bounce,right-bounce,ship-diffuse,ship-specular,planet-plate,city-emission,atmosphere,clean-master,previous-v13}-{960,1920}.webp` proceden de `D:\venator\venator_web_project\package\assets` y conservan las leyendas en inglés de `site_content.json`. La reconstrucción AOV del paquete era idéntica al máster limpio y se omitió para no presentar dos veces la misma imagen.
 
