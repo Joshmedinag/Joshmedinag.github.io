@@ -86,7 +86,7 @@ No renombres un PNG a `.jpg`: expórtalo realmente como JPEG. Después de sustit
 
 - Correo: **Joshalexmedina@hotmail.com**
 - GitHub: [Joshmedinag](https://github.com/Joshmedinag)
-- Vimeo/showreel principal: [Showreel Lighting Joshua Medina 2026](https://vimeo.com/1226809535)
+- Vimeo/showreel principal: [Joshua Medina — Principal Showreel 2026](https://vimeo.com/1232872369)
 - LinkedIn: [Joshua Alexander Medina Gracia](https://www.linkedin.com/in/joshua-alexander-medina-gracia-3561981a3/).
 
 Los datos públicos de contacto se limitan al correo y los enlaces profesionales. No se muestran teléfono, dirección particular ni ubicación personal.
@@ -158,7 +158,7 @@ Las fechas desconocidas y los enlaces sin proporcionar se omiten del sitio. AOVG
 ```text
 index.html                  Portada y secciones profesionales
 css/style.css               Diseño y adaptación a móvil
-css/blue-theme.css          Paleta azul y blanca aplicada al sitio
+css/home-experience.css     Sistema visual y composición de la portada
 js/site-config.js           Datos de contacto y reel
 js/main.js                  Menú, sección activa y reproductor
 images/*.{jpg,png}          Imágenes de proyectos y recursos de portada

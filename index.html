@@ -3,35 +3,39 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07111D">
-  <meta name="description" content="Joshua Medina — Lighting TD and look development artist. Cinematic CG lighting, RenderMan studies and Python tools for reliable VFX rendering.">
-  <title>Joshua Medina — Lighting TD &amp; Look Development Artist</title>
+  <meta name="theme-color" content="#09090b">
+  <meta name="description" content="Joshua Medina — Lighting TD, Compositor and Technical Artist. Cinematic CG lighting, compositing and tools for reliable VFX rendering.">
+  <title>Joshua Medina — Lighting TD · Compositor · Technical Artist</title>
   <link rel="canonical" href="https://joshmedinag.github.io/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Joshua Medina — Lighting TD &amp; Look Development Artist">
-  <meta property="og:description" content="Cinematic CG lighting and look development, with Python tools for reliable VFX rendering.">
+  <meta property="og:title" content="Joshua Medina — Lighting TD · Compositor · Technical Artist">
+  <meta property="og:description" content="Cinematic CG lighting, compositing and technical art, with Python tools for reliable VFX rendering.">
   <meta property="og:url" content="https://joshmedinag.github.io/">
   <meta property="og:image" content="https://joshmedinag.github.io/images/venator/cover-from-breakdown.webp">
   <meta property="og:image:alt" content="Venator above Coruscant in Joshua Medina's final lighting and compositing study">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/style.css?v=20261001-editorial">
-  <link rel="stylesheet" href="css/blue-theme.css?v=20261001-editorial">
-  <script src="js/site-config.js?v=20260914-showreel" defer></script>
-  <script src="js/main.js?v=20261001-editorial" defer></script>
+  <link rel="stylesheet" href="css/home-experience.css?v=20261004-portfolio">
+  <script src="js/site-config.js?v=20261004-main-reel" defer></script>
+  <script src="js/main.js?v=20261004-contact" defer></script>
+  <script src="js/home-experience.js?v=20261004-portfolio" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="wordmark" href="#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <p class="availability"><span aria-hidden="true"></span> Available · 2026</p>
     <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
     <nav class="navigation" id="primary-navigation" aria-label="Main navigation">
       <a href="#home" class="active" aria-current="location">Home</a>
       <a href="#showreel">Showreel</a>
       <a href="#work">Selected work</a>
+      <a href="#pipeline-lab">Pipeline</a>
       <a href="#about">About</a>
       <a class="nav-cv" href="assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="View Joshua Medina's CV PDF in a new tab">CV <span aria-hidden="true">↗</span></a>
       <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+      <button class="command-trigger" type="button" data-command-open aria-label="Open project and navigation search">Search <kbd>⌘K</kbd></button>
     </nav>
   </header>
   <main id="main">
@@ -45,15 +49,15 @@
       </div>
       <div class="hero-shade"></div>
       <div class="hero-content wrap">
-        <p class="eyebrow"><span class="accent-line"></span> LIGHTING · LOOK DEVELOPMENT · PIPELINE</p>
-        <h1 id="hero-title">Joshua<br>Medina<span class="title-dot">.</span></h1>
-        <p class="hero-roles">Lighting TD <span>|</span> Look Development Artist</p>
-        <p class="hero-description">Cinematic lighting, shading and final-frame craft. <br>Python tools for reliable VFX rendering pipelines.</p>
+        <p class="eyebrow"><span class="accent-line"></span> Portfolio 2026 · Lighting / compositing / pipeline</p>
+        <h1 id="hero-title">Joshua Medina<br><em>Lighting TD <span class="hero-role-segment">- Compositor</span> <span class="hero-role-segment">- Technical Artist.</span></em></h1>
+        <p class="hero-description">Crafting cinematic light, final-frame composites and reliable tools for high-end visual effects.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#showreel">Watch showreel <span aria-hidden="true">▷</span></a>
-          <a class="button button-secondary" href="assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="View CV PDF in a new tab">View CV <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="View CV PDF in a new tab">CV [PDF ↗]</a>
         </div>
       </div>
+      <div class="hero-telemetry" aria-hidden="true"><span>[SCENE: 01 // ORBIT OVER CORUSCANT]</span><span>[OPTICS: ANAMORPHIC 50MM · T2.0]</span><span>[RENDER: KATANA + RENDERMAN · 32-BIT EXR]</span><span>[COLOR: ACESCG]</span></div>
       <div class="hero-bottom wrap">
         <a class="hero-project-link" data-carousel-project href="projects/venator.html">
           <span class="hero-project-kicker">FEATURED PROJECT <span data-carousel-project-index>01</span></span>
@@ -71,14 +75,21 @@
     </section>
 
     <section class="section reel-section wrap" id="showreel" aria-labelledby="reel-title">
-      <div class="section-heading">
-        <div><p class="eyebrow"><span class="section-index">01 /</span> IN MOTION</p><h2 id="reel-title">Showreel<span class="muted-dot">.</span></h2></div>
-        <p class="section-intro">Lighting, look development<br> and visual effects.</p>
+      <div class="section-heading reel-heading">
+        <div><h2 id="reel-title">Showreel<span class="muted-dot">.</span></h2></div>
+        <p class="section-intro">The principal reel: lighting, look development, cinematography and visual effects.</p>
       </div>
-      <div class="reel-stage" id="reel-stage">
-        <iframe src="https://player.vimeo.com/video/1226809535?dnt=1" title="Joshua Medina — Lighting and VFX Showreel 2026" width="1600" height="900" allow="fullscreen; picture-in-picture; encrypted-media" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <div class="reel-theater" data-reel-theater>
+        <div class="reel-stage" id="reel-stage">
+          <iframe src="https://player.vimeo.com/video/1232872369?dnt=1" title="Joshua Medina — Principal Showreel 2026" width="1600" height="900" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="reel-rail">
+          <span>Principal reel · 2026</span>
+          <span class="reel-shortcuts"><kbd>Space</kbd> Play / pause <kbd>F</kbd> Fullscreen <kbd>J</kbd><kbd>L</kbd> −/+ 5 sec</span>
+          <button class="theater-toggle" type="button" data-theater-toggle aria-pressed="false">Darkroom mode</button>
+        </div>
       </div>
-      <div class="reel-links"><a class="inline-link" data-reel-link href="https://vimeo.com/1226809535" target="_blank" rel="noopener noreferrer">Watch on Vimeo <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
+      <div class="reel-links"><a class="inline-link" data-reel-link href="https://vimeo.com/1232872369" target="_blank" rel="noopener noreferrer">Watch on Vimeo <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
       <div class="reel-project-links" aria-label="Project responsibilities and breakdowns">
         <p class="eyebrow">EXPLORE THE PROJECTS</p>
         <p>See the work and my specific contribution in these case studies.</p>
@@ -91,7 +102,7 @@
 
     <section class="section work-section wrap" id="work" aria-labelledby="work-title">
       <div class="section-heading">
-        <div><p class="eyebrow"><span class="section-index">02 /</span> SELECTED PROJECTS</p><h2 id="work-title">Behind the frame<span class="muted-dot">.</span></h2></div>
+        <div><h2 id="work-title">Behind the frame<span class="muted-dot">.</span></h2></div>
         <p class="section-intro">Shot lighting, look development<br> and the tools behind the render.</p>
       </div>
       <div class="work-toolbar" data-work-filters hidden>
@@ -226,21 +237,92 @@
       <div class="more-work-actions" data-more-work-container hidden><button type="button" data-more-work aria-controls="project-grid" aria-expanded="false"><span data-more-work-label>View all 12 projects</span><span aria-hidden="true" data-more-work-arrow>↓</span></button></div>
     </section>
 
+    <section class="section comparison-section wrap" id="comparisons" aria-labelledby="comparisons-title">
+      <div class="section-heading comparison-heading">
+        <div><h2 id="comparisons-title">From diagnostic<br>to final frame<span class="tungsten-dot">.</span></h2></div>
+        <p class="section-intro">Drag each playhead to inspect how material, light and compositing shape the image.</p>
+      </div>
+      <div class="comparison-grid">
+        <article class="comparison-card comparison-card--wide">
+          <div class="shot-compare" data-compare style="--compare-position:50%" tabindex="0" role="slider" aria-label="Compare neutral clay and final Venator composite" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+            <img class="compare-before" src="images/venator/clay-neutral-1920.webp" alt="Neutral clay render of the Venator" width="1920" height="810" loading="lazy">
+            <div class="compare-after"><img src="images/venator/clean-master-1920.webp" alt="Final lit Venator composite above Coruscant" width="1920" height="810" loading="lazy"></div>
+            <span class="compare-label compare-label--before">[PASS: FINAL COMP]</span><span class="compare-label compare-label--after">[PASS: NEUTRAL CLAY]</span>
+            <span class="compare-handle" aria-hidden="true"><i></i></span>
+          </div>
+          <div class="comparison-copy"><p><span>01</span> Venator Above Coruscant</p><a href="projects/venator.html">Open breakdown ↗</a></div>
+        </article>
+        <article class="comparison-card comparison-card--wide">
+          <div class="shot-compare" data-compare style="--compare-position:50%" tabindex="0" role="slider" aria-label="Compare clay and final Spaceship composite" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+            <img class="compare-before" src="images/spaceship/01-clay.png" alt="Clay render of the Spaceship station" width="1920" height="858" loading="lazy">
+            <div class="compare-after"><img src="images/spaceship/09-final-composite.png" alt="Final Spaceship and Moon composite" width="1920" height="858" loading="lazy"></div>
+            <span class="compare-label compare-label--before">[PASS: FINAL COMP]</span><span class="compare-label compare-label--after">[PASS: CLAY]</span>
+            <span class="compare-handle" aria-hidden="true"><i></i></span>
+          </div>
+          <div class="comparison-copy"><p><span>02</span> Spaceship</p><a href="projects/spaceship.html">Open breakdown ↗</a></div>
+        </article>
+        <article class="comparison-card comparison-card--portrait">
+          <div class="shot-compare shot-compare--paired" data-compare style="--compare-position:50%" tabindex="0" role="slider" aria-label="Compare R2-D2 render and final composite" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+            <img class="compare-before" src="images/r2d2/render_vs_comp.jpg" alt="R2-D2 render before compositing" width="780" height="540" loading="lazy">
+            <div class="compare-after"><img src="images/r2d2/render_vs_comp.jpg" alt="R2-D2 final composite" width="780" height="540" loading="lazy"></div>
+            <span class="compare-label compare-label--before">[PASS: FINAL COMP]</span><span class="compare-label compare-label--after">[PASS: RAW RENDER]</span>
+            <span class="compare-handle" aria-hidden="true"><i></i></span>
+          </div>
+          <div class="comparison-copy"><p><span>03</span> R2-D2 Desert Look Development</p><a href="projects/r2d2-lighting.html">Open breakdown ↗</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section pipeline-lab wrap" id="pipeline-lab" aria-labelledby="pipeline-title">
+      <div class="pipeline-shell">
+        <header class="pipeline-header">
+          <div><h2 id="pipeline-title">Pipeline lab<span class="title-dot">.</span></h2></div>
+          <p>Tools designed around the failures artists meet between scene assembly, render and review.</p>
+        </header>
+        <div class="pipeline-tabs" role="tablist" aria-label="Pipeline tools">
+          <button type="button" role="tab" id="tab-aovguard" aria-controls="panel-aovguard" aria-selected="true" data-pipeline-tab="aovguard"><span>01</span>AOVGuard</button>
+          <button type="button" role="tab" id="tab-farmflow" aria-controls="panel-farmflow" aria-selected="false" tabindex="-1" data-pipeline-tab="farmflow"><span>02</span>FarmFlow</button>
+        </div>
+        <div class="pipeline-panel is-active" role="tabpanel" id="panel-aovguard" aria-labelledby="tab-aovguard" data-pipeline-panel="aovguard">
+          <div class="pipeline-visual"><img src="images/aovguard-current-ui.png" alt="AOVGuard desktop interface showing EXR sequence validation findings" width="2559" height="1527" loading="lazy"></div>
+          <div class="pipeline-console">
+            <div class="console-status"><span class="status-lamp"></span><strong>Sequence diagnostics</strong><small>EXR / AOV QA</small></div>
+            <div class="console-tabs" role="tablist" aria-label="AOVGuard technical views"><button type="button" role="tab" aria-selected="true" data-console-tab="channels">Channels</button><button type="button" role="tab" aria-selected="false" data-console-tab="python">Python engine</button><button type="button" role="tab" aria-selected="false" data-console-tab="architecture">Architecture</button></div>
+            <div class="console-view" data-console-view="channels"><ul class="channel-tree"><li><span>RGBA</span> R · G · B · A</li><li><span>Lighting</span> diffuse · specular · emission</li><li><span>Utility</span> N · Z · cryptomatte</li><li><span>State</span> 56 channels · 17 AOVs</li></ul></div>
+            <div class="console-view" data-console-view="python" hidden><div class="code-head"><span>analysis.py</span><button type="button" data-copy-code>Copy code</button></div><pre><code data-code-source><span class="code-line"><i>01</i>from aovguard.core.analysis import analyze</span>
+<span class="code-line"><i>02</i>from aovguard.core.models import AnalysisOptions</span>
+<span class="code-line"><i>03</i>from aovguard.io.reader import OpenEXRReader</span>
+<span class="code-line"><i>04</i></span>
+<span class="code-line"><i>05</i>report = analyze(source, AnalysisOptions(),</span>
+<span class="code-line"><i>06</i>                 OpenEXRReader())</span></code></pre></div>
+            <div class="console-view" data-console-view="architecture" hidden><div class="architecture-flow"><span>EXR source</span><b>→</b><span>Inspect</span><b>→</b><span>Rules</span><b>→</b><span>Report</span></div></div>
+            <a href="projects/aovguard.html">Inspect AOVGuard ↗</a>
+          </div>
+        </div>
+        <div class="pipeline-panel" role="tabpanel" id="panel-farmflow" aria-labelledby="tab-farmflow" data-pipeline-panel="farmflow" hidden>
+          <div class="pipeline-visual pipeline-visual--farm"><img src="images/farmflow-sequence-verified.png" alt="FarmFlow verified render sequence output" width="1919" height="1020" loading="lazy"></div>
+          <div class="pipeline-console">
+            <div class="console-status"><span class="status-lamp"></span><strong>Local render orchestration</strong><small>Maya / Arnold</small></div>
+            <p>Packages scene validation, render execution and output verification into a repeatable artist-facing workflow.</p>
+            <ul><li><span>Input</span> Maya scene and render settings</li><li><span>Process</span> Validate · submit · monitor</li><li><span>Output</span> Verified image sequence</li></ul>
+            <a href="projects/farmflow.html">Inspect FarmFlow ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section about-section" id="about" aria-labelledby="about-title">
       <div class="wrap about-grid">
-        <div><p class="eyebrow"><span class="section-index">03 /</span> ABOUT ME</p><h2 id="about-title">A cinematographer's eye.<br>A technical mindset<span class="title-dot">.</span></h2></div>
-        <div class="about-copy">
-          <p class="large-copy">I'm Joshua, a Lighting TD and look development artist with a cinematographer's eye and a background in pipeline development.</p>
-          <p>I worked as an Assistant Cinematographer / Assistant DoP at Lightoon Films in Mexico. That experience shaped how I approach light, composition, colour and storytelling.</p>
-          <p>I specialised in CG lighting at Lost Boys | School of VFX, then continued into rendering, simulation and pipeline development through my MSc at Bournemouth University. I enjoy creating cinematic images while understanding and improving the systems behind them.</p>
-          <nav class="about-links" aria-label="Background and qualifications"><a href="projects/cinematography.html">Cinematography showreel ↗</a><a href="#skills">Skills ↓</a><a href="#education">Education ↓</a><a href="#cv">CV &amp; experience ↓</a></nav>
-          <div class="career-details"><h3>Opportunities I'm interested in</h3><p>Junior Lighting Artist · Lighting TD · Lighting &amp; Compositing Artist · Pipeline TD · Assistant Technical Director / ATD · Technical Artist</p></div>
+        <div class="about-lead"><h2 id="about-title">A visual artist's <em>eye.</em><br>A technical mindset.</h2><p>I'm Joshua, a Lighting TD, Compositor and Technical Artist who approaches every shot through both image-making and production systems.</p><blockquote>“Light is the architecture of the frame and the emotional anchor of the story.”</blockquote></div>
+        <div class="perspective-grid">
+          <article><span class="perspective-number">A /</span><h3>Cinematography</h3><p>Experience as an Assistant Cinematographer / Assistant DoP at Lightoon Films shaped how I read motivated light, composition, colour and story.</p><a href="projects/cinematography.html">View cinematography reel ↗</a></article>
+          <article><span class="perspective-number">B /</span><h3>Lighting &amp; pipeline</h3><p>Specialised CG lighting study at Lost Boys and MSc work at Bournemouth University connect final-frame craft with rendering, simulation and pipeline development.</p><a href="#pipeline-lab">Explore production tools ↑</a></article>
         </div>
       </div>
     </section>
 
     <section class="section wrap" id="skills" aria-labelledby="skills-title">
-      <div class="section-heading"><div><p class="eyebrow"><span class="section-index">04 /</span> THE TOOLKIT</p><h2 id="skills-title">From lighting to pipeline<span class="muted-dot">.</span></h2></div></div>
+      <div class="section-heading"><div><h2 id="skills-title">From lighting to pipeline<span class="muted-dot">.</span></h2></div></div>
       <div class="skills-grid">
         <div class="skill-group"><span class="skill-symbol" aria-hidden="true">◐</span><h3>Lighting &amp; compositing</h3><p>Light, materials and the final frame.</p><ul class="skill-tags"><li>Katana</li><li>Arnold</li><li>Nuke</li><li>Maya</li><li>RenderMan</li><li>Unreal Engine</li><li>DaVinci Resolve</li></ul><a class="skill-evidence" href="projects/r2d2-lighting.html">Lighting TD case study <span aria-hidden="true">↗</span></a></div>
         <div class="skill-group"><span class="skill-symbol" aria-hidden="true">≋</span><h3>FX &amp; scene assembly</h3><p>Simulation, assembly and rendering.</p><ul class="skill-tags"><li>Houdini</li><li>FLIP</li><li>Solaris</li><li>Karma</li><li>USD</li><li>VDB</li></ul><a class="skill-evidence" href="projects/going-merry.html">Simulation to scene assembly <span aria-hidden="true">↗</span></a></div>
@@ -249,7 +331,7 @@
     </section>
 
     <section class="section education-section wrap" id="education" aria-labelledby="education-title">
-      <div><p class="eyebrow"><span class="section-index">05 /</span> THE FOUNDATION</p><h2 id="education-title">Education<span class="muted-dot">.</span></h2></div>
+      <div><h2 id="education-title">Education<span class="muted-dot">.</span></h2></div>
       <div class="education-list">
         <article><span class="education-number">01</span><div><h3>MSc Computer Animation &amp; Visual Effects</h3><p>Bournemouth University</p><p class="education-meta">September 2025 – 2026</p><details class="education-details"><summary>Relevant study areas</summary><ul><li>Animation Software Engineering</li><li>CGI Tools &amp; CGI Techniques</li><li>Simulation and Rendering</li><li>Pipeline and Technical Direction</li><li>Group Project &amp; Industry Brief</li><li>Master's Project</li></ul></details></div></article>
         <article><span class="education-number">02</span><div><h3>Lighting Artist</h3><p>Lost Boys | School of VFX</p><p class="education-meta">2023 – 2024 · Completed</p><p class="education-tools">Six-month specialised programme · Katana · Arnold · Nuke</p></div></article>
@@ -258,9 +340,9 @@
     </section>
 
     <section class="section cv-section wrap" id="cv" aria-labelledby="cv-title">
-      <div><p class="eyebrow"><span class="section-index">06 /</span> CURRICULUM VITAE</p><h2 id="cv-title">Experience, skills<br>and selected work<span class="muted-dot">.</span></h2></div>
+      <div><h2 id="cv-title">Experience, skills<br>and selected work<span class="muted-dot">.</span></h2></div>
       <div class="cv-panel">
-        <p class="cv-kicker">JOSHUA MEDINA · LIGHTING ARTIST</p>
+        <p class="cv-kicker">JOSHUA MEDINA · LIGHTING TD / COMPOSITOR / TECHNICAL ARTIST</p>
         <h3>CV 2026</h3>
         <p>Professional experience, lighting and pipeline projects, core skills and education in a concise one-page document.</p>
         <div class="cv-meta" aria-hidden="true"><span>PDF</span><span>1 PAGE</span><span>UPDATED 2026</span></div>
@@ -271,15 +353,14 @@
 
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
       <div class="wrap">
-        <p class="eyebrow"><span class="section-index">07 /</span> GET IN TOUCH</p>
-        <div class="contact-heading"><h2 id="contact-title">Let’s talk<br>lighting &amp; pipeline<span class="title-dot">.</span></h2><span class="contact-arrow" aria-hidden="true">↗</span></div>
+        <div class="contact-heading"><h2 id="contact-title">Let’s talk<br>lighting &amp; compositing<span class="title-dot">.</span></h2><span class="contact-arrow" aria-hidden="true">↗</span></div>
         <div class="contact-bottom">
-          <p>For lighting, look development and pipeline roles.</p>
+          <p>For Lighting TD, Compositor and Technical Artist roles.</p>
           <div class="contact-links" data-contact-links>
-            <a href="mailto:Joshalexmedina@hotmail.com">Joshalexmedina@hotmail.com ↗</a>
+            <button class="email-copy" type="button" data-copy-email data-email="Joshalexmedina@hotmail.com">Joshalexmedina@hotmail.com <span>↗</span></button>
             <a href="https://www.linkedin.com/in/joshua-alexander-medina-gracia-3561981a3/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">LinkedIn ↗</a>
             <a href="https://github.com/Joshmedinag" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            <a href="https://vimeo.com/1226809535" target="_blank" rel="noopener noreferrer">Vimeo ↗</a>
+            <a href="https://vimeo.com/1232872369" target="_blank" rel="noopener noreferrer">Vimeo ↗</a>
           </div>
         </div>
       </div>
@@ -290,5 +371,13 @@
     <p>© <span data-year>2026</span> Joshua Medina</p>
     <a class="back-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
   </footer>
+  <dialog class="command-palette" data-command-palette aria-labelledby="command-title">
+    <div class="command-box">
+      <div class="command-search"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 5 5"></path></svg><label class="sr-only" for="command-input" id="command-title">Search projects and navigation</label><input id="command-input" data-command-input type="search" autocomplete="off" placeholder="Search projects, tools or actions…"><kbd>Esc</kbd></div>
+      <p class="command-status" data-command-status aria-live="polite">Quick navigation</p>
+      <div class="command-results" data-command-results role="listbox"></div>
+    </div>
+  </dialog>
+  <div class="copy-toast" data-copy-toast role="status" aria-live="polite" hidden>[COPIED TO CLIPBOARD]</div>
 </body>
 </html>

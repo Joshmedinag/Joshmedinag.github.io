@@ -196,9 +196,15 @@
   document.querySelectorAll('[data-contact-links]').forEach(container => {
     const links = [];
     if (typeof config.email === 'string' && /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(config.email)) {
-      const email = document.createElement('a');
-      email.href = 'mailto:' + encodeURIComponent(config.email);
-      email.textContent = config.email + ' ↗';
+      const emailCopy = container.querySelector('[data-copy-email]');
+      const email = emailCopy || document.createElement('a');
+      if (emailCopy) {
+        email.dataset.email = config.email;
+        email.replaceChildren(document.createTextNode(config.email + ' '), Object.assign(document.createElement('span'), { textContent: '↗' }));
+      } else {
+        email.href = 'mailto:' + encodeURIComponent(config.email);
+        email.textContent = config.email + ' ↗';
+      }
       links.push(email);
     }
     ['linkedin', 'github', 'vimeo'].forEach(key => {
