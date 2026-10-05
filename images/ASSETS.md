@@ -4,20 +4,20 @@ El material de Spaceship, R2-D2, FarmFlow, AOVGuard, Realtime Raytracer, Norwegi
 
 ## Spaceship — Lighting TD Case Study
 
-Fuentes: `CASE_STUDY_EN.md`, `spaceship_1st_version.mp4`, `material_detail.mp4`, nueve PNG de etapas y `spaceship_breakdown.mp4`, proporcionados por Joshua Medina el 24 de septiembre de 2026. Joshua seleccionó `spaceship_1st_version.mp4` como vídeo principal del proyecto.
+Fuentes: `CASE_STUDY_EN.md`, `spaceship_1st_version.mp4`, `material_detail.mp4`, nueve PNG de etapas y `spaceship_breakdown_2.mp4`, proporcionados por Joshua Medina. Joshua seleccionó `spaceship_1st_version.mp4` como vídeo principal del proyecto y entregó el breakdown actualizado el 4 de octubre de 2026.
 
 | Archivo | Uso | Duración / resolución |
 | --- | --- | --- |
-| `spaceship-main.png` | Carrusel, tarjeta, cabecera y póster del plano final | 1920 × 858 |
+| `spaceship-main.png` | Carrusel, tarjeta, cabecera y póster; plano final limpio extraído del breakdown actualizado | 1920 × 810 |
 | `spaceship/01-clay.png` a `09-final-composite.png` | Nueve estados alineados del frame 541 | 1920 × 858 |
 | `spaceship/material-stages.png` | Tablero 3 × 3 reconstruido con todas las etiquetas en inglés | 1920 × 2088 |
 | `spaceship/nine-stages.png` | Tablero vertical y póster del breakdown, reconstruido en inglés | 1920 × 2435 |
 | `spaceship/material-detail-en-1.png` a `material-detail-en-3.png` | Tres placas en inglés que forman el vídeo de detalle | 1920 × 858 |
 | `../assets/video/spaceship-final.mp4` | Plano final | 15 s · 1920 × 858 |
-| `../assets/video/spaceship-breakdown.mp4` | Breakdown entregado por Joshua | 25,8 s · 1920 × 1080 |
+| `../assets/video/spaceship-breakdown.mp4` | Breakdown actualizado entregado por Joshua | 14,08 s · 1920 × 1080 · 25 fps |
 | `../assets/video/spaceship-material-detail.mp4` | Revisión de materiales reconstruida con títulos, descripciones y etiquetas en inglés | 1920 × 858 |
 
-Las nueve imágenes individuales se copiaron sin recomprimir. Los dos tableros y el vídeo corto de materiales se reconstruyeron a partir de esas imágenes con Neue Montreal y textos íntegramente en inglés; no se alteró el render de cada etapa. La información técnica se resume del caso de estudio en inglés: 360 frames, 223 meshes USD, 1.080 EXR de render y 360 PNG finales. La página distingue el trabajo de Joshua de los recursos suministrados: la geometría base y varios paquetes de texturas no fueron creados por él. La Luna y el campo estelar forman una placa 2D creada en Nuke; no se atribuye parallax 3D. El proyecto no documenta una canalización ACES/OCIO. Las primeras cuatro etapas del breakdown son renders diagnósticos controlados, no capturas históricas del desarrollo.
+Las nueve imágenes individuales se copiaron sin recomprimir. Los dos tableros y el vídeo corto de materiales se reconstruyeron a partir de esas imágenes con Neue Montreal y textos íntegramente en inglés; no se alteró el render de cada etapa. El breakdown publicado se remultiplexó con `faststart` sin recomprimir la imagen ni el audio. La nueva portada procede de su plano final en 00:13,2; se recortaron únicamente las bandas negras y el rótulo para conservar un área limpia de 1920 × 810. La información técnica se resume del caso de estudio en inglés: 360 frames, 223 meshes USD, 1.080 EXR de render y 360 PNG finales. La página distingue el trabajo de Joshua de los recursos suministrados: la geometría base y varios paquetes de texturas no fueron creados por él. La Luna y el campo estelar forman una placa 2D creada en Nuke; no se atribuye parallax 3D. El proyecto no documenta una canalización ACES/OCIO. Las primeras cuatro etapas del breakdown son renders diagnósticos controlados, no capturas históricas del desarrollo.
 
 ## R2-D2 Desert Look Development & Lighting
 
@@ -176,7 +176,7 @@ Fuente: `JoshuaMedina_DemoReel_2026.mp4`, 1:55,85, 1920 × 1080 y 29,97 fps.
 | Archivo | Tiempo aproximado | Contenido | Resolución |
 | --- | --- | --- | --- |
 | `venator/cover-from-breakdown.webp` | 00:58 del breakdown Venator | Primer plano del carrusel: composición final sobre Coruscant | 1920 × 810 |
-| `spaceship-main.png` | Frame 541 del proyecto Spaceship | Segundo plano del carrusel: estación frente a la Luna | 1920 × 858 |
+| `spaceship-main.png` | 00:13,2 del breakdown actualizado | Segundo plano del carrusel: estación frente a la Luna | 1920 × 810 |
 | `hero/hero-reel-01.jpg` | 00:07 | Exterior gótico con niebla | 1600 × 900 |
 | `hero/hero-reel-02.jpg` | 00:15 | Entorno industrial submarino | 1600 × 900 |
 | `hero/hero-reel-03.jpg` | 00:31 | Bosque nevado | 1600 × 900 |
