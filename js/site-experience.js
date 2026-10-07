@@ -36,6 +36,34 @@
   if (navigation) new MutationObserver(() => positionIndicator(activeNav())).observe(navigation, { attributes: true, subtree: true, attributeFilter: ['class'] });
 
   let toastTimer;
+  const copyStates = new WeakMap();
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const confirmCopy = (button, animate) => {
+    if (!button) return;
+    let state = copyStates.get(button);
+    if (!state) {
+      state = { nodes:Array.from(button.childNodes), minWidth:button.style.minWidth };
+      button.style.minWidth = `min(${Math.ceil(button.getBoundingClientRect().width)}px,100%)`;
+      copyStates.set(button,state);
+    }
+    clearTimeout(state.timer);
+    const transform = getComputedStyle(button).transform;
+    state.animation?.cancel();
+    button.classList.add('is-copied');
+    button.textContent = '[✓ COPIED TO CLIPBOARD]';
+    if (animate && !reducedMotion.matches) state.animation = button.animate([
+      {transform:transform === 'none' ? 'scale(.95)' : transform},
+      {transform:'scale(1.015)',offset:.65},
+      {transform:'scale(1)'}
+    ], {duration:160,easing:getComputedStyle(button).getPropertyValue('--spring-press').trim()});
+    state.timer = setTimeout(() => {
+      state.animation?.cancel();
+      button.replaceChildren(...state.nodes);
+      button.classList.remove('is-copied');
+      button.style.minWidth = state.minWidth;
+      copyStates.delete(button);
+    },1800);
+  };
   const toast = document.querySelector('[data-copy-toast]');
   const notify = message => {
     if (!toast) return;
@@ -44,10 +72,11 @@
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => { toast.hidden = true; }, 2600);
   };
-  window.portfolioCopy = async (value, message = 'Email copied') => {
+  window.portfolioCopy = async (value, message = 'Email copied', feedback = {}) => {
     try {
       if (!navigator.clipboard) throw new Error('Clipboard unavailable');
       await navigator.clipboard.writeText(value);
+      confirmCopy(feedback.button,feedback.animate);
       notify(message);
       return true;
     } catch {
@@ -55,8 +84,8 @@
       return false;
     }
   };
-  document.querySelectorAll('[data-copy-email]').forEach(button => button.addEventListener('click', () => {
-    window.portfolioCopy(button.dataset.email || window.PORTFOLIO_CONFIG?.email || 'Joshalexmedina@hotmail.com');
+  document.querySelectorAll('[data-copy-email]').forEach(button => button.addEventListener('click', event => {
+    window.portfolioCopy(button.dataset.email || window.PORTFOLIO_CONFIG?.email || 'Joshalexmedina@hotmail.com','Email copied',{button,animate:event.detail > 0});
   }));
 
   const imageLinks = Array.from(document.querySelectorAll('.project-main .image-detail-link'));

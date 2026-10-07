@@ -2,15 +2,39 @@
   'use strict';
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const telemetry = document.querySelector('.hero-telemetry');
+  const heroCarousel = document.querySelector('[data-hero-carousel]');
+  let telemetryFade;
+  const syncTelemetry = (slide, index, animate = false) => {
+    if (!telemetry || !slide) return;
+    telemetryFade?.cancel();
+    telemetry.querySelector('[data-carousel-scene]').textContent = `[SCENE: ${String(index + 1).padStart(2,'0')} // ${slide.dataset.scene}]`;
+    telemetry.querySelector('[data-carousel-pipeline]').textContent = `[${slide.dataset.pipeline}]`;
+    telemetry.querySelector('[data-carousel-tools]').textContent = `[${slide.dataset.render}]`;
+    telemetry.querySelector('[data-carousel-format]').textContent = `[FRAME: ${slide.getAttribute('width')} × ${slide.getAttribute('height')}]`;
+    if (animate && !reduceMotion.matches) telemetryFade = telemetry.animate([{opacity:0},{opacity:1}], {duration:200,easing:getComputedStyle(telemetry).getPropertyValue('--spring-snappy').trim()});
+  };
+  syncTelemetry(heroCarousel?.querySelector('.is-active'),0);
+  document.addEventListener('portfolio:slidechange', event => syncTelemetry(event.detail.slide,event.detail.index,event.detail.animate));
+
   document.querySelectorAll('[data-compare]').forEach(compare => {
     let dragging = false;
+    let activePointer;
     let target = 50;
     let current = 50;
     let velocity = 0;
     let animationFrame = 0;
+    const finalLabel = compare.querySelector('.compare-label--before');
+    const technicalLabel = compare.querySelector('.compare-label--after');
     const paint = value => {
+      value = Math.min(96,Math.max(4,value));
       compare.style.setProperty('--compare-position', `${value}%`);
       compare.setAttribute('aria-valuenow', String(Math.round(value)));
+      finalLabel.style.opacity = String(Math.min(1,(value - 4) / 46));
+      technicalLabel.style.opacity = String(Math.min(1,(96 - value) / 46));
+      finalLabel.classList.toggle('is-dominant',value >= 50);
+      technicalLabel.classList.toggle('is-dominant',value <= 50);
+      compare.setAttribute('aria-valuetext',`${Math.round(value)}% final composite, ${Math.round(100-value)}% ${technicalLabel.textContent.replace(/\[PASS: |\]/g,'').toLowerCase()}`);
     };
     const animate = () => {
       velocity = (velocity + (target - current) * .24) * .68;
@@ -19,10 +43,17 @@
       if (Math.abs(target - current) > .02 || Math.abs(velocity) > .02) animationFrame = requestAnimationFrame(animate);
       else { current = target; paint(current); animationFrame = 0; }
     };
-    const setPosition = value => {
+    const setPosition = (value, immediate = false) => {
       target = Math.min(96, Math.max(4, value));
       compare.setAttribute('aria-valuenow', String(Math.round(target)));
-      if (reduceMotion.matches) { current = target; paint(current); return; }
+      if (reduceMotion.matches || immediate) {
+        cancelAnimationFrame(animationFrame);
+        animationFrame = 0;
+        velocity = 0;
+        current = target;
+        paint(current);
+        return;
+      }
       if (!animationFrame) animationFrame = requestAnimationFrame(animate);
     };
     const fromPointer = event => {
@@ -30,24 +61,29 @@
       setPosition(((event.clientX - rect.left) / rect.width) * 100);
     };
     compare.addEventListener('pointerdown', event => {
+      if (dragging || event.button !== 0) return;
       dragging = true;
+      activePointer = event.pointerId;
       compare.setPointerCapture(event.pointerId);
       fromPointer(event);
     });
-    compare.addEventListener('pointermove', event => { if (dragging) fromPointer(event); });
+    compare.addEventListener('pointermove', event => { if (dragging && event.pointerId === activePointer) fromPointer(event); });
     compare.addEventListener('pointerup', event => {
+      if (event.pointerId !== activePointer) return;
       dragging = false;
       if (compare.hasPointerCapture(event.pointerId)) compare.releasePointerCapture(event.pointerId);
     });
     compare.addEventListener('pointercancel', () => { dragging = false; });
+    compare.addEventListener('lostpointercapture', () => { dragging = false; });
     compare.addEventListener('keydown', event => {
       const nextFrom = target;
       const step = event.shiftKey ? 10 : 2;
-      if (event.key === 'ArrowLeft') { event.preventDefault(); setPosition(nextFrom - step); }
-      if (event.key === 'ArrowRight') { event.preventDefault(); setPosition(nextFrom + step); }
-      if (event.key === 'Home') { event.preventDefault(); setPosition(4); }
-      if (event.key === 'End') { event.preventDefault(); setPosition(96); }
+      if (event.key === 'ArrowLeft') { event.preventDefault(); setPosition(nextFrom - step,true); }
+      if (event.key === 'ArrowRight') { event.preventDefault(); setPosition(nextFrom + step,true); }
+      if (event.key === 'Home') { event.preventDefault(); setPosition(4,true); }
+      if (event.key === 'End') { event.preventDefault(); setPosition(96,true); }
     });
+    paint(current);
   });
 
   const pipelineTabs = Array.from(document.querySelectorAll('[data-pipeline-tab]'));
@@ -91,14 +127,42 @@
     const button = event.currentTarget;
     const source = document.querySelector('[data-code-source]');
     const code = Array.from(source?.querySelectorAll('.code-line') || []).map(line => line.textContent.replace(/^\d+/, '')).join('\n').trim();
-    if (await window.portfolioCopy(code,'Code copied')) {
-      button.textContent = 'Copied ↗';
-      setTimeout(() => { button.textContent = 'Copy code'; },1600);
-    }
+    await window.portfolioCopy(code,'Code copied',{button,animate:event.detail > 0});
   });
 
   const workToolbar = document.querySelector('[data-work-filters]');
   const workCards = Array.from(document.querySelectorAll('.project-card[data-category]'));
+  const projectGrid = document.querySelector('.project-grid');
+  let selectedProject = workCards.find(card => !card.hidden);
+  const visibleProjects = () => workCards.filter(card => !card.hidden);
+  const syncProjectFocus = () => {
+    const visible = visibleProjects();
+    if (!visible.includes(selectedProject)) selectedProject = visible[0];
+    workCards.forEach(card => { card.tabIndex = card === selectedProject && !card.hidden ? 0 : -1; });
+  };
+  projectGrid?.addEventListener('focusin', event => {
+    const card = event.target.closest('.project-card');
+    if (!workCards.includes(card)) return;
+    selectedProject = card;
+    syncProjectFocus();
+  });
+  projectGrid?.addEventListener('keydown', event => {
+    if (event.altKey || event.ctrlKey || event.metaKey || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+    const card = event.target.closest('.project-card');
+    const visible = visibleProjects();
+    const index = visible.indexOf(card);
+    if (index < 0) return;
+    event.preventDefault();
+    let next = (index + (event.key === 'ArrowLeft' ? -1 : 1) + visible.length) % visible.length;
+    if (event.key === 'Home') next = 0;
+    if (event.key === 'End') next = visible.length - 1;
+    selectedProject = visible[next];
+    syncProjectFocus();
+    selectedProject.focus({preventScroll:true});
+    selectedProject.scrollIntoView({block:'nearest',behavior:'instant'});
+  });
+  document.addEventListener('portfolio:workchange',syncProjectFocus);
+  syncProjectFocus();
   const palette = document.querySelector('[data-command-palette]');
   const commandInput = palette?.querySelector('[data-command-input]');
   const commandResults = palette?.querySelector('[data-command-results]');
@@ -215,7 +279,8 @@
 
 
   const reelSection = document.querySelector('.reel-section');
-  const reelFrame = document.querySelector('#reel-stage iframe');
+  const reelStage = document.querySelector('#reel-stage');
+  let reelFrame;
   const theaterToggle = document.querySelector('[data-theater-toggle]');
   theaterToggle?.addEventListener('click', () => {
     const active = !reelSection?.classList.contains('is-darkroom');
@@ -223,19 +288,21 @@
     theaterToggle.setAttribute('aria-pressed', String(active));
     theaterToggle.textContent = active ? 'Exit darkroom' : 'Darkroom mode';
   });
-  if (reelSection && reelFrame) {
+  if (reelSection && reelStage) {
     let reelInView = false;
     let reelPlaying = false;
     const observer = new IntersectionObserver(entries => { reelInView = entries[0].intersectionRatio > .32; }, { threshold: [.32] });
     observer.observe(reelSection);
 
-    const initialiseVimeo = player => {
+    const initialiseVimeo = ({detail:{stage,frame,player}}) => {
+      if (stage !== reelStage) return;
+      reelFrame = frame;
       player.on('play', () => { reelPlaying = true; reelSection.classList.add('is-playing'); });
       player.on('pause', () => { reelPlaying = false; reelSection.classList.remove('is-playing'); });
       player.on('ended', () => { reelPlaying = false; reelSection.classList.remove('is-playing'); });
       document.addEventListener('keydown', event => {
         const target = event.target;
-        if (!reelInView || reelFrame.hidden || palette?.open || target instanceof HTMLElement && (target.isContentEditable || /INPUT|TEXTAREA|SELECT/.test(target.tagName))) return;
+        if (!reelInView || reelFrame.hidden || palette?.open || event.ctrlKey || event.metaKey || event.altKey || target instanceof HTMLElement && (target.isContentEditable || target.closest('input,textarea,select,button,a,[role="slider"],[role="tab"]'))) return;
         const key = event.key.toLowerCase();
         if (key === ' ' || key === 'k') {
           event.preventDefault();
@@ -252,11 +319,6 @@
         }
       });
     };
-    const playerObserver = new IntersectionObserver(entries => {
-      if (!entries.some(entry => entry.isIntersecting)) return;
-      playerObserver.disconnect();
-      window.portfolioVimeo(reelFrame).then(initialiseVimeo).catch(() => {});
-    },{rootMargin:'100px'});
-    playerObserver.observe(reelFrame);
+    document.addEventListener('portfolio:reelready',initialiseVimeo);
   }
 })();

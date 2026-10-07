@@ -89,17 +89,13 @@
       if (projectIndex) projectIndex.textContent = String(current + 1).padStart(2, '0');
       if (projectTitle) projectTitle.textContent = slide?.dataset.projectTitle || '';
       if (projectRole) projectRole.textContent = slide?.dataset.projectRole || '';
-      const tools = document.querySelector('[data-carousel-tools]');
-      const format = document.querySelector('[data-carousel-format]');
-      if (tools) tools.textContent = '[TOOLS: ' + (slide?.dataset.projectTools || '') + ']';
-      if (format) format.textContent = '[FRAME: ' + (slide?.getAttribute('width') || '') + ' × ' + (slide?.getAttribute('height') || '') + ']';
       if (pauseButton) {
         pauseButton.textContent = pausedByUser ? 'Resume' : 'Pause';
         pauseButton.setAttribute('aria-pressed', String(pausedByUser));
         pauseButton.setAttribute('aria-label', (pausedByUser ? 'Resume' : 'Pause') + ' featured project slideshow');
       }
     };
-    const showSlide = async direction => {
+    const showSlide = async (direction, animate = true) => {
       if (slides.length < 2) return;
       const target = (current + direction + slides.length) % slides.length;
       const request = ++slideRequest;
@@ -111,6 +107,7 @@
       previous.classList.remove('is-active');
       previous.classList.add('is-leaving');
       next.classList.add('is-active');
+      heroCarousel.dispatchEvent(new CustomEvent('portfolio:slidechange', { bubbles: true, detail: { slide: next, index: current, animate } }));
       window.setTimeout(() => previous.classList.remove('is-leaving'), 1500);
       updateControls();
       prepareSlide(slides[(current + 1) % slides.length]);
@@ -122,8 +119,8 @@
     };
     if (controls && slides.length > 1) {
       controls.hidden = false;
-      controls.querySelector('[data-carousel-prev]')?.addEventListener('click', () => { pausedByUser = true; stopCarousel(); updateControls(); showSlide(-1); });
-      controls.querySelector('[data-carousel-next]')?.addEventListener('click', () => { pausedByUser = true; stopCarousel(); updateControls(); showSlide(1); });
+      controls.querySelector('[data-carousel-prev]')?.addEventListener('click', event => { pausedByUser = true; stopCarousel(); updateControls(); showSlide(-1, event.detail > 0); });
+      controls.querySelector('[data-carousel-next]')?.addEventListener('click', event => { pausedByUser = true; stopCarousel(); updateControls(); showSlide(1, event.detail > 0); });
       pauseButton?.addEventListener('click', () => { pausedByUser = !pausedByUser; updateControls(); startCarousel(); });
     }
     if ('IntersectionObserver' in window) {
@@ -202,6 +199,7 @@
         const y = previous.top - rect.top;
         if (Math.abs(x)>1 || Math.abs(y)>1) card.animate([{transform:`translate(${x}px,${y}px)`},{transform:'translate(0,0)'}],{duration:350,easing:'cubic-bezier(.16,1,.3,1)'});
       });
+      document.dispatchEvent(new CustomEvent('portfolio:workchange'));
     };
     workToolbar.hidden = false;
     buttons.forEach(button => button.addEventListener('click', () => filterWork(button.dataset.filter, true, true)));
@@ -272,18 +270,22 @@
           if (id) embed = 'https://player.vimeo.com/video/' + id + '?dnt=1' + (hash && /^[\da-f]+$/i.test(hash) ? '&h=' + hash : '');
         }
         if (embed) {
-          player = document.createElement('iframe');
-          player.src = embed;
-          player.title = 'Joshua Medina showreel';
-          player.allow = 'fullscreen; picture-in-picture; encrypted-media';
-          player.allowFullscreen = true;
-          player.loading = 'lazy';
-          player.referrerPolicy = 'strict-origin-when-cross-origin';
+          if (['vimeo.com','player.vimeo.com'].includes(host) && stage.querySelector('[data-reel-play]')) {
+            // Preserve the poster: the Vimeo iframe is created only after a click.
+            stage.dataset.vimeoUrl = embed;
+          } else {
+            player = document.createElement('iframe');
+            player.src = embed;
+            player.title = 'Joshua Medina showreel';
+            player.allow = 'fullscreen; picture-in-picture; encrypted-media';
+            player.allowFullscreen = true;
+            player.loading = 'lazy';
+            player.referrerPolicy = 'strict-origin-when-cross-origin';
+          }
         }
       }
       if (player && stage.querySelector('iframe')?.src !== player.src) stage.replaceChildren(player);
-      const directLink = document.querySelector('[data-reel-link]');
-      if (directLink && secure) directLink.href = url.href;
+      if (secure) document.querySelectorAll('[data-reel-link]').forEach(link => { link.href = url.href; });
     } catch { /* An invalid override preserves the static player and link. */ }
   }
 })();

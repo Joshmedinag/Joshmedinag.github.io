@@ -37,7 +37,9 @@ The record red marks live states and single focal details. Tungsten gold labels 
 - Project filtering retains spatial context through FLIP motion.
 - AOV comparators reveal the final image on the left and the technical stage on the right. Dragging uses damped spring movement and supports arrow keys.
 - The showreel supports Darkroom mode and keyboard playback controls.
-- Vimeo embeds use the official player handshake and provide a poster and direct link if loading fails. Playback failures do not fabricate privacy tokens or credentials.
+- Both Vimeo reels start with a local poster and a Play button. The iframe and SDK load only after a click, with a visible connecting state and a direct link if the official player handshake fails. Playback failures do not fabricate privacy tokens or credentials.
+- Hero scene, workflow and renderer labels follow the active slide through a short opacity fade. Comparison labels fade as their image is concealed, with the dominant pass highlighted.
+- Successful copy actions show a solid amber confirmation for 1.8 seconds and a restrained 160ms press rebound. Repeated clicks reset confirmation without losing the original label; failed copies never show success.
 - The pipeline console provides channel, code and architecture views. The Python sample uses the public AOVGuard API from the repository.
 - Contact copies the email address and confirms the action with a compact telemetry toast.
 
@@ -47,6 +49,8 @@ The record red marks live states and single focal details. Tungsten gold labels 
 - Controls compress to `0.97`–`0.98` while pressed.
 - All core controls support the keyboard and use a visible white focus ring.
 - Dialogs restore focus on close; image galleries support arrow keys and Escape.
+- The project grid has one tab stop and uses left/right arrows to move between visible projects. Enter keeps native link behavior; filtering updates the available keyboard targets.
+- Keyboard navigation and reduced-motion settings bypass the new movement effects.
 - The fixed navigation is measured dynamically to keep linked headings visible.
 - Reduced-motion mode removes transform transitions and comparator inertia.
 - Text labels accompany icons and technical states remain understandable without colour.
