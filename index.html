@@ -15,11 +15,15 @@
   <meta property="og:image:alt" content="Venator above Coruscant in Joshua Medina's final lighting and compositing study">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="css/style.css?v=20261001-editorial">
-  <link rel="stylesheet" href="css/home-experience.css?v=20261004-role-scale">
+  <link rel="preload" href="assets/fonts/roboto/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="css/style.css?v=20261006-roboto">
+  <link rel="stylesheet" href="css/site-system.css?v=20261006-complete">
+  <link rel="stylesheet" href="css/home-experience.css?v=20261006-complete">
   <script src="js/site-config.js?v=20261004-main-reel" defer></script>
-  <script src="js/main.js?v=20261004-contact" defer></script>
-  <script src="js/home-experience.js?v=20261004-portfolio" defer></script>
+  <script src="js/main.js?v=20261006-complete" defer></script>
+  <script src="js/site-experience.js?v=20261006-complete" defer></script>
+  <script src="js/video-experience.js?v=20261006-complete" defer></script>
+  <script src="js/home-experience.js?v=20261006-complete" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -41,10 +45,10 @@
   <main id="main">
     <section class="hero" id="home" aria-labelledby="hero-title">
       <div class="hero-carousel" data-hero-carousel data-interval="8000" aria-hidden="true">
-        <img class="hero-image hero-image--wide hero-image--venator is-active" src="images/venator/cover-from-breakdown.webp" srcset="images/thumbs/cover-from-breakdown-1200.webp 1200w, images/venator/cover-from-breakdown.webp 1920w" sizes="100vw" alt="" width="1920" height="810" fetchpriority="high" decoding="async" data-project-title="Venator Above Coruscant" data-project-role="Lighting · look development · rendering · compositing" data-project-href="projects/venator.html" style="--hero-focus:50%">
+        <img class="hero-image hero-image--wide hero-image--venator is-active" src="images/venator/cover-from-breakdown.webp" srcset="images/thumbs/cover-from-breakdown-1200.webp 1200w, images/venator/cover-from-breakdown.webp 1920w" sizes="100vw" alt="" width="1920" height="810" fetchpriority="high" decoding="async" data-project-tools="KATANA / RENDERMAN / NUKE" data-project-title="Venator Above Coruscant" data-project-role="Lighting · look development · rendering · compositing" data-project-href="projects/venator.html" style="--hero-focus:50%">
         <template data-carousel-slides>
-          <img class="hero-image hero-image--wide hero-image--spaceship" src="images/spaceship-main.png?v=20261004-breakdown2" srcset="images/thumbs/spaceship-main-1200.webp?v=20261004-breakdown2 1200w, images/spaceship-main.png?v=20261004-breakdown2 1920w" sizes="100vw" alt="" width="1920" height="810" decoding="async" data-project-title="Spaceship" data-project-role="Look development · lighting · rendering · compositing" data-project-href="projects/spaceship.html" style="--hero-focus:42%">
-          <img class="hero-image hero-image--wide hero-image--r2d2" src="images/r2d2-main.jpg?v=20260914-colour" srcset="images/thumbs/r2d2-main-1200.webp 1200w, images/r2d2-main.jpg 1800w" sizes="100vw" alt="" width="1800" height="765" decoding="async" data-project-title="R2-D2 Desert Look Development" data-project-role="Look development · lighting · rendering · compositing" data-project-href="projects/r2d2-lighting.html" style="--hero-focus:50%">
+          <img class="hero-image hero-image--wide hero-image--spaceship" src="images/spaceship-main.png?v=20261004-breakdown2" srcset="images/thumbs/spaceship-main-1200.webp?v=20261004-breakdown2 1200w, images/spaceship-main.png?v=20261004-breakdown2 1920w" sizes="100vw" alt="" width="1920" height="810" decoding="async" data-project-tools="USD / KATANA / RENDERMAN / NUKE" data-project-title="Spaceship" data-project-role="Look development · lighting · rendering · compositing" data-project-href="projects/spaceship.html" style="--hero-focus:42%">
+          <img class="hero-image hero-image--wide hero-image--r2d2" src="images/r2d2-main.jpg?v=20260914-colour" srcset="images/thumbs/r2d2-main-1200.webp 1200w, images/r2d2-main.jpg 1800w" sizes="100vw" alt="" width="1800" height="765" decoding="async" data-project-tools="MAYA / KATANA / RENDERMAN / NUKE" data-project-title="R2-D2 Desert Look Development" data-project-role="Look development · lighting · rendering · compositing" data-project-href="projects/r2d2-lighting.html" style="--hero-focus:50%">
         </template>
       </div>
       <div class="hero-shade"></div>
@@ -57,7 +61,7 @@
           <a class="button button-secondary" href="assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="View CV PDF in a new tab">CV [PDF ↗]</a>
         </div>
       </div>
-      <div class="hero-telemetry" aria-hidden="true"><span>[SCENE: 01 // ORBIT OVER CORUSCANT]</span><span>[OPTICS: ANAMORPHIC 50MM · T2.0]</span><span>[RENDER: KATANA + RENDERMAN · 32-BIT EXR]</span><span>[COLOR: ACESCG]</span></div>
+      <div class="hero-telemetry" aria-hidden="true"><span>[SHOT: FINAL COMPOSITE]</span><span data-carousel-tools>[TOOLS: KATANA / RENDERMAN / NUKE]</span><span data-carousel-format>[FRAME: 1920 × 810]</span></div>
       <div class="hero-bottom wrap">
         <a class="hero-project-link" data-carousel-project href="projects/venator.html">
           <span class="hero-project-kicker">FEATURED PROJECT <span data-carousel-project-index>01</span></span>
@@ -80,8 +84,9 @@
         <p class="section-intro">The principal reel: lighting, look development, cinematography and visual effects.</p>
       </div>
       <div class="reel-theater" data-reel-theater>
-        <div class="reel-stage" id="reel-stage">
+        <div class="reel-stage vimeo-stage" id="reel-stage" data-vimeo-stage>
           <iframe src="https://player.vimeo.com/video/1232872369?dnt=1" title="Joshua Medina — Principal Showreel 2026" width="1600" height="900" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          <div class="reel-fallback" data-vimeo-fallback hidden><img src="images/venator/cover-from-breakdown.webp" alt="" width="1920" height="810" loading="lazy"><div class="reel-fallback-copy"><p>The embedded player is unavailable. Watch the principal showreel on Vimeo.</p><a class="button button-primary" data-reel-link href="https://vimeo.com/1232872369" target="_blank" rel="noopener noreferrer">Watch on Vimeo <span aria-hidden="true">↗</span></a></div></div>
         </div>
         <div class="reel-rail">
           <span>Principal reel · 2026</span>
@@ -152,13 +157,9 @@
           <p class="card-role"><span>My role</span> Lighting · cinematography · rendering</p>
           <p class="card-description">A group cinematic exploring overcast light, atmospheric depth and visual storytelling.</p><p class="card-tools">Unreal Engine · Lumen · Movie Render Queue</p>
         </a>
-        <a data-category="pipeline" data-featured class="project-card" href="projects/aovguard.html">
+        <a data-category="pipeline" data-featured class="project-card aovguard-card" href="projects/aovguard.html">
           <div class="card-media">
-            <div class="tool-logo-stage" role="img" aria-label="Autodesk Maya, Python and AOVs">
-              <span class="tool-logo-mark"><img src="images/brands/maya-original.svg" alt="" width="128" height="128" loading="lazy" decoding="async"><span>Autodesk Maya</span></span>
-              <span class="tool-logo-mark"><img src="images/brands/python-original.svg" alt="" width="128" height="128" loading="lazy" decoding="async"><span>Python</span></span>
-              <span class="tool-logo-mark"><img src="images/brands/aovs.svg" alt="" width="128" height="128" loading="lazy" decoding="async"><span>AOVs</span></span>
-            </div>
+            <img src="images/aovguard-sequence-table.png" alt="AOVGuard validating a 302-frame EXR sequence with 56 channels and 17 detected AOVs" width="2559" height="1527" loading="lazy">
             <span class="category-tag">PIPELINE DEVELOPMENT</span><span class="card-arrow" aria-hidden="true">↗</span>
           </div>
           <div class="card-heading"><h3>AOVGuard</h3><span class="project-number">05</span></div>
@@ -263,6 +264,7 @@
         </article>
         <article class="comparison-card comparison-card--portrait">
           <div class="shot-compare shot-compare--paired" data-compare style="--compare-position:50%" tabindex="0" role="slider" aria-label="Compare R2-D2 render and final composite" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+            <!-- Paired reference: left half is the render, right half is the composite. CSS aligns each half in this portrait frame. -->
             <img class="compare-before" src="images/r2d2/render_vs_comp.jpg" alt="R2-D2 render before compositing" width="780" height="540" loading="lazy">
             <div class="compare-after"><img src="images/r2d2/render_vs_comp.jpg" alt="R2-D2 final composite" width="780" height="540" loading="lazy"></div>
             <span class="compare-label compare-label--before">[PASS: FINAL COMP]</span><span class="compare-label compare-label--after">[PASS: RAW RENDER]</span>
@@ -284,7 +286,7 @@
           <button type="button" role="tab" id="tab-farmflow" aria-controls="panel-farmflow" aria-selected="false" tabindex="-1" data-pipeline-tab="farmflow"><span>02</span>FarmFlow</button>
         </div>
         <div class="pipeline-panel is-active" role="tabpanel" id="panel-aovguard" aria-labelledby="tab-aovguard" data-pipeline-panel="aovguard">
-          <div class="pipeline-visual"><img src="images/aovguard-current-ui.png" alt="AOVGuard desktop interface showing EXR sequence validation findings" width="2559" height="1527" loading="lazy"></div>
+          <div class="pipeline-visual"><img src="images/aovguard-sequence-table.png" alt="AOVGuard desktop interface showing sequence discovery and validation results for 302 EXR frames" width="2559" height="1527" loading="lazy"></div>
           <div class="pipeline-console">
             <div class="console-status"><span class="status-lamp"></span><strong>Sequence diagnostics</strong><small>EXR / AOV QA</small></div>
             <div class="console-tabs" role="tablist" aria-label="AOVGuard technical views"><button type="button" role="tab" aria-selected="true" data-console-tab="channels">Channels</button><button type="button" role="tab" aria-selected="false" data-console-tab="python">Python engine</button><button type="button" role="tab" aria-selected="false" data-console-tab="architecture">Architecture</button></div>
@@ -373,9 +375,9 @@
   </footer>
   <dialog class="command-palette" data-command-palette aria-labelledby="command-title">
     <div class="command-box">
-      <div class="command-search"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 5 5"></path></svg><label class="sr-only" for="command-input" id="command-title">Search projects and navigation</label><input id="command-input" data-command-input type="search" autocomplete="off" placeholder="Search projects, tools or actions…"><kbd>Esc</kbd></div>
+      <div class="command-search"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 5 5"></path></svg><label class="sr-only" for="command-input" id="command-title">Search projects and navigation</label><input id="command-input" data-command-input type="search" autocomplete="off" placeholder="Search projects, tools or actions…" role="combobox" aria-autocomplete="list" aria-controls="command-results" aria-expanded="false"><button class="command-close" type="button" data-command-close aria-label="Close search">Esc</button></div>
       <p class="command-status" data-command-status aria-live="polite">Quick navigation</p>
-      <div class="command-results" data-command-results role="listbox"></div>
+      <div class="command-results" id="command-results" data-command-results role="listbox" aria-label="Search results"></div>
     </div>
   </dialog>
   <div class="copy-toast" data-copy-toast role="status" aria-live="polite" hidden>[COPIED TO CLIPBOARD]</div>

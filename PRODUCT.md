@@ -48,4 +48,4 @@ Joshua is presented as a Lighting TD, Compositor and Technical Artist. His eye f
 - Venator, Spaceship and R2-D2 are the first projects in that order.
 - Project imagery fills its panel with intentional framing.
 - Visitors can reach the showreel, work, pipeline tools, CV and contact from a persistent compact navigation.
-- The visual system feels like a contemporary colour-grading suite: dark neutral surfaces, tungsten warmth, anamorphic blue accents and restrained technical overlays.
+- The homepage and all project pages use one visual system: locally hosted Roboto, dark neutral surfaces, white controls, tungsten metadata and restrained technical overlays.

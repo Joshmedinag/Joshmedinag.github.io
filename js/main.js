@@ -89,6 +89,10 @@
       if (projectIndex) projectIndex.textContent = String(current + 1).padStart(2, '0');
       if (projectTitle) projectTitle.textContent = slide?.dataset.projectTitle || '';
       if (projectRole) projectRole.textContent = slide?.dataset.projectRole || '';
+      const tools = document.querySelector('[data-carousel-tools]');
+      const format = document.querySelector('[data-carousel-format]');
+      if (tools) tools.textContent = '[TOOLS: ' + (slide?.dataset.projectTools || '') + ']';
+      if (format) format.textContent = '[FRAME: ' + (slide?.getAttribute('width') || '') + ' × ' + (slide?.getAttribute('height') || '') + ']';
       if (pauseButton) {
         pauseButton.textContent = pausedByUser ? 'Resume' : 'Pause';
         pauseButton.setAttribute('aria-pressed', String(pausedByUser));
@@ -160,7 +164,11 @@
     const labels = { all: '', lighting: 'lighting & look development ', cinematography: 'cinematography ', pipeline: 'pipeline ', rendering: 'rendering & FX ' };
     let currentCategory = 'all';
     let expanded = false;
-    const filterWork = (category, updateUrl = false) => {
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const filterWork = (category, updateUrl = false, animate = false) => {
+      cards.forEach(card => card.getAnimations().forEach(animation => animation.cancel()));
+      const positions = animate && !motionPreference.matches
+        ? new Map(cards.filter(card => !card.hidden).map(card => [card, card.getBoundingClientRect()])) : null;
       if (!categories.has(category)) category = 'all';
       currentCategory = category;
       let visible = 0;
@@ -183,10 +191,21 @@
         if (category === 'all') url.searchParams.delete('category'); else url.searchParams.set('category', category);
         window.history.replaceState(window.history.state, '', url);
       }
+      if (positions) cards.filter(card => !card.hidden).forEach(card => {
+        const previous = positions.get(card);
+        if (!previous) {
+          card.animate([{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'translateY(0)'}],{duration:260,easing:'cubic-bezier(.16,1,.3,1)'});
+          return;
+        }
+        const rect = card.getBoundingClientRect();
+        const x = previous.left - rect.left;
+        const y = previous.top - rect.top;
+        if (Math.abs(x)>1 || Math.abs(y)>1) card.animate([{transform:`translate(${x}px,${y}px)`},{transform:'translate(0,0)'}],{duration:350,easing:'cubic-bezier(.16,1,.3,1)'});
+      });
     };
     workToolbar.hidden = false;
-    buttons.forEach(button => button.addEventListener('click', () => filterWork(button.dataset.filter, true)));
-    moreButton?.addEventListener('click', () => { expanded = !expanded; filterWork(currentCategory); });
+    buttons.forEach(button => button.addEventListener('click', () => filterWork(button.dataset.filter, true, true)));
+    moreButton?.addEventListener('click', () => { expanded = !expanded; filterWork(currentCategory, false, true); });
     filterWork(new URLSearchParams(window.location.search).get('category') || 'all');
   }
 

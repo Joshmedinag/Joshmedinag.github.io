@@ -2,32 +2,6 @@
   'use strict';
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const header = document.querySelector('.site-header');
-
-  const updateHeader = () => header?.classList.toggle('is-compact', window.scrollY > 44);
-  updateHeader();
-  window.addEventListener('scroll', updateHeader, { passive: true });
-
-  const navigation = document.querySelector('.navigation');
-  const navLinks = Array.from(navigation?.querySelectorAll('a[href^="#"]') || []);
-  const positionNavIndicator = link => {
-    if (!navigation || !link || window.innerWidth <= 1050) return;
-    const navRect = navigation.getBoundingClientRect();
-    const linkRect = link.getBoundingClientRect();
-    navigation.style.setProperty('--nav-left', `${linkRect.left - navRect.left}px`);
-    navigation.style.setProperty('--nav-width', `${linkRect.width}px`);
-    navigation.style.setProperty('--nav-opacity', '1');
-  };
-  const activeNav = () => navLinks.find(link => link.classList.contains('active')) || navLinks[0];
-  requestAnimationFrame(() => positionNavIndicator(activeNav()));
-  navLinks.forEach(link => {
-    link.addEventListener('mouseenter', () => positionNavIndicator(link));
-    link.addEventListener('focus', () => positionNavIndicator(link));
-  });
-  navigation?.addEventListener('mouseleave', () => positionNavIndicator(activeNav()));
-  window.addEventListener('resize', () => positionNavIndicator(activeNav()), { passive: true });
-  if (navigation) new MutationObserver(() => positionNavIndicator(activeNav())).observe(navigation, { attributes: true, subtree: true, attributeFilter: ['class'] });
-
   document.querySelectorAll('[data-compare]').forEach(compare => {
     let dragging = false;
     let target = 50;
@@ -113,60 +87,24 @@
       consoleViews.forEach(view => { view.hidden = view.dataset.consoleView !== tab.dataset.consoleTab; });
     });
   });
-  document.querySelector('[data-copy-code]')?.addEventListener('click', event => {
+  document.querySelector('[data-copy-code]')?.addEventListener('click', async event => {
+    const button = event.currentTarget;
     const source = document.querySelector('[data-code-source]');
     const code = Array.from(source?.querySelectorAll('.code-line') || []).map(line => line.textContent.replace(/^\d+/, '')).join('\n').trim();
-    navigator.clipboard?.writeText(code).then(() => {
-      event.currentTarget.textContent = 'Copied ↗';
-      window.setTimeout(() => { event.currentTarget.textContent = 'Copy code'; }, 1600);
-    });
+    if (await window.portfolioCopy(code,'Code copied')) {
+      button.textContent = 'Copied ↗';
+      setTimeout(() => { button.textContent = 'Copy code'; },1600);
+    }
   });
 
   const workToolbar = document.querySelector('[data-work-filters]');
   const workCards = Array.from(document.querySelectorAll('.project-card[data-category]'));
-  if (workToolbar && workCards.length && !reduceMotion.matches) {
-    const animateLayout = () => {
-      const first = new Map(workCards.filter(card => !card.hidden).map(card => [card, card.getBoundingClientRect()]));
-      requestAnimationFrame(() => requestAnimationFrame(() => {
-        workCards.filter(card => !card.hidden).forEach(card => {
-          const previous = first.get(card);
-          if (!previous) {
-            card.animate([{ opacity: 0, transform: 'translateY(18px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 330, easing: 'cubic-bezier(.22,1,.36,1)' });
-            return;
-          }
-          const next = card.getBoundingClientRect();
-          const x = previous.left - next.left;
-          const y = previous.top - next.top;
-          if (Math.abs(x) > 1 || Math.abs(y) > 1) {
-            card.animate([{ transform: `translate(${x}px, ${y}px)` }, { transform: 'translate(0, 0)' }], { duration: 430, easing: 'cubic-bezier(.22,1,.36,1)' });
-          }
-        });
-      }));
-    };
-    workToolbar.addEventListener('click', event => {
-      if (event.target.closest('[data-filter]')) animateLayout();
-    }, { capture: true });
-    document.querySelector('[data-more-work]')?.addEventListener('click', animateLayout, { capture: true });
-  }
-
   const palette = document.querySelector('[data-command-palette]');
   const commandInput = palette?.querySelector('[data-command-input]');
   const commandResults = palette?.querySelector('[data-command-results]');
   const commandStatus = palette?.querySelector('[data-command-status]');
   const email = window.PORTFOLIO_CONFIG?.email || 'Joshalexmedina@hotmail.com';
-  const copyToast = document.querySelector('[data-copy-toast]');
-  let toastTimer = 0;
-  const showCopyToast = message => {
-    if (!copyToast) return;
-    copyToast.textContent = message;
-    copyToast.hidden = false;
-    clearTimeout(toastTimer);
-    toastTimer = window.setTimeout(() => { copyToast.hidden = true; }, 1800);
-  };
-  const copyText = async (value, message) => {
-    await navigator.clipboard?.writeText(value);
-    showCopyToast(message);
-  };
+  const copyText = (value, message) => window.portfolioCopy(value, message);
   const staticCommands = [
     { title: 'Watch principal showreel', detail: 'Showreel', href: '#showreel', mark: '▶' },
     { title: 'Selected work', detail: 'All projects', href: '#work', mark: 'W' },
@@ -190,8 +128,8 @@
   const runCommand = command => {
     if (!command) return;
     if (command.action === 'copy-email') {
-      copyText(email, '[COPIED TO CLIPBOARD]').then(() => {
-        if (commandStatus) commandStatus.textContent = 'Email copied';
+      copyText(email, '[COPIED TO CLIPBOARD]').then(copied => {
+        if (commandStatus) commandStatus.textContent = copied ? 'Email copied' : 'Copy unavailable';
       });
       return;
     }
@@ -206,6 +144,7 @@
       const empty = document.createElement('p');
       empty.className = 'command-empty';
       empty.textContent = 'No matching projects or actions.';
+      commandInput?.removeAttribute('aria-activedescendant');
       commandResults.append(empty);
       if (commandStatus) commandStatus.textContent = '0 results';
       return;
@@ -214,6 +153,8 @@
     visibleCommands.forEach((command, index) => {
       const option = document.createElement('button');
       option.type = 'button';
+      option.id = `command-option-${index}`;
+      option.tabIndex = -1;
       option.className = `command-option${index === selectedCommand ? ' is-selected' : ''}`;
       option.setAttribute('role', 'option');
       option.setAttribute('aria-selected', String(index === selectedCommand));
@@ -231,16 +172,19 @@
       option.addEventListener('click', () => runCommand(command));
       commandResults.append(option);
     });
+    commandInput?.setAttribute('aria-activedescendant', `command-option-${selectedCommand}`);
+    commandResults.querySelector('.is-selected')?.scrollIntoView({block:'nearest'});
     if (commandStatus) commandStatus.textContent = `${visibleCommands.length} ${visibleCommands.length === 1 ? 'result' : 'results'}`;
   };
   const openPalette = () => {
-    if (!palette || palette.open) return;
+    if (!palette || palette.open || typeof palette.showModal !== 'function') return;
     returnFocus = document.activeElement;
     visibleCommands = commands;
     selectedCommand = 0;
     if (commandInput) commandInput.value = '';
     renderCommands();
     palette.showModal();
+    commandInput?.setAttribute('aria-expanded','true');
     commandInput?.focus();
   };
   document.querySelectorAll('[data-command-open]').forEach(button => button.addEventListener('click', openPalette));
@@ -254,6 +198,7 @@
     }
     if (!palette?.open || editing && target !== commandInput) return;
     if (event.key === 'Escape') { event.preventDefault(); palette.close(); return; }
+    if (!visibleCommands.length) return;
     if (event.key === 'ArrowDown') { event.preventDefault(); selectedCommand = (selectedCommand + 1) % visibleCommands.length; renderCommands(); }
     if (event.key === 'ArrowUp') { event.preventDefault(); selectedCommand = (selectedCommand - 1 + visibleCommands.length) % visibleCommands.length; renderCommands(); }
     if (event.key === 'Enter') { event.preventDefault(); runCommand(visibleCommands[selectedCommand]); }
@@ -265,11 +210,9 @@
     renderCommands();
   });
   palette?.addEventListener('click', event => { if (event.target === palette) palette.close(); });
-  palette?.addEventListener('close', () => { if (returnFocus instanceof HTMLElement) returnFocus.focus(); });
+  palette?.querySelector('[data-command-close]')?.addEventListener('click', () => palette.close());
+  palette?.addEventListener('close', () => { commandInput?.setAttribute('aria-expanded','false'); if (returnFocus instanceof HTMLElement) returnFocus.focus({preventScroll:true}); });
 
-  document.querySelector('[data-copy-email]')?.addEventListener('click', event => {
-    copyText(event.currentTarget.dataset.email || email, '[COPIED TO CLIPBOARD]');
-  });
 
   const reelSection = document.querySelector('.reel-section');
   const reelFrame = document.querySelector('#reel-stage iframe');
@@ -286,35 +229,34 @@
     const observer = new IntersectionObserver(entries => { reelInView = entries[0].intersectionRatio > .32; }, { threshold: [.32] });
     observer.observe(reelSection);
 
-    const initialiseVimeo = () => {
-      if (!window.Vimeo?.Player) return;
-      const player = new window.Vimeo.Player(reelFrame);
+    const initialiseVimeo = player => {
       player.on('play', () => { reelPlaying = true; reelSection.classList.add('is-playing'); });
       player.on('pause', () => { reelPlaying = false; reelSection.classList.remove('is-playing'); });
       player.on('ended', () => { reelPlaying = false; reelSection.classList.remove('is-playing'); });
       document.addEventListener('keydown', event => {
         const target = event.target;
-        if (!reelInView || palette?.open || target instanceof HTMLElement && (target.isContentEditable || /INPUT|TEXTAREA|SELECT/.test(target.tagName))) return;
+        if (!reelInView || reelFrame.hidden || palette?.open || target instanceof HTMLElement && (target.isContentEditable || /INPUT|TEXTAREA|SELECT/.test(target.tagName))) return;
         const key = event.key.toLowerCase();
         if (key === ' ' || key === 'k') {
           event.preventDefault();
-          if (reelPlaying) player.pause(); else player.play();
+          if (reelPlaying) player.pause().catch(() => {}); else player.play().catch(() => {});
         }
         if (key === 'f') {
           event.preventDefault();
-          reelFrame.requestFullscreen?.();
+          reelFrame.requestFullscreen?.().catch(() => {});
         }
         if (key === 'j' || key === 'l' || event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
           event.preventDefault();
-          const amount = key === 'j' ? -5 : key === 'l' ? 5 : event.key === 'ArrowLeft' ? -(1 / 24) : 1 / 24;
-          player.getCurrentTime().then(time => player.setCurrentTime(Math.max(0, time + amount)));
+          const amount = key === 'j' || event.key === 'ArrowLeft' ? -5 : 5;
+          player.getCurrentTime().then(time => player.setCurrentTime(Math.max(0, time + amount))).catch(() => {});
         }
       });
     };
-    const sdk = document.createElement('script');
-    sdk.src = 'https://player.vimeo.com/api/player.js';
-    sdk.async = true;
-    sdk.addEventListener('load', initialiseVimeo, { once: true });
-    document.head.append(sdk);
+    const playerObserver = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      playerObserver.disconnect();
+      window.portfolioVimeo(reelFrame).then(initialiseVimeo).catch(() => {});
+    },{rootMargin:'100px'});
+    playerObserver.observe(reelFrame);
   }
 })();
