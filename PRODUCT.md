@@ -1,51 +1,33 @@
 # Joshua Medina Portfolio — Product Context
 
-## Product
+## Purpose and mode
 
-Joshua Medina's public portfolio is a static, English-language website hosted on GitHub Pages. It presents cinematic lighting, look development, rendering, compositing, cinematography and pipeline development work through a showreel and detailed project case studies.
+Experience: a portfolio where real imagery and demonstrable technical work lead. Joshua creates images and develops solutions that help produce them.
 
-## Primary audience
+## Identity and truth
 
-- Lighting supervisors, Heads of Lighting and CG supervisors evaluating production-ready lighting and look-development work.
-- VFX recruiters and hiring managers looking for clear evidence of responsibilities, tools and final image quality.
-- Filmmakers and collaborators evaluating Joshua's cinematography and camera work.
-- Pipeline and rendering leads reviewing AOVGuard, FarmFlow and related Python work.
+Joshua Medina: **Lighting TD / Compositor · Technical Artist / Pipeline TD**. These are areas of specialisation, not unverified previous job titles. The MSc in Computer Animation & Visual Effects at Bournemouth University is completed, as confirmed by Joshua. Public content is natural English. Never invent seniority, employers, film credits, availability, right to work, testimonials or performance results.
 
-## Core user goals
+## Audiences and paths
 
-1. Watch the current principal showreel immediately.
-2. Understand Joshua's role and positioning within a few seconds.
-3. Inspect the strongest lighting and look-development projects first.
-4. Compare intermediate and final imagery to understand the craft behind each shot.
-5. Review technical tools and production reasoning without losing the visual focus.
-6. Open the CV or contact Joshua with minimal friction.
+- General visitor: understand the image-making and technical connection, see work and contact Joshua.
+- Lighting/compositing recruiter or supervisor: Watch Showreel, final shots, precise contribution and diagnostic stages.
+- Technical art/pipeline supervisor: find AOVGuard and FarmFlow directly, understand the production problem, workflow, implementation, evidence and limits.
 
-## Positioning
+## Initial curation
 
-Joshua is presented as a Lighting TD, Compositor and Technical Artist. His eye for composition, colour and motivated light combines with production discipline across rendering, compositing and pipeline development. The portfolio should make these strengths visible while keeping the final image as the primary evidence.
+Six featured projects: Venator, Spaceship, R2-D2 and Broken Horizons in Lighting & Compositing; AOVGuard and FarmFlow in Technical Art & Pipeline. Both paths remain visible. More Work preserves access to RenderMan, CPU Raytracer, Norwegian Lakeside, Snowbound Environment, Going Merry and Cinematography. Each project has one canonical page.
 
-## Confirmed content
+## Constraints
 
-- Featured lighting projects: Venator Above Coruscant, Spaceship and R2-D2 Desert Look Development.
-- Cinematography showreel and stills.
-- Pipeline tools: AOVGuard and FarmFlow.
-- Additional environment, rendering and ray-tracing studies.
-- Public CV, email, LinkedIn, GitHub and Vimeo links.
+- Static HTML/CSS/vanilla JS, no build step, CMS, backend, paid services or visitor tracking.
+- Local Roboto supplied by Joshua, neutral dark surfaces and restrained warm accent.
+- Original renders and files preserved; no CSS filters, colour tints or invented evidence.
+- Essential navigation, contact, media fallback and project links available without JS.
+- Vimeo starts from a real local poster and loads after interaction; direct external link always available.
+- Existing CV remains unchanged; discrepancies are reported separately.
+- Review changes locally before publication. Commits, pushes and deployment require express permission; Joshua subsequently authorised publishing the 17 October 2026 revision.
 
-## Product constraints
+## Acceptance
 
-- Static HTML, CSS and vanilla JavaScript; no application backend.
-- Must remain deployable on GitHub Pages.
-- Use existing real project media and truthful role descriptions.
-- Do not invent credits, awards, employers, production claims or software usage.
-- Vimeo is an external embed and must have a direct-link fallback.
-- Preserve keyboard navigation, visible focus, reduced-motion support and responsive layouts.
-- Performance matters: defer non-critical media and avoid loading every large asset above the fold.
-
-## Success criteria
-
-- The current principal showreel is the first major content section after the hero.
-- Venator, Spaceship and R2-D2 are the first projects in that order.
-- Project imagery fills its panel with intentional framing.
-- Visitors can reach the showreel, work, pipeline tools, CV and contact from a persistent compact navigation.
-- The homepage and all project pages use one visual system: locally hosted Roboto, dark neutral surfaces, white controls, tungsten metadata and restrained technical overlays.
+Four specialties consistent across hero/About/contact/footer/metadata. Work visible early, contribution distinguished from third-party assets. Working CV/contact and all twelve existing routes. Responsive, keyboard accessible, motion-reduced interactions. Verified requests and resources, with laboratory measurements distinguished from field experience. Do not claim full WCAG conformance from automated testing alone.

@@ -84,9 +84,9 @@
       return false;
     }
   };
-  document.querySelectorAll('[data-copy-email]').forEach(button => button.addEventListener('click', event => {
+  document.querySelectorAll('[data-copy-email]').forEach(button => { button.hidden = false; button.addEventListener('click', event => {
     window.portfolioCopy(button.dataset.email || window.PORTFOLIO_CONFIG?.email || 'Joshalexmedina@hotmail.com','Email copied',{button,animate:event.detail > 0});
-  }));
+  }); });
 
   const imageLinks = Array.from(document.querySelectorAll('.project-main .image-detail-link'));
   const links = imageLinks.filter((link,index) => imageLinks.findIndex(item => item.href === link.href) === index);

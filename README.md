@@ -1,223 +1,91 @@
 # Joshua Medina — Portfolio
 
-Portfolio estático en inglés para **Lighting Artist | Pipeline TD | VFX Artist**, hecho con HTML, CSS y JavaScript. La portada prioriza el showreel y una selección breve de proyectos; las páginas de proyecto contienen las responsabilidades, retos y resultados proporcionados por Joshua. La tipografía principal es **Neue Montreal**, integrada localmente con sus pesos Regular, Medium, Bold e Italic.
+Portafolio estático en inglés de **Lighting TD / Compositor / Technical Artist / Pipeline TD**. HTML, CSS y JavaScript sin compilación, CMS, backend ni dependencias de ejecución. Tipografía **Roboto**, alojada localmente desde el paquete entregado por Joshua.
 
-No requiere instalar paquetes ni compilar. El sitio está publicado en [joshmedinag.github.io](https://joshmedinag.github.io/).
+La versión publicada está en https://joshmedinag.github.io/. La revisión del **17 de octubre de 2026** se validó primero en local; Joshua autorizó después su publicación.
 
 ## Vista previa local
 
-Desde PowerShell, dentro de esta carpeta:
+En PowerShell:
 
 ```powershell
-py -m http.server 4173 --bind 127.0.0.1
+Set-Location C:\Joshua_Portfolio
+python -m http.server 4173 --bind 127.0.0.1
 ```
 
-Usa `python` en lugar de `py` si lo requiere tu instalación. Abre [la vista previa](http://127.0.0.1:4173/). Detén el servidor con `Ctrl+C`.
+Abre http://127.0.0.1:4173/. Si `python` no existe, utiliza `py`. Detén el servidor con `Ctrl+C`. Las páginas de proyecto se abren directamente, por ejemplo http://127.0.0.1:4173/projects/aovguard.html.
 
-## Sustituir las imágenes sin editar HTML
+## Recorridos y contenido
 
-Los recursos ya están conectados a sus ubicaciones. **Exporta cada imagen en el formato indicado y reemplaza el archivo con el mismo nombre**. No es necesario cambiar HTML, JavaScript ni ningún manifiesto. Los proyectos utilizan material real proporcionado por Joshua; la presentación de AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para el sitio. FarmFlow utiliza una portada de tres etapas construida exclusivamente con el wireframe de Maya, el beauty real de Arnold y la verificación EXR, conserva el diagrama técnico en HTML/CSS y añade capturas reales de ejecución. La portada general utiliza una selección del demo reel.
+- La presentación conecta las cuatro especialidades. Son áreas de orientación, no empleos anteriores.
+- El hero permite seleccionar Venator, Spaceship y R2-D2. Empieza **pausado**; Play slideshow activa la rotación de ocho segundos. La navegación manual pausa, al salir de pantalla o cambiar de pestaña no se rota y el movimiento reducido evita las transiciones. Texto e imagen están separados: no hay filtros de color ni capas de sombreado sobre los renders.
+- El showreel principal usa https://vimeo.com/1232872369. Un póster real y un enlace externo están en el HTML; iframe y SDK se cargan tras pulsar Play. Sin JavaScript se mantiene el enlace a Vimeo. No hay reproducción automática con sonido al abrir la página.
+- Lighting & Compositing presenta Venator, Spaceship, R2-D2 y Broken Horizons, en ese orden.
+- Technical Art & Pipeline muestra AOVGuard y FarmFlow en la misma página, sin una pestaña que oculte uno de ellos. Cada caso documenta qué hace la herramienta, evidencia y limitaciones.
+- More Work es un desplegable HTML nativo con seis estudios adicionales: RenderMan, CPU Raytracer, Norwegian Lakeside, Snowbound Environment, Going Merry y Cinematography. Se puede abrir sin JavaScript. Sus filtros mejoran progresivamente el catálogo; no ocultan los seis proyectos principales.
+- Las URLs `?category=lighting`, `?category=rendering` y `?category=cinematography` abren y filtran More Work. `?category=pipeline` lleva al recorrido técnico. Las doce rutas de proyecto se conservan.
+- Los comparadores mantienen sus imágenes originales y la separación render/composite. Funcionan con arrastre, flechas, Home/End y tres botones de vista. El par R2-D2 procede de las dos mitades alineadas de un mismo archivo de referencia.
+- Las galerías abren imágenes originales con flechas, Escape y restauración del foco. El menú móvil soporta teclado y Escape.
+- Email me abre mailto; Copy email copia con confirmación de 1,8 segundos solo tras éxito. La dirección permanece como texto seleccionable; sin JavaScript el botón de copiar está oculto y mailto sigue funcionando.
 
-El CV público se encuentra en `assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf` y se abre desde la sección CV o desde la navegación principal.
+## Configuración compartida
 
-| Archivo en `images/` | Dónde aparece | Contenido previsto |
-| --- | --- | --- |
-| `hero/hero-reel-01.jpg` a `hero-reel-07.jpg` | Carrusel de portada | Siete fotogramas limpios del demo reel 2026 |
-| `hero/hero-norwegian-01.jpg` y `hero-norwegian-02.jpg` | Carrusel de portada | Dos fotogramas de Norwegian Lakeside |
-| `hero/hero-snowbound-01.jpg` y `hero-snowbound-02.jpg` | Carrusel de portada | Dos fotogramas de Snowbound Environment |
-| `r2d2-main.jpg` | Carrusel, tarjeta y cabecera | Último estado corregido de color del breakdown de R2-D2, recortado al formato 2.35:1 |
-| `cinematography-*.jpg` | Tarjeta y galería de Cinematography Showreel | 14 fotogramas extraídos directamente del MP4 original entregado por Joshua; las capturas de referencia no se incluyen en el sitio |
-| `spaceship-main.png` | Carrusel, tarjeta y cabecera | Plano final limpio extraído del breakdown actualizado de Spaceship |
-| `brands/maya-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Autodesk Maya |
-| `brands/python-original.svg` | Tarjeta y cabecera de AOVGuard | Logotipo de Python |
-| `brands/aovs.svg` | Tarjeta y cabecera de AOVGuard | Símbolo de AOVs creado para el portfolio |
-| `farmflow-beauty.png` | Portada y evidencia de FarmFlow | Conversión limpia del beauty ACEScg generado por Arnold |
-| `farmflow-wireframe.png` | Portada y evidencia de FarmFlow | Wireframe de la escena de prueba en Maya |
-| `farmflow-render-run.png` | Evidencia de FarmFlow | Render de Arnold ejecutado y comprobado desde el panel |
-| `farmflow-sequence-verified.png` | Evidencia de FarmFlow | Secuencia de diez archivos verificada dentro de Maya |
-| `aovguard-architecture.jpg` | Sección System design de AOVGuard | Diagrama de arquitectura del informe MSc |
-| `aovguard-current-ui.png` | Galería y vista previa social de AOVGuard | Interfaz actual del repositorio público |
-| `aovguard-technical-channels.png` | Galería de AOVGuard | Diagnóstico independiente de normales y profundidad |
-| `aovguard-corrupt-frame.png` | Galería de AOVGuard | Recuperación y localización de un EXR ilegible dentro de una secuencia |
-| `aovguard-temporal-chart.png` | Galería de AOVGuard | Curva temporal de luminancia, mediana y rango normal |
-| `aovguard-frame-navigation.png` | Galería de AOVGuard | Navegación desde una métrica temporal al frame exacto |
-| `aovguard-frame-table.png` | Galería de AOVGuard | Mediciones por archivo y AOV |
-| `aovguard-sequence-table.png` | Galería de AOVGuard | Patrón, rango, archivos presentes y padding de una secuencia |
-| `aovguard-cryptomatte-regression.png` | Galería de AOVGuard | Caso histórico que documenta el falso positivo corregido para Cryptomatte |
-| `aovguard-ui.jpg` | Material histórico de AOVGuard | Interfaz documentada en el informe MSc |
-| `aovguard-report.jpg` | Galería de AOVGuard | Diagnósticos de una secuencia real |
-| `going-merry-main.jpg` | Tarjeta y póster del vídeo | Frame del vídeo a los 15 segundos |
-| `going-merry-breakdown.jpg` | Galería de Going Merry | Vista superior del vídeo a los 25 segundos |
-| `lighting-main.jpg` | Tarjeta de Lighting y póster del vídeo | Frame de Broken Horizons a los 43 segundos |
-| `lighting-breakdown.jpg` | Proceso de Lighting | Captura de iluminación y cámara en Unreal, del informe |
-| `broken-horizons-atmosphere.jpg` | Galería de Lighting | Frame del paisaje con niebla a los 25 segundos |
-| `broken-horizons-sculpture.jpg` | Galería de Lighting | Frame del Roy Dog a los 65 segundos |
-| `broken-horizons-render-settings.jpg` | Proceso de Lighting | Preset de Movie Render Queue del informe |
-| `broken-horizons-location-reference.jpg` | Referencias de Lighting | Fotografía de Tout Quarry del informe |
-| `broken-horizons-moodboard-reference.jpg` | Referencias de Lighting | Tablero de referencias visuales externas del informe |
-| `nordic-main.jpg` | Tarjeta y póster principal de Norwegian Lakeside | Cabaña junto al lago en luz cálida |
-| `nordic-exterior.jpg` | Galería y póster de Norwegian Lakeside | Exterior de la terraza y el lago |
-| `nordic-interior.jpg` | Galería y póster de Norwegian Lakeside | Interior iluminado desde puertas y ventanas |
-| `nordic-wide.jpg` | Galería y póster de Norwegian Lakeside | Vista amplia desde el agua |
-| `nordic-cabin.jpg` | Póster de Norwegian Lakeside | Aproximación a la cabaña desde el lago |
-| `snow-main.jpg` | Póster de la secuencia final de Snowbound Environment | Fotograma del paneo final de invierno |
-| `snow-environment.jpg` | Galería y póster de Snowbound Environment | Vista del lago con capas de profundidad |
-| `snowfall.jpg` | Galería y póster de Snowbound Environment | Estudio de nevada intensa |
-| `snow-breakdown.jpg` | Tarjeta y póster principal de Snowbound Environment | Estado final de la transformación invernal |
-| `raytracer-main.png` | Tarjeta y cabecera del raytracer | Render final de la Trifuerza a 1920 × 1080 |
-| `raytracer-early.png` | Galería del raytracer | Primera etapa con triángulos planos separados |
-| `raytracer-reflections.png` | Galería del raytracer | Desarrollo de reflejos HDRI y material metálico |
-| `raytracer-junction-upper.png` | Galería del raytracer | Inspección de la unión superior |
-| `raytracer-junction-lower.png` | Galería del raytracer | Inspección del contacto inferior |
-| `renderman-main.png` | Tarjeta y cabecera de RenderMan | Render refinado de la naranja en primer plano |
-| `renderman-breakdown.png` | Galería de RenderMan | Render refinado lateral de la superficie |
-| `renderman-top.png` | Galería de RenderMan | Render refinado desde arriba |
-| `renderman-wide.png` | Galería de RenderMan | Render refinado de encuadre amplio |
+`js/site-config.js` contiene correo público, GitHub, LinkedIn, Vimeo y reel. `js/main.js` actualiza los elementos marcados sin reconstruir la navegación o el contacto. Si cambian datos públicos, actualiza también los respaldos HTML para mantenerlos disponibles sin JavaScript.
 
-El carrusel cambia de imagen cada **5,6 segundos** con un desplazamiento suave. Se detiene cuando la pestaña queda en segundo plano y para usuarios que prefieren movimiento reducido. Sus dos primeras imágenes proceden de los planos finales de Venator y Spaceship. Siete fotogramas adicionales proceden de `JoshuaMedina_DemoReel_2026.mp4`; se recortó la franja inferior que contenía nombres de software y detalles de breakdown, sin retocar la iluminación ni el color.
+Los headers y footers se mantienen como HTML estático en la portada y los doce casos; no se descargan con fetch. Esta duplicación pequeña es deliberada. `tools/verify_portfolio.cjs` comprueba su coherencia, enlaces, identidad y recorridos. No se añade un sistema de plantillas ni build para generar trece páginas.
 
-Los fotogramas de Going Merry y Broken Horizons y los cuatro renders refinados de RenderMan miden **1920 × 1080 px**. Las imágenes extraídas de los PDF conservan su resolución disponible, sin ampliación artificial; las galerías y cabeceras de estos proyectos muestran su proporción completa. Las tarjetas pueden recortar la imagen y la portada utiliza un recorte amplio: deja margen alrededor del sujeto. Para sustituir el placeholder de 1600 × 900 px, se recomienda una imagen panorámica de al menos 1600 px de ancho.
+El CV existente es `assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf`. View CV abre el PDF y Download PDF tiene el atributo de descarga para alojamiento del mismo origen. No se reescribe el documento en esta revisión. El PDF tiene una página; el enlace interno de reel y sus metadatos requieren una actualización separada (véase REVIEW_2026-10-17.md).
 
-No renombres un PNG a `.jpg`: expórtalo realmente como JPEG. Después de sustituirlo, recarga con `Ctrl+F5` si el navegador conserva la versión anterior. No ejecutes el generador interno de placeholders después de añadir tus imágenes finales.
+## Material y fidelidad
 
-## Contacto y vídeo
+Consulta `images/ASSETS.md` para procedencia y `REVIEW_2026-10-17.md` para decisiones, validación y pendientes. Los originales no se sustituyen al optimizar miniaturas. `images/thumbs/` contiene variantes reales; `srcset` y `sizes` seleccionan la resolución. Las capturas técnicas nuevas usan WebP sin pérdida; los enlaces de galería conservan el archivo original.
 
-`js/site-config.js` ya contiene:
+- Venator y Spaceship usan portadas extraídas de los breakdowns actualizados entregados por Joshua. Su aportación se limita a iluminación, look development, render y composición documentados.
+- R2-D2 documenta ingestión, assembly, OSL, iluminación RenderMan y acabado Nuke; el modelado del asset no se atribuye a Joshua.
+- Broken Horizons conserva vídeo, evidencia de Unreal y créditos de equipo. Snowbound abre con el plano final antes del proceso.
+- Cinematography utiliza Vimeo 1230422221 y catorce capturas del MP4 original; no las capturas de pantalla de referencia. Roles confirmados: Director / Cinematographer / Camera Operator.
+- AOVGuard y FarmFlow presentan evidencia fechada: sus cifras de pruebas y cobertura son resultados documentados de las herramientas, no pruebas ejecutadas al revisar la web. FarmFlow separa Maya/Arnold verificado, cola/Qube simulado y adaptadores pendientes.
+- El benchmark del CPU Raytracer procede del informe de desarrollo; no es una promesa general ni una medición del equipo que sirve la web.
 
-- Correo: **Joshalexmedina@hotmail.com**
-- GitHub: [Joshmedinag](https://github.com/Joshmedinag)
-- Vimeo/showreel principal: [Joshua Medina — Principal Showreel 2026](https://vimeo.com/1232872369)
-- LinkedIn: [Joshua Alexander Medina Gracia](https://www.linkedin.com/in/joshua-alexander-medina-gracia-3561981a3/).
+MSc Computer Animation & Visual Effects, Bournemouth University: **completado**, confirmado por Joshua el 17 de octubre de 2026. No implica experiencia profesional en un estudio.
 
-Los datos públicos de contacto se limitan al correo y los enlaces profesionales. No se muestran teléfono, dirección particular ni ubicación personal.
-
-El Vimeo está incrustado en `index.html`, funciona sin JavaScript y tiene un enlace alternativo **Watch on Vimeo**. No hay reproducción automática. El código evita volver a cargar el mismo iframe cuando la configuración coincide con el HTML.
-
-Para cambiarlo más adelante, actualiza `showreel` en `js/site-config.js`. Acepta Vimeo, YouTube o una ruta a un MP4/WebM/OGV local. Si necesitas conservar la versión sin JavaScript, actualiza también el iframe y enlace estáticos en `index.html`. Los enlaces estáticos de contacto sirven igualmente como respaldo sin JavaScript.
-
-Vimeo carga recursos externos y debe permitir la inserción en el dominio donde publiques. Se utiliza el parámetro `dnt=1`; el sitio no incorpora analítica propia.
-
-El proyecto `projects/cinematography.html` presenta primero [Showreel CINEMATOGRAPHY Joshua Medina](https://vimeo.com/1230422221), con un enlace alternativo a Vimeo. La portada y la galería usan 14 fotogramas extraídos del archivo original proporcionado por Joshua; el MP4 de 547 MB y las capturas de referencia no se incluyen en el repositorio.
-
-Going Merry tiene un reproductor HTML nativo en `projects/going-merry.html` y un enlace directo al MP4. El archivo `assets/video/going-merry.mp4` es una copia optimizada del vídeo entregado: **53,5 segundos, 1920 × 1080, 24 fps, H.264 y audio AAC**, aproximadamente **31,6 MB** frente a los 97,3 MB del original. Incluye `faststart` para comenzar la reproducción sin descargar el archivo completo, controles, reproducción en línea en móvil y carga inicial de metadatos. No tiene autoplay. La marca de Houdini del material original se conserva.
-
-Snowbound Environment abre con el breakdown de la transformación hacia invierno y utiliza su estado final como portada. Después presenta el paneo final, una vista ambiental y un estudio de nevada intensa. Las copias web mantienen 1920 × 1080, H.264/AAC y `faststart`; pesan en conjunto aproximadamente **19,1 MB** frente a unos **391 MB** de los originales. La página atribuye a Joshua la iluminación del entorno, look development, cámara y corrección de color. El trabajo se realizó en Unreal Engine y el acabado de color en DaVinci Resolve.
-
-Norwegian Lakeside tiene cinco reproductores HTML nativos para el plano principal, el exterior de la terraza, el interior, la vista amplia del lago y la aproximación a la cabaña. Las copias web mantienen 1920 × 1080, utilizan H.264/AAC y `faststart`, y pesan en conjunto **23,2 MiB** frente a **128,7 MiB** de los originales. Los clips duran entre 8,34 y 10,43 segundos. La página se limita a las responsabilidades visuales confirmadas por el material y no atribuye el modelado ni la creación de assets.
-
-## Material de los informes
-
-La página de FarmFlow resume `FarmFlow_documentacion_completa_1.9.0.docx`. Presenta la arquitectura neutral al DCC, el plug-in para Maya 2026, preflight, render Arnold por frame, verificación EXR, diagnósticos, cola y handoff. Las cifras publicadas —**753 pruebas**, **90,40 % de cobertura documentada** y **10 de 10 frames verificados**— proceden de ese informe. La web distingue el flujo Maya/Arnold comprobado, el comportamiento de cola/Qube simulado y las integraciones pendientes. La captura incluida en el DOCX no se publica porque muestra rutas personales del equipo local.
-
-Lighting & Look Development presenta **Broken Horizons** con vídeo y material de `JoshuaMG_IndividualContribution.pdf`. La aportación de Joshua se describe como iluminación, cinematografía y preparación del render en Unreal Engine. Incluye capturas del setup y de Movie Render Queue, fotogramas, referencias de Tout Quarry y un tablero visual externo inspirado en Death Stranding. Los créditos del equipo proceden del vídeo y del informe; no se publica la evaluación académica de los compañeros ni el PDF completo.
-
-`assets/video/broken-horizons.mp4` conserva los **118,29 segundos** del archivo entregado, incluidos títulos y créditos, a **1920 × 1080, 24 fps, H.264/AAC**, con faststart, controles y sin autoplay. La copia web pesa **36,8 MB** frente a los 219,5 MB del original. El informe describe una secuencia de unos 90 segundos; la web indica la duración real del archivo completo. Las capturas y referencias se abren a tamaño completo al seleccionarlas. Los ajustes de render y enlaces a documentación de Epic Games están en desplegables.
-
-La página de RenderMan utiliza los cuatro renders refinados de 1920 × 1080 proporcionados por Joshua. La explicación del modelado por Python, los poros geométricos, PxrSurface y la iluminación procede del informe de la naranja.
-
-La página Physically Based CPU Raytracer — Triforce resume `Joshua_Raytracer_Development_Report.docx`. Presenta la geometría cerrada y biselada, el modelo Cook–Torrance/GGX, la iluminación y los reflejos HDRI, el pipeline HDR y la aceleración con Numba. Las cifras de 256 SPP, cuatro bounces, 19 pruebas aprobadas, 258,8 segundos de render final y una mejora aproximada de 75× proceden de las mediciones del informe. Se publica el render final entregado y cuatro imágenes de desarrollo extraídas del documento; la referencia externa de The Legend of Zelda no se incluye.
-
-La página de AOVGuard presenta la versión estable 1.2.1 y las correcciones actuales del repositorio público, con arquitectura, flujo de revisión, GUI, validación de secuencias, recuperación de frames corruptos, Cryptomatte, métricas temporales y revisión de outliers. Las cifras de 282 pruebas, 95,37 % de cobertura y 4/4 matrices CI proceden de la verificación documentada en `main` y en `AOVGuard_mejoras_2026.pdf` el **24 de septiembre de 2026**; no son pruebas ejecutadas al comprobar esta web. La página enlaza la documentación pública en inglés y español, y los detalles desplegables delimitan el benchmark y las limitaciones del prototipo.
-
-La página R2-D2 Desert Look Development & Lighting resume el caso de estudio entregado en `C:\r2d2lighting\portfolio`. Presenta la ingestión Maya/Alembic, el scene assembly en Katana, look development y weathering procedural con OSL, lighting y AOVs en RenderMan, acabado en Nuke y automatización con Python. Publica el plano final, un breakdown de 8,88 segundos, el pipeline, comparaciones de materiales, una tabla de AOVs y la comparación RenderMan/Nuke, además del PDF completo. La página aclara que Joshua no modeló el asset de R2-D2 y delimita su contribución desde la ingestión de escena.
-
-La página Spaceship presenta un caso de Lighting TD de 15 segundos y 360 frames realizado con Blender, USD, Katana, RenderMan y Nuke. El vídeo principal utiliza `spaceship_1st_version.mp4`, seleccionado por Joshua; también incluye el breakdown actualizado de 14,08 segundos, un vídeo de detalle de materiales y nueve estados alineados del frame 541. La portada se extrajo del plano final del nuevo breakdown, sin bandas negras ni rótulo. Las cifras de 223 meshes, 1.080 EXR de render y 360 PNG finales proceden de `CASE_STUDY_EN.md`. La página declara que el modelo base y varias texturas son recursos suministrados, que la Luna es un elemento 2D de Nuke y que no existe una canalización ACES/OCIO documentada para el proyecto.
-
-La página Venator Above Coruscant presenta un estudio de iluminación, look development, render y composición de un solo frame (1113, 1920 × 810) en Katana, RenderMan y Nuke. Incluye el breakdown ampliado de 1 minuto y 2 segundos y quince vistas de materiales, luz, planeta y composición. La portada se extrajo directamente del plano final del vídeo proporcionado por Joshua, recortando las bandas y el rótulo del propio breakdown. Por petición de Joshua, los créditos de autores del modelo y los assets quedan fuera de la página por ahora; el texto atribuye únicamente su aportación al plano.
-
-Consulta `images/ASSETS.md` para la procedencia exacta. Los originales entregados no se modifican y los PDF completos no forman parte de los archivos públicos del sitio.
-
-## Responsabilidades y revisión de proyectos
-
-El reel enlaza a los casos documentados de Spaceship, Broken Horizons, Norwegian Lakeside y Snowbound Environment. Las tarjetas muestran el rol de Joshua, y las páginas detallan responsabilidades, herramientas, referencias y créditos. No se muestran campos vacíos ni se atribuyen responsabilidades por plano sin confirmar.
-
-La lista completa de créditos del showreel, con tiempos y fuentes de assets, sigue pendiente de recibir. Mantener ese pendiente fuera de la interfaz no sustituye su recopilación antes de una candidatura.
-
-## Navegación y filtros
-
-La portada prioriza lighting y look development, seguida de herramientas de pipeline y rendering. Las primeras tarjetas de proyectos son Venator, Spaceship y R2-D2, en ese orden. El carrusel principal muestra primero el plano final del Venator y después el plano de Spaceship; ambos se muestran completos en escritorio y usan un encuadre cercano como fondo en móvil. Los filtros permiten ver All work, Lighting & look development, Pipeline tools o Rendering & FX. El parámetro `?category=lighting#work` conserva una selección compartible; sin JavaScript se muestran los doce proyectos.
-
-El CV se abre directamente desde la portada y desde la navegación de cualquier página. La sección CV también permite descargarlo. Skills y Education siguen disponibles mediante enlaces en About. El menú móvil funciona en tablet y teléfono, mantiene el foco dentro de la navegación y se cierra con Escape.
-
-El carrusel incluye anterior, siguiente y pausa. La navegación manual pausa la rotación; Resume la activa de nuevo. Se inicia pausado para movimiento reducido y deja de rotar cuando sale de pantalla o la pestaña queda oculta. Las imágenes de las galerías se pueden abrir a tamaño completo.
-
-Solo se inserta la primera imagen del carrusel en el HTML inicial; JavaScript prepara la siguiente y carga las demás progresivamente antes de mostrarlas. Los vídeos secundarios conservan sus pósteres sin precargar el MP4; al reproducir otro vídeo local se pausa el anterior.
-
-## Información pendiente
-
-1. Confirmar si el MSc ya está completado o sigue en curso. Actualmente se muestra **September 2025 – 2026**, sin atribuir un estado definitivo.
-2. Créditos de cada plano del showreel. Broken Horizons ya tiene sus créditos de equipo.
-3. Fuente exacta del asset 3D de Going Merry y su atribución.
-
-Las fechas confirmadas de educación ya están incorporadas: **Lost Boys, 2023–2024**; **UAG, agosto de 2019–diciembre de 2022**.
-
-Las fechas desconocidas y los enlaces sin proporcionar se omiten del sitio. AOVGuard enlaza a su repositorio público oficial: [Joshmedinag/AOVGuard](https://github.com/Joshmedinag/AOVGuard).
-
-## Archivos principales
+## Estructura
 
 ```text
-index.html                  Portada y secciones profesionales
-css/style.css               Diseño y adaptación a móvil
-css/home-experience.css     Sistema visual y composición de la portada
-js/site-config.js           Datos de contacto y reel
-js/main.js                  Menú, sección activa y reproductor
-images/*.{jpg,png}          Imágenes de proyectos y recursos de portada
-images/hero/*.jpg           Once fotogramas del demo reel y entornos en el carrusel
-images/spaceship-main.png   Plano final de Spaceship en portada y página
-images/spaceship/*.png      Nueve etapas y tableros del caso Spaceship
-images/venator/*.webp       Portada extraída del breakdown y etapas del frame
-images/ASSETS.md             Procedencia y mapa de recursos
-projects/aovguard.html       Herramienta de validación EXR/AOV
-projects/farmflow.html       Pipeline Maya/Arnold para Lighting TD
-projects/r2d2-lighting.html  Look development, lighting y comp de R2-D2
-projects/spaceship.html      Lighting TD, RenderMan AOVs y comp del plano espacial
-projects/venator.html        Lighting y composición del Venator sobre Coruscant
-projects/lighting.html       Lighting y look development
-projects/norwegian-lakeside.html  Iluminación de entorno nórdico
-projects/snow-environment.html  Iluminación de entorno nevado
-projects/going-merry.html    Simulación de océano
-projects/renderman.html      Estudio de una naranja
-projects/raytracer.html      Raytracer PBR y estudio de la Trifuerza
-assets/favicon.svg          Monograma JM
-assets/fonts/neue-montreal/  Neue Montreal y licencia del paquete entregado
-assets/video/going-merry.mp4  Vídeo optimizado de la simulación
-assets/video/broken-horizons.mp4  Corto grupal completo optimizado
-assets/video/spaceship-*.mp4  Plano final, breakdown y detalle de materiales
-assets/video/venator-breakdown.mp4  Breakdown del frame Venator
-assets/video/nordic-*.mp4    Cinco planos de Norwegian Lakeside
-assets/video/snow-*.mp4      Cuatro clips optimizados del entorno nevado
-.nojekyll                   Publicación estática directa
+index.html                   Portada y doce accesos de proyecto
+projects/*.html              Una página por proyecto; URLs preservadas
+css/style.css                Reglas base y componentes históricos compartidos
+css/site-system.css          Tokens, navegación, contacto y medios compartidos
+css/home-experience.css      Composición editorial de la portada
+css/project-experience.css   Casos de estudio y galerías
+js/site-config.js            Datos públicos confirmados
+js/main.js                   Menú, carrusel, filtros y configuración
+js/site-experience.js        Navegación, copiado e imágenes ampliadas
+js/video-experience.js       Vimeo bajo demanda, errores y vídeos locales
+js/home-experience.js        Comparadores, teclado en catálogo y controles de reel
+assets/fonts/roboto/         Roboto local
+assets/documents/            CV y documentos públicos autorizados
+assets/video/               Copias web optimizadas; originales conservados aparte
+images/                     Material real y miniaturas
+tools/verify_portfolio.cjs   Pruebas reproducibles de recorridos críticos
+404.html                    Recuperación de URL desconocida
+robots.txt / sitemap.xml    Descubrimiento y rutas canónicas
+.nojekyll                   Publicación estática directa en GitHub Pages
 ```
 
-La navegación y el pie se mantienen en los trece HTML. Si cambias su estructura, actualiza todos. El contenido sigue disponible sin JavaScript; las funciones de menú móvil y actualización automática de contacto utilizan JavaScript.
+## Verificación
 
-`.verification/` contiene herramientas de comprobación local y no se incluye en Git. Los WebP y el SVG de la primera maqueta se conservan como recursos anteriores, pero ya no se usan en los HTML.
-
-## Publicar en GitHub Pages
-
-1. Crea un repositorio de portfolio en tu cuenta de GitHub. Con GitHub Free, utiliza un repositorio público.
-2. Sube los archivos con `index.html` en la raíz.
-3. En **Settings → Pages → Build and deployment**, selecciona **Deploy from a branch**.
-4. Elige **main** y **/ (root)** y pulsa **Save**.
-5. Cuando termine el despliegue, abre **Visit site**.
-
-Si creas el repositorio vacío con el nombre `JoshuaPortfolio`, puedes usar:
+Con servidor local activo y Node/Playwright ya disponibles:
 
 ```powershell
-git init
-git add index.html css js images projects assets README.md .gitignore .nojekyll
-git commit -m "Create Joshua Medina portfolio"
-git branch -M main
-git remote add origin https://github.com/Joshmedinag/JoshuaPortfolio.git
-git push -u origin main
+$env:PORTFOLIO_BASE_URL = 'http://127.0.0.1:4173'
+node tools/verify_portfolio.cjs
 ```
 
-Estos comandos son una referencia para otros repositorios. Este sitio ya está conectado a GitHub Pages y publica desde la rama `main`.
+El script permite configurar la ruta existente de Playwright y el navegador con `PORTFOLIO_PLAYWRIGHT_PATH` y `PORTFOLIO_BROWSER_PATH`; no instala paquetes. Resultados y capturas se guardan en `.verification/20261017-audit/`, ignorado por Git. Las pruebas bloquean MP4 y aíslan servicios externos cuando se indica; no envían correo y simulan el clipboard sin modificar el del usuario.
 
-Las rutas relativas funcionan tanto en un sitio de usuario como en un sitio de proyecto bajo `/JoshuaPortfolio/`. Conserva `.nojekyll`. Revisa los créditos y sustituye las imágenes antes de publicar la versión definitiva.
+Una prueba de interfaz con Vimeo simulado no acredita reproducción real ni permisos de inserción. Las mediciones locales sin throttling no son Core Web Vitals de campo ni certifican WCAG. No se incorpora analítica ni seguimiento.
 
-Guías oficiales: [crear un sitio de GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site) y [configurar la fuente de publicación](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+## Publicación
 
-## Referencia
-
-La [web de Yuqian He](https://yuqian-he.github.io/myWebsite/#home) se consultó como referencia estructural inicial. El código y el diseño de este portfolio se crearon para Joshua Medina.
+GitHub Pages está conectado a `main` del repositorio Joshmedinag/Joshmedinag.github.io. Los cambios se revisan localmente y solo se publican tras autorización expresa; Joshua autorizó la publicación de esta revisión. No ejecutar generadores antiguos de placeholders sobre el material final.

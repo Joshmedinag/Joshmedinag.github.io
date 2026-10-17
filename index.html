@@ -4,67 +4,61 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#09090b">
-  <meta name="description" content="Joshua Medina — Lighting TD, Compositor and Technical Artist. Cinematic CG lighting, compositing and tools for reliable VFX rendering.">
-  <title>Joshua Medina — Lighting TD · Compositor · Technical Artist</title>
+  <meta name="description" content="Joshua Medina — Lighting TD, Compositor, Technical Artist and Pipeline TD. Lighting and compositing connected with procedural shading and Python tools.">
+  <title>Joshua Medina — Lighting TD / Compositor / Technical Artist / Pipeline TD</title>
   <link rel="canonical" href="https://joshmedinag.github.io/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Joshua Medina — Lighting TD · Compositor · Technical Artist">
-  <meta property="og:description" content="Cinematic CG lighting, compositing and technical art, with Python tools for reliable VFX rendering.">
+  <meta property="og:title" content="Joshua Medina — Lighting TD / Compositor / Technical Artist / Pipeline TD">
+  <meta property="og:description" content="Lighting, look development and compositing, connected with technical art and Python pipeline tools. Explore Joshua Medina’s showreel and case studies.">
   <meta property="og:url" content="https://joshmedinag.github.io/">
   <meta property="og:image" content="https://joshmedinag.github.io/images/venator/cover-from-breakdown.webp">
   <meta property="og:image:alt" content="Venator above Coruscant in Joshua Medina's final lighting and compositing study">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/roboto/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20261006-roboto">
-  <link rel="stylesheet" href="css/site-system.css?v=20261006-emil">
-  <link rel="stylesheet" href="css/home-experience.css?v=20261006-emil">
+  <link rel="stylesheet" href="css/style.css?v=20261017-editorial">
+  <link rel="stylesheet" href="css/site-system.css?v=20261017-editorial">
+  <link rel="stylesheet" href="css/home-experience.css?v=20261017-editorial">
   <script src="js/site-config.js?v=20261004-main-reel" defer></script>
-  <script src="js/main.js?v=20261006-emil" defer></script>
-  <script src="js/site-experience.js?v=20261006-emil" defer></script>
-  <script src="js/video-experience.js?v=20261006-emil" defer></script>
-  <script src="js/home-experience.js?v=20261006-emil" defer></script>
+  <script src="js/main.js?v=20261017-editorial" defer></script>
+  <script src="js/site-experience.js?v=20261017-editorial" defer></script>
+  <script src="js/video-experience.js?v=20261017-editorial" defer></script>
+  <script src="js/home-experience.js?v=20261017-editorial" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="wordmark" href="#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
-    <p class="availability"><span aria-hidden="true"></span> Available · 2026</p>
     <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
     <nav class="navigation" id="primary-navigation" aria-label="Main navigation">
-      <a href="#home" class="active" aria-current="location">Home</a>
+      <a href="#work">Work</a>
       <a href="#showreel">Showreel</a>
-      <a href="#work">Selected work</a>
-      <a href="#pipeline-lab">Pipeline</a>
       <a href="#about">About</a>
       <a class="nav-cv" href="assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="View Joshua Medina's CV PDF in a new tab">CV <span aria-hidden="true">↗</span></a>
       <a class="nav-contact" href="#contact">Contact <span aria-hidden="true">↗</span></a>
-      <button class="command-trigger" type="button" data-command-open aria-label="Open project and navigation search">Search <kbd>⌘K</kbd></button>
     </nav>
   </header>
   <main id="main">
-    <section class="hero" id="home" aria-labelledby="hero-title">
-      <div class="hero-carousel" data-hero-carousel data-interval="8000" aria-hidden="true">
-        <img class="hero-image hero-image--wide hero-image--venator is-active" src="images/venator/cover-from-breakdown.webp" srcset="images/thumbs/cover-from-breakdown-1200.webp 1200w, images/venator/cover-from-breakdown.webp 1920w" sizes="100vw" alt="" width="1920" height="810" fetchpriority="high" decoding="async" data-scene="ORBIT OVER CORUSCANT" data-pipeline="LIGHTING / LOOK DEVELOPMENT" data-render="KATANA + RENDERMAN" data-project-tools="KATANA / RENDERMAN / NUKE" data-project-title="Venator Above Coruscant" data-project-role="Lighting · look development · rendering · compositing" data-project-href="projects/venator.html" style="--hero-focus:50%">
-        <template data-carousel-slides>
-          <img class="hero-image hero-image--wide hero-image--spaceship" src="images/spaceship-main.png?v=20261004-breakdown2" srcset="images/thumbs/spaceship-main-1200.webp?v=20261004-breakdown2 1200w, images/spaceship-main.png?v=20261004-breakdown2 1920w" sizes="100vw" alt="" width="1920" height="810" decoding="async" data-scene="ORBITAL STATION" data-pipeline="USD PIPELINE" data-render="KATANA + RENDERMAN" data-project-tools="USD / KATANA / RENDERMAN / NUKE" data-project-title="Spaceship" data-project-role="Look development · lighting · rendering · compositing" data-project-href="projects/spaceship.html" style="--hero-focus:42%">
-          <img class="hero-image hero-image--wide hero-image--r2d2" src="images/r2d2-main.jpg?v=20260914-colour" srcset="images/thumbs/r2d2-main-1200.webp 1200w, images/r2d2-main.jpg 1800w" sizes="100vw" alt="" width="1800" height="765" decoding="async" data-scene="TATOOINE CANYON" data-pipeline="PROCEDURAL SHADING" data-render="OSL + NUKE" data-project-tools="MAYA / KATANA / RENDERMAN / NUKE" data-project-title="R2-D2 Desert Look Development" data-project-role="Look development · lighting · rendering · compositing" data-project-href="projects/r2d2-lighting.html" style="--hero-focus:50%">
-        </template>
-      </div>
-      <div class="hero-shade"></div>
-      <div class="hero-content wrap">
-        <p class="eyebrow"><span class="accent-line"></span> Portfolio 2026 · Lighting / compositing / pipeline</p>
-        <h1 id="hero-title">Joshua Medina<br><em>Lighting TD <span class="hero-role-segment">- Compositor</span> <span class="hero-role-segment">- Technical Artist.</span></em></h1>
-        <p class="hero-description">Crafting cinematic light, final-frame composites and reliable tools for high-end visual effects.</p>
+    <section class="hero wrap" id="home" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <h1 id="hero-title">Joshua<br>Medina</h1>
+        <p class="hero-specialties">Lighting TD / Compositor<br>Technical Artist / Pipeline TD</p>
+        <p class="hero-description">I combine lighting, look development and compositing with technical problem-solving and Python tool development.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#showreel">Watch showreel <span aria-hidden="true">▷</span></a>
-          <a class="button button-secondary" href="assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="View CV PDF in a new tab">CV [PDF ↗]</a>
+          <a class="button button-primary" href="#showreel">Watch Showreel <svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></svg></a>
+          <a class="inline-link" href="#pipeline-lab">Technical projects <span aria-hidden="true">↘</span></a>
         </div>
       </div>
-      <div class="hero-telemetry" aria-hidden="true"><span data-carousel-scene>[SCENE: 01 // ORBIT OVER CORUSCANT]</span><span data-carousel-pipeline>[LIGHTING / LOOK DEVELOPMENT]</span><span data-carousel-tools>[KATANA + RENDERMAN]</span><span data-carousel-format>[FRAME: 1920 × 810]</span></div>
-      <div class="hero-bottom wrap">
+      <div class="hero-artwork">
+      <div class="hero-carousel" data-hero-carousel data-interval="8000" aria-hidden="true">
+        <img class="hero-image hero-image--wide hero-image--venator is-active" src="images/venator/cover-from-breakdown.webp" srcset="images/thumbs/cover-from-breakdown-1200.webp 1200w, images/venator/cover-from-breakdown.webp 1920w" sizes="(max-width:1050px) calc(100vw - 32px), 58vw" alt="" width="1920" height="810" fetchpriority="high" decoding="async" data-scene="ORBIT OVER CORUSCANT" data-pipeline="LIGHTING / LOOK DEVELOPMENT" data-render="KATANA + RENDERMAN" data-project-tools="KATANA / RENDERMAN / NUKE" data-project-title="Venator Above Coruscant" data-project-role="Lighting · look development · rendering · compositing" data-project-href="projects/venator.html" style="--hero-focus:50%">
+        <template data-carousel-slides>
+          <img class="hero-image hero-image--wide hero-image--spaceship" src="images/spaceship-main.png?v=20261004-breakdown2" srcset="images/thumbs/spaceship-main-1200.webp?v=20261004-breakdown2 1200w, images/spaceship-main.png?v=20261004-breakdown2 1920w" sizes="(max-width:1050px) calc(100vw - 32px), 58vw" alt="" width="1920" height="810" decoding="async" data-scene="ORBITAL STATION" data-pipeline="USD PIPELINE" data-render="KATANA + RENDERMAN" data-project-tools="USD / KATANA / RENDERMAN / NUKE" data-project-title="Spaceship" data-project-role="Look development · lighting · rendering · compositing" data-project-href="projects/spaceship.html" style="--hero-focus:42%">
+          <img class="hero-image hero-image--wide hero-image--r2d2" src="images/r2d2-main.jpg?v=20260914-colour" srcset="images/thumbs/r2d2-main-1200.webp 1200w, images/r2d2-main.jpg 1800w" sizes="(max-width:1050px) calc(100vw - 32px), 58vw" alt="" width="1800" height="765" decoding="async" data-scene="TATOOINE CANYON" data-pipeline="PROCEDURAL SHADING" data-render="OSL + NUKE" data-project-tools="MAYA / KATANA / RENDERMAN / NUKE" data-project-title="R2-D2 Desert Look Development" data-project-role="Look development · lighting · rendering · compositing" data-project-href="projects/r2d2-lighting.html" style="--hero-focus:50%">
+        </template>
+      </div>
+        <div class="hero-caption">
         <a class="hero-project-link" data-carousel-project href="projects/venator.html">
-          <span class="hero-project-kicker">FEATURED PROJECT <span data-carousel-project-index>01</span></span>
           <strong data-carousel-project-title>Venator Above Coruscant</strong>
           <small data-carousel-project-role>Lighting · look development · rendering · compositing</small>
           <span class="hero-project-arrow" aria-hidden="true">↗</span>
@@ -75,13 +69,15 @@
           <button type="button" data-carousel-next aria-label="Next featured project">→</button>
           <button type="button" data-carousel-pause aria-label="Pause featured project slideshow" aria-pressed="false">Pause</button>
         </div>
+        </div>
+      <div class="hero-telemetry" aria-hidden="true"><span data-carousel-scene>[SCENE: 01 // ORBIT OVER CORUSCANT]</span><span data-carousel-pipeline>[LIGHTING / LOOK DEVELOPMENT]</span><span data-carousel-tools>[KATANA + RENDERMAN]</span><span data-carousel-format>[FRAME: 1920 × 810]</span></div>
       </div>
     </section>
 
     <section class="section reel-section wrap" id="showreel" aria-labelledby="reel-title">
       <div class="section-heading reel-heading">
         <div><h2 id="reel-title">Showreel<span class="muted-dot">.</span></h2></div>
-        <p class="section-intro">The principal reel: lighting, look development, cinematography and visual effects.</p>
+        <p class="section-intro">Lighting, look development, compositing and cinematography. Explore the case studies for my contribution and process.</p>
       </div>
       <div class="reel-theater" data-reel-theater>
         <div class="reel-stage vimeo-stage" id="reel-stage" data-vimeo-stage data-vimeo-url="https://player.vimeo.com/video/1232872369?dnt=1" data-vimeo-title="Joshua Medina — Principal Showreel 2026">
@@ -96,7 +92,7 @@
       </div>
       <div class="reel-links"><a class="inline-link" data-reel-link href="https://vimeo.com/1232872369" target="_blank" rel="noopener noreferrer">Watch on Vimeo <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
       <div class="reel-project-links" aria-label="Project responsibilities and breakdowns">
-        <p class="eyebrow">EXPLORE THE PROJECTS</p>
+        <h3>Project contributions</h3>
         <p>See the work and my specific contribution in these case studies.</p>
         <a href="projects/spaceship.html"><strong>Spaceship</strong><span>Look development · lighting · rendering · compositing</span><span aria-hidden="true">↗</span></a>
         <a href="projects/lighting.html"><strong>Broken Horizons</strong><span>Lighting · cinematography · rendering</span><span aria-hidden="true">↗</span></a>
@@ -107,31 +103,23 @@
 
     <section class="section work-section wrap" id="work" aria-labelledby="work-title">
       <div class="section-heading">
-        <div><h2 id="work-title">Behind the frame<span class="muted-dot">.</span></h2></div>
-        <p class="section-intro">Shot lighting, look development<br> and the tools behind the render.</p>
+        <h2 id="work-title">Selected work</h2>
+        <p class="section-intro">Final images, the decisions behind them and my contribution to each project.</p>
       </div>
-      <div class="work-toolbar" data-work-filters hidden>
-        <div class="work-filters" role="group" aria-label="Filter selected work">
-          <button type="button" data-filter="all" aria-pressed="true"><span class="filter-name" data-all-work-label>Featured work</span> <span data-all-work-count>5</span></button>
-          <button type="button" data-filter="lighting" aria-pressed="false">Lighting &amp; look development</button>
-          <button type="button" data-filter="cinematography" aria-pressed="false">Cinematography</button>
-          <button type="button" data-filter="pipeline" aria-pressed="false">Pipeline tools</button>
-          <button type="button" data-filter="rendering" aria-pressed="false">Rendering &amp; FX</button>
-        </div>
-        <p class="filter-status" data-filter-status role="status" aria-live="polite" aria-atomic="true">12 projects</p>
-      </div>
-      <p class="project-keyboard-hint" id="project-keyboard-hint"><kbd>←</kbd> <kbd>→</kbd> Browse projects · <kbd>Enter</kbd> Open · <kbd>Tab</kbd> Continue</p>
-      <div class="project-grid" id="project-grid" role="group" aria-label="Selected projects" aria-describedby="project-keyboard-hint">
-        <a data-category="lighting rendering" data-featured class="project-card project-card--lead venator-card" href="projects/venator.html">
+      <nav class="work-paths" aria-label="Explore selected work"><a href="#visual-work">Lighting &amp; Compositing <span aria-hidden="true">↓</span></a><a href="#pipeline-lab">Technical Art &amp; Pipeline <span aria-hidden="true">↓</span></a></nav>
+      <div class="work-subheading" id="visual-work"><h3>Lighting &amp; Compositing</h3><p>Shot lighting, materials and the final composite.</p></div>
+      <p class="project-keyboard-hint" id="project-keyboard-hint" data-keyboard-hint hidden><kbd>←</kbd> <kbd>→</kbd> Browse projects · <kbd>Enter</kbd> Open</p>
+      <div class="project-grid" id="project-grid" role="group" aria-label="Lighting and compositing projects" aria-describedby="project-keyboard-hint">
+        <a data-category="lighting rendering" class="project-card venator-card" href="projects/venator.html">
           <div class="card-media">
-            <img src="images/venator/cover-from-breakdown.webp" srcset="images/thumbs/cover-from-breakdown-640.webp 640w, images/thumbs/cover-from-breakdown-1200.webp 1200w, images/venator/cover-from-breakdown.webp 1920w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc(100vw - 112px), 1320px" alt="Final Venator and Coruscant composite, captured from the project breakdown video" width="1920" height="810" loading="lazy">
+            <img src="images/venator/cover-from-breakdown.webp" srcset="images/thumbs/cover-from-breakdown-640.webp 640w, images/thumbs/cover-from-breakdown-1200.webp 1200w, images/venator/cover-from-breakdown.webp 1920w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Final Venator and Coruscant composite, captured from the project breakdown video" width="1920" height="810" loading="lazy">
             <span class="category-tag">LIGHTING · LOOK DEVELOPMENT</span><span class="card-arrow" aria-hidden="true">↗</span>
           </div>
           <div class="card-heading"><h3>Venator Above Coruscant</h3><span class="project-number">01</span></div>
           <p class="card-role"><span>My role</span> Lighting · look development · rendering · compositing</p>
           <p class="card-description">A single-frame sunset study, from material and light diagnostics to the final Nuke composite.</p><p class="card-tools">Katana · RenderMan · Nuke</p>
         </a>
-        <a data-category="lighting rendering" data-featured class="project-card spaceship-card" href="projects/spaceship.html">
+        <a data-category="lighting rendering" class="project-card spaceship-card" href="projects/spaceship.html">
           <div class="card-media">
             <img src="images/spaceship-main.png?v=20261004-breakdown2" srcset="images/thumbs/spaceship-main-640.webp?v=20261004-breakdown2 640w, images/thumbs/spaceship-main-1200.webp?v=20261004-breakdown2 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="A detailed ring-shaped space station travelling beside the Moon in Joshua Medina's final Spaceship composition" width="1920" height="810" loading="lazy">
             <span class="category-tag">LIGHTING TD · LOOK DEVELOPMENT</span><span class="card-arrow" aria-hidden="true">↗</span>
@@ -140,7 +128,7 @@
           <p class="card-role"><span>My role</span> Look development · lighting · rendering · compositing</p>
           <p class="card-description">A 360-frame USD shot with RenderMan AOVs, production diagnostics and a controlled Nuke finish.</p><p class="card-tools">Blender · USD · Katana · RenderMan · Nuke · Python</p>
         </a>
-        <a data-category="lighting rendering" data-featured class="project-card" href="projects/r2d2-lighting.html">
+        <a data-category="lighting rendering" class="project-card" href="projects/r2d2-lighting.html">
           <div class="card-media">
             <img src="images/r2d2-main.jpg?v=20260914-colour" srcset="images/thumbs/r2d2-main-640.webp 640w, images/thumbs/r2d2-main-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="R2-D2 integrated into a desert canyon through Joshua Medina's look development, lighting and colour-corrected final composition" width="1800" height="765" loading="lazy">
             <span class="category-tag">LIGHTING TD · LOOK DEVELOPMENT</span><span class="card-arrow" aria-hidden="true">↗</span>
@@ -149,7 +137,7 @@
           <p class="card-role"><span>My role</span> Look development · lighting · rendering · compositing</p>
           <p class="card-description">A complete shot workflow with procedural weathering, RenderMan AOVs and a controlled Nuke finish.</p><p class="card-tools">Maya · Katana · RenderMan · OSL · Nuke · Python</p>
         </a>
-        <a data-category="lighting" data-featured class="project-card" href="projects/lighting.html">
+        <a data-category="lighting" class="project-card" href="projects/lighting.html">
           <div class="card-media">
             <img src="images/lighting-main.jpg" srcset="images/thumbs/lighting-main-640.webp 640w, images/thumbs/lighting-main-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Broken Horizons: stone sculptures and red flowers in a moody quarry landscape, lit and framed by Joshua Medina" width="1920" height="1080" loading="lazy">
             <span class="category-tag">LIGHTING &amp; LOOK DEVELOPMENT</span><span class="card-arrow" aria-hidden="true">↗</span>
@@ -158,21 +146,71 @@
           <p class="card-role"><span>My role</span> Lighting · cinematography · rendering</p>
           <p class="card-description">A group cinematic exploring overcast light, atmospheric depth and visual storytelling.</p><p class="card-tools">Unreal Engine · Lumen · Movie Render Queue</p>
         </a>
-        <a data-category="pipeline" data-featured class="project-card aovguard-card" href="projects/aovguard.html">
+      </div>
+    </section>
+
+    <section class="section pipeline-lab wrap" id="pipeline-lab" aria-labelledby="pipeline-title">
+      <div class="section-heading"><h2 id="pipeline-title">Technical Art<br>&amp; Pipeline</h2><p class="section-intro">Python tools that help artists check renders and move from a scene to a verified image sequence.</p></div>
+      <div class="project-grid technical-grid" role="group" aria-label="Technical art and pipeline projects">
+        <a data-category="pipeline" class="project-card aovguard-card" href="projects/aovguard.html">
           <div class="card-media">
-            <img src="images/aovguard-sequence-table.png" alt="AOVGuard validating a 302-frame EXR sequence with 56 channels and 17 detected AOVs" width="2559" height="1527" loading="lazy">
+            <img src="images/thumbs/aovguard-sequence-table-2559-lossless.webp" alt="AOVGuard validating a 302-frame EXR sequence with 56 channels and 17 detected AOVs" width="2559" height="1527" loading="lazy">
             <span class="category-tag">PIPELINE DEVELOPMENT</span><span class="card-arrow" aria-hidden="true">↗</span>
           </div>
           <div class="card-heading"><h3>AOVGuard</h3><span class="project-number">05</span></div>
           <p class="card-role"><span>My role</span> Product design · pipeline architecture · Python development</p>
-          <p class="card-description">Open-source EXR/AOV validation with Cryptomatte-aware diagnostics, temporal outliers and sequence QA.</p><p class="card-tools">Python · OpenEXR · NumPy · PySide6 · pytest</p>
+          <p class="card-description">Find unreadable frames, missing passes and unusual changes in EXR sequences before compositing.</p><p class="card-tools">Python · OpenEXR · NumPy · PySide6 · pytest</p>
+        </a>
+        <a data-category="pipeline" class="project-card farmflow-cover-card" href="projects/farmflow.html">
+          <div class="card-media">
+            <div class="farmflow-production-cover" role="img" aria-label="Actual FarmFlow production material showing the Maya wireframe, Arnold beauty render and verified EXR output">
+              <span class="farmflow-production-frame scene"><img src="images/farmflow-wireframe.png" srcset="images/thumbs/farmflow-wireframe-640.webp 640w, images/thumbs/farmflow-wireframe-1200.webp 1200w" sizes="(max-width:760px) 25vw, 16vw" alt="" width="1413" height="1038" loading="lazy" decoding="async"><small>01 · MAYA SCENE</small></span>
+              <span class="farmflow-production-frame beauty"><img src="images/farmflow-beauty.png" srcset="images/thumbs/farmflow-beauty-640.webp 640w, images/thumbs/farmflow-beauty-960.webp 960w" sizes="(max-width:760px) 45vw, 28vw" alt="" width="960" height="540" loading="lazy" decoding="async"><small>02 · ARNOLD BEAUTY</small></span>
+              <span class="farmflow-production-frame verified"><img src="images/thumbs/farmflow-sequence-verified-1200-lossless.webp" srcset="images/thumbs/farmflow-sequence-verified-640-lossless.webp 640w, images/thumbs/farmflow-sequence-verified-1200-lossless.webp 1200w, images/thumbs/farmflow-sequence-verified-2559-lossless.webp 2559w" sizes="(max-width:760px) 25vw, 16vw" alt="" width="2559" height="1524" loading="lazy" decoding="async"><small>03 · EXR VERIFIED</small></span>
+            </div>
+            <strong class="cover-title">FARMFLOW</strong>
+            <span class="category-tag">LIGHTING TD PIPELINE</span><span class="card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="card-heading"><h3>FarmFlow</h3><span class="project-number">06</span></div>
+          <p class="card-role"><span>My role</span> Python development · Maya integration</p>
+          <p class="card-description">Check a Maya scene, run Arnold renders and verify the output files in one repeatable workflow.</p><p class="card-tools">Python · Maya · Arnold · OpenImageIO</p>
+        </a>
+      </div>
+      <p class="evidence-note">The case studies distinguish implemented features, documented tests and integrations that remain simulated or unverified.</p>
+    </section>
+
+    <section class="section more-work-section wrap" aria-labelledby="more-work-title">
+      <details class="more-work" id="more-work">
+        <summary><h2 id="more-work-title">More work</h2><span>Six studies in rendering, environments, FX and cinematography</span><svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></summary>
+        <div class="work-toolbar" data-work-filters hidden>
+          <div class="work-filters" role="group" aria-label="Filter more work"><button type="button" data-filter="all" aria-pressed="true">All studies</button><button type="button" data-filter="lighting" aria-pressed="false">Environments</button><button type="button" data-filter="rendering" aria-pressed="false">Rendering &amp; FX</button><button type="button" data-filter="cinematography" aria-pressed="false">Cinematography</button></div>
+          <p class="filter-status" data-filter-status role="status" aria-live="polite" aria-atomic="true">6 studies</p>
+        </div>
+        <div class="project-grid" role="group" aria-label="Additional project studies">
+        <a data-category="rendering" class="project-card" href="projects/renderman.html">
+          <div class="card-media">
+            <img src="images/renderman-main.png" srcset="images/thumbs/renderman-main-640.webp 640w, images/thumbs/renderman-main-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Refined procedural RenderMan orange with detailed peel, warm highlights and a soft tabletop shadow" width="1920" height="1080" loading="lazy">
+            <span class="category-tag">LIGHTING &amp; RENDERING</span><span class="card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="card-heading"><h3>RenderMan — Orange Study</h3><span class="project-number">07</span></div>
+          <p class="card-role"><span>My role</span> Procedural geometry · materials · lighting</p>
+          <p class="card-description">Exploring realism through surface detail, materials and light.</p><p class="card-tools">Python · RenderMan · RIB · HDRI</p>
+        </a>
+        <a data-category="rendering" class="project-card" href="projects/raytracer.html">
+          <div class="card-media">
+            <img src="images/raytracer-main.png" srcset="images/thumbs/raytracer-main-640.webp 640w, images/thumbs/raytracer-main-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Gold Triforce rendered by Joshua Medina's physically based CPU ray tracer" width="1920" height="1080" loading="lazy">
+            <span class="category-tag">RENDERING ENGINEERING</span><span class="card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="card-heading"><h3>CPU Raytracer — Triforce</h3><span class="project-number">08</span></div>
+          <p class="card-role"><span>My role</span> Renderer development · PBR shading</p>
+          <p class="card-description">A CPU renderer evolved into a physically based metallic look-development tool.</p><p class="card-tools">Python · NumPy · Numba · Cook–Torrance · HDRI</p>
         </a>
         <a data-category="lighting" class="project-card" href="projects/norwegian-lakeside.html">
           <div class="card-media">
             <img src="images/nordic-main.jpg" srcset="images/thumbs/nordic-main-640.webp 640w, images/thumbs/nordic-main-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Norwegian Lakeside cabin beside reflective water and forested mountains in warm natural light" width="1920" height="1080" loading="lazy">
             <span class="category-tag">ENVIRONMENT LIGHTING</span><span class="card-arrow" aria-hidden="true">↗</span>
           </div>
-          <div class="card-heading"><h3>Norwegian Lakeside</h3><span class="project-number">06</span></div>
+          <div class="card-heading"><h3>Norwegian Lakeside</h3><span class="project-number">09</span></div>
           <p class="card-role"><span>My role</span> Lighting · look development · composition</p>
           <p class="card-description">Natural daylight, reflective water and a warm visual rhythm across a Nordic retreat.</p><p class="card-tools">Lighting · Look Development · Composition</p>
         </a>
@@ -181,41 +219,9 @@
             <img src="images/snow-breakdown.jpg" srcset="images/thumbs/snow-breakdown-640.webp 640w, images/thumbs/snow-breakdown-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Final Snowbound Environment shot with a snow-covered mountain valley, wooden fence and frozen lakeside landscape" width="1920" height="1080" loading="lazy">
             <span class="category-tag">ENVIRONMENT LIGHTING</span><span class="card-arrow" aria-hidden="true">↗</span>
           </div>
-          <div class="card-heading"><h3>Snowbound Environment</h3><span class="project-number">07</span></div>
+          <div class="card-heading"><h3>Snowbound Environment</h3><span class="project-number">10</span></div>
           <p class="card-role"><span>My role</span> Lighting · camera · colour correction</p>
           <p class="card-description">Winter daylight, atmospheric depth and a cinematic grade for a mountain landscape.</p><p class="card-tools">Unreal Engine · DaVinci Resolve</p>
-        </a>
-        <a data-category="lighting rendering" class="project-card" href="projects/renderman.html">
-          <div class="card-media">
-            <img src="images/renderman-main.png" srcset="images/thumbs/renderman-main-640.webp 640w, images/thumbs/renderman-main-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Refined procedural RenderMan orange with detailed peel, warm highlights and a soft tabletop shadow" width="1920" height="1080" loading="lazy">
-            <span class="category-tag">LIGHTING &amp; RENDERING</span><span class="card-arrow" aria-hidden="true">↗</span>
-          </div>
-          <div class="card-heading"><h3>RenderMan — Orange Study</h3><span class="project-number">08</span></div>
-          <p class="card-role"><span>My role</span> Procedural geometry · materials · lighting</p>
-          <p class="card-description">Exploring realism through surface detail, materials and light.</p><p class="card-tools">Python · RenderMan · RIB · HDRI</p>
-        </a>
-        <a data-category="pipeline" class="project-card farmflow-cover-card" href="projects/farmflow.html">
-          <div class="card-media">
-            <div class="farmflow-production-cover" role="img" aria-label="Actual FarmFlow production material showing the Maya wireframe, Arnold beauty render and verified EXR output">
-              <span class="farmflow-production-frame scene"><img src="images/farmflow-wireframe.png" srcset="images/thumbs/farmflow-wireframe-640.webp 640w, images/thumbs/farmflow-wireframe-1200.webp 1200w" sizes="(max-width:760px) 25vw, 16vw" alt="" width="1413" height="1038" loading="lazy" decoding="async"><small>01 · MAYA SCENE</small></span>
-              <span class="farmflow-production-frame beauty"><img src="images/farmflow-beauty.png" srcset="images/thumbs/farmflow-beauty-640.webp 640w, images/thumbs/farmflow-beauty-960.webp 960w" sizes="(max-width:760px) 45vw, 28vw" alt="" width="960" height="540" loading="lazy" decoding="async"><small>02 · ARNOLD BEAUTY</small></span>
-              <span class="farmflow-production-frame verified"><img src="images/farmflow-sequence-verified.png" srcset="images/thumbs/farmflow-sequence-verified-640.webp 640w, images/thumbs/farmflow-sequence-verified-1200.webp 1200w" sizes="(max-width:760px) 25vw, 16vw" alt="" width="2048" height="1228" loading="lazy" decoding="async"><small>03 · EXR VERIFIED</small></span>
-            </div>
-            <strong class="cover-title">FARMFLOW</strong>
-            <span class="category-tag">LIGHTING TD PIPELINE</span><span class="card-arrow" aria-hidden="true">↗</span>
-          </div>
-          <div class="card-heading"><h3>FarmFlow</h3><span class="project-number">09</span></div>
-          <p class="card-role"><span>My role</span> Python development · Maya integration</p>
-          <p class="card-description">Preflight, Arnold rendering and EXR verification inside Maya.</p><p class="card-tools">Python · Maya · Arnold · OpenImageIO</p>
-        </a>
-        <a data-category="rendering" class="project-card" href="projects/raytracer.html">
-          <div class="card-media">
-            <img src="images/raytracer-main.png" srcset="images/thumbs/raytracer-main-640.webp 640w, images/thumbs/raytracer-main-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Gold Triforce rendered by Joshua Medina's physically based CPU ray tracer" width="1920" height="1080" loading="lazy">
-            <span class="category-tag">RENDERING ENGINEERING</span><span class="card-arrow" aria-hidden="true">↗</span>
-          </div>
-          <div class="card-heading"><h3>CPU Raytracer — Triforce</h3><span class="project-number">10</span></div>
-          <p class="card-role"><span>My role</span> Renderer development · PBR shading</p>
-          <p class="card-description">A CPU renderer evolved into a physically based metallic look-development tool.</p><p class="card-tools">Python · NumPy · Numba · Cook–Torrance · HDRI</p>
         </a>
         <a data-category="rendering" class="project-card" href="projects/going-merry.html">
           <div class="card-media">
@@ -235,14 +241,14 @@
           <p class="card-role"><span>My role</span> Director · Cinematographer · Camera Operator</p>
           <p class="card-description">Live-action work spanning natural-light portraits, low-key interiors and visual storytelling.</p><p class="card-tools">Camera · Composition · Light</p>
         </a>
-      </div>
-      <div class="more-work-actions" data-more-work-container hidden><button type="button" data-more-work aria-controls="project-grid" aria-expanded="false"><span data-more-work-label>View all 12 projects</span><span aria-hidden="true" data-more-work-arrow>↓</span></button></div>
+        </div>
+      </details>
     </section>
 
     <section class="section comparison-section wrap" id="comparisons" aria-labelledby="comparisons-title">
       <div class="section-heading comparison-heading">
         <div><h2 id="comparisons-title">From diagnostic<br>to final frame<span class="tungsten-dot">.</span></h2></div>
-        <p class="section-intro">Drag each playhead to inspect how material, light and compositing shape the image.</p>
+        <p class="section-intro">Compare the final image with a diagnostic pass. Drag, tap a preset or use the arrow keys on each comparison.</p>
       </div>
       <div class="comparison-grid">
         <article class="comparison-card comparison-card--wide">
@@ -252,15 +258,17 @@
             <span class="compare-label compare-label--before">[PASS: FINAL COMP]</span><span class="compare-label compare-label--after">[PASS: NEUTRAL CLAY]</span>
             <span class="compare-handle" aria-hidden="true"><i></i></span>
           </div>
+          <div class="compare-presets" role="group" aria-label="Comparison view" hidden><button type="button" data-compare-preset="96">Final composite</button><button type="button" data-compare-preset="50">Split view</button><button type="button" data-compare-preset="4">Diagnostic pass</button></div>
           <div class="comparison-copy"><p><span>01</span> Venator Above Coruscant</p><a href="projects/venator.html">Open breakdown ↗</a></div>
         </article>
         <article class="comparison-card comparison-card--wide">
           <div class="shot-compare" data-compare style="--compare-position:50%" tabindex="0" role="slider" aria-label="Compare clay and final Spaceship composite" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-            <img class="compare-before" src="images/spaceship/01-clay.png" alt="Clay render of the Spaceship station" width="1920" height="858" loading="lazy">
-            <div class="compare-after"><img src="images/spaceship/09-final-composite.png" alt="Final Spaceship and Moon composite" width="1920" height="858" loading="lazy"></div>
+            <img class="compare-before" src="images/thumbs/01-clay-1200-lossless.webp" srcset="images/thumbs/01-clay-640-lossless.webp 640w, images/thumbs/01-clay-1200-lossless.webp 1200w, images/thumbs/01-clay-1920-lossless.webp 1920w" sizes="(max-width:1050px) calc(100vw - 32px), 46vw" alt="Clay render of the Spaceship station" width="1920" height="858" loading="lazy">
+            <div class="compare-after"><img src="images/thumbs/09-final-composite-1200-lossless.webp" srcset="images/thumbs/09-final-composite-640-lossless.webp 640w, images/thumbs/09-final-composite-1200-lossless.webp 1200w, images/thumbs/09-final-composite-1920-lossless.webp 1920w" sizes="(max-width:1050px) calc(100vw - 32px), 46vw" alt="Final Spaceship and Moon composite" width="1920" height="858" loading="lazy"></div>
             <span class="compare-label compare-label--before">[PASS: FINAL COMP]</span><span class="compare-label compare-label--after">[PASS: CLAY]</span>
             <span class="compare-handle" aria-hidden="true"><i></i></span>
           </div>
+          <div class="compare-presets" role="group" aria-label="Comparison view" hidden><button type="button" data-compare-preset="96">Final composite</button><button type="button" data-compare-preset="50">Split view</button><button type="button" data-compare-preset="4">Diagnostic pass</button></div>
           <div class="comparison-copy"><p><span>02</span> Spaceship</p><a href="projects/spaceship.html">Open breakdown ↗</a></div>
         </article>
         <article class="comparison-card comparison-card--portrait">
@@ -271,84 +279,43 @@
             <span class="compare-label compare-label--before">[PASS: FINAL COMP]</span><span class="compare-label compare-label--after">[PASS: RAW RENDER]</span>
             <span class="compare-handle" aria-hidden="true"><i></i></span>
           </div>
+          <div class="compare-presets" role="group" aria-label="Comparison view" hidden><button type="button" data-compare-preset="96">Final composite</button><button type="button" data-compare-preset="50">Split view</button><button type="button" data-compare-preset="4">Diagnostic pass</button></div>
           <div class="comparison-copy"><p><span>03</span> R2-D2 Desert Look Development</p><a href="projects/r2d2-lighting.html">Open breakdown ↗</a></div>
         </article>
       </div>
     </section>
 
-    <section class="section pipeline-lab wrap" id="pipeline-lab" aria-labelledby="pipeline-title">
-      <div class="pipeline-shell">
-        <header class="pipeline-header">
-          <div><h2 id="pipeline-title">Pipeline lab<span class="title-dot">.</span></h2></div>
-          <p>Tools designed around the failures artists meet between scene assembly, render and review.</p>
-        </header>
-        <div class="pipeline-tabs" role="tablist" aria-label="Pipeline tools">
-          <button type="button" role="tab" id="tab-aovguard" aria-controls="panel-aovguard" aria-selected="true" data-pipeline-tab="aovguard"><span>01</span>AOVGuard</button>
-          <button type="button" role="tab" id="tab-farmflow" aria-controls="panel-farmflow" aria-selected="false" tabindex="-1" data-pipeline-tab="farmflow"><span>02</span>FarmFlow</button>
-        </div>
-        <div class="pipeline-panel is-active" role="tabpanel" id="panel-aovguard" aria-labelledby="tab-aovguard" data-pipeline-panel="aovguard">
-          <div class="pipeline-visual"><img src="images/aovguard-sequence-table.png" alt="AOVGuard desktop interface showing sequence discovery and validation results for 302 EXR frames" width="2559" height="1527" loading="lazy"></div>
-          <div class="pipeline-console">
-            <div class="console-status"><span class="status-lamp"></span><strong>Sequence diagnostics</strong><small>EXR / AOV QA</small></div>
-            <div class="console-tabs" role="tablist" aria-label="AOVGuard technical views"><button type="button" role="tab" aria-selected="true" data-console-tab="channels">Channels</button><button type="button" role="tab" aria-selected="false" data-console-tab="python">Python engine</button><button type="button" role="tab" aria-selected="false" data-console-tab="architecture">Architecture</button></div>
-            <div class="console-view" data-console-view="channels"><ul class="channel-tree"><li><span>RGBA</span> R · G · B · A</li><li><span>Lighting</span> diffuse · specular · emission</li><li><span>Utility</span> N · Z · cryptomatte</li><li><span>State</span> 56 channels · 17 AOVs</li></ul></div>
-            <div class="console-view" data-console-view="python" hidden><div class="code-head"><span>analysis.py</span><button type="button" data-copy-code>Copy code</button></div><pre><code data-code-source><span class="code-line"><i>01</i>from aovguard.core.analysis import analyze</span>
-<span class="code-line"><i>02</i>from aovguard.core.models import AnalysisOptions</span>
-<span class="code-line"><i>03</i>from aovguard.io.reader import OpenEXRReader</span>
-<span class="code-line"><i>04</i></span>
-<span class="code-line"><i>05</i>report = analyze(source, AnalysisOptions(),</span>
-<span class="code-line"><i>06</i>                 OpenEXRReader())</span></code></pre></div>
-            <div class="console-view" data-console-view="architecture" hidden><div class="architecture-flow"><span>EXR source</span><b>→</b><span>Inspect</span><b>→</b><span>Rules</span><b>→</b><span>Report</span></div></div>
-            <a href="projects/aovguard.html">Inspect AOVGuard ↗</a>
-          </div>
-        </div>
-        <div class="pipeline-panel" role="tabpanel" id="panel-farmflow" aria-labelledby="tab-farmflow" data-pipeline-panel="farmflow" hidden>
-          <div class="pipeline-visual pipeline-visual--farm"><img src="images/farmflow-sequence-verified.png" alt="FarmFlow verified render sequence output" width="1919" height="1020" loading="lazy"></div>
-          <div class="pipeline-console">
-            <div class="console-status"><span class="status-lamp"></span><strong>Local render orchestration</strong><small>Maya / Arnold</small></div>
-            <p>Packages scene validation, render execution and output verification into a repeatable artist-facing workflow.</p>
-            <ul><li><span>Input</span> Maya scene and render settings</li><li><span>Process</span> Validate · submit · monitor</li><li><span>Output</span> Verified image sequence</li></ul>
-            <a href="projects/farmflow.html">Inspect FarmFlow ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section class="section about-section" id="about" aria-labelledby="about-title">
       <div class="wrap about-grid">
-        <div class="about-lead"><h2 id="about-title">A visual artist's <em>eye.</em><br>A technical mindset.</h2><p>I'm Joshua, a Lighting TD, Compositor and Technical Artist who approaches every shot through both image-making and production systems.</p><blockquote>“Light is the architecture of the frame and the emotional anchor of the story.”</blockquote></div>
-        <div class="perspective-grid">
-          <article><span class="perspective-number">A /</span><h3>Cinematography</h3><p>Experience as an Assistant Cinematographer / Assistant DoP at Lightoon Films shaped how I read motivated light, composition, colour and story.</p><a href="projects/cinematography.html">View cinematography reel ↗</a></article>
-          <article><span class="perspective-number">B /</span><h3>Lighting &amp; pipeline</h3><p>Specialised CG lighting study at Lost Boys and MSc work at Bournemouth University connect final-frame craft with rendering, simulation and pipeline development.</p><a href="#pipeline-lab">Explore production tools ↑</a></article>
-        </div>
+        <h2 id="about-title">Making images.<br>Building the tools<br>behind them.</h2>
+        <div class="about-copy"><p>I'm Joshua Medina — a Lighting TD, Compositor, Technical Artist and Pipeline TD. I approach image-making through light, composition and the practical systems that support a shot.</p><p>My cinematography background informs how I work with motivated light and framing. My CG projects connect look development and compositing with procedural shading, render diagnostics and Python tools.</p><p>I completed my MSc in Computer Animation &amp; Visual Effects at Bournemouth University, following specialised CG lighting study at Lost Boys.</p><div class="about-links"><a class="inline-link" href="projects/cinematography.html">Cinematography reel ↗</a><a class="inline-link" href="#education">Education ↓</a></div></div>
       </div>
     </section>
 
-    <section class="section wrap" id="skills" aria-labelledby="skills-title">
-      <div class="section-heading"><div><h2 id="skills-title">From lighting to pipeline<span class="muted-dot">.</span></h2></div></div>
+    <details class="skills-disclosure wrap" id="skills">
+<summary>Tools used in these projects</summary>
       <div class="skills-grid">
-        <div class="skill-group"><span class="skill-symbol" aria-hidden="true">◐</span><h3>Lighting &amp; compositing</h3><p>Light, materials and the final frame.</p><ul class="skill-tags"><li>Katana</li><li>Arnold</li><li>Nuke</li><li>Maya</li><li>RenderMan</li><li>Unreal Engine</li><li>DaVinci Resolve</li></ul><a class="skill-evidence" href="projects/r2d2-lighting.html">Lighting TD case study <span aria-hidden="true">↗</span></a></div>
-        <div class="skill-group"><span class="skill-symbol" aria-hidden="true">≋</span><h3>FX &amp; scene assembly</h3><p>Simulation, assembly and rendering.</p><ul class="skill-tags"><li>Houdini</li><li>FLIP</li><li>Solaris</li><li>Karma</li><li>USD</li><li>VDB</li></ul><a class="skill-evidence" href="projects/going-merry.html">Simulation to scene assembly <span aria-hidden="true">↗</span></a></div>
-        <div class="skill-group"><span class="skill-symbol code-symbol" aria-hidden="true">&lt;/&gt;</span><h3>Pipeline &amp; development</h3><p>Tools that support artists.</p><ul class="skill-tags"><li>Python</li><li>C++</li><li>OpenEXR</li><li>OpenImageIO</li><li>OpenCV</li><li>OCIO</li><li>PySide6</li><li>pytest</li></ul><a class="skill-evidence" href="projects/aovguard.html">Pipeline development &amp; validation <span aria-hidden="true">↗</span></a></div>
+        <div class="skill-group"><h3>Lighting &amp; compositing</h3><p>Light, materials and the final frame.</p><ul class="skill-tags"><li>Katana</li><li>Arnold</li><li>Nuke</li><li>Maya</li><li>RenderMan</li><li>Unreal Engine</li><li>DaVinci Resolve</li></ul><a class="skill-evidence" href="projects/r2d2-lighting.html">Lighting TD case study <span aria-hidden="true">↗</span></a></div>
+        <div class="skill-group"><h3>FX &amp; scene assembly</h3><p>Simulation, assembly and rendering.</p><ul class="skill-tags"><li>Houdini</li><li>FLIP</li><li>Solaris</li><li>Karma</li><li>USD</li><li>VDB</li></ul><a class="skill-evidence" href="projects/going-merry.html">Simulation to scene assembly <span aria-hidden="true">↗</span></a></div>
+        <div class="skill-group"><h3>Pipeline &amp; development</h3><p>Tools that support artists.</p><ul class="skill-tags"><li>Python</li><li>C++</li><li>OpenEXR</li><li>OpenImageIO</li><li>OpenCV</li><li>OCIO</li><li>PySide6</li><li>pytest</li></ul><a class="skill-evidence" href="projects/aovguard.html">Pipeline development &amp; validation <span aria-hidden="true">↗</span></a></div>
       </div>
-    </section>
+    </details>
 
     <section class="section education-section wrap" id="education" aria-labelledby="education-title">
       <div><h2 id="education-title">Education<span class="muted-dot">.</span></h2></div>
       <div class="education-list">
-        <article><span class="education-number">01</span><div><h3>MSc Computer Animation &amp; Visual Effects</h3><p>Bournemouth University</p><p class="education-meta">September 2025 – 2026</p><details class="education-details"><summary>Relevant study areas</summary><ul><li>Animation Software Engineering</li><li>CGI Tools &amp; CGI Techniques</li><li>Simulation and Rendering</li><li>Pipeline and Technical Direction</li><li>Group Project &amp; Industry Brief</li><li>Master's Project</li></ul></details></div></article>
+        <article><span class="education-number">01</span><div><h3>MSc Computer Animation &amp; Visual Effects</h3><p>Bournemouth University</p><p class="education-meta">2025 – 2026 · Completed</p><details class="education-details"><summary>Relevant study areas</summary><ul><li>Animation Software Engineering</li><li>CGI Tools &amp; CGI Techniques</li><li>Simulation and Rendering</li><li>Pipeline and Technical Direction</li><li>Group Project &amp; Industry Brief</li><li>Master's Project</li></ul></details></div></article>
         <article><span class="education-number">02</span><div><h3>Lighting Artist</h3><p>Lost Boys | School of VFX</p><p class="education-meta">2023 – 2024 · Completed</p><p class="education-tools">Six-month specialised programme · Katana · Arnold · Nuke</p></div></article>
         <article><span class="education-number">03</span><div><h3>Bachelor's Degree in Engineering in Digital Communication Design</h3><p>Universidad Autónoma de Guadalajara (UAG)</p><p class="education-meta">August 2019 – December 2022 · Completed</p></div></article>
       </div>
     </section>
 
     <section class="section cv-section wrap" id="cv" aria-labelledby="cv-title">
-      <div><h2 id="cv-title">Experience, skills<br>and selected work<span class="muted-dot">.</span></h2></div>
+      <div><h2 id="cv-title">Experience &amp; education</h2></div>
       <div class="cv-panel">
-        <p class="cv-kicker">JOSHUA MEDINA · LIGHTING TD / COMPOSITOR / TECHNICAL ARTIST</p>
+        <p class="cv-kicker">Lighting TD / Compositor · Technical Artist / Pipeline TD</p>
         <h3>CV 2026</h3>
-        <p>Professional experience, lighting and pipeline projects, core skills and education in a concise one-page document.</p>
-        <div class="cv-meta" aria-hidden="true"><span>PDF</span><span>1 PAGE</span><span>UPDATED 2026</span></div>
+        <p>Experience, selected projects, skills and education. The PDF opens in a new tab.</p>
         <a class="button button-primary" href="assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open Joshua Medina's CV PDF in a new tab">View CV PDF <span aria-hidden="true">↗</span></a>
         <a class="cv-download" href="assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" download>Download PDF <span aria-hidden="true">↓</span></a>
       </div>
@@ -356,31 +323,19 @@
 
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
       <div class="wrap">
-        <div class="contact-heading"><h2 id="contact-title">Let’s talk<br>lighting &amp; compositing<span class="title-dot">.</span></h2><span class="contact-arrow" aria-hidden="true">↗</span></div>
-        <div class="contact-bottom">
-          <p>For Lighting TD, Compositor and Technical Artist roles.</p>
-          <div class="contact-links" data-contact-links>
-            <button class="email-copy" type="button" data-copy-email data-email="Joshalexmedina@hotmail.com">Joshalexmedina@hotmail.com <span>↗</span></button>
-            <a href="https://www.linkedin.com/in/joshua-alexander-medina-gracia-3561981a3/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">LinkedIn ↗</a>
-            <a href="https://github.com/Joshmedinag" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-            <a href="https://vimeo.com/1232872369" target="_blank" rel="noopener noreferrer">Vimeo ↗</a>
-          </div>
-        </div>
+        <h2 id="contact-title">Let’s create compelling images<br>and better tools.</h2>
+        <p class="contact-intro">Get in touch about lighting, compositing, technical art or pipeline opportunities.</p>
+        <p class="contact-address" data-email-address>Joshalexmedina@hotmail.com</p>
+        <div class="contact-actions"><a class="button button-primary" data-email-link href="mailto:Joshalexmedina@hotmail.com">Email me <span aria-hidden="true">↗</span></a><button class="button button-secondary" type="button" data-copy-email data-email="Joshalexmedina@hotmail.com" hidden>Copy email</button></div>
+        <div class="contact-links" data-contact-links><a data-profile="linkedin" href="https://www.linkedin.com/in/joshua-alexander-medina-gracia-3561981a3/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a data-profile="github" href="https://github.com/Joshmedinag" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a data-profile="vimeo" href="https://vimeo.com/1232872369" target="_blank" rel="noopener noreferrer">Vimeo ↗</a></div>
       </div>
     </section>
   </main>
   <footer class="site-footer wrap">
     <a class="wordmark" href="#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
-    <p>© <span data-year>2026</span> Joshua Medina</p>
+    <div class="footer-identity"><p>Joshua Medina · Lighting TD / Compositor</p><p>Technical Artist / Pipeline TD</p><p>© <span data-year>2026</span></p></div>
     <a class="back-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
   </footer>
-  <dialog class="command-palette" data-command-palette aria-labelledby="command-title">
-    <div class="command-box">
-      <div class="command-search"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 5 5"></path></svg><label class="sr-only" for="command-input" id="command-title">Search projects and navigation</label><input id="command-input" data-command-input type="search" autocomplete="off" placeholder="Search projects, tools or actions…" role="combobox" aria-autocomplete="list" aria-controls="command-results" aria-expanded="false"><button class="command-close" type="button" data-command-close aria-label="Close search">Esc</button></div>
-      <p class="command-status" data-command-status aria-live="polite">Quick navigation</p>
-      <div class="command-results" id="command-results" data-command-results role="listbox" aria-label="Search results"></div>
-    </div>
-  </dialog>
   <div class="copy-toast" data-copy-toast role="status" aria-live="polite" hidden>[COPIED TO CLIPBOARD]</div>
 </body>
 </html>

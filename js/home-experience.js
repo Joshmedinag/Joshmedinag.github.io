@@ -83,201 +83,40 @@
       if (event.key === 'Home') { event.preventDefault(); setPosition(4,true); }
       if (event.key === 'End') { event.preventDefault(); setPosition(96,true); }
     });
+    const presets = compare.parentElement.querySelector('.compare-presets');
+    if (presets) {
+      presets.hidden = false;
+      presets.querySelectorAll('[data-compare-preset]').forEach(button => button.addEventListener('click', () => setPosition(Number(button.dataset.comparePreset),true)));
+    }
     paint(current);
   });
 
-  const pipelineTabs = Array.from(document.querySelectorAll('[data-pipeline-tab]'));
-  const pipelinePanels = Array.from(document.querySelectorAll('[data-pipeline-panel]'));
-  const selectPipelineTab = (name, moveFocus = false) => {
-    pipelineTabs.forEach(tab => {
-      const active = tab.dataset.pipelineTab === name;
-      tab.setAttribute('aria-selected', String(active));
-      tab.tabIndex = active ? 0 : -1;
-      if (active && moveFocus) tab.focus();
-    });
-    pipelinePanels.forEach(panel => {
-      const active = panel.dataset.pipelinePanel === name;
-      panel.hidden = !active;
-      panel.classList.toggle('is-active', active);
-    });
-  };
-  pipelineTabs.forEach((tab, index) => {
-    tab.addEventListener('click', () => selectPipelineTab(tab.dataset.pipelineTab));
-    tab.addEventListener('keydown', event => {
-      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+  document.querySelectorAll('[data-keyboard-hint]').forEach(hint => { hint.hidden = false; });
+  document.querySelectorAll('.project-grid').forEach(projectGrid => {
+    const cards = Array.from(projectGrid.querySelectorAll('.project-card'));
+    let selected = cards[0];
+    const visible = () => cards.filter(card => !card.hidden);
+    const sync = () => {
+      if (!visible().includes(selected)) selected = visible()[0];
+      cards.forEach(card => { card.tabIndex = card === selected && !card.hidden ? 0 : -1; });
+    };
+    projectGrid.addEventListener('focusin',event => { if (cards.includes(event.target)) { selected = event.target; sync(); } });
+    projectGrid.addEventListener('keydown',event => {
+      if (event.altKey || event.ctrlKey || event.metaKey || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+      const available = visible();
+      const index = available.indexOf(event.target);
+      if (index < 0) return;
       event.preventDefault();
-      let next = index;
-      if (event.key === 'ArrowLeft') next = (index - 1 + pipelineTabs.length) % pipelineTabs.length;
-      if (event.key === 'ArrowRight') next = (index + 1) % pipelineTabs.length;
+      let next = (index + (event.key === 'ArrowLeft' ? -1 : 1) + available.length) % available.length;
       if (event.key === 'Home') next = 0;
-      if (event.key === 'End') next = pipelineTabs.length - 1;
-      selectPipelineTab(pipelineTabs[next].dataset.pipelineTab, true);
+      if (event.key === 'End') next = available.length - 1;
+      selected = available[next]; sync();
+      selected.focus({preventScroll:true});
+      selected.scrollIntoView({block:'nearest',behavior:'instant'});
     });
+    document.addEventListener('portfolio:workchange',sync);
+    sync();
   });
-
-  const consoleTabs = Array.from(document.querySelectorAll('[data-console-tab]'));
-  const consoleViews = Array.from(document.querySelectorAll('[data-console-view]'));
-  consoleTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      consoleTabs.forEach(item => item.setAttribute('aria-selected', String(item === tab)));
-      consoleViews.forEach(view => { view.hidden = view.dataset.consoleView !== tab.dataset.consoleTab; });
-    });
-  });
-  document.querySelector('[data-copy-code]')?.addEventListener('click', async event => {
-    const button = event.currentTarget;
-    const source = document.querySelector('[data-code-source]');
-    const code = Array.from(source?.querySelectorAll('.code-line') || []).map(line => line.textContent.replace(/^\d+/, '')).join('\n').trim();
-    await window.portfolioCopy(code,'Code copied',{button,animate:event.detail > 0});
-  });
-
-  const workToolbar = document.querySelector('[data-work-filters]');
-  const workCards = Array.from(document.querySelectorAll('.project-card[data-category]'));
-  const projectGrid = document.querySelector('.project-grid');
-  let selectedProject = workCards.find(card => !card.hidden);
-  const visibleProjects = () => workCards.filter(card => !card.hidden);
-  const syncProjectFocus = () => {
-    const visible = visibleProjects();
-    if (!visible.includes(selectedProject)) selectedProject = visible[0];
-    workCards.forEach(card => { card.tabIndex = card === selectedProject && !card.hidden ? 0 : -1; });
-  };
-  projectGrid?.addEventListener('focusin', event => {
-    const card = event.target.closest('.project-card');
-    if (!workCards.includes(card)) return;
-    selectedProject = card;
-    syncProjectFocus();
-  });
-  projectGrid?.addEventListener('keydown', event => {
-    if (event.altKey || event.ctrlKey || event.metaKey || !['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
-    const card = event.target.closest('.project-card');
-    const visible = visibleProjects();
-    const index = visible.indexOf(card);
-    if (index < 0) return;
-    event.preventDefault();
-    let next = (index + (event.key === 'ArrowLeft' ? -1 : 1) + visible.length) % visible.length;
-    if (event.key === 'Home') next = 0;
-    if (event.key === 'End') next = visible.length - 1;
-    selectedProject = visible[next];
-    syncProjectFocus();
-    selectedProject.focus({preventScroll:true});
-    selectedProject.scrollIntoView({block:'nearest',behavior:'instant'});
-  });
-  document.addEventListener('portfolio:workchange',syncProjectFocus);
-  syncProjectFocus();
-  const palette = document.querySelector('[data-command-palette]');
-  const commandInput = palette?.querySelector('[data-command-input]');
-  const commandResults = palette?.querySelector('[data-command-results]');
-  const commandStatus = palette?.querySelector('[data-command-status]');
-  const email = window.PORTFOLIO_CONFIG?.email || 'Joshalexmedina@hotmail.com';
-  const copyText = (value, message) => window.portfolioCopy(value, message);
-  const staticCommands = [
-    { title: 'Watch principal showreel', detail: 'Showreel', href: '#showreel', mark: '▶' },
-    { title: 'Selected work', detail: 'All projects', href: '#work', mark: 'W' },
-    { title: 'Pipeline lab', detail: 'AOVGuard and FarmFlow', href: '#pipeline-lab', mark: 'P' },
-    { title: 'About Joshua', detail: 'Lighting + compositing + technical art', href: '#about', mark: 'A' },
-    { title: 'Open CV', detail: 'PDF · updated 2026', href: 'assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf', mark: 'CV', external: true },
-    { title: 'Copy email address', detail: email, action: 'copy-email', mark: '@' },
-    { title: 'Contact', detail: 'Email and professional profiles', href: '#contact', mark: 'C' }
-  ];
-  const projectCommands = workCards.map((card, index) => ({
-    title: card.querySelector('h3')?.textContent.trim() || `Project ${index + 1}`,
-    detail: `${card.dataset.category || ''} ${card.querySelector('.card-tools')?.textContent || ''}`.trim(),
-    href: card.getAttribute('href'),
-    mark: String(index + 1).padStart(2, '0')
-  }));
-  const commands = [...staticCommands, ...projectCommands];
-  let visibleCommands = commands;
-  let selectedCommand = 0;
-  let returnFocus = null;
-
-  const runCommand = command => {
-    if (!command) return;
-    if (command.action === 'copy-email') {
-      copyText(email, '[COPIED TO CLIPBOARD]').then(copied => {
-        if (commandStatus) commandStatus.textContent = copied ? 'Email copied' : 'Copy unavailable';
-      });
-      return;
-    }
-    palette?.close();
-    if (command.external) window.open(command.href, '_blank', 'noopener,noreferrer');
-    else window.location.href = command.href;
-  };
-  const renderCommands = () => {
-    if (!commandResults) return;
-    commandResults.replaceChildren();
-    if (!visibleCommands.length) {
-      const empty = document.createElement('p');
-      empty.className = 'command-empty';
-      empty.textContent = 'No matching projects or actions.';
-      commandInput?.removeAttribute('aria-activedescendant');
-      commandResults.append(empty);
-      if (commandStatus) commandStatus.textContent = '0 results';
-      return;
-    }
-    selectedCommand = Math.min(selectedCommand, visibleCommands.length - 1);
-    visibleCommands.forEach((command, index) => {
-      const option = document.createElement('button');
-      option.type = 'button';
-      option.id = `command-option-${index}`;
-      option.tabIndex = -1;
-      option.className = `command-option${index === selectedCommand ? ' is-selected' : ''}`;
-      option.setAttribute('role', 'option');
-      option.setAttribute('aria-selected', String(index === selectedCommand));
-      option.innerHTML = `<span>${command.mark}</span><span><strong></strong><small></small></span><span aria-hidden="true">↗</span>`;
-      option.querySelector('strong').textContent = command.title;
-      option.querySelector('small').textContent = command.detail;
-      option.addEventListener('mouseenter', () => {
-        selectedCommand = index;
-        commandResults.querySelectorAll('.command-option').forEach((item, itemIndex) => {
-          const selected = itemIndex === selectedCommand;
-          item.classList.toggle('is-selected', selected);
-          item.setAttribute('aria-selected', String(selected));
-        });
-      });
-      option.addEventListener('click', () => runCommand(command));
-      commandResults.append(option);
-    });
-    commandInput?.setAttribute('aria-activedescendant', `command-option-${selectedCommand}`);
-    commandResults.querySelector('.is-selected')?.scrollIntoView({block:'nearest'});
-    if (commandStatus) commandStatus.textContent = `${visibleCommands.length} ${visibleCommands.length === 1 ? 'result' : 'results'}`;
-  };
-  const openPalette = () => {
-    if (!palette || palette.open || typeof palette.showModal !== 'function') return;
-    returnFocus = document.activeElement;
-    visibleCommands = commands;
-    selectedCommand = 0;
-    if (commandInput) commandInput.value = '';
-    renderCommands();
-    palette.showModal();
-    commandInput?.setAttribute('aria-expanded','true');
-    commandInput?.focus();
-  };
-  document.querySelectorAll('[data-command-open]').forEach(button => button.addEventListener('click', openPalette));
-  document.addEventListener('keydown', event => {
-    const target = event.target;
-    const editing = target instanceof HTMLElement && (target.isContentEditable || /INPUT|TEXTAREA|SELECT/.test(target.tagName));
-    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
-      event.preventDefault();
-      if (palette?.open) palette.close(); else openPalette();
-      return;
-    }
-    if (!palette?.open || editing && target !== commandInput) return;
-    if (event.key === 'Escape') { event.preventDefault(); palette.close(); return; }
-    if (!visibleCommands.length) return;
-    if (event.key === 'ArrowDown') { event.preventDefault(); selectedCommand = (selectedCommand + 1) % visibleCommands.length; renderCommands(); }
-    if (event.key === 'ArrowUp') { event.preventDefault(); selectedCommand = (selectedCommand - 1 + visibleCommands.length) % visibleCommands.length; renderCommands(); }
-    if (event.key === 'Enter') { event.preventDefault(); runCommand(visibleCommands[selectedCommand]); }
-  });
-  commandInput?.addEventListener('input', () => {
-    const terms = commandInput.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
-    visibleCommands = commands.filter(command => terms.every(term => `${command.title} ${command.detail}`.toLowerCase().includes(term)));
-    selectedCommand = 0;
-    renderCommands();
-  });
-  palette?.addEventListener('click', event => { if (event.target === palette) palette.close(); });
-  palette?.querySelector('[data-command-close]')?.addEventListener('click', () => palette.close());
-  palette?.addEventListener('close', () => { commandInput?.setAttribute('aria-expanded','false'); if (returnFocus instanceof HTMLElement) returnFocus.focus({preventScroll:true}); });
-
-
   const reelSection = document.querySelector('.reel-section');
   const reelStage = document.querySelector('#reel-stage');
   let reelFrame;
@@ -302,7 +141,7 @@
       player.on('ended', () => { reelPlaying = false; reelSection.classList.remove('is-playing'); });
       document.addEventListener('keydown', event => {
         const target = event.target;
-        if (!reelInView || reelFrame.hidden || palette?.open || event.ctrlKey || event.metaKey || event.altKey || target instanceof HTMLElement && (target.isContentEditable || target.closest('input,textarea,select,button,a,[role="slider"],[role="tab"]'))) return;
+        if (!reelInView || reelFrame.hidden  || event.ctrlKey || event.metaKey || event.altKey || target instanceof HTMLElement && (target.isContentEditable || target.closest('input,textarea,select,button,a,[role="slider"],[role="tab"]'))) return;
         const key = event.key.toLowerCase();
         if (key === ' ' || key === 'k') {
           event.preventDefault();

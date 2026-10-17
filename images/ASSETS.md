@@ -204,4 +204,12 @@ Ninguna de esas imágenes se presenta como trabajo de Joshua Medina. `assets/fav
 
 ## Tipografía
 
-La interfaz utiliza Neue Montreal Regular, Medium, Bold e Italic desde `assets/fonts/neue-montreal/`. Los archivos proceden de `neue-montreal-font-family.zip`, proporcionado por Joshua, y conservan el aviso `LICENSE.txt` incluido en el paquete. Se utiliza Arial como respaldo si el navegador no puede cargar la fuente.
+La interfaz utiliza Roboto Regular, Medium, Bold e Italic desde `assets/fonts/roboto/`, procedente del paquete proporcionado por Joshua. Conserva el aviso `NOTICE.txt`. Arial y las familias sans-serif del sistema actúan como respaldo. Los archivos anteriores de Neue Montreal se conservan como material histórico y no están referenciados por el CSS activo.
+
+## Variantes responsive y compresión sin pérdida — 17 de octubre de 2026
+
+- `thumbs/farmflow-render-run-{640,1200,2559}-lossless.webp` y `thumbs/farmflow-sequence-verified-{640,1200,2559}-lossless.webp` proceden de los PNG públicos del mismo nombre. Las variantes de menor ancho conservan la proporción y permiten servir capturas adecuadas al panel. Los enlaces de ampliación mantienen los PNG originales.
+- `thumbs/01-clay-{640,1200,1920}-lossless.webp` hasta `thumbs/09-final-composite-{640,1200,1920}-lossless.webp` proceden de los nueve estados PNG de `spaceship/`. `thumbs/material-stages-{640,1200,1920}-lossless.webp` procede del mosaico de materiales del mismo proyecto. Los originales no se sustituyen ni se recortan.
+- `thumbs/aovguard-sequence-table-2559-lossless.webp` conserva toda la resolución de `aovguard-sequence-table.png`. Esta captura de texto comprime mejor a resolución completa que las variantes intermedias, por lo que se utiliza la copia de 2559 × 1527.
+- La codificación WebP es sin pérdida. En cada derivado a resolución completa se compararon los píxeles RGBA decodificados con su PNG: coincidencia exacta en los trece originales convertidos. Las variantes más pequeñas se remuestrearon proporcionalmente, sin filtros de color, contraste, saturación ni regradación. Una versión reducida no contiene el mismo detalle que el original; por eso se conservan el acceso a tamaño completo y las descripciones textuales.
+- Los scripts de generación y el detalle de tamaños/condiciones están en `.verification/20261017-audit/`. No requieren dependencias nuevas: utilizan el procesador de imágenes ya disponible en el entorno. Los resultados de transferencia se documentan como mediciones locales, no como métricas de campo.

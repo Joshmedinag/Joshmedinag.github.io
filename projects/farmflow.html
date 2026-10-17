@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#09090b">
+  <meta name="author" content="Joshua Medina">
   <meta name="description" content="FarmFlow by Joshua Medina — a Maya and Arnold pipeline for scene preflight, render execution, EXR verification, diagnostics and production handoff.">
   <title>FarmFlow — Joshua Medina</title>
   <link rel="canonical" href="https://joshmedinag.github.io/projects/farmflow.html">
@@ -16,13 +17,13 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/roboto/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="../css/style.css?v=20261006-roboto">
-  <link rel="stylesheet" href="../css/site-system.css?v=20261006-emil">
-  <link rel="stylesheet" href="../css/project-experience.css?v=20261006-complete">
-  <script src="../js/site-config.js?v=20261004-main-reel" defer></script>
-  <script src="../js/main.js?v=20261006-emil" defer></script>
-  <script src="../js/site-experience.js?v=20261006-emil" defer></script>
-  <script src="../js/video-experience.js?v=20261006-emil" defer></script>
+  <link rel="stylesheet" href="../css/style.css?v=20261017-editorial">
+  <link rel="stylesheet" href="../css/site-system.css?v=20261017-editorial">
+  <link rel="stylesheet" href="../css/project-experience.css?v=20261017-editorial">
+  <script src="../js/site-config.js?v=20261017-editorial" defer></script>
+  <script src="../js/main.js?v=20261017-editorial" defer></script>
+  <script src="../js/site-experience.js?v=20261017-editorial" defer></script>
+  <script src="../js/video-experience.js?v=20261017-editorial" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -30,10 +31,8 @@
     <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
     <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
     <nav class="navigation" id="primary-navigation" aria-label="Main navigation">
-      <a href="../index.html#home">Home</a>
+      <a href="../index.html#work" class="active">Work</a>
       <a href="../index.html#showreel">Showreel</a>
-      <a href="../index.html#work" class="active" aria-current="page">Selected work</a>
-      <a href="../index.html#pipeline-lab">Pipeline</a>
       <a href="../index.html#about">About</a>
       <a class="nav-cv" href="../assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="View Joshua Medina's CV PDF in a new tab">CV <span aria-hidden="true">↗</span></a>
       <a class="nav-contact" href="../index.html#contact">Contact <span aria-hidden="true">↗</span></a>
@@ -43,10 +42,10 @@
   <main class="project-main" id="main">
     <div class="project-intro wrap">
       <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
-      <p class="eyebrow"><span class="section-index">08 /</span> LIGHTING TD PIPELINE</p>
+      <p class="eyebrow">LIGHTING TD PIPELINE</p>
       <div class="project-title-row">
         <h1>FarmFlow<span class="title-dot">.</span></h1>
-        <p class="project-lede">A production-minded Maya and Arnold pipeline that validates scenes before render, verifies every EXR and leaves a traceable handoff.</p>
+        <p class="project-lede">Check a Maya scene, render an Arnold sequence and verify its EXR outputs in one traceable workflow.</p>
       </div>
       <div class="project-meta">
         <div><span class="meta-label">My contribution</span><p>Architecture, Python development, Maya integration, validation &amp; render workflow</p></div>
@@ -59,20 +58,40 @@
     </nav>
 
     <figure class="project-hero wrap">
-      <div class="farmflow-production-cover" role="img" aria-label="Actual FarmFlow production material showing the Maya wireframe, Arnold beauty render and verified EXR output">
-        <span class="farmflow-production-frame scene"><img src="../images/farmflow-wireframe.png" alt="" width="1413" height="1038"><small>01 · MAYA SCENE</small></span>
-        <span class="farmflow-production-frame beauty"><img src="../images/farmflow-beauty.png" alt="" width="960" height="540"><small>02 · ARNOLD BEAUTY</small></span>
-        <span class="farmflow-production-frame verified"><img src="../images/farmflow-sequence-verified.png" alt="" width="2048" height="1228"><small>03 · EXR VERIFIED</small></span>
-      </div>
-      <figcaption>Actual FarmFlow test material: Maya scene, Arnold beauty render and verified EXR output.</figcaption>
+      <a class="image-detail-link" href="../images/farmflow-render-run.png" target="_blank" rel="noopener noreferrer" aria-label="Open the FarmFlow workflow screenshot at full size"><img src="../images/thumbs/farmflow-render-run-1200-lossless.webp" srcset="../images/thumbs/farmflow-render-run-640-lossless.webp 640w, ../images/thumbs/farmflow-render-run-1200-lossless.webp 1200w, ../images/thumbs/farmflow-render-run-2559-lossless.webp 2559w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1548px) 93vw, 1440px" alt="FarmFlow running inside Maya, with the Arnold render and output verification visible beside the scene" width="2559" height="1519" fetchpriority="high" decoding="async"></a>
+      <figcaption>FarmFlow in use: Maya scene, Arnold render and output verification. Open the original to inspect the interface; the workflow and validation limits are documented below.</figcaption>
     </figure>
 
     <section class="project-story wrap" aria-labelledby="overview-title">
       <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
       <div class="story-copy">
         <h2 id="overview-title">Catch the failure before the farm does.</h2>
-        <p>A scene can work on an artist's workstation and still fail elsewhere because of missing textures, local paths, incomplete sequences, the wrong camera, unsupported render layers, incompatible Arnold settings or unexpected output names. FarmFlow turns those conditions into explicit checks before render time is spent.</p>
+        <p>A scene can work on an artist's workstation and still fail elsewhere because of missing textures, local paths, incomplete sequences, the wrong camera, unsupported render layers, incompatible Arnold settings or unexpected output names. FarmFlow turns those conditions into explicit checks before render time is spent. It is designed for a lighting artist preparing a render and for the technical person investigating a failed output.</p>
         <p>The project evolved from a neutral Python architecture into a working Maya plug-in and dockable panel. It reads the scene without silently repairing it, blocks critical errors, renders Arnold sequences one frame at a time, verifies the generated EXRs and records diagnostics that can be inspected later.</p>
+      </div>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="maya-evidence-title">
+      <p class="eyebrow"><span class="section-index">/</span> IN MAYA</p>
+      <h2 id="maya-evidence-title">Scene, render and verification.</h2>
+      <p class="reference-intro">These production captures show the same test scene moving through FarmFlow inside Maya 2026: from scene inspection to Arnold output and sequence verification.</p>
+      <div class="project-gallery evidence-gallery">
+        <figure>
+          <a class="image-detail-link" href="../images/farmflow-beauty.png" target="_blank" rel="noopener noreferrer" aria-label="Open image at full size in a new tab"><img src="../images/thumbs/farmflow-beauty-960.webp" srcset="../images/thumbs/farmflow-beauty-640.webp 640w, ../images/thumbs/farmflow-beauty-960.webp 960w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1548px) 46vw, 720px" alt="Arnold beauty render generated from the FarmFlow test scene" width="960" height="540" loading="lazy"></a>
+          <figcaption><p class="reference-label">ARNOLD BEAUTY</p><h3>Verified render output</h3><p>The cleaned display conversion of frame 1 from the original ACEScg EXR.</p></figcaption>
+        </figure>
+        <figure>
+          <a class="image-detail-link" href="../images/farmflow-wireframe.png" target="_blank" rel="noopener noreferrer" aria-label="Open image at full size in a new tab"><img src="../images/thumbs/farmflow-wireframe-1200.webp" srcset="../images/thumbs/farmflow-wireframe-640.webp 640w, ../images/thumbs/farmflow-wireframe-1200.webp 1200w, ../images/farmflow-wireframe.png 1413w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1548px) 46vw, 720px" alt="Wireframe view of the character test scene used with FarmFlow" width="1413" height="1038" loading="lazy"></a>
+          <figcaption><p class="reference-label">SCENE INPUT</p><h3>Wireframe inspection</h3><p>The Maya test scene before FarmFlow validation and Arnold execution.</p></figcaption>
+        </figure>
+        <figure>
+          <a class="image-detail-link" href="../images/farmflow-render-run.png" target="_blank" rel="noopener noreferrer" aria-label="Open image at full size in a new tab"><img src="../images/thumbs/farmflow-render-run-1200-lossless.webp" srcset="../images/thumbs/farmflow-render-run-640-lossless.webp 640w, ../images/thumbs/farmflow-render-run-1200-lossless.webp 1200w, ../images/thumbs/farmflow-render-run-2559-lossless.webp 2559w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1548px) 46vw, 720px" alt="FarmFlow panel in Maya showing an Arnold render and verified output" width="2559" height="1519" loading="lazy"></a>
+          <figcaption><p class="reference-label">RENDER EXECUTION</p><h3>Frame rendered and checked</h3><p>FarmFlow drives Arnold, checks the resulting file and reports restoration of the Maya scene state.</p></figcaption>
+        </figure>
+        <figure>
+          <a class="image-detail-link" href="../images/farmflow-sequence-verified.png" target="_blank" rel="noopener noreferrer" aria-label="Open image at full size in a new tab"><img src="../images/thumbs/farmflow-sequence-verified-1200-lossless.webp" srcset="../images/thumbs/farmflow-sequence-verified-640-lossless.webp 640w, ../images/thumbs/farmflow-sequence-verified-1200-lossless.webp 1200w, ../images/thumbs/farmflow-sequence-verified-2559-lossless.webp 2559w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1548px) 46vw, 720px" alt="FarmFlow panel in Maya after completing and verifying a ten-frame Arnold sequence" width="2559" height="1524" loading="lazy"></a>
+          <figcaption><p class="reference-label">SEQUENCE RESULT</p><h3>10 outputs verified</h3><p>The completed camera sequence with the render view and local execution history visible in Maya.</p></figcaption>
+        </figure>
       </div>
     </section>
 
@@ -112,39 +131,15 @@
       <article class="process-step"><span>03 /</span><h3>Diagnose with evidence</h3><p>Results record timings, scene snapshots, probable causes and suggested actions. EXRs and JSON reports remain connected to the frame and execution that produced them.</p></article>
     </section>
 
-    <section class="project-evidence wrap" aria-labelledby="maya-evidence-title">
-      <p class="eyebrow"><span class="section-index">/</span> IN MAYA</p>
-      <h2 id="maya-evidence-title">Scene, render and verification.</h2>
-      <p class="reference-intro">These production captures show the same test scene moving through FarmFlow inside Maya 2026: from scene inspection to Arnold output and sequence verification.</p>
-      <div class="project-gallery evidence-gallery">
-        <figure>
-          <a class="image-detail-link" href="../images/farmflow-beauty.png" target="_blank" rel="noopener noreferrer" aria-label="Open image at full size in a new tab"><img src="../images/farmflow-beauty.png" alt="Arnold beauty render generated from the FarmFlow test scene" width="960" height="540" loading="lazy"></a>
-          <figcaption><p class="reference-label">ARNOLD BEAUTY</p><h3>Verified render output</h3><p>The cleaned display conversion of frame 1 from the original ACEScg EXR.</p></figcaption>
-        </figure>
-        <figure>
-          <a class="image-detail-link" href="../images/farmflow-wireframe.png" target="_blank" rel="noopener noreferrer" aria-label="Open image at full size in a new tab"><img src="../images/farmflow-wireframe.png" alt="Wireframe view of the character test scene used with FarmFlow" width="1413" height="1038" loading="lazy"></a>
-          <figcaption><p class="reference-label">SCENE INPUT</p><h3>Wireframe inspection</h3><p>The Maya test scene before FarmFlow validation and Arnold execution.</p></figcaption>
-        </figure>
-        <figure>
-          <a class="image-detail-link" href="../images/farmflow-render-run.png" target="_blank" rel="noopener noreferrer" aria-label="Open image at full size in a new tab"><img src="../images/farmflow-render-run.png" alt="FarmFlow panel in Maya showing an Arnold render and verified output" width="2048" height="1228" loading="lazy"></a>
-          <figcaption><p class="reference-label">RENDER EXECUTION</p><h3>Frame rendered and checked</h3><p>FarmFlow drives Arnold, checks the resulting file and reports restoration of the Maya scene state.</p></figcaption>
-        </figure>
-        <figure>
-          <a class="image-detail-link" href="../images/farmflow-sequence-verified.png" target="_blank" rel="noopener noreferrer" aria-label="Open image at full size in a new tab"><img src="../images/farmflow-sequence-verified.png" alt="FarmFlow panel in Maya after completing and verifying a ten-frame Arnold sequence" width="2048" height="1228" loading="lazy"></a>
-          <figcaption><p class="reference-label">SEQUENCE RESULT</p><h3>10 outputs verified</h3><p>The completed camera sequence with the render view and local execution history visible in Maya.</p></figcaption>
-        </figure>
-      </div>
-    </section>
-
     <section class="project-evidence wrap" aria-labelledby="evidence-title">
       <p class="eyebrow"><span class="section-index">/</span> VERIFIED RESULTS</p>
       <h2 id="evidence-title">Measured, packaged and tested.</h2>
-      <div class="evidence-grid">
+      <dl class="evidence-grid">
         <div><dt>Automated tests</dt><dd>753</dd></div>
         <div><dt>Documented coverage</dt><dd>90.40%</dd></div>
         <div><dt>Maya acceptance render</dt><dd>10 / 10</dd></div>
-      </div>
-      <p class="source-note">Version 1.9.0 records 753 passing tests and two skipped tests that require a real Qube environment. The documented Maya 2026 acceptance run rendered and verified frames 1–10 with Arnold in 29.7 seconds, reported no execution error and restored the scene state correctly.</p>
+      </dl>
+      <p class="source-note">Source: the version 1.9.0 project report, 9 September 2026. It records 753 passing tests and two skipped tests that require a real Qube environment. The documented Maya 2026 acceptance run rendered and verified frames 1–10 with Arnold in 29.7 seconds, reported no execution error and restored the scene state correctly. This timing describes that local ten-frame test scene, not general farm throughput; the portfolio does not rerun the tool’s tests.</p>
     </section>
 
     <section class="project-evidence wrap" aria-labelledby="architecture-title">
@@ -167,7 +162,7 @@
     </section>
 
     <section class="project-evidence wrap" aria-labelledby="status-title">
-      <p class="eyebrow"><span class="section-index">/</span> CURRENT STATUS</p>
+      <p class="eyebrow"><span class="section-index">/</span> VALIDATION SCOPE</p>
       <h2 id="status-title">Clear about what has been exercised.</h2>
       <div class="status-grid">
         <article class="status-card verified"><span class="status-label">VERIFIED</span><h3>Local Maya and Arnold flow</h3><p>Installation, plug-in loading, preflight, camera selection, Arnold sequence rendering, EXR checks, light-group assignment and state restoration.</p></article>
@@ -179,20 +174,24 @@
     <section class="project-credits wrap" aria-labelledby="credits-title">
       <h2 id="credits-title">Project credits</h2>
       <p>Project architecture, development, Maya integration, testing and documentation: Joshua Medina.</p>
+      <p>The character scene is test input for the workflow. Character modelling and source-asset creation are outside the contribution documented here.</p>
       <p>FarmFlow version 1.9.0 is documented for Maya 2026 and Arnold. Results and limitations shown here follow the project's technical report dated 9 September 2026.</p>
     </section>
 
     <a class="next-project wrap" href="aovguard.html"><div><small>NEXT PROJECT</small><h2>AOVGuard</h2></div><span aria-hidden="true">↗</span></a>
     <section class="project-contact wrap" aria-labelledby="project-contact-title">
-      <div><p class="eyebrow">LIGHTING TD / COMPOSITOR / TECHNICAL ARTIST</p><h2 id="project-contact-title">Have a shot in mind?</h2></div>
-      <div class="project-contact-actions"><button class="email-copy" type="button" data-copy-email data-email="Joshalexmedina@hotmail.com" aria-label="Copy Joshua Medina's email address">Copy email ↗</button><a class="inline-link" href="mailto:Joshalexmedina@hotmail.com">Send an email <span aria-hidden="true">↗</span></a></div>
+      <div><h2 id="project-contact-title">Let’s create compelling images and better tools.</h2><p>Get in touch about lighting, compositing, technical art or pipeline opportunities.</p></div>
+      <div class="project-contact-actions">
+        <p class="contact-address" data-email-address>Joshalexmedina@hotmail.com</p>
+        <div class="contact-actions"><a class="button button-primary" href="mailto:Joshalexmedina@hotmail.com" data-email-link>Email me <span aria-hidden="true">↗</span></a><button class="button button-secondary" type="button" data-copy-email hidden data-email="Joshalexmedina@hotmail.com">Copy email</button></div>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer wrap">
     <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
-    <p>© <span data-year>2026</span> Joshua Medina</p>
-    <div class="footer-actions"><a href="../assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="View CV PDF in a new tab">View CV <span aria-hidden="true">↗</span></a><a class="back-top" href="mailto:Joshalexmedina@hotmail.com">Email Joshua <span aria-hidden="true">↗</span></a></div>
+    <div class="footer-identity"><p>© <span data-year>2026</span> Joshua Medina</p><p class="footer-role">Lighting TD / Compositor<br>Technical Artist / Pipeline TD</p></div>
+    <div class="footer-actions"><a href="../index.html#work">All work</a><a href="../assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="View CV PDF in a new tab">View CV <span aria-hidden="true">↗</span></a><a href="mailto:Joshalexmedina@hotmail.com" data-email-link>Email me <span aria-hidden="true">↗</span></a></div>
   </footer>
   <div class="copy-toast" role="status" data-copy-toast hidden></div>
 </body>
