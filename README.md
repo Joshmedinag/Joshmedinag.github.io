@@ -22,8 +22,8 @@ Abre http://127.0.0.1:4173/. Si `python` no existe, utiliza `py`. Detén el serv
 - El showreel principal usa https://vimeo.com/1232872369. Un póster real y un enlace externo están en el HTML; iframe y SDK se cargan tras pulsar Play. Sin JavaScript se mantiene el enlace a Vimeo. No hay reproducción automática con sonido al abrir la página.
 - Lighting & Compositing presenta Venator, Spaceship, R2-D2 y Broken Horizons, en ese orden.
 - Technical Art & Pipeline muestra AOVGuard y FarmFlow en la misma página, sin una pestaña que oculte uno de ellos. Cada caso documenta qué hace la herramienta, evidencia y limitaciones.
-- More Work es un desplegable HTML nativo con seis estudios adicionales: RenderMan, CPU Raytracer, Norwegian Lakeside, Snowbound Environment, Going Merry y Cinematography. Se puede abrir sin JavaScript. Sus filtros mejoran progresivamente el catálogo; no ocultan los seis proyectos principales.
-- Las URLs `?category=lighting`, `?category=rendering` y `?category=cinematography` abren y filtran More Work. `?category=pipeline` lleva al recorrido técnico. Las doce rutas de proyecto se conservan.
+- More Work es un desplegable HTML nativo con seis estudios adicionales: RenderMan, CPU Raytracer, Norwegian Lakeside, Snowbound Environment, Going Merry y Cinematography. Se puede abrir sin JavaScript. Sus filtros mejoran progresivamente el catálogo; no ocultan los siete proyectos principales.
+- Las URLs `?category=lighting`, `?category=rendering` y `?category=cinematography` abren y filtran More Work. `?category=pipeline` lleva al recorrido técnico. Las doce rutas anteriores se conservan y Asset Publisher & Loader añade una decimotercera.
 - Los comparadores mantienen sus imágenes originales y la separación render/composite. Funcionan con arrastre, flechas, Home/End y tres botones de vista. El par R2-D2 procede de las dos mitades alineadas de un mismo archivo de referencia.
 - Las galerías abren imágenes originales con flechas, Escape y restauración del foco. El menú móvil soporta teclado y Escape.
 - Email me abre mailto; Copy email copia con confirmación de 1,8 segundos solo tras éxito. La dirección permanece como texto seleccionable; sin JavaScript el botón de copiar está oculto y mailto sigue funcionando.
@@ -32,7 +32,7 @@ Abre http://127.0.0.1:4173/. Si `python` no existe, utiliza `py`. Detén el serv
 
 `js/site-config.js` contiene correo público, GitHub, LinkedIn, Vimeo y reel. `js/main.js` actualiza los elementos marcados sin reconstruir la navegación o el contacto. Si cambian datos públicos, actualiza también los respaldos HTML para mantenerlos disponibles sin JavaScript.
 
-Los headers y footers se mantienen como HTML estático en la portada y los doce casos; no se descargan con fetch. Esta duplicación pequeña es deliberada. `tools/verify_portfolio.cjs` comprueba su coherencia, enlaces, identidad y recorridos. No se añade un sistema de plantillas ni build para generar trece páginas.
+Los headers y footers se mantienen como HTML estático en la portada y los trece casos; no se descargan con fetch. Esta duplicación pequeña es deliberada. `tools/verify_portfolio.cjs` comprueba su coherencia, enlaces, identidad y recorridos. No se añade un sistema de plantillas ni build para generar catorce páginas.
 
 El CV existente es `assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf`. View CV abre el PDF y Download PDF tiene el atributo de descarga para alojamiento del mismo origen. No se reescribe el documento en esta revisión. El PDF tiene una página; el enlace interno de reel y sus metadatos requieren una actualización separada (véase REVIEW_2026-10-17.md).
 
@@ -52,7 +52,7 @@ MSc Computer Animation & Visual Effects, Bournemouth University: **completado**,
 ## Estructura
 
 ```text
-index.html                   Portada y doce accesos de proyecto
+index.html                   Portada y trece accesos de proyecto
 projects/*.html              Una página por proyecto; URLs preservadas
 css/style.css                Reglas base y componentes históricos compartidos
 css/site-system.css          Tokens, navegación, contacto y medios compartidos
@@ -89,3 +89,9 @@ Una prueba de interfaz con Vimeo simulado no acredita reproducción real ni perm
 ## Publicación
 
 GitHub Pages está conectado a `main` del repositorio Joshmedinag/Joshmedinag.github.io. Los cambios se revisan localmente y solo se publican tras autorización expresa; Joshua autorizó la publicación de esta revisión. No ejecutar generadores antiguos de placeholders sobre el material final.
+
+## Asset Publisher & Loader — 26 October 2026
+
+Nuevo caso inglés en `projects/asset-publisher.html`, accesible desde Technical Art & Pipeline. Incluye ocho capturas de la interfaz 0.10.1 sin cursor brillante, una explicación de arquitectura y recuperación, y el paquete del caso de estudio. Las capturas originales y las pruebas de Maya/Katana se conservan en el proyecto de la herramienta; las cifras documentadas no son pruebas ejecutadas por la web. El recorrido Zelda actual está acotado al frame 1 sobre NTFS local. SMB permanece pendiente y se indican las pausas nativas.
+
+Esta publicación se prepara desde una copia aislada de la versión pública para preservar las ediciones locales pendientes en `C:/Joshua_Portfolio`. El despliegue sólo incorpora este nuevo proyecto y sus accesos, estilos, recursos y notas de mantenimiento.

@@ -1,0 +1,13 @@
+.technical-grid .asset-publisher-card {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+}
+.technical-grid .asset-publisher-card .card-media { margin: 0; }
+.asset-publisher-card .card-copy { min-width: 0; }
+@media (max-width: 760px) {
+  .technical-grid .asset-publisher-card { display: block; }
+  .technical-grid .asset-publisher-card .card-media { margin-bottom: 18px; }
+}

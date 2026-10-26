@@ -12,11 +12,11 @@ Joshua Medina: **Lighting TD / Compositor · Technical Artist / Pipeline TD**. T
 
 - General visitor: understand the image-making and technical connection, see work and contact Joshua.
 - Lighting/compositing recruiter or supervisor: Watch Showreel, final shots, precise contribution and diagnostic stages.
-- Technical art/pipeline supervisor: find AOVGuard and FarmFlow directly, understand the production problem, workflow, implementation, evidence and limits.
+- Technical art/pipeline supervisor: find AOVGuard, FarmFlow and Asset Publisher & Loader directly, understand the production problem, workflow, implementation, evidence and limits.
 
 ## Initial curation
 
-Six featured projects: Venator, Spaceship, R2-D2 and Broken Horizons in Lighting & Compositing; AOVGuard and FarmFlow in Technical Art & Pipeline. Both paths remain visible. More Work preserves access to RenderMan, CPU Raytracer, Norwegian Lakeside, Snowbound Environment, Going Merry and Cinematography. Each project has one canonical page.
+Seven featured projects: Venator, Spaceship, R2-D2 and Broken Horizons in Lighting & Compositing; AOVGuard, FarmFlow and Asset Publisher & Loader in Technical Art & Pipeline. Both paths remain visible. More Work preserves access to RenderMan, CPU Raytracer, Norwegian Lakeside, Snowbound Environment, Going Merry and Cinematography. Each project has one canonical page.
 
 ## Constraints
 
@@ -30,4 +30,8 @@ Six featured projects: Venator, Spaceship, R2-D2 and Broken Horizons in Lighting
 
 ## Acceptance
 
-Four specialties consistent across hero/About/contact/footer/metadata. Work visible early, contribution distinguished from third-party assets. Working CV/contact and all twelve existing routes. Responsive, keyboard accessible, motion-reduced interactions. Verified requests and resources, with laboratory measurements distinguished from field experience. Do not claim full WCAG conformance from automated testing alone.
+Four specialties consistent across hero/About/contact/footer/metadata. Work visible early, contribution distinguished from third-party assets. Working CV/contact and all thirteen project routes. Responsive, keyboard accessible, motion-reduced interactions. Verified requests and resources, with laboratory measurements distinguished from field experience. Do not claim full WCAG conformance from automated testing alone.
+
+## Asset Publisher & Loader · 26 October 2026
+
+English 0.10.1 case study with eight current native interface images, prepared for presentation by removing the highlighted cursor. Original captures and acceptance proofs remain preserved in the tool project. The current Zelda demonstration covers frame 1 on local NTFS; SMB certification remains pending. Publication of this new Pipeline project was expressly requested by Joshua. This isolated update does not publish the other pending local portfolio revisions.
