@@ -74,6 +74,8 @@
   };
 
   document.querySelectorAll('[data-vimeo-stage]').forEach(stage => {
+    // The site owns iframe creation; prevent the SDK's automatic data-vimeo-url embed.
+    stage.setAttribute('data-vimeo-defer','');
     const playButton = stage.querySelector('[data-reel-play]');
     if (playButton) {
       // No Vimeo iframe or SDK request is made until the visitor presses Play.

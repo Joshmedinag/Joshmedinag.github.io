@@ -1,6 +1,25 @@
 (() => {
   'use strict';
 
+  const spanish = document.documentElement.lang.toLowerCase().split('-')[0] === 'es';
+  const labels = spanish ? {
+    copied: '[✓ COPIADO AL PORTAPAPELES]', emailCopied: 'Correo copiado',
+    copyUnavailable: 'No se pudo copiar. Selecciona el texto y cópialo manualmente.',
+    gallery: 'Galería de imágenes del proyecto', closeGallery: 'Cerrar galería de imágenes', close: 'Cerrar ×',
+    imageError: 'No se pudo cargar esta imagen. Puedes abrir el original con el enlace de abajo.',
+    original: 'Abrir original ↗', newTab: ' (se abre en una pestaña nueva)',
+    previous: 'Imagen anterior', next: 'Imagen siguiente',
+    viewImage: alt => `Ver ${alt} en la galería de imágenes`
+  } : {
+    copied: '[✓ COPIED TO CLIPBOARD]', emailCopied: 'Email copied',
+    copyUnavailable: 'Copy unavailable. Select the text and copy it manually.',
+    gallery: 'Project image gallery', closeGallery: 'Close image gallery', close: 'Close ×',
+    imageError: "We couldn't load this image. You can still open the original below.",
+    original: 'Open original ↗', newTab: ' (opens in a new tab)',
+    previous: 'Previous image', next: 'Next image',
+    viewImage: alt => `View ${alt} in image gallery`
+  };
+
   const header = document.querySelector('.site-header');
   const updateAnchorOffset = () => {
     if (header) document.documentElement.style.setProperty('--anchor-offset', `${Math.ceil(header.offsetTop + header.offsetHeight + 16)}px`);
@@ -50,7 +69,7 @@
     const transform = getComputedStyle(button).transform;
     state.animation?.cancel();
     button.classList.add('is-copied');
-    button.textContent = '[✓ COPIED TO CLIPBOARD]';
+    button.textContent = labels.copied;
     if (animate && !reducedMotion.matches) state.animation = button.animate([
       {transform:transform === 'none' ? 'scale(.95)' : transform},
       {transform:'scale(1.015)',offset:.65},
@@ -72,7 +91,7 @@
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => { toast.hidden = true; }, 2600);
   };
-  window.portfolioCopy = async (value, message = 'Email copied', feedback = {}) => {
+  window.portfolioCopy = async (value, message = labels.emailCopied, feedback = {}) => {
     try {
       if (!navigator.clipboard) throw new Error('Clipboard unavailable');
       await navigator.clipboard.writeText(value);
@@ -80,12 +99,12 @@
       notify(message);
       return true;
     } catch {
-      notify('Copy unavailable. Select the text and copy it manually.');
+      notify(labels.copyUnavailable);
       return false;
     }
   };
   document.querySelectorAll('[data-copy-email]').forEach(button => { button.hidden = false; button.addEventListener('click', event => {
-    window.portfolioCopy(button.dataset.email || window.PORTFOLIO_CONFIG?.email || 'Joshalexmedina@hotmail.com','Email copied',{button,animate:event.detail > 0});
+    window.portfolioCopy(button.dataset.email || window.PORTFOLIO_CONFIG?.email || 'Joshalexmedina@hotmail.com',labels.emailCopied,{button,animate:event.detail > 0});
   }); });
 
   const imageLinks = Array.from(document.querySelectorAll('.project-main .image-detail-link'));
@@ -93,10 +112,10 @@
   if (!links.length || typeof HTMLDialogElement === 'undefined') return;
   const dialog = document.createElement('dialog');
   dialog.className = 'gallery-viewer';
-  dialog.setAttribute('aria-label', 'Project image gallery');
-  dialog.innerHTML = `<div class="viewer-toolbar"><p data-viewer-count aria-live="polite"></p><button type="button" data-viewer-close aria-label="Close image gallery">Close ×</button></div>
-    <div class="viewer-image-stage"><img data-viewer-image alt=""><p class="viewer-error" data-viewer-error hidden>We couldn't load this image. You can still open the original below.</p></div>
-    <div class="viewer-caption"><div><h2 data-viewer-title></h2><p data-viewer-description></p><a data-viewer-original target="_blank" rel="noopener noreferrer">Open original ↗<span class="sr-only"> (opens in a new tab)</span></a></div><div class="viewer-navigation"><button type="button" data-viewer-previous aria-label="Previous image">←</button><button type="button" data-viewer-next aria-label="Next image">→</button></div></div>`;
+  dialog.setAttribute('aria-label', labels.gallery);
+  dialog.innerHTML = `<div class="viewer-toolbar"><p data-viewer-count aria-live="polite"></p><button type="button" data-viewer-close aria-label="${labels.closeGallery}">${labels.close}</button></div>
+    <div class="viewer-image-stage"><img data-viewer-image alt=""><p class="viewer-error" data-viewer-error hidden>${labels.imageError}</p></div>
+    <div class="viewer-caption"><div><h2 data-viewer-title></h2><p data-viewer-description></p><a data-viewer-original target="_blank" rel="noopener noreferrer">${labels.original}<span class="sr-only">${labels.newTab}</span></a></div><div class="viewer-navigation"><button type="button" data-viewer-previous aria-label="${labels.previous}">←</button><button type="button" data-viewer-next aria-label="${labels.next}">→</button></div></div>`;
   document.body.append(dialog);
   dialog.querySelector('.viewer-navigation').hidden = links.length < 2;
   const viewerImage = dialog.querySelector('[data-viewer-image]');
@@ -125,7 +144,7 @@
   imageLinks.forEach(link => {
     const index = links.findIndex(item => item.href === link.href);
     // Real image URLs remain usable with JavaScript disabled or a modified click.
-    link.setAttribute('aria-label', `View ${link.querySelector('img').alt} in image gallery`);
+    link.setAttribute('aria-label', labels.viewImage(link.querySelector('img').alt));
     link.setAttribute('aria-haspopup', 'dialog');
     link.addEventListener('click', event => {
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;

@@ -5,25 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#09090b">
   <meta name="author" content="Joshua Medina">
-  <meta name="description" content="AOVGuard 1.2.1 by Joshua Medina. Open-source OpenEXR structure inspection, AOV validation and render-sequence quality control for VFX pipelines.">
+  <meta name="description" content="AOVGuard 1.4.0rc1 by Joshua Medina. Verified OpenEXR and AOV quality control with real Maya and Venator renders. Manual Windows review remains pending.">
   <title>AOVGuard — Joshua Medina</title>
   <link rel="canonical" href="https://joshmedinag.github.io/projects/aovguard.html">
+  <link rel="alternate" hreflang="en" href="https://joshmedinag.github.io/projects/aovguard.html">
+  <link rel="alternate" hreflang="es" href="https://joshmedinag.github.io/projects/aovguard-es.html">
   <meta property="og:type" content="website">
   <meta property="og:title" content="AOVGuard — Joshua Medina">
-  <meta property="og:description" content="Open-source OpenEXR structure inspection, AOV validation and render-sequence quality control for VFX pipelines.">
+  <meta property="og:description" content="Release candidate 1.4.0rc1: 1041 tests passed, real-render CLI/Qt acceptance and traceable screenshots. Manual Windows review is pending.">
   <meta property="og:url" content="https://joshmedinag.github.io/projects/aovguard.html">
-  <meta property="og:image" content="https://joshmedinag.github.io/images/aovguard-sequence-table.png">
-  <meta property="og:image:alt" content="AOVGuard interface showing EXR and AOV validation results">
+  <meta property="og:image" content="https://joshmedinag.github.io/images/aovguard-rc1-20261019/02-venator-metricas.png">
+  <meta property="og:image:alt" content="Automated AOVGuard Qt capture showing 144 processed Venator frames and two expected warnings">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:locale:alternate" content="es_MX">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/roboto/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../css/style.css?v=20261017-editorial">
-  <link rel="stylesheet" href="../css/site-system.css?v=20261017-editorial">
-  <link rel="stylesheet" href="../css/project-experience.css?v=20261017-editorial">
+  <link rel="stylesheet" href="../css/site-system.css?v=20261023-portfolio">
+  <link rel="stylesheet" href="../css/project-experience.css?v=20261023-portfolio">
+  <link rel="stylesheet" href="../css/aovguard-case.css?v=20261023-evidence">
   <script src="../js/site-config.js?v=20261017-editorial" defer></script>
-  <script src="../js/main.js?v=20261017-editorial" defer></script>
-  <script src="../js/site-experience.js?v=20261017-editorial" defer></script>
-  <script src="../js/video-experience.js?v=20261017-editorial" defer></script>
+  <script src="../js/main.js?v=20261019-aovguard-i18n" defer></script>
+  <script src="../js/site-experience.js?v=20261019-aovguard-i18n" defer></script>
+  <script src="../js/video-experience.js?v=20261023-portfolio" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -38,41 +43,123 @@
       <a class="nav-contact" href="../index.html#contact">Contact <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
-  <main class="project-main" id="main">
-    <div class="project-intro wrap">
-      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
-      <p class="eyebrow">PIPELINE DEVELOPMENT</p>
-      <div class="project-title-row"><h1>AOVGuard<span class="title-dot">.</span></h1><p class="project-lede">Find missing frames, unreadable EXRs and unusual AOV values before a render sequence reaches compositing.</p></div>
-      <div class="project-meta">
-        <div><span class="meta-label">My contribution</span><p>Product design · pipeline architecture · Python development</p></div>
-        <div><span class="meta-label">Toolkit</span><p>Python 3.11/3.12 · OpenEXR · NumPy · PySide6 · pytest</p></div>
-      </div>
-      <p class="project-context">Open-source MSc project · documented version 1.2.1 · 24 September 2026 · MIT License</p>
-      <div class="project-actions">
-        <a class="button button-primary" href="https://github.com/Joshmedinag/AOVGuard" target="_blank" rel="noopener noreferrer">View source on GitHub <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
-        <a class="button button-secondary" href="https://github.com/Joshmedinag/AOVGuard/blob/main/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Review changelog <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+  <main class="project-main aovguard-case" id="main">
+    <div class="wrap aovguard-topline">
+      <div class="case-topline">
+        <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
+        <nav class="case-language-nav" aria-label="Case study language">
+          <a href="aovguard.html" lang="en" hreflang="en" aria-current="page">English</a>
+          <a href="aovguard-es.html" lang="es" hreflang="es">Español</a>
+        </nav>
       </div>
     </div>
-    <nav class="case-nav wrap" aria-label="On this project">
-      <a href="#overview-title">Overview</a><a href="#workflow-title">Workflow</a><a href="#architecture-title">Architecture</a><a href="#evidence-title">Validation</a><a href="#documentation-title">Documentation</a>
-    </nav>
-    <figure class="project-hero wrap technical">
-      <a class="image-detail-link" href="../images/aovguard-sequence-table.png" target="_blank" rel="noopener noreferrer"><img src="../images/thumbs/aovguard-sequence-table-2559-lossless.webp" alt="AOVGuard interface with EXR sequence discovery, validation findings and technical AOV diagnostics" width="2559" height="1527" fetchpriority="high"></a>
-      <figcaption>AOVGuard in use: a 302-frame EXR sequence, 56 channels and 17 detected AOVs.</figcaption>
+    <div class="aovguard-opening wrap">
+      <div class="project-intro">
+        <h1>AOVGuard<span class="title-dot">.</span></h1>
+        <p class="project-lede">Find technical problems in EXR render sequences before compositing.</p>
+        <p class="aovguard-authorship"><strong>My contribution</strong> Product design · pipeline architecture · Python development</p>
+      <div class="project-actions">
+        <a class="button button-primary" href="https://github.com/Joshmedinag/AOVGuard" target="_blank" rel="noopener noreferrer">View source <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+        <a class="button button-secondary" href="https://github.com/Joshmedinag/AOVGuard/releases/tag/v1.4.0rc1" target="_blank" rel="noopener noreferrer">v1.4.0rc1 <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+      </div>
+    <figure class="project-hero technical">
+      <span class="aovguard-crop-label">Select the capture to inspect the chart and metrics</span>
+      <a class="image-detail-link aovguard-chart-detail" aria-label="Open the full AOVGuard interface capture" href="../images/aovguard-rc1-20261019/02-venator-metricas.png" target="_blank" rel="noopener noreferrer"><img src="../images/aovguard-rc1-20261019/02-venator-metricas.png" alt="AOVGuard luminance chart and metrics for 144 Venator master frames, with 18 color AOVs and two expected warnings" width="1460" height="908" fetchpriority="high"></a>
+      <figcaption>
+        <p>Venator: 144 frames, two expected warnings. Automated capture; manual review pending.</p>
+        <details class="aovguard-capture-details">
+          <summary>Capture scope and method</summary>
+          <p>Venator master, frames 1065-1208: 144/144 processed, 55 channels and 18 color AOVs. Two expected warnings, no read failures. Automated Qt offscreen capture from the installed 1.4.0rc1 wheel, 19 October 2026. Local paths are cropped out; this is not manual acceptance.</p>
+        </details>
+      </figcaption>
     </figure>
+    </div>
 
-    <section class="project-story wrap" aria-labelledby="overview-title">
-      <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
-      <div class="story-copy"><h2 id="overview-title">Technical checks, made repeatable.</h2>
-        <p>I designed and developed AOVGuard to inspect rendered EXR files and identify common technical problems before they reach later stages of a lighting or compositing pipeline. It gives lighting and compositing artists a repeatable review of a file or sequence, with a finding linked to the exact AOV, channel or frame that needs attention.</p>
-        <p>The documented implementation automatically inspects EXR parts and channels, normalises colour passes to a canonical RGB convention and diagnoses technical AOVs per channel. Standard Cryptomatte metadata keeps encoded IDs out of luminance and temporal-outlier calculations while preserving integrity checks.</p>
-        <p>A shared report model serves the PySide6 interface, command line, strict JSON and self-contained HTML exports. Version 1.2.1 adds temporal charts, robust outlier review and direct frame navigation. The September 2026 repository snapshot also verifies expected frame ranges and Cryptomatte-aware analysis.</p>
+    <section class="aovguard-summary wrap" aria-labelledby="overview-title">
+      <div class="aovguard-result-copy">
+        <h2 id="overview-title">Real renders, traceable findings.</h2>
+        <p>144 Venator master frames processed with two expected warnings and no read failures. One real Maya frame also checked colour, technical and Cryptomatte handling.</p>
+      </div>
+      <div class="aovguard-release">
+      <p class="project-context">Release candidate 1.4.0rc1. Verification recorded on 19 October 2026. Open-source MSc project, MIT License.</p>
+      <p class="aovguard-status" data-aovguard-manual-status><strong>Manual Windows review pending.</strong> Automated acceptance passed. This remains a release candidate, not stable 1.4.0.</p>
+      </div>
+    </section>
+    <nav class="case-nav wrap" aria-label="On this project">
+      <a href="#overview-title">Result</a><a href="#decisions-title">Decisions</a><a href="#workflow-title">Workflow</a><a href="#architecture-title">Architecture</a><a href="#evidence-title">Validation</a><a href="#documentation-title">Documentation</a>
+    </nav>
+
+    <section class="aovguard-decisions wrap" aria-labelledby="decisions-title">
+      <h2 id="decisions-title">Three decisions behind the tool.</h2>
+      <div class="aovguard-decision-list">
+        <article class="aovguard-decision"><h3>Structure before assumptions</h3><p>Channels and metadata establish how each AOV is handled. Colour, technical, Cryptomatte and unknown data retain appropriate diagnostics without forcing one interpretation onto every pass.</p></article>
+<article class="aovguard-decision"><h3>Find the exact frame</h3><p>Robust temporal statistics expose unusual luminance changes. Charts, an ordered Outliers view and Locate Selected Frame connect an aggregate warning to its evidence.</p></article>
+<article class="aovguard-decision"><h3>Ready for automation</h3><p>GUI and CLI share the same typed models, while strict reports, baseline comparison, deterministic exit codes and bounded discovery support publishing checks.</p></article>
       </div>
     </section>
 
-    <section class="project-evidence wrap" aria-labelledby="workflow-title">
-      <p class="eyebrow"><span class="section-index">/</span> REVIEW WORKFLOW</p>
-      <h2 id="workflow-title">From an EXR source to reviewable evidence.</h2>
+    <section class="project-gallery document-gallery wrap" aria-label="Dated AOVGuard render evidence and outlier illustration">
+      <figure>
+        <a class="image-detail-link" href="../images/aovguard-rc1-20261019/01-maya-metricas.png" target="_blank" rel="noopener noreferrer"><img src="../images/aovguard-rc1-20261019/01-maya-metricas.png" alt="Metrics for one Maya frame with seven color AOVs, eight Cryptomatte passes excluded from luminance, normal and depth diagnostics" width="1460" height="908" loading="lazy"></a>
+        <figcaption><h2>Maya and Cryptomatte separation</h2><p>One real frame, not a repeat of the historical 301-frame sequence: 56 channels, 17 AOVs, zero read failures or NaN/Inf. The empty <code>volume</code> warning is retained. Automated Qt offscreen capture, 19 October 2026; the source-path strip is removed.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+      </figure>
+      <figure>
+        <a class="image-detail-link" href="../images/aovguard-rc1-20261019/03-venator-outliers-ilustracion.png" target="_blank" rel="noopener noreferrer"><img src="../images/aovguard-rc1-20261019/03-venator-outliers-ilustracion.png" alt="Saved Venator JSON report replay showing 15 AOV-frame outlier samples, with beauty_sun_key frame 1065 selected" width="1460" height="980" loading="lazy"></a>
+        <figcaption><h2>Outliers with exact-frame evidence</h2><p>15 AOV-frame samples across nine unique frames: six in <code>beauty_ship_diffuse</code> and nine in <code>beauty_sun_key</code>. This image is a saved-report replay in the rc1 interface, captured on 13 October 2026, not a new analysis or 15 confirmed defects. Automated navigation to frame 1065 passed on 19 October.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="evidence-title">
+      <h2 id="evidence-title">Recorded verification, 19 October 2026.</h2>
+      <dl class="evidence-grid aovguard-evidence">
+        <div><dt>Automated tests passed</dt><dd>1041</dd></div>
+        <div><dt>Tests skipped</dt><dd>3</dd></div>
+        <div><dt>Combined statement / branch coverage</dt><dd>96.34%</dd></div>
+        <div><dt>Venator master frames processed</dt><dd>144/144</dd></div>
+      </dl>
+      <p class="source-note">Source: the 19 October 2026 verification record and illustrated update report. The full locked suite ran on Windows/Python 3.12.12; Ruff and mypy passed. These are recorded AOVGuard results, not tests executed by this website. The separate published rc1 CI covered Windows/Linux and Python 3.11/3.12.</p>
+      <p class="source-note">Installed-wheel CLI/Qt acceptance checked one Maya frame and 144 Venator masters, semantic parity, unchanged baseline findings, JSON/HTML export, protected-destination rejection/retry, active cancellation, restart and process cleanup. The selected EXRs retained their names, sizes and <code>mtime_ns</code>; this repetition did not hash the entire render corpus.</p>
+      <div class="aovguard-manual-note" role="note" aria-labelledby="manual-review-title">
+        <h3 id="manual-review-title">Manual Windows review is still pending</h3>
+        <p>Qt acceptance ran automatically offscreen, substituting file and message dialogs. A separate native review attempt could not bind the application's window through Computer Use after refresh and retry. It stopped before interaction; that tooling failure does not establish an AOVGuard defect.</p>
+        <p>Native dialogs, keyboard focus, Windows display scaling and closing during active work still need interactive review. No participant timings or SUS scores were collected. Expected warnings and outliers require artistic context; this is not production certification or a stable 1.4.0 release.</p>
+      </div>
+      <p class="reference-links"><a href="../assets/documents/AOVGuard_revision_visual_2026-10-19_es.pdf" type="application/pdf" hreflang="es" target="_blank" rel="noopener noreferrer">Read illustrated verification report (Spanish PDF)<span class="sr-only"> (opens in a new tab)</span></a></p>
+      <details class="technical-notes">
+        <summary>Historical benchmark and current limits</summary>
+        <p>A controlled benchmark used 12 generated 320 × 180 frames, five AOVs and 30 repetitions per strategy on one Windows workstation. Frame-first processing reduced application-level reader calls from 60 to 12 while preserving the output checksum. Median elapsed time changed from 0.4387 s to 0.1181 s; Python-tracked peak memory increased from about 5.55 MB to 11.08 MB.</p>
+        <p>The result supports this processing change under those conditions. Native decoder allocations were not fully measured, and the timing ratio is not a general production-performance claim.</p>
+        <p>A separate in-memory scalability check processed 100, 500 and 1,000 frames in approximately linear time for its small 64 × 36 fixture, reaching 0.505 seconds and 2.206 MB of Python-tracked peak memory at 1,000 frames. It excludes OpenEXR decoding, filesystem I/O and full-resolution native allocations.</p>
+        <p>These measurements predate 1.4.0rc1 and are not a current candidate benchmark. The current candidate supports flat multipart EXRs with separate part identities and windows; any deep part or incomplete decode rejects the whole frame. Memory admission is an estimate, not an operating-system RSS cap. Frame deadlines exclude parent discovery, final rules and export. Cryptomatte classification depends on standard metadata or an explicit preset.</p>
+      </details>
+    </section>
+
+    <details class="technical-notes aovguard-implementation wrap">
+      <summary id="scope-title">Implementation details and safeguards</summary>
+      <div class="aovguard-implementation-content">
+      <div class="story-copy"><h2 id="implementation-overview-title">Technical checks, made repeatable.</h2>
+        <p>I designed and developed AOVGuard to inspect rendered EXR files and identify common technical problems before they reach later stages of a lighting or compositing pipeline. It gives lighting and compositing artists a repeatable review of a file or sequence, with a finding linked to the exact AOV, channel or frame that needs attention.</p>
+        <p>The documented implementation automatically inspects EXR parts and channels, normalises colour passes to a canonical RGB convention and diagnoses technical AOVs per channel. Standard Cryptomatte metadata keeps encoded IDs out of luminance and temporal-outlier calculations while preserving integrity checks.</p>
+        <p>A shared report model serves the PySide6 interface, command line, strict JSON and self-contained HTML exports. The 1.4.0rc1 candidate adds estimated memory admission, isolated frame execution, optional technical ranges and protected report publication. These safeguards do not turn statistical warnings into artistic approval.</p>
+      </div>
+        <h3>Toolkit</h3>
+        <p>Python 3.11/3.12 · OpenEXR · NumPy · PySide6 · pytest</p>
+        <h3>What I developed</h3>
+        <ul>
+        <li>Automatic inspection of regular and multilayer EXRs, with colour, scalar, vector, mask, depth, Cryptomatte and unknown AOV categories.</li>
+        <li>Frame-first processing with float64 accumulation, every physical channel preserved and independent identities and windows for flat multipart EXRs.</li>
+        <li>Configurable checks for NaN/Inf, negative and extreme values, empty passes, constant channels, missing AOVs, mixed resolutions and structural changes.</li>
+        <li>Sequence discovery with filename patterns, recursive search, bounded depth, frame limits and inclusive expected ranges for missing heads, tails and internal gaps.</li>
+        <li>Median/MAD temporal analysis, luminance and change charts, score-ordered outlier review and direct navigation to the exact frame evidence.</li>
+        <li>One canonical report for GUI, CLI, JSON and HTML output, with baseline comparison and protected atomic exports that allow retry without reanalysis.</li>
+        <li>Optional per-frame memory admission and technical range policies, plus default CLI/GUI isolation, frame deadlines, cancellation, restart and fail-closed cleanup.</li>
+      </ul>
+      </div>
+    </details>
+
+    <details class="technical-notes aovguard-workflow-details wrap">
+      <summary id="workflow-title">Review workflow: inspect, analyze, export</summary>
       <ol class="aovguard-workflow">
         <li><span>01</span><p>Select a file or render folder.</p></li>
         <li><span>02</span><p>Inspect channels, parts and inferred AOVs.</p></li>
@@ -82,94 +169,34 @@
         <li><span>06</span><p>Export canonical JSON or self-contained HTML.</p></li>
         <li><span>07</span><p>Compare the result with a previous baseline.</p></li>
       </ol>
-    </section>
-
-    <section class="project-scope wrap" aria-labelledby="scope-title">
-      <h2 id="scope-title">What I did</h2>
-      <ul>
-        <li>Automatic inspection of regular and multilayer EXRs, with colour, scalar, vector, mask, depth, Cryptomatte and unknown AOV categories.</li>
-        <li>Frame-first processing that opens each compatible frame once, accumulates colour metrics in float64 and keeps technical diagnostics separate from luminance.</li>
-        <li>Configurable checks for NaN/Inf, negative and extreme values, empty passes, constant channels, missing AOVs, mixed resolutions and structural changes.</li>
-        <li>Sequence discovery with filename patterns, recursive search, bounded depth, frame limits and inclusive expected ranges for missing heads, tails and internal gaps.</li>
-        <li>Median/MAD temporal analysis, luminance and change charts, score-ordered outlier review and direct navigation to the exact frame evidence.</li>
-        <li>One canonical report for GUI, CLI, JSON and HTML output, plus baseline comparison, strict exit codes and confirmation-gated AOV classification presets.</li>
-      </ul>
-    </section>
+    </details>
 
     <section class="project-evidence wrap" aria-labelledby="architecture-title">
-      <p class="eyebrow"><span class="section-index">/</span> SYSTEM DESIGN</p>
       <h2 id="architecture-title">One report model, every interface.</h2>
       <p class="reference-intro">The architecture keeps discovery, reading, analysis and presentation separate while the CLI, GUI and exporters share the same report.</p>
       <figure class="architecture-figure">
         <a class="image-detail-link" href="../images/aovguard-architecture.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard architecture diagram at full size in a new tab"><img src="../images/aovguard-architecture.jpg" alt="AOVGuard architecture: discovery, OpenEXR reading, canonical models, frame-first analysis, rule engine and one report model shared by CLI, GUI and exporters" width="1249" height="682" loading="lazy"></a>
-        <figcaption>Shared processing architecture · Figure 2 from the MSc dissertation. The dissertation names this redesign “AOVGuard 2.0”; the package release documented here is 1.2.1.<span class="image-detail-hint">Select the diagram to view full size ↗</span></figcaption>
-      </figure>
-    </section>
-
-    <section class="process-grid wrap" aria-label="Process, challenges and results">
-      <article class="process-step"><span>01 /</span><h3>Structure before assumptions</h3><p>Channels and metadata establish how each AOV is handled. Colour, technical, Cryptomatte and unknown data retain appropriate diagnostics without forcing one interpretation onto every pass.</p></article>
-      <article class="process-step"><span>02 /</span><h3>Find the exact frame</h3><p>Robust temporal statistics expose unusual luminance changes. Charts, an ordered Outliers view and Locate Selected Frame connect an aggregate warning to its evidence.</p></article>
-      <article class="process-step"><span>03 /</span><h3>Ready for automation</h3><p>GUI and CLI share the same typed models, while strict reports, baseline comparison, deterministic exit codes and bounded discovery support publishing checks.</p></article>
-    </section>
-
-    <section class="project-gallery document-gallery wrap" aria-label="AOVGuard interface documentation and validation results">
-      <figure>
-        <a class="image-detail-link" href="../images/aovguard-corrupt-frame.png" target="_blank" rel="noopener noreferrer" aria-label="Open the corrupt-frame finding at full size in a new tab"><img src="../images/aovguard-corrupt-frame.png" alt="AOVGuard Findings tab reporting one unreadable EXR as a read-frame error while completing the rest of a 302-frame sequence" width="1767" height="1353" loading="lazy"></a>
-        <figcaption><h2>Findings and recovery</h2><p>An unreadable EXR becomes a precise <code>read_frame</code> finding. Analysis continues across the remaining 301 frames and exposes the failed file path for review.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
-      </figure>
-      <figure>
-        <a class="image-detail-link" href="../images/aovguard-temporal-chart.png" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard temporal luminance chart at full size in a new tab"><img src="../images/aovguard-temporal-chart.png" alt="AOVGuard Metrics tab plotting average beauty luminance over a 301-frame render sequence with a median and normal range" width="1767" height="1353" loading="lazy"></a>
-        <figcaption><h2>Temporal metrics</h2><p>The Metrics view plots beauty luminance against the sequence median and normal range, while the table preserves aggregate values for each AOV.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
-      </figure>
-      <figure>
-        <a class="image-detail-link" href="../images/aovguard-frame-navigation.png" target="_blank" rel="noopener noreferrer" aria-label="Open the exact-frame navigation example at full size in a new tab"><img src="../images/aovguard-frame-navigation.png" alt="AOVGuard temporal chart tooltip showing the exact EXR path and beauty luminance for frame 150" width="1767" height="1353" loading="lazy"></a>
-        <figcaption><h2>Evidence at the exact frame</h2><p>Interactive chart points reveal the source path and measured value, then connect the temporal signal back to the corresponding EXR.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
-      </figure>
-      <figure>
-        <a class="image-detail-link" href="../images/aovguard-frame-table.png" target="_blank" rel="noopener noreferrer" aria-label="Open the per-frame metrics table at full size in a new tab"><img src="../images/aovguard-frame-table.png" alt="AOVGuard Frames tab showing per-file measurements for beauty, Cryptomatte and lighting AOV channels" width="2559" height="1518" loading="lazy"></a>
-        <figcaption><h2>Per-frame inspection</h2><p>The Frames view keeps file-level measurements available for targeted investigation across beauty, lighting and encoded data channels.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
-      </figure>
-      <figure>
-        <a class="image-detail-link" href="../images/aovguard-technical-channels.png" target="_blank" rel="noopener noreferrer" aria-label="Open the AOVGuard technical-channel diagnostics at full size in a new tab"><img src="../images/aovguard-technical-channels.png" alt="AOVGuard Technical tab showing separate per-channel statistics for normal components and depth across a render sequence" width="2559" height="1528" loading="lazy"></a>
-        <figcaption><h2>Technical channels</h2><p>Normal components and depth receive min, average, max, non-finite and negative-value diagnostics without entering colour-luminance calculations.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
-      </figure>
-      <figure>
-        <a class="image-detail-link" href="../images/aovguard-sequence-table.png" target="_blank" rel="noopener noreferrer" aria-label="Open the sequence discovery table at full size in a new tab"><img src="../images/thumbs/aovguard-sequence-table-2559-lossless.webp" alt="AOVGuard Sequences tab showing a detected EXR sequence, frame range, present count and padding" width="2559" height="1527" loading="lazy"></a>
-        <figcaption><h2>Sequence discovery</h2><p>The sequence record makes the detected pattern, inclusive range, file count, missing frames, duplicates and padding explicit before publishing.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
-      </figure>
-      <figure>
-        <a class="image-detail-link" href="../images/aovguard-cryptomatte-regression.png" target="_blank" rel="noopener noreferrer" aria-label="Open the historical Cryptomatte regression capture at full size in a new tab"><img src="../images/aovguard-cryptomatte-regression.png" alt="Historical AOVGuard regression capture showing encoded Cryptomatte values incorrectly ranked as luminance outliers before metadata-aware classification" width="2559" height="1519" loading="lazy"></a>
-        <figcaption><h2>Regression evidence: Cryptomatte</h2><p>This development capture records the false-positive behaviour that motivated metadata-aware classification. The documented implementation excludes encoded Cryptomatte IDs from luminance and temporal-outlier calculations.</p><span class="image-detail-hint">Select the image to view full size ↗</span></figcaption>
+        <figcaption>Historical conceptual diagram, Figure 2 from the MSc dissertation. Its “AOVGuard 2.0” label is not the package version. It illustrates the shared processing model, not every memory, execution or export safeguard in 1.4.0rc1.<span class="image-detail-hint">Select the diagram to view full size ↗</span></figcaption>
       </figure>
     </section>
 
     <section class="project-evidence wrap" aria-labelledby="documentation-title">
-      <p class="eyebrow"><span class="section-index">/</span> PUBLIC DOCUMENTATION</p>
       <h2 id="documentation-title">Documented in English and Spanish.</h2>
-      <p class="reference-intro">The public repository includes installation, GUI and CLI workflows, presets, reports, baselines, Cryptomatte handling, troubleshooting, limitations and verification evidence in both languages.</p>
+      <p class="reference-intro">Installation, GUI and CLI workflows, presets, reports, baselines and limitations are documented in English and Spanish. The screenshots below show the local documentation update checked on 19 October 2026; they do not establish that those changes have been deployed.</p>
       <div class="project-actions">
-        <a class="button button-secondary" href="https://github.com/Joshmedinag/AOVGuard/blob/main/website/documentation.html" target="_blank" rel="noopener noreferrer">English documentation <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
-        <a class="button button-secondary" href="https://github.com/Joshmedinag/AOVGuard/blob/main/website/documentacion.html" target="_blank" rel="noopener noreferrer">Documentación en español <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+        <a class="button button-secondary" href="https://github.com/Joshmedinag/AOVGuard/blob/v1.4.0rc1/website/documentation.html" target="_blank" rel="noopener noreferrer">English guide <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+        <a class="button button-secondary" href="https://github.com/Joshmedinag/AOVGuard/blob/v1.4.0rc1/website/documentacion.html" target="_blank" rel="noopener noreferrer" hreflang="es">Spanish guide <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
       </div>
-    </section>
-
-    <section class="project-evidence wrap" aria-labelledby="evidence-title">
-      <p class="eyebrow"><span class="section-index">/</span> VERIFICATION</p>
-      <h2 id="evidence-title">Documented verification · 24 September 2026.</h2>
-      <dl class="evidence-grid aovguard-evidence">
-        <div><dt>Automated tests passed</dt><dd>282</dd></div>
-        <div><dt>Statement / branch coverage</dt><dd>95.37%</dd></div>
-        <div><dt>CI matrices passing</dt><dd>4 / 4</dd></div>
-        <div><dt>Controlled frame-first speed-up</dt><dd>3.72×</dd></div>
-      </dl>
-      <p class="source-note">Source: the version 1.2.1 repository verification record and AOVGuard improvement report, 24 September 2026. These are recorded tool results, not tests run by this website: Python 3.11 and 3.12 on Windows and Linux, with core and GUI paths covered by CI. Documented release: 1.2.1. The speed figure comes from the documented 12-frame, five-AOV controlled benchmark and is not a production-throughput claim.</p>
-      <details class="technical-notes">
-        <summary>Benchmark conditions and current scope</summary>
-        <p>A controlled benchmark used 12 generated 320 × 180 frames, five AOVs and 30 repetitions per strategy on one Windows workstation. Frame-first processing reduced application-level reader calls from 60 to 12 while preserving the output checksum. Median elapsed time changed from 0.4387 s to 0.1181 s; Python-tracked peak memory increased from about 5.55 MB to 11.08 MB.</p>
-        <p>The result supports this processing change under those conditions. Native decoder allocations were not fully measured, and the timing ratio is not a general production-performance claim.</p>
-        <p>A separate in-memory scalability check processed 100, 500 and 1,000 frames in approximately linear time for its small 64 × 36 fixture, reaching 0.505 seconds and 2.206 MB of Python-tracked peak memory at 1,000 frames. It excludes OpenEXR decoding, filesystem I/O and full-resolution native allocations.</p>
-        <p>The documented analysis supports regular RGB/RGBA and named multilayer EXRs. Deep and multipart files are detected but not analyzed. Cryptomatte classification depends on standard metadata or an explicit preset; renderer-specific artistic interpretation and show-calibrated thresholds remain the user's responsibility.</p>
-      </details>
+      <div class="project-gallery aovguard-docs-gallery">
+        <figure>
+          <a class="image-detail-link" href="../images/aovguard-rc1-20261019/04-documentacion-escritorio.png" target="_blank" rel="noopener noreferrer"><img src="../images/aovguard-rc1-20261019/04-documentacion-escritorio.png" alt="Spanish AOVGuard documentation with a contents sidebar and installation instructions at a 1440 pixel viewport" width="1440" height="1000" loading="lazy"></a>
+          <figcaption><h3>Desktop documentation</h3><p>Spanish documentation at 1440 px. Automated headless Edge capture, 19 October 2026.</p></figcaption>
+        </figure>
+        <figure class="aovguard-mobile-figure">
+          <a class="image-detail-link" href="../images/aovguard-rc1-20261019/05-documentacion-movil.png" target="_blank" rel="noopener noreferrer"><img src="../images/aovguard-rc1-20261019/05-documentacion-movil.png" alt="Spanish AOVGuard documentation with reflowed contents and overview at a 320 pixel viewport" width="320" height="1000" loading="lazy"></a>
+          <figcaption><h3>Mobile documentation</h3><p>320 px viewport, headless Edge, 19 October 2026. This is not a complete accessibility evaluation.</p></figcaption>
+        </figure>
+      </div>
     </section>
 
     <section class="project-credits wrap" aria-labelledby="credits-title">

@@ -1,13 +1,16 @@
 (() => {
   'use strict';
   document.documentElement.classList.add('has-js');
+  const spanish = document.documentElement.lang.toLowerCase().split('-')[0] === 'es';
+  const openNavigationLabel = spanish ? 'Abrir navegación' : 'Open navigation';
+  const closeNavigationLabel = spanish ? 'Cerrar navegación' : 'Close navigation';
   const config = window.PORTFOLIO_CONFIG || {};
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.navigation');
   const closeMenu = (restoreFocus = false) => {
     if (!toggle || !nav) return;
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Open navigation');
+    toggle.setAttribute('aria-label', openNavigationLabel);
     nav.classList.remove('is-open');
     document.body.classList.remove('menu-open');
     if (restoreFocus) toggle.focus();
@@ -16,7 +19,7 @@
     toggle.addEventListener('click', () => {
       const open = toggle.getAttribute('aria-expanded') !== 'true';
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      toggle.setAttribute('aria-label', open ? closeNavigationLabel : openNavigationLabel);
       nav.classList.toggle('is-open', open);
       document.body.classList.toggle('menu-open', open);
       if (open) nav.querySelector('a')?.focus();

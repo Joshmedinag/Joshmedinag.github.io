@@ -18,12 +18,12 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/roboto/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../css/style.css?v=20261017-editorial">
-  <link rel="stylesheet" href="../css/site-system.css?v=20261017-editorial">
-  <link rel="stylesheet" href="../css/project-experience.css?v=20261017-editorial">
+  <link rel="stylesheet" href="../css/site-system.css?v=20261023-portfolio">
+  <link rel="stylesheet" href="../css/project-experience.css?v=20261023-portfolio">
   <script src="../js/site-config.js?v=20261017-editorial" defer></script>
   <script src="../js/main.js?v=20261017-editorial" defer></script>
   <script src="../js/site-experience.js?v=20261017-editorial" defer></script>
-  <script src="../js/video-experience.js?v=20261017-editorial" defer></script>
+  <script src="../js/video-experience.js?v=20261023-portfolio" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -42,25 +42,29 @@
   <main class="project-main" id="main">
     <div class="project-intro wrap">
       <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
-      <p class="eyebrow">LIGHTING TD PIPELINE</p>
       <div class="project-title-row">
-        <h1>FarmFlow<span class="title-dot">.</span></h1>
+        <div class="project-heading"><h1>FarmFlow<span class="title-dot">.</span></h1><p class="project-discipline">LIGHTING TD PIPELINE</p></div>
         <p class="project-lede">Check a Maya scene, render an Arnold sequence and verify its EXR outputs in one traceable workflow.</p>
       </div>
+      <p class="project-contribution"><span>My contribution</span> Python development · Maya integration · render workflow</p>
+    </div>
+
+    <figure class="project-hero wrap project-lead-media">
+      <a class="image-detail-link" href="../images/farmflow-render-run.png" target="_blank" rel="noopener noreferrer" aria-label="Open the FarmFlow workflow screenshot at full size"><img src="../images/thumbs/farmflow-render-run-1200-lossless.webp" srcset="../images/thumbs/farmflow-render-run-640-lossless.webp 640w, ../images/thumbs/farmflow-render-run-1200-lossless.webp 1200w, ../images/thumbs/farmflow-render-run-2559-lossless.webp 2559w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1548px) 93vw, 1440px" alt="FarmFlow running inside Maya, with the Arnold render and output verification visible beside the scene" width="2559" height="1519" fetchpriority="high" decoding="async"></a>
+      <figcaption>FarmFlow in use: Maya scene, Arnold render and output verification. Open the original to inspect the interface; the workflow and validation limits are documented below.</figcaption>
+    </figure>
+
+    <div class="project-details wrap">
       <div class="project-meta">
         <div><span class="meta-label">My contribution</span><p>Architecture, Python development, Maya integration, validation &amp; render workflow</p></div>
         <div><span class="meta-label">Toolkit</span><p>Python · Maya 2026 · Arnold · PySide6 · OpenImageIO · pytest · JSON · OCIO</p></div>
       </div>
       <p class="project-context">Independent pipeline engineering project · version 1.9.0 · August–September 2026</p>
     </div>
+
     <nav class="case-nav wrap" aria-label="On this project">
       <a href="#overview-title">Overview</a><a href="#maya-evidence-title">Render evidence</a><a href="#evidence-title">Verification</a><a href="#architecture-title">Interface</a><a href="#status-title">Project status</a>
     </nav>
-
-    <figure class="project-hero wrap">
-      <a class="image-detail-link" href="../images/farmflow-render-run.png" target="_blank" rel="noopener noreferrer" aria-label="Open the FarmFlow workflow screenshot at full size"><img src="../images/thumbs/farmflow-render-run-1200-lossless.webp" srcset="../images/thumbs/farmflow-render-run-640-lossless.webp 640w, ../images/thumbs/farmflow-render-run-1200-lossless.webp 1200w, ../images/thumbs/farmflow-render-run-2559-lossless.webp 2559w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1548px) 93vw, 1440px" alt="FarmFlow running inside Maya, with the Arnold render and output verification visible beside the scene" width="2559" height="1519" fetchpriority="high" decoding="async"></a>
-      <figcaption>FarmFlow in use: Maya scene, Arnold render and output verification. Open the original to inspect the interface; the workflow and validation limits are documented below.</figcaption>
-    </figure>
 
     <section class="project-story wrap" aria-labelledby="overview-title">
       <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
@@ -179,6 +183,7 @@
     </section>
 
     <a class="next-project wrap" href="aovguard.html"><div><small>NEXT PROJECT</small><h2>AOVGuard</h2></div><span aria-hidden="true">↗</span></a>
+
     <section class="project-contact wrap" aria-labelledby="project-contact-title">
       <div><h2 id="project-contact-title">Let’s create compelling images and better tools.</h2><p>Get in touch about lighting, compositing, technical art or pipeline opportunities.</p></div>
       <div class="project-contact-actions">

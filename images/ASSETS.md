@@ -2,6 +2,26 @@
 
 El material de Spaceship, R2-D2, FarmFlow, AOVGuard, Realtime Raytracer, Norwegian Lakeside, Going Merry, RenderMan y Broken Horizons procede de los archivos proporcionados por Joshua. FarmFlow combina material real de Maya y Arnold con un diagrama técnico construido en HTML y CSS. AOVGuard utiliza logotipos vectoriales de Maya y Python y un símbolo de AOVs creado para este portfolio. Los originales no se modifican. Las imágenes extraídas de los documentos conservan su resolución disponible, sin ampliación artificial. Los números de página indicados para los PDF cuentan desde la primera página, incluida la portada.
 
+## Zelda: Lighting & Look Development
+
+Fuentes entregadas por Joshua el 23 de octubre de 2026: `C:\Users\josha\Downloads\Zelda_Final_Shot.png`, `C:\Users\josha\Videos\ZELDA_BREAKDOWN.mp4` y `C:\Users\josha\Downloads\Zelda_Lighting_Lookdev_Case_Study_EN.pdf`. La página es `projects/zelda.html`, en inglés. La portada procede del PNG final suministrado, no de una captura del navegador ni de una imagen generada.
+
+| Recurso | Procedencia y preparación |
+| --- | --- |
+| `zelda/final-shot.png` | Copia idéntica del original, 1920 × 1080, sin recorte ni ajuste de color |
+| `zelda/final-shot.webp` | WebP sin pérdida de 1920 × 1080; píxeles decodificados idénticos al PNG |
+| `zelda/final-shot-{640,1200}.webp` | Variantes proporcionales de 640 × 360 y 1200 × 675, calidad 92 |
+| `zelda/clay-render-{960,1920}.webp` | Fotograma 37, 00:01,48, etapa rotulada Clay Render |
+| `zelda/warm-key-light-{960,1920}.webp` | Fotograma 62, 00:02,48, etapa Warm Key Light |
+| `zelda/soft-cream-fill-{960,1920}.webp` | Fotograma 87, 00:03,48, etapa Soft Cream Fill |
+| `zelda/main-blade-reflection-{960,1920}.webp` | Fotograma 187, 00:07,48, etapa Main Blade Reflection |
+| `../assets/video/zelda-breakdown.mp4` | 11,4 s, 1920 × 1080, 25 fps, H.264 Main / yuv420p y AAC. Remultiplexado con faststart; los payloads de los 285 paquetes de video y 535 de audio coinciden con el original |
+| `../assets/documents/Zelda_Lighting_Lookdev_Case_Study_EN.pdf` | Copia idéntica del PDF inglés de diez páginas |
+
+Los fotogramas de galería conservan la zona superior de 1920 × 984: solo se retiraron los 96 píxeles inferiores con rótulos de etapa/software. No se reconstruyeron píxeles ni se cambió la iluminación, el color o el contraste. Las copias de 1920 píxeles son WebP sin pérdida; las de 960 × 492 usan calidad 92. El video mantiene la progresión completa y sus rótulos. La reconstrucción de iluminación explica el estado aprobado v40; no se presenta como historial cronológico ni como AOVs aislados.
+
+El PDF identifica el alcance: pose/contacto, materiales NPR, iluminación, atmósfera y composición. La geometría y las texturas de base son externas y no se atribuyen a Joshua. La documentación no identifica al autor/distribuidor específico de esos assets. Es fan art personal sin afiliación oficial; Zelda y The Legend of Zelda pertenecen a Nintendo. La evidencia de extracción y hashes queda en `.verification/20261023-zelda/media/`.
+
 ## Spaceship — Lighting TD Case Study
 
 Fuentes: `CASE_STUDY_EN.md`, `spaceship_1st_version.mp4`, `material_detail.mp4`, nueve PNG de etapas y `spaceship_breakdown_2.mp4`, proporcionados por Joshua Medina. Joshua seleccionó `spaceship_1st_version.mp4` como vídeo principal del proyecto y entregó el breakdown actualizado el 4 de octubre de 2026.
@@ -53,6 +73,22 @@ La portada utiliza únicamente material real en una composición HTML/CSS de tre
 La página reproduce únicamente afirmaciones documentadas: 753 pruebas aprobadas, 2 omitidas, 90,40 % de cobertura y una aceptación local de 10 frames verificados en 29,7 segundos. También conserva la clasificación del informe entre funciones comprobadas, simuladas y pendientes.
 
 ## AOVGuard
+
+### Actualización de la candidata el 19 de octubre de 2026
+
+Las cinco imágenes de `aovguard-rc1-20261019/` proceden del material visual verificado de AOVGuard y se copian sin filtros ni cambios de color. No son capturas de una revisión manual aprobada. Los dos PNG de métricas tienen un recorte real de la franja superior de 72 px para excluir rutas locales; las métricas no se alteraron y los originales se conservan fuera de este portafolio.
+
+| Archivo | Procedencia y alcance | Resolución |
+| --- | --- | --- |
+| `01-maya-metricas.png` | Qt offscreen automatizado, wheel instalado 1.4.0rc1, 19/10/2026. Un solo frame Maya, 56 canales, 17 AOVs; Cryptomatte fuera de luminancia. | 1460 × 908 |
+| `02-venator-metricas.png` | Qt offscreen automatizado, wheel instalado 1.4.0rc1, 19/10/2026. 144 masters, frames 1065-1208, 55 canales y 18 AOVs de color; dos warnings esperados. | 1460 × 908 |
+| `03-venator-outliers-ilustracion.png` | Interfaz rc1 que reproduce un informe JSON guardado, captura del 13/10/2026. 15 muestras AOV-frame en nueve frames, no 15 defectos confirmados. Las rutas visibles ya están anonimizadas. | 1460 × 980 |
+| `04-documentacion-escritorio.png` | Comprobación automatizada de la documentación local en español con Edge headless, 19/10/2026, viewport de 1440 px. No acredita publicación remota. | 1440 × 1000 |
+| `05-documentacion-movil.png` | Misma documentación, Edge headless, 19/10/2026, viewport de 320 px. No sustituye una evaluación de accesibilidad. | 320 × 1000 |
+
+El PDF público `assets/documents/AOVGuard_revision_visual_2026-10-19_es.pdf` contiene seis páginas con estas imágenes, resultados y límites. La aceptación automatizada sustituye diálogos; la interacción con diálogos nativos, teclado/DPI y cierre durante trabajo sigue pendiente por un fallo del controlador de ventanas Computer Use. No se publican informes privados ni renders EXR. La galería actual sustituye las capturas históricas que mezclaban Cryptomatte con luminancia; esos archivos originales no se borran.
+
+### Material histórico de la disertación
 
 Fuente: `AOVGuard_MSc_Project_Joshua_Medina.pdf`.
 

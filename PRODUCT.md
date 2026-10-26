@@ -6,7 +6,7 @@ Experience: a portfolio where real imagery and demonstrable technical work lead.
 
 ## Identity and truth
 
-Joshua Medina: **Lighting TD / Compositor · Technical Artist / Pipeline TD**. These are areas of specialisation, not unverified previous job titles. The MSc in Computer Animation & Visual Effects at Bournemouth University is completed, as confirmed by Joshua. Public content is natural English. Never invent seniority, employers, film credits, availability, right to work, testimonials or performance results.
+Joshua Medina: **Lighting TD / Compositor · Technical Artist / Pipeline TD**. These are areas of specialisation, not unverified previous job titles. The MSc in Computer Animation & Visual Effects at Bournemouth University is completed, as confirmed by Joshua. Public content defaults to natural English; the AOVGuard case study also has a Spanish edition, requested on 19 October 2026. Never invent seniority, employers, film credits, availability, right to work, testimonials or performance results.
 
 ## Audiences and paths
 
@@ -16,7 +16,7 @@ Joshua Medina: **Lighting TD / Compositor · Technical Artist / Pipeline TD**. T
 
 ## Initial curation
 
-Six featured projects: Venator, Spaceship, R2-D2 and Broken Horizons in Lighting & Compositing; AOVGuard and FarmFlow in Technical Art & Pipeline. Both paths remain visible. More Work preserves access to RenderMan, CPU Raytracer, Norwegian Lakeside, Snowbound Environment, Going Merry and Cinematography. Each project has one canonical page.
+Six featured projects: Venator, Spaceship, R2-D2 and Zelda in Lighting & Compositing; AOVGuard and FarmFlow in Technical Art & Pipeline. Both paths remain visible. More Work preserves access to Broken Horizons, RenderMan, CPU Raytracer, Norwegian Lakeside, Snowbound Environment, Going Merry and Cinematography. Each project has one canonical page. Zelda is a personal stylized fan-art study using external base geometry/textures; its case study identifies pose/contact, look development, lighting and compositing work without claiming original modelling.
 
 ## Constraints
 
@@ -26,8 +26,8 @@ Six featured projects: Venator, Spaceship, R2-D2 and Broken Horizons in Lighting
 - Essential navigation, contact, media fallback and project links available without JS.
 - Vimeo starts from a real local poster and loads after interaction; direct external link always available.
 - Existing CV remains unchanged; discrepancies are reported separately.
-- Review changes locally before publication. Commits, pushes and deployment require express permission; Joshua subsequently authorised publishing the 17 October 2026 revision.
+- Review changes locally before publication. Commits, pushes and deployment require express permission; Joshua authorised publishing Zelda, the portfolio presentation improvements and the bilingual AOVGuard update on 23 October 2026.
 
 ## Acceptance
 
-Four specialties consistent across hero/About/contact/footer/metadata. Work visible early, contribution distinguished from third-party assets. Working CV/contact and all twelve existing routes. Responsive, keyboard accessible, motion-reduced interactions. Verified requests and resources, with laboratory measurements distinguished from field experience. Do not claim full WCAG conformance from automated testing alone.
+Four specialties consistent across hero/About/contact/footer/metadata. Work visible early, contribution distinguished from third-party assets. Working CV/contact and all thirteen project routes, plus the AOVGuard Spanish edition. Responsive, keyboard accessible, motion-reduced interactions. Verified requests and resources, with laboratory measurements distinguished from field experience. Do not claim full WCAG conformance from automated testing alone.

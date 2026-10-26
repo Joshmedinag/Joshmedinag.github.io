@@ -18,12 +18,12 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/roboto/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../css/style.css?v=20261017-editorial">
-  <link rel="stylesheet" href="../css/site-system.css?v=20261017-editorial">
-  <link rel="stylesheet" href="../css/project-experience.css?v=20261017-editorial">
+  <link rel="stylesheet" href="../css/site-system.css?v=20261023-portfolio">
+  <link rel="stylesheet" href="../css/project-experience.css?v=20261023-portfolio">
   <script src="../js/site-config.js?v=20261017-editorial" defer></script>
   <script src="../js/main.js?v=20261017-editorial" defer></script>
   <script src="../js/site-experience.js?v=20261017-editorial" defer></script>
-  <script src="../js/video-experience.js?v=20261017-editorial" defer></script>
+  <script src="../js/video-experience.js?v=20261023-portfolio" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -41,22 +41,15 @@
   <main class="project-main" id="main">
     <div class="project-intro wrap">
       <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
-      <p class="eyebrow">LIGHTING &amp; LOOK DEVELOPMENT</p>
-      <div class="project-title-row"><h1>Broken<br>Horizons<span class="title-dot">.</span></h1><p class="project-lede">Light, atmosphere and camera work that give an environment its emotional tone.</p></div>
-      <div class="project-meta">
-        <div><span class="meta-label">My contribution</span><p>Lighting, cinematography &amp; render workflow</p></div>
-        <div><span class="meta-label">Project toolkit</span><p>Unreal Engine · Lumen · Sequencer · Movie Render Queue</p></div>
-      </div>
-      <p class="project-context">MSc group project · Bournemouth University</p>
+      <div class="project-title-row"><div class="project-heading"><h1>Broken Horizons<span class="title-dot">.</span></h1><p class="project-discipline">LIGHTING &amp; LOOK DEVELOPMENT</p></div><p class="project-lede">Light, atmosphere and camera work that give an environment its emotional tone.</p></div>
+      <p class="project-contribution"><span>My contribution</span> Lighting · cinematography</p>
     </div>
-    <nav class="case-nav wrap" aria-label="On this project">
-      <a href="#film-title">Cinematic</a><a href="#scope-title">Contribution</a><a href="#workflow-title">Workflow</a><a href="#references-title">References</a><a href="#credits-title">Credits</a>
-    </nav>
-    <section class="featured-film wrap" aria-labelledby="film-title">
-      <p class="eyebrow"><span class="section-index">/</span> FEATURED FILM</p>
+
+    <section class="project-opening-label wrap" aria-labelledby="film-title">
       <h2 id="film-title">Final group cinematic<span class="title-dot">.</span></h2>
     </section>
-    <figure class="project-video wrap">
+
+    <figure class="project-video wrap project-lead-media">
       <video controls playsinline preload="metadata" poster="../images/lighting-main.jpg" width="1920" height="1080" aria-label="Broken Horizons final group film">
         <source src="../assets/video/broken-horizons.mp4" type="video/mp4">
         Your browser does not support embedded video. <a href="../assets/video/broken-horizons.mp4">Open Broken Horizons</a>.
@@ -64,6 +57,19 @@
       <figcaption>Final group film · 1 min 58 sec, including titles and credits · 1080p / 24 fps</figcaption>
       <a class="inline-link" href="../assets/video/broken-horizons.mp4" target="_blank" rel="noopener noreferrer">Open the film <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
     </figure>
+
+    <div class="project-details wrap">
+      <div class="project-meta">
+        <div><span class="meta-label">My contribution</span><p>Lighting, cinematography &amp; render workflow</p></div>
+        <div><span class="meta-label">Project toolkit</span><p>Unreal Engine · Lumen · Sequencer · Movie Render Queue</p></div>
+      </div>
+      <p class="project-context">MSc group project · Bournemouth University</p>
+    </div>
+
+    <nav class="case-nav wrap" aria-label="On this project">
+      <a href="#film-title">Cinematic</a><a href="#scope-title">Contribution</a><a href="#workflow-title">Workflow</a><a href="#references-title">References</a><a href="#credits-title">Credits</a>
+    </nav>
+
     <div class="project-video-links wrap">
       <p>A cinematic recreation of Tout Quarry Sculpture Park in Portland, Dorset.</p>
       <nav class="project-jumps" aria-label="Broken Horizons sections">
@@ -175,7 +181,9 @@
       <p>My broader practice includes personal and academic lighting work and specialised training at Lost Boys | School of VFX, using Katana, Arnold and Nuke.</p>
       <a class="inline-link" href="../index.html#showreel">Watch my lighting showreel <span aria-hidden="true">↗</span></a>
     </section>
+
     <a class="next-project wrap" href="norwegian-lakeside.html"><div><small>NEXT PROJECT</small><h2>Norwegian Lakeside</h2></div><span aria-hidden="true">↗</span></a>
+
     <section class="project-contact wrap" aria-labelledby="project-contact-title">
       <div><h2 id="project-contact-title">Let’s create compelling images and better tools.</h2><p>Get in touch about lighting, compositing, technical art or pipeline opportunities.</p></div>
       <div class="project-contact-actions">

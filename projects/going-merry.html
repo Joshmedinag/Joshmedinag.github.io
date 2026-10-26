@@ -18,12 +18,12 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/roboto/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../css/style.css?v=20261017-editorial">
-  <link rel="stylesheet" href="../css/site-system.css?v=20261017-editorial">
-  <link rel="stylesheet" href="../css/project-experience.css?v=20261017-editorial">
+  <link rel="stylesheet" href="../css/site-system.css?v=20261023-portfolio">
+  <link rel="stylesheet" href="../css/project-experience.css?v=20261023-portfolio">
   <script src="../js/site-config.js?v=20261017-editorial" defer></script>
   <script src="../js/main.js?v=20261017-editorial" defer></script>
   <script src="../js/site-experience.js?v=20261017-editorial" defer></script>
-  <script src="../js/video-experience.js?v=20261017-editorial" defer></script>
+  <script src="../js/video-experience.js?v=20261023-portfolio" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -41,19 +41,11 @@
   <main class="project-main" id="main">
     <div class="project-intro wrap">
       <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
-      <p class="eyebrow">FX &amp; SIMULATION</p>
-      <div class="project-title-row"><h1>Going Merry<br>Ocean Simulation<span class="title-dot">.</span></h1><p class="project-lede">A cinematic ocean simulation featuring the Going Merry ship inspired by One Piece.</p></div>
-      <div class="project-meta">
-        <div><span class="meta-label">My contribution</span><p>Simulation, lighting, scene assembly &amp; technical implementation</p></div>
-        <div><span class="meta-label">Toolkit</span><p>Houdini · FLIP · Guided Ocean Layer · Ocean Spectrum · Ocean Evaluate · VDB · Solaris · Karma · USD</p></div>
-      </div>
-      <p class="project-context">Individual academic project · MSc, Bournemouth University</p>
-      
+      <div class="project-title-row"><div class="project-heading"><h1>Going Merry Ocean Simulation<span class="title-dot">.</span></h1><p class="project-discipline">FX &amp; SIMULATION</p></div><p class="project-lede">A cinematic ocean simulation featuring the Going Merry ship inspired by One Piece.</p></div>
+      <p class="project-contribution"><span>My contribution</span> Simulation · lighting · scene assembly</p>
     </div>
-    <nav class="case-nav wrap" aria-label="On this project">
-      <a href="#overview-title">Overview</a><a href="#scope-title">Simulation</a><a href="#gallery">Gallery</a><a href="#credits-title">Credits</a>
-    </nav>
-    <figure class="project-video wrap">
+
+    <figure class="project-video wrap project-lead-media">
       <video controls playsinline preload="metadata" poster="../images/going-merry-main.jpg" width="1920" height="1080" aria-label="Going Merry ocean simulation by Joshua Medina">
         <source src="../assets/video/going-merry.mp4" type="video/mp4">
         Your browser does not support embedded video. <a href="../assets/video/going-merry.mp4">Open the Going Merry video</a>.
@@ -61,6 +53,18 @@
       <figcaption>Going Merry ocean simulation · 53 seconds · Houdini / Solaris / Karma</figcaption>
       <a class="inline-link" href="../assets/video/going-merry.mp4" target="_blank" rel="noopener noreferrer">Open the video <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
     </figure>
+
+    <div class="project-details wrap">
+      <div class="project-meta">
+        <div><span class="meta-label">My contribution</span><p>Simulation, lighting, scene assembly &amp; technical implementation</p></div>
+        <div><span class="meta-label">Toolkit</span><p>Houdini · FLIP · Guided Ocean Layer · Ocean Spectrum · Ocean Evaluate · VDB · Solaris · Karma · USD</p></div>
+      </div>
+      <p class="project-context">Individual academic project · MSc, Bournemouth University</p>
+    </div>
+
+    <nav class="case-nav wrap" aria-label="On this project">
+      <a href="#overview-title">Overview</a><a href="#scope-title">Simulation</a><a href="#gallery">Gallery</a><a href="#credits-title">Credits</a>
+    </nav>
 
     <section class="project-story wrap" aria-labelledby="overview-title">
       <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
@@ -101,7 +105,9 @@
       <p>The exact source and author of the supplied 3D asset remain unconfirmed.</p>
 
     </section>
+
     <a class="next-project wrap" href="r2d2-lighting.html"><div><small>NEXT PROJECT</small><h2>R2-D2 Desert Look Development</h2></div><span aria-hidden="true">↗</span></a>
+
     <section class="project-contact wrap" aria-labelledby="project-contact-title">
       <div><h2 id="project-contact-title">Let’s create compelling images and better tools.</h2><p>Get in touch about lighting, compositing, technical art or pipeline opportunities.</p></div>
       <div class="project-contact-actions">

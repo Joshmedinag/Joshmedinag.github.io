@@ -1,5 +1,6 @@
 /* Integration checks for the static portfolio. Start a local server first.
-   PORTFOLIO_BASE_URL, PORTFOLIO_PLAYWRIGHT_PATH and PORTFOLIO_BROWSER_PATH are optional.
+   PORTFOLIO_BASE_URL, PORTFOLIO_PLAYWRIGHT_PATH, PORTFOLIO_BROWSER_PATH and
+   PORTFOLIO_VERIFICATION_OUTPUT are optional.
    No email is sent and clipboard writes are replaced with an isolated test stub. */
 const fs = require('fs');
 const path = require('path');
@@ -10,7 +11,7 @@ let playwright;
 try { playwright = require(process.env.PORTFOLIO_PLAYWRIGHT_PATH || 'playwright'); }
 catch { playwright = require(bundled); }
 const base = new URL(process.env.PORTFOLIO_BASE_URL || 'http://127.0.0.1:4183/');
-const output = path.join(root, '.verification/20261017-audit');
+const output = path.resolve(root, process.env.PORTFOLIO_VERIFICATION_OUTPUT || '.verification/20261017-audit');
 fs.mkdirSync(output, { recursive: true });
 const edge = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe';
 const executablePath = process.env.PORTFOLIO_BROWSER_PATH || (fs.existsSync(edge) ? edge : undefined);
@@ -75,11 +76,11 @@ const prepare = async context => {
     await check('More Work opens with Enter and filters do not hide featured work', async () => {
       const summary = page.locator('#more-work > summary'); await summary.focus(); await page.keyboard.press('Enter');
       assert.equal(await page.locator('#more-work').evaluate(e => e.open), true);
-      assert.equal(await page.locator('#more-work .project-card:visible').count(), 6);
+      assert.equal(await page.locator('#more-work .project-card:visible').count(), 7);
       await page.locator('#more-work [data-filter="lighting"]').click();
       assert.equal(await page.locator('#project-grid .project-card:visible').count(), 4);
       assert.equal(await page.locator('.technical-grid .project-card:visible').count(), 2);
-      assert.equal(await page.locator('#more-work .project-card:visible').count(), 2);
+      assert.equal(await page.locator('#more-work .project-card:visible').count(), 3);
       await page.locator('#more-work [data-filter="all"]').click();
     });
     await check('Legacy category URL exposes the same technical projects', async () => {
@@ -118,7 +119,7 @@ const prepare = async context => {
       for (const name of pages) {
         await page.goto(new URL(name, base).href, { waitUntil: 'domcontentloaded' });
         const data = await page.evaluate(() => ({ h1: document.querySelectorAll('h1').length, lang: document.documentElement.lang, title: document.title, ids: [...document.querySelectorAll('[id]')].map(e => e.id), urls: [...document.querySelectorAll('[href],[src],[poster]')].flatMap(e => ['href', 'src', 'poster'].map(k => e.getAttribute(k)).filter(Boolean)), cv: [...document.querySelectorAll('a[href$=".pdf"]')].map(e => e.href), mailto: !!document.querySelector('a[href^="mailto:"]'), roles: document.querySelector('.site-footer')?.innerText || '' }));
-        assert.equal(data.h1, 1, `${name} h1 count`); assert.equal(data.lang, 'en', `${name} lang`); assert.equal(new Set(data.ids).size, data.ids.length, `${name} duplicate IDs`); assert(data.cv.length, `${name} CV`); assert(data.mailto, `${name} mailto`);
+        assert.equal(data.h1, 1, `${name} h1 count`); assert.equal(data.lang, name === 'projects/aovguard-es.html' ? 'es' : 'en', `${name} lang`); assert.equal(new Set(data.ids).size, data.ids.length, `${name} duplicate IDs`); assert(data.cv.length, `${name} CV`); assert(data.mailto, `${name} mailto`);
         for (const title of ['Lighting TD', 'Compositor', 'Technical Artist', 'Pipeline TD']) assert(data.roles.includes(title), `${name} footer ${title}`);
         ids.set(new URL(name, base).pathname, new Set(data.ids));
         for (const raw of data.urls) { const u = new URL(raw, new URL(name, base)); if (u.origin === base.origin) { links.push(new URL(u)); u.hash = ''; resources.add(u.href); } }
@@ -140,7 +141,7 @@ const prepare = async context => {
           await page.goto(new URL(name, base).href, { waitUntil: 'domcontentloaded' }); await settle(page);
           const layout = await page.evaluate(() => ({ width: innerWidth, scrollWidth: document.documentElement.scrollWidth, overflow: document.documentElement.scrollWidth > innerWidth + 1 }));
           report.layouts.push({ page: name, ...layout });
-          if ((width === 1440 || width === 390) && ['index.html', 'projects/venator.html', 'projects/aovguard.html', 'projects/farmflow.html'].includes(name)) await screenshot(page, `after-${path.basename(name, '.html')}-${width}.png`);
+          if ((width === 1440 || width === 390) && ['index.html', 'projects/venator.html', 'projects/aovguard.html', 'projects/aovguard-es.html', 'projects/farmflow.html'].includes(name)) await screenshot(page, `after-${path.basename(name, '.html')}-${width}.png`);
         }
       }
       const failed = report.layouts.filter(r => r.overflow); assert.equal(failed.length, 0, JSON.stringify(failed));
@@ -175,7 +176,7 @@ const prepare = async context => {
       const nojs = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } }); await prepare(nojs); const p = await nojs.newPage();
       await p.goto(base.href, { waitUntil: 'domcontentloaded' }); await settle(p);
       assert.equal(await p.locator('#project-grid .project-card:visible').count(), 4); assert.equal(await p.locator('.technical-grid .project-card:visible').count(), 2);
-      await p.locator('#more-work > summary').click(); assert.equal(await p.locator('#more-work .project-card:visible').count(), 6);
+      await p.locator('#more-work > summary').click(); assert.equal(await p.locator('#more-work .project-card:visible').count(), 7);
       assert(await p.locator('a[href^="mailto:"]:visible').count()); assert.equal(await p.locator('[data-copy-email]').isVisible(), false); assert(await p.locator('a[data-reel-link]:visible').count());
       await screenshot(p, 'after-nojs-390.png'); await nojs.close();
     });

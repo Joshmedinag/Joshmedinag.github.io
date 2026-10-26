@@ -1,0 +1,96 @@
+/* Scoped case-study additions; retain the portfolio's existing visual system. */
+.case-topline { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; }
+.case-topline .back-link { margin-bottom: 0; }
+.case-language-nav { display: flex; flex-wrap: wrap; gap: 8px; }
+.case-language-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border: 1px solid var(--line-strong); border-radius: 3px; color: var(--text-secondary); font-size: .875rem; }
+.case-language-nav a[aria-current="page"] { color: var(--text-primary); background: var(--bg-surface-active); text-decoration: underline; text-underline-offset: 4px; }
+.case-language-nav a:hover { color: var(--text-primary); border-color: var(--text-primary); }
+.aovguard-status { max-width: 74ch; margin-top: 16px; color: var(--text-secondary); font-size: .9375rem; line-height: 1.7; }
+.aovguard-status strong { color: var(--accent-gold); }
+.aovguard-manual-note { max-width: 78ch; padding: 24px; margin-block: 24px; border: 1px solid var(--line-strong); border-radius: 3px; background: var(--bg-surface); }
+.aovguard-manual-note h3 { color: var(--text-primary); font-size: 1.25rem; line-height: 1.4; }
+.aovguard-manual-note p { margin-top: 12px; color: var(--text-secondary); font-size: .9375rem; line-height: 1.8; }
+.aovguard-docs-gallery { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); gap: 32px; }
+.aovguard-mobile-figure { max-width: 320px; }
+.aovguard-docs-gallery h3 { margin-top: 0; }
+.aovguard-evidence dd { font-variant-numeric: tabular-nums; }
+.project-evidence .source-note { max-width: 78ch; line-height: 1.8; }
+.project-evidence .source-note + .source-note { margin-top: 14px; }
+
+/* Put the working tool beside its purpose, then let evidence lead the read. */
+.aovguard-topline { padding-top: 16px; padding-bottom: 24px; }
+.aovguard-opening { display: grid; grid-template-columns: minmax(0, .78fr) minmax(0, 1.4fr); align-items: start; gap: clamp(28px, 4vw, 56px); }
+.aovguard-opening .project-intro { padding: 16px 0 0; }
+.aovguard-opening h1 { font-size: clamp(2.5rem, 4.1vw, 3.75rem); font-weight: 500; line-height: 1.06; letter-spacing: -.035em; }
+.aovguard-opening .project-lede { max-width: 32ch; margin-top: 20px; color: var(--text-primary); font-size: clamp(1.1rem, 1.5vw, 1.35rem); line-height: 1.5; text-wrap: pretty; }
+.aovguard-authorship { max-width: 42ch; margin-top: 24px; color: var(--text-secondary); font-size: .9375rem; line-height: 1.7; }
+.aovguard-authorship strong { display: block; color: var(--text-primary); font-weight: 500; }
+.aovguard-opening .project-actions { align-items: flex-start; gap: 8px; margin-top: 24px; }
+.aovguard-opening .project-actions .button { gap: 14px; }
+.aovguard-opening .project-hero { width: 100%; margin: 0; }
+.aovguard-opening .project-hero figcaption { margin-top: 12px; font-size: .8125rem; line-height: 1.6; }
+.aovguard-crop-label { display: none; }
+.aovguard-capture-details { margin-top: 6px; }
+.aovguard-capture-details summary { min-height: 44px; padding-block: 10px; color: var(--text-primary); cursor: pointer; }
+.aovguard-capture-details p { max-width: 74ch; padding-bottom: 8px; }
+.aovguard-summary { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 32px 64px; padding-block: 40px 32px; }
+.aovguard-summary h2 { max-width: 28ch; margin-bottom: 12px; font-size: clamp(1.5rem, 2.1vw, 2rem); line-height: 1.2; }
+.aovguard-result-copy > p { max-width: 64ch; color: var(--text-secondary); font-size: 1rem; line-height: 1.75; }
+.aovguard-release .project-context { margin-top: 0; font-family: var(--font-body); font-size: .875rem; line-height: 1.7; }
+.aovguard-release .aovguard-status { margin-top: 12px; font-size: .875rem; line-height: 1.7; }
+.aovguard-case .case-nav { margin-bottom: 0; }
+.aovguard-decisions { display: grid; grid-template-columns: minmax(180px, .7fr) minmax(0, 1.3fr); gap: 32px 64px; padding-block: 52px; }
+.aovguard-decisions > h2 { max-width: 20ch; font-size: clamp(1.75rem, 2.6vw, 2.3rem); line-height: 1.15; }
+.aovguard-decision + .aovguard-decision { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line-subtle); }
+.aovguard-decision h3 { margin: 0 0 8px; font-size: 1.125rem; line-height: 1.4; }
+.aovguard-decision p { max-width: 66ch; color: var(--text-secondary); font-size: .9375rem; line-height: 1.75; }
+.aovguard-case .project-evidence > h2 { margin-top: 0; }
+.aovguard-case .project-evidence > .reference-intro { margin-top: 16px; }
+.aovguard-evidence { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin-block: 24px; }
+.aovguard-evidence > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 16px; border: 0; border-top: 1px solid var(--line-subtle); padding: 16px 0; }
+.aovguard-evidence dt { font-size: .9375rem; line-height: 1.6; }
+.aovguard-evidence dd { font-size: 1.125rem; font-weight: 500; letter-spacing: 0; line-height: 1.4; }
+.aovguard-implementation, .aovguard-workflow-details { margin-top: 0; margin-bottom: 24px; }
+.aovguard-implementation-content { max-width: 78ch; padding-block: 20px; }
+.aovguard-implementation-content h2 { margin-bottom: 18px; font-size: 1.5rem; line-height: 1.3; }
+.aovguard-implementation-content h3 { margin-top: 28px; margin-bottom: 12px; font-size: 1.125rem; }
+.aovguard-implementation-content > p, .aovguard-implementation-content ul { color: var(--text-secondary); font-size: .9375rem; line-height: 1.8; }
+.aovguard-implementation-content > p { margin-top: 0; }
+.aovguard-implementation-content ul { padding-left: 20px; }
+.aovguard-implementation-content li + li { margin-top: 12px; }
+.aovguard-implementation-content li::marker { color: var(--accent-gold); }
+.aovguard-workflow-details .aovguard-workflow { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; row-gap: 0; margin-top: 12px; margin-bottom: 20px; }
+.aovguard-workflow-details .aovguard-workflow li { display: grid; grid-template-columns: 24px minmax(0, 1fr); align-items: baseline; min-height: 0; padding: 16px 0; border: 0; border-top: 1px solid var(--line-subtle); border-radius: 0; background: none; }
+.aovguard-workflow-details .aovguard-workflow p { margin-top: 0; }
+
+@media (max-width: 1050px) {
+  .aovguard-opening { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 28px; }
+  .aovguard-opening .project-intro { padding-top: 0; }
+  .aovguard-opening h1 { font-size: clamp(2.4rem, 4.2vw, 3.25rem); }
+  .aovguard-opening .project-lede { font-size: 1.125rem; }
+  .aovguard-opening .project-actions { flex-direction: column; }
+  .aovguard-summary, .aovguard-decisions { column-gap: 32px; }
+}
+@media (max-width: 760px) {
+  .case-topline { align-items: flex-start; }
+  .aovguard-docs-gallery { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .aovguard-manual-note { padding: 20px; }
+  .aovguard-topline { padding-bottom: 20px; }
+  .aovguard-opening { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .aovguard-opening h1 { font-size: clamp(2.4rem, 9vw, 3rem); }
+  .aovguard-opening .project-lede { max-width: 40ch; margin-top: 12px; font-size: 1.0625rem; }
+  .aovguard-authorship { max-width: 46ch; margin-top: 16px; font-size: .875rem; }
+  .aovguard-opening .project-actions { flex-direction: row; margin-top: 18px; }
+  .aovguard-opening .project-actions .button { width: auto; min-height: 44px; padding: 10px 12px; font-size: .75rem; }
+  .aovguard-crop-label { display: block; margin-bottom: 8px; color: var(--text-secondary); font-size: .8125rem; line-height: 1.5; }
+  .aovguard-summary, .aovguard-decisions { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .aovguard-summary { padding-block: 32px 24px; }
+  .aovguard-decisions { padding-block: 36px; }
+  .aovguard-decisions > h2 { max-width: 28ch; }
+  .aovguard-evidence { grid-template-columns: minmax(0, 1fr); }
+  .aovguard-workflow-details .aovguard-workflow { grid-template-columns: minmax(0, 1fr); }
+}
+@media print {
+  .aovguard-opening { display: block; }
+  .aovguard-opening .project-hero { margin-top: 24px; }
+}

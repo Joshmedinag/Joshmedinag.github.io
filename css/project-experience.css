@@ -1,10 +1,16 @@
 /* Case studies: final imagery, clear authorship, readable production evidence. */
 .project-main { padding-top: var(--header); }
-.project-intro { padding-top: 24px; padding-bottom: 24px; }
-.back-link { min-height: 44px; margin-bottom: 24px; font-size: .8125rem; color: var(--text-secondary); }
-.project-title-row { grid-template-columns: minmax(0,1.4fr) minmax(0,1fr); align-items: end; gap: 48px; margin-top: 18px; }
-.project-title-row h1 { font-size: clamp(2.6rem,4.8vw,4.8rem); font-weight: 500; letter-spacing: -.04em; line-height: 1.04; text-wrap: balance; }
-.project-lede { max-width: 48ch; font-size: 1.0625rem; line-height: 1.65; color: var(--text-secondary); }
+.project-intro { padding-top: 16px; padding-bottom: 24px; }
+.back-link { min-height: 44px; margin-bottom: 12px; font-size: .8125rem; color: var(--text-secondary); }
+.project-title-row { grid-template-columns: minmax(0,1.4fr) minmax(0,1fr); align-items: end; gap: 32px; margin-top: 0; }
+.project-title-row h1 { font-size: clamp(2.25rem,3.8vw,3.5rem); font-weight: 500; letter-spacing: -.03em; line-height: 1.08; text-wrap: balance; }
+.project-heading { min-width: 0; }
+.project-discipline { margin-top: 10px; font-size: .8125rem; line-height: 1.5; color: var(--accent-gold); }
+.project-lede { max-width: 48ch; font-size: 1rem; line-height: 1.6; color: var(--text-secondary); }
+.project-contribution { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 16px; font-size: .875rem; line-height: 1.5; color: var(--text-primary); }
+.project-contribution>span { color: var(--text-secondary); }
+.project-details { padding-block: 0 24px; }
+.project-details .project-meta { margin-top: 0; }
 .project-meta { grid-template-columns: minmax(0,1fr) minmax(0,1.3fr); gap: 24px 48px; margin-top: 28px; padding-top: 20px; }
 .project-meta>div { min-width: 0; }
 .meta-label { margin-bottom: 6px; color: var(--accent-gold); font-size: .75rem; letter-spacing: .04em; }
@@ -20,6 +26,13 @@
 .project-hero img, .project-hero.technical img, .project-hero.r2d2-shot img, .project-hero.spaceship-shot img, .project-hero.venator-shot img { display: block; width: 100%; height: auto; max-height: none; aspect-ratio: auto; object-fit: contain; border: 1px solid var(--line-subtle); border-radius: 2px; background: #050507; }
 .project-hero figcaption, .project-video figcaption { margin-top: 12px; font-family: var(--font-body); font-size: .8125rem; line-height: 1.65; color: var(--text-secondary); }
 .project-hero a.image-detail-link { line-height: 0; }
+/* The artifact precedes toolkit, project context and section navigation in the DOM. */
+.project-hero.project-lead-media, .project-video.project-lead-media { margin-top: 0; margin-bottom: 24px; }
+.project-opening-label { margin-bottom: 12px; }
+.project-opening-label h2, .project-evidence.project-lead-media>h2 { margin-top: 0; font-size: 1.125rem; line-height: 1.4; letter-spacing: 0; }
+.project-evidence.project-lead-media { padding-top: 0; margin-bottom: 24px; }
+.project-evidence.project-lead-media .project-video-grid { grid-template-columns: 1fr; margin-top: 12px; margin-bottom: 0; }
+.project-evidence.project-lead-media .reference-intro { margin-top: 16px; }
 .project-story { grid-template-columns: minmax(180px,.55fr) minmax(0,1.45fr); gap: 8%; padding-block: clamp(56px,6vw,88px); }
 .project-story h2 { max-width: 24ch; margin-bottom: 24px; font-size: clamp(1.9rem,3vw,2.7rem); line-height: 1.12; letter-spacing: -.03em; }
 .story-copy { max-width: 74ch; }
@@ -131,15 +144,17 @@
 .viewer-navigation { display: flex; gap: 8px; flex-shrink: 0; }
 
 @media (max-width: 1050px) {
-  .project-title-row { grid-template-columns: 1fr; gap: 20px; }
+  .project-title-row { grid-template-columns: 1fr; gap: 12px; }
   .project-lede { max-width: 68ch; }
   .project-story, .project-scope { grid-template-columns: minmax(150px,.45fr) minmax(0,1.55fr); gap: 6%; }
   .spaceship-gallery { grid-template-columns: repeat(2,minmax(0,1fr)); }
 }
 @media (max-width: 760px) {
-  .project-intro { padding-top: 16px; padding-bottom: 20px; }
-  .back-link { margin-bottom: 20px; }
-  .project-title-row h1 { font-size: clamp(2.25rem,9vw,3.6rem); letter-spacing: -.035em; line-height: 1.08; }
+  .project-intro { padding-top: 12px; padding-bottom: 20px; }
+  .back-link { margin-bottom: 8px; }
+  .project-title-row h1 { font-size: clamp(2rem,7.5vw,2.75rem); letter-spacing: -.03em; line-height: 1.08; }
+  .project-discipline { margin-top: 8px; font-size: .75rem; }
+  .project-contribution { gap: 4px 8px; margin-top: 12px; font-size: .8125rem; }
   .project-lede { font-size: .9375rem; }
   .project-meta { grid-template-columns: 1fr; gap: 18px; margin-top: 24px; padding-top: 18px; }
   .project-meta p { font-size: .8125rem; }
