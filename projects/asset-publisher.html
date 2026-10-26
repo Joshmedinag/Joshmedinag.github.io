@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09090b">
+  <meta name="author" content="Joshua Medina">
+  <meta name="description" content="Asset Publisher & Loader by Joshua Medina: versioned USD publishing from Maya to Katana, semantic review, verified saving and rollback that preserves shot lighting and shaders.">
+  <title>Asset Publisher &amp; Loader — Joshua Medina</title>
+  <link rel="canonical" href="https://joshmedinag.github.io/projects/asset-publisher.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Asset Publisher &amp; Loader — Joshua Medina">
+  <meta property="og:description" content="A Pipeline TD case study: publish USD assets, review changes and update or recover a Katana shot while preserving its lighting and shaders.">
+  <meta property="og:url" content="https://joshmedinag.github.io/projects/asset-publisher.html">
+  <meta property="og:image" content="https://joshmedinag.github.io/images/asset-publisher-0101/01-maya-publish-v002.png">
+  <meta property="og:image:alt" content="Maya Publisher with a verified v002 Master Sword publication and its USD preview">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/fonts/roboto/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../css/style.css?v=20261017-editorial">
+  <link rel="stylesheet" href="../css/site-system.css?v=20261017-editorial">
+  <link rel="stylesheet" href="../css/project-experience.css?v=20261017-editorial">
+  <link rel="stylesheet" href="../css/asset-publisher-case.css?v=20261026">
+  <script src="../js/site-config.js?v=20261017-editorial" defer></script>
+  <script src="../js/main.js?v=20261017-editorial" defer></script>
+  <script src="../js/site-experience.js?v=20261017-editorial" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation"><span></span><span></span></button>
+    <nav class="navigation" id="primary-navigation" aria-label="Main navigation">
+      <a href="../index.html#work" class="active">Work</a>
+      <a href="../index.html#showreel">Showreel</a>
+      <a href="../index.html#about">About</a>
+      <a class="nav-cv" href="../assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="View Joshua Medina's CV PDF in a new tab">CV <span aria-hidden="true">↗</span></a>
+      <a class="nav-contact" href="../index.html#contact">Contact <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main class="project-main asset-publisher-case" id="main">
+    <div class="project-intro wrap">
+      <a class="back-link" href="../index.html#pipeline-lab"><span aria-hidden="true">←</span> Technical Art &amp; Pipeline</a>
+      <div class="project-title-row">
+        <h1>Asset Publisher<br>&amp; Loader<span class="title-dot">.</span></h1>
+        <p class="project-lede">Move a versioned USD asset from Maya to Katana, review its changes and recover an earlier version while the shot keeps its lighting and shaders.</p>
+      </div>
+      <p class="project-contribution"><span>My contribution</span> Pipeline architecture · Python development · Maya &amp; Katana integration · validation</p>
+    </div>
+
+    <figure class="project-hero wrap">
+      <a class="image-detail-link" href="../images/asset-publisher-0101/01-maya-publish-v002.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Maya Publisher capture at full resolution"><img src="../images/asset-publisher-0101/01-maya-publish-v002.png" alt="Maya Publisher showing a verified v002 Master Sword publication, a change note, manifest hash and generated USD preview" width="1707" height="1019" fetchpriority="high" decoding="async"></a>
+      <figcaption>Publishing v002 from Maya. The package, captured source and reopened USD have been verified; its change note and preview travel with the publication.</figcaption>
+    </figure>
+
+    <div class="project-details publisher-meta wrap">
+      <div class="project-meta">
+        <div><span class="meta-label">Delivery</span><p>Independent pipeline project · version 0.10.1<br>English interface · Windows / local NTFS</p></div>
+        <div><span class="meta-label">Toolkit</span><p>Python · USD · Maya 2026 · Katana 9.0v3 · PySide · RenderMan 27.3 · pytest</p></div>
+      </div>
+      <p class="project-context">Zelda acceptance: publish → load → review → update → save and verify → rollback. SMB certification remains pending.</p>
+    </div>
+
+    <nav class="case-nav wrap" aria-label="On this project">
+      <a href="#problem-title">Problem</a><a href="#decisions-title">Design decisions</a><a href="#workflow-title">Workflow</a><a href="#evidence-title">Verified results</a><a href="#scope-title">Scope</a>
+    </nav>
+
+    <section class="project-story wrap" aria-labelledby="problem-title">
+      <h2 id="problem-title">A model revision should keep the lighting work.</h2>
+      <div class="story-copy">
+        <p>Once a model reaches a lighting scene, replacing it by hand can break assignments, hide which version is loaded or leave no dependable way back. I built Asset Publisher &amp; Loader to make that handoff explicit: publish an identified version, inspect its impact and choose when it enters the shot.</p>
+        <p>The tool gives the published asset and the shot separate ownership. USD packages hold the asset data; Katana retains lighting, shader networks, material assignments, placement and render settings. An exact publication pin connects them.</p>
+      </div>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="decisions-title">
+      <h2 id="decisions-title">Three decisions make the handoff recoverable.</h2>
+      <dl class="publisher-decisions">
+        <div><dt>Publish once, identify precisely</dt><dd>Version numbers are reserved exclusively. Committed packages are immutable through the publishing API, with a manifest, required dependencies, a change note and preview. SHA-256 hashes and exact file inventories detect changed or missing data.</dd></div>
+        <div><dt>Review meaning before mutation</dt><dd>The Loader pins a specific publication. Stable asset and prim identities support comparisons of transforms, geometry, UVs and camera data. Reports declare their evaluation coverage; stale state, unsupported dependencies and blocking findings prevent Apply.</dd></div>
+        <div><dt>Verify the saved result</dt><dd>Apply captures the live shot and tests a candidate in isolation before changing the active reference. A successful update in memory remains pending until Save and Verify independently reopens the selected file and checks its state and dependencies.</dd></div>
+      </dl>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="workflow-title">
+      <h2 id="workflow-title">A controlled change, through the real interfaces.</h2>
+      <p class="reference-intro">The Zelda demonstration used the Master Sword from my existing scene: three meshes and 6,040 points. I published v001, changed the blade’s X scale from 1.00 to 1.08 and published v002. Prim identity, topology and UVs stayed stable.</p>
+      <ol class="publisher-workflow">
+        <li><h3>Publish from Maya</h3><p>Select the asset, prepare its identity and publish a version with a change note, captured source, validated USD, dependencies and preview.</p></li>
+        <li><h3>Load an exact version</h3><p>Find the asset in Katana, load v001 and see the version used by each managed shot instance alongside the available publications.</p></li>
+        <li><h3>Review and apply v002</h3><p>Inspect the semantic differences and declared coverage. Current comparison, required acknowledgements, snapshot and candidate checks all gate the update.</p></li>
+        <li><h3>Save, verify and roll back</h3><p>Independently reopen the saved Update. Review and apply v001 as a new transaction, keeping later shot edits, then verify the saved rollback.</p></li>
+      </ol>
+      <div class="project-gallery document-gallery">
+        <figure>
+          <a class="image-detail-link" href="../images/asset-publisher-0101/02-katana-version-library.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Katana version library capture at full resolution"><img src="../images/asset-publisher-0101/02-katana-version-library.png" alt="Katana Loader listing v001 and v002 of the Master Sword with the shot instance pinned to v001" width="723" height="538" loading="lazy" decoding="async"></a>
+          <figcaption><h3>The library and the shot agree</h3><p>The Loader identifies both available publications and the version actually used by the scene.</p></figcaption>
+        </figure>
+        <figure>
+          <a class="image-detail-link" href="../images/asset-publisher-0101/03-semantic-impact-review.png" target="_blank" rel="noopener noreferrer" aria-label="Open the semantic impact report at full resolution"><img src="../images/asset-publisher-0101/03-semantic-impact-review.png" alt="Impact report comparing v001 with v002, showing transform and point changes, measured values, declared coverage and review controls" width="816" height="551" loading="lazy" decoding="async"></a>
+          <figcaption><h3>A change with visible coverage</h3><p>The report explains the transform and point differences before Apply. Acknowledging a warning cannot override a blocking validation.</p></figcaption>
+        </figure>
+      </div>
+      <p class="publisher-method">I connected the loaded model to the lighting graph through Katana’s native Python editor. Publishing, loading, review, Update, rollback and Save and Verify were operated through the tool’s visible controls. This English 0.10.1 GUI demonstration evaluates frame 1 with its seed camera.</p>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="save-title">
+      <h2 id="save-title">An applied change still needs a verified save.</h2>
+      <p class="reference-intro">The journal separates <code>COMMITTED_IN_MEMORY</code> from <code>PERSISTED</code>. Save and Verify chooses the destination, saves it and independently reopens that exact file before declaring the transaction complete. Cancelling the native save was also tested: the scene stayed unchanged, the transaction remained pending and no destination file was created.</p>
+      <div class="project-gallery publisher-single">
+        <figure>
+          <a class="image-detail-link" href="../images/asset-publisher-0101/04-update-pending-verification.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open the applied update awaiting save verification at full resolution"><img src="../images/asset-publisher-0101/04-update-pending-verification.jpg" alt="Katana Impact Report stating that v002 is updated and verified in memory while the shot still needs saving, with Save and Verify available" width="816" height="551" loading="lazy" decoding="async"></a>
+          <figcaption><h3>Persistence remains explicit</h3><p>The Impact Report marks the update as committed in memory. The saved file must pass reopening checks to reach PERSISTED.</p></figcaption>
+        </figure>
+      </div>
+      <details class="technical-notes">
+        <summary>Mutation guards and recovery behaviour</summary>
+        <p>Scene capture and mutation stay on the DCC main thread. Suitable checks run in isolated processes or workers, while plan, scene and dependency validity are checked again at the mutation boundary. The interface reports the real operation stage and permits stopping only at safe boundaries.</p>
+        <p>The session also retained a separate rejected Apply. Creating an evidence helper changed a protected ancestor directory; the integrity guard blocked mutation and Recovery reconciled the attempt as <code>ABORTED_RESTORED</code>. An independent audit verified restoration and the unchanged v001 pin. A fresh reviewed retry completed Update without relaxing its checks.</p>
+        <p>Asset rollback changes the publication through a new reviewed transaction and preserves current shot adjustments. Restoring a complete shot snapshot is a separate operation that restores the captured recipe.</p>
+      </details>
+    </section>
+
+    <section class="project-evidence wrap" aria-labelledby="evidence-title">
+      <h2 id="evidence-title">Rollback keeps the edits made after Update.</h2>
+      <p class="reference-intro">After updating to v002, I used Katana’s native parameters to set a RenderMan light’s exposure to 1 and a PxrSurface shader’s specular roughness to 0.25. Those later edits became concrete preservation targets. Rollback restored v001 geometry exactly and retained both values.</p>
+      <div class="project-gallery document-gallery">
+        <figure>
+          <a class="image-detail-link" href="../images/asset-publisher-0101/05-shot-light-exposure.png" target="_blank" rel="noopener noreferrer" aria-label="Open the light exposure edit at full resolution"><img src="../images/asset-publisher-0101/05-shot-light-exposure.png" alt="Katana native RenderMan light parameters with Exposure set to 1 after the asset update" width="1707" height="1067" loading="lazy" decoding="async"></a>
+          <figcaption><h3>Later light edit</h3><p>Exposure is set to 1 after Update and remains 1 after rollback.</p></figcaption>
+        </figure>
+        <figure>
+          <a class="image-detail-link" href="../images/asset-publisher-0101/06-shot-shader-roughness.png" target="_blank" rel="noopener noreferrer" aria-label="Open the shader roughness edit at full resolution"><img src="../images/asset-publisher-0101/06-shot-shader-roughness.png" alt="Katana PxrSurface shader parameters with specular roughness set to 0.25 after the asset update" width="1707" height="1067" loading="lazy" decoding="async"></a>
+          <figcaption><h3>Later shader edit</h3><p>Specular roughness is set to 0.25 before rollback and remains 0.25 in the independently reopened result.</p></figcaption>
+        </figure>
+      </div>
+      <div class="publisher-table-wrap" role="region" aria-labelledby="preservation-caption" tabindex="0">
+        <table class="publisher-table">
+          <caption id="preservation-caption">Declared preservation checks · English Zelda GUI · release 0.10.1</caption>
+          <thead><tr><th scope="col">State</th><th scope="col">After Update and later edits</th><th scope="col">After verified rollback</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Asset geometry</th><td>v002 · blade X scale 1.08</td><td>v001 · original geometry restored exactly</td></tr>
+            <tr><th scope="row">Light exposure</th><td>1</td><td>1 · retained</td></tr>
+            <tr><th scope="row">Shader roughness</th><td>0.25</td><td>0.25 · retained</td></tr>
+            <tr><th scope="row">Shot state</th><td>Lighting, shaders, assignments, camera and persistent Render recipe</td><td>Declared native-state checks across 39 nodes passed</td></tr>
+            <tr><th scope="row">Persistence</th><td>Update saved and independently reopened</td><td>Rollback saved and independently reopened</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="publisher-method">All ten declared workflow steps passed in one Katana session. The two accepted transactions followed PREPARED → APPLYING → COMMITTED_IN_MEMORY → PERSISTED. Original source inputs remained unchanged. These are native state, dependency and reopening checks; no new pixel-render equivalence is claimed.</p>
+      <div class="project-gallery document-gallery publisher-result-images">
+        <figure>
+          <a class="image-detail-link" href="../images/asset-publisher-0101/07-update-and-rollback-persisted.png" target="_blank" rel="noopener noreferrer" aria-label="Open the saved Update and rollback history at full resolution"><img src="../images/asset-publisher-0101/07-update-and-rollback-persisted.png" alt="Katana Recovery history with Update and rollback recorded as PERSISTED, alongside the separate ABORTED_RESTORED guard attempt" width="1707" height="1019" loading="lazy" decoding="async"></a>
+          <figcaption><h3>Two verified saved transactions</h3><p>Update and rollback reached PERSISTED. The separate restored guard attempt remains visible and is not counted as a successful transaction.</p></figcaption>
+        </figure>
+        <figure>
+          <a class="image-detail-link" href="../images/asset-publisher-0101/08-final-loader-v001.png" target="_blank" rel="noopener noreferrer" aria-label="Open the final v001 Loader state at full resolution"><img src="../images/asset-publisher-0101/08-final-loader-v001.png" alt="Final Katana Loader showing the Master Sword restored to v001 with verified references after rollback and Save and Verify" width="1707" height="1019" loading="lazy" decoding="async"></a>
+          <figcaption><h3>The earlier asset, with the current shot work</h3><p>The Loader returns to v001. The later light and shader adjustments remain in the saved, reopened shot.</p></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-story wrap" aria-labelledby="release-title">
+      <h2 id="release-title">An installable English release, checked end to end.</h2>
+      <div class="story-copy">
+        <p>The accepted 0.10.1 suite collected 1,299 tests: <strong>1,297 passed, with 69 additional passing subtests</strong> and two skips for Windows symlink privileges. It recorded zero failures or errors. A source audit verified that translating the interface retained machine codes, schema fields, identities, version pins and non-text program structure.</p>
+        <p>A fresh private offline installation on the test machine verified 210 installed files and all 54 product/schema files against the same wheel used for the GUI demonstration. Native diagnostics passed six Maya checks and seven Katana checks, including the defined renderer profile. This is documented tool acceptance; integrating this case study into the website does not rerun those DCC tests.</p>
+        <div class="project-actions"><a class="button button-secondary" href="../assets/documents/asset-publisher-case-study-0.10.1-cursor-free.zip" download>Download full case study <span>ZIP · 2.96 MB</span></a></div>
+        <p class="publisher-method">The ZIP contains the complete English article, full-resolution images and evidence references, including separately attributed historical 0.10.0 results. It is a case-study package, not a software installer.</p>
+      </div>
+    </section>
+
+    <section class="project-scope wrap" aria-labelledby="scope-title">
+      <h2 id="scope-title">Current scope and next milestone</h2>
+      <div class="publisher-scope-list">
+        <div><h3>Local Windows acceptance</h3><p>The English GUI run covers one Master Sword instance at frame 1, its seed camera and the defined RenderMan 27.3 recipe in Maya 2026 and Katana 9.0v3 on local NTFS. It does not recertify an animated-camera range, larger shots, other renderers or every display scale. No new timing benchmark or source Arnold look parity is claimed.</p></div>
+        <div><h3>Native pauses remain</h3><p>Keeping host scene access on the main thread preserves its requirements. Some native guards still pause the UI; stage feedback explains the wait, while further reduction remains an engineering goal.</p></div>
+        <div><h3>SMB certification pending</h3><p>Network diagnostics and a certification protocol are prepared. Real share concurrency, disconnect and recovery tests remain pending. Production writes to network depots stay disabled.</p></div>
+      </div>
+    </section>
+
+    <section class="project-credits wrap" aria-labelledby="credits-title">
+      <h2 id="credits-title">Project and evidence</h2>
+      <p>Pipeline architecture, Python development, Maya/Katana integration, artist tools, validation and documentation: Joshua Medina. The Master Sword comes from the existing Zelda test scene; original modelling and source-asset creation are outside the contribution documented here.</p>
+      <p>Captures show the running English 0.10.1 interface. Seven presentation copies have the highlighted pointer removed using clean areas from native captures of the same session; no AI-generated pixels were used in the final images. Every decoded pixel outside the declared edit regions was verified unchanged. The originals remain preserved with the acceptance evidence; the fourth capture is unchanged.</p>
+    </section>
+
+    <a class="next-project wrap" href="aovguard.html"><div><small>NEXT PROJECT</small><h2>AOVGuard</h2></div><span aria-hidden="true">↗</span></a>
+    <section class="project-contact wrap" aria-labelledby="project-contact-title">
+      <div><h2 id="project-contact-title">Let’s create compelling images and better tools.</h2><p>Get in touch about lighting, compositing, technical art or pipeline opportunities.</p></div>
+      <div class="project-contact-actions">
+        <p class="contact-address" data-email-address>Joshalexmedina@hotmail.com</p>
+        <div class="contact-actions"><a class="button button-primary" href="mailto:Joshalexmedina@hotmail.com" data-email-link>Email me <span aria-hidden="true">↗</span></a><button class="button button-secondary" type="button" data-copy-email hidden data-email="Joshalexmedina@hotmail.com">Copy email</button></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <a class="wordmark" href="../index.html#home" aria-label="Joshua Medina — home">JM<span class="brand-dot" aria-hidden="true"></span></a>
+    <div class="footer-identity"><p>© <span data-year>2026</span> Joshua Medina</p><p class="footer-role">Lighting TD / Compositor<br>Technical Artist / Pipeline TD</p></div>
+    <div class="footer-actions"><a href="../index.html#work">All work</a><a href="../assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" target="_blank" rel="noopener noreferrer" aria-label="View CV PDF in a new tab">View CV <span aria-hidden="true">↗</span></a><a href="mailto:Joshalexmedina@hotmail.com" data-email-link>Email me <span aria-hidden="true">↗</span></a></div>
+  </footer>
+  <div class="copy-toast" role="status" data-copy-toast hidden></div>
+</body>
+</html>

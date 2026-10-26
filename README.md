@@ -21,10 +21,10 @@ Abre http://127.0.0.1:4173/. Si `python` no existe, utiliza `py`. Detén el serv
 - El hero permite seleccionar Venator, Spaceship y R2-D2. Empieza **pausado**; Play slideshow activa la rotación de ocho segundos. La navegación manual pausa, al salir de pantalla o cambiar de pestaña no se rota y el movimiento reducido evita las transiciones. Texto e imagen están separados: no hay filtros de color ni capas de sombreado sobre los renders.
 - El showreel principal usa https://vimeo.com/1232872369. Un póster real y un enlace externo están en el HTML; iframe y SDK se cargan tras pulsar Play. Sin JavaScript se mantiene el enlace a Vimeo. No hay reproducción automática con sonido al abrir la página.
 - Lighting & Compositing presenta Venator, Spaceship, R2-D2 y Zelda, en ese orden. Broken Horizons se conserva como primer estudio de More Work.
-- Technical Art & Pipeline muestra AOVGuard y FarmFlow en la misma página, sin una pestaña que oculte uno de ellos. Cada caso documenta qué hace la herramienta, evidencia y limitaciones.
+- Technical Art & Pipeline muestra AOVGuard, FarmFlow y Asset Publisher & Loader en la misma página, sin una pestaña que oculte uno de ellos. Cada caso documenta qué hace la herramienta, evidencia y limitaciones.
 - AOVGuard conserva `projects/aovguard.html` en inglés y añade `projects/aovguard-es.html` en español, con enlaces de idioma que funcionan sin JavaScript. La candidata 1.4.0rc1 presenta la evidencia del 19 de octubre de 2026, cinco imágenes con procedencia y la revisión manual de Windows explícitamente pendiente. No se traduce el resto del portafolio.
-- More Work es un desplegable HTML nativo con siete estudios adicionales: Broken Horizons, RenderMan, CPU Raytracer, Norwegian Lakeside, Snowbound Environment, Going Merry y Cinematography. Se puede abrir sin JavaScript. Sus filtros mejoran progresivamente el catálogo; no ocultan los seis proyectos principales.
-- Las URLs `?category=lighting`, `?category=rendering` y `?category=cinematography` abren y filtran More Work. `?category=pipeline` lleva al recorrido técnico. Las doce rutas originales se conservan y Zelda añade una decimotercera.
+- More Work es un desplegable HTML nativo con siete estudios adicionales: Broken Horizons, RenderMan, CPU Raytracer, Norwegian Lakeside, Snowbound Environment, Going Merry y Cinematography. Se puede abrir sin JavaScript. Sus filtros mejoran progresivamente el catálogo; no ocultan los siete proyectos principales.
+- Las URLs `?category=lighting`, `?category=rendering` y `?category=cinematography` abren y filtran More Work. `?category=pipeline` lleva al recorrido técnico. Las doce rutas originales se conservan y Zelda y Asset Publisher & Loader añaden dos casos.
 - Los comparadores mantienen sus imágenes originales y la separación render/composite. Funcionan con arrastre, flechas, Home/End y tres botones de vista. El par R2-D2 procede de las dos mitades alineadas de un mismo archivo de referencia.
 - Las galerías abren imágenes originales con flechas, Escape y restauración del foco. El menú móvil soporta teclado y Escape.
 - Email me abre mailto; Copy email copia con confirmación de 1,8 segundos solo tras éxito. La dirección permanece como texto seleccionable; sin JavaScript el botón de copiar está oculto y mailto sigue funcionando.
@@ -33,7 +33,7 @@ Abre http://127.0.0.1:4173/. Si `python` no existe, utiliza `py`. Detén el serv
 
 `js/site-config.js` contiene correo público, GitHub, LinkedIn, Vimeo y reel. `js/main.js` actualiza los elementos marcados sin reconstruir la navegación o el contacto. Si cambian datos públicos, actualiza también los respaldos HTML para mantenerlos disponibles sin JavaScript.
 
-Los headers y footers se mantienen como HTML estático en la portada y los trece casos, más la edición española de AOVGuard; no se descargan con fetch. Esta duplicación pequeña es deliberada. `tools/verify_portfolio.cjs` comprueba su coherencia, enlaces, identidad y recorridos. No se añade un sistema de plantillas ni build para generar las páginas.
+Los headers y footers se mantienen como HTML estático en la portada y los catorce casos, más la edición española de AOVGuard; no se descargan con fetch. Esta duplicación pequeña es deliberada. `tools/verify_portfolio.cjs` comprueba su coherencia, enlaces, identidad y recorridos. No se añade un sistema de plantillas ni build para generar las páginas.
 
 El CV existente es `assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf`. View CV abre el PDF y Download PDF tiene el atributo de descarga para alojamiento del mismo origen. No se reescribe el documento en esta revisión. El PDF tiene una página; el enlace interno de reel y sus metadatos requieren una actualización separada (véase REVIEW_2026-10-17.md).
 
@@ -55,8 +55,8 @@ MSc Computer Animation & Visual Effects, Bournemouth University: **completado**,
 ## Estructura
 
 ```text
-index.html                   Portada y doce accesos de proyecto
-projects/*.html              Doce casos, más AOVGuard en español; URLs preservadas
+index.html                   Portada y catorce accesos de proyecto
+projects/*.html              Catorce casos, más AOVGuard en español; URLs preservadas
 css/style.css                Reglas base y componentes históricos compartidos
 css/site-system.css          Tokens, navegación, contacto y medios compartidos
 css/home-experience.css      Composición editorial de la portada
@@ -107,4 +107,10 @@ Una prueba de interfaz con Vimeo simulado no acredita reproducción real ni perm
 
 ## Publicación
 
-GitHub Pages está conectado a `main` del repositorio Joshmedinag/Joshmedinag.github.io. Los cambios se revisan localmente y solo se publican tras autorización expresa. Joshua autorizó el 23 de octubre de 2026 la publicación del nuevo caso Zelda, las mejoras de presentación del portafolio y la actualización bilingüe de AOVGuard. La publicación se realiza mediante un push a `main` y se comprueba en el sitio público. No ejecutar generadores antiguos de placeholders sobre el material final.
+GitHub Pages está conectado a `main` del repositorio Joshmedinag/Joshmedinag.github.io. Los cambios se revisan localmente y solo se publican tras autorización expresa. Joshua autorizó el 23 de octubre de 2026 la publicación del nuevo caso Zelda, las mejoras de presentación del portafolio y la actualización bilingüe de AOVGuard, y reiteró la publicación el 26 de octubre. La publicación se realiza mediante un push a `main` y se comprueba en el sitio público. No ejecutar generadores antiguos de placeholders sobre el material final.
+
+## Asset Publisher & Loader — 26 October 2026
+
+Nuevo caso inglés en `projects/asset-publisher.html`, accesible desde Technical Art & Pipeline. Incluye ocho capturas de la interfaz 0.10.1 sin cursor brillante, una explicación de arquitectura y recuperación, y el paquete del caso de estudio. Las capturas originales y las pruebas de Maya/Katana se conservan en el proyecto de la herramienta; las cifras documentadas no son pruebas ejecutadas por la web. El recorrido Zelda actual está acotado al frame 1 sobre NTFS local. SMB permanece pendiente y se indican las pausas nativas.
+
+El proyecto se publicó inicialmente desde una copia aislada de la versión pública para preservar las ediciones locales pendientes en `C:/Joshua_Portfolio`. Esa incorporación se conserva al integrar la publicación del resto de las revisiones autorizadas del portafolio.

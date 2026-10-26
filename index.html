@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="css/style.css?v=20261017-editorial">
   <link rel="stylesheet" href="css/site-system.css?v=20261023-portfolio">
   <link rel="stylesheet" href="css/home-experience.css?v=20261023-portfolio">
+  <link rel="stylesheet" href="css/asset-publisher-home.css?v=20261026">
   <script src="js/site-config.js?v=20261004-main-reel" defer></script>
   <script src="js/main.js?v=20261017-editorial" defer></script>
   <script src="js/site-experience.js?v=20261017-editorial" defer></script>
@@ -140,7 +141,7 @@
     </section>
 
     <section class="section pipeline-lab wrap" id="pipeline-lab" aria-labelledby="pipeline-title">
-      <div class="section-heading"><h2 id="pipeline-title">Technical Art &amp; Pipeline</h2><p class="section-intro">Tools I built to check renders and automate production workflows.</p></div>
+      <div class="section-heading"><h2 id="pipeline-title">Technical Art &amp; Pipeline</h2><p class="section-intro">Tools for render validation, verified rendering and versioned USD handoff between applications.</p></div>
       <div class="project-grid technical-grid" role="group" aria-label="Technical art and pipeline projects">
         <a data-category="pipeline" class="project-card aovguard-card" href="projects/aovguard.html">
           <div class="card-media">
@@ -164,6 +165,18 @@
           <div class="card-heading"><h3>FarmFlow</h3><span class="project-number">06</span></div>
           <p class="card-role"><span>My role</span> Python development · Maya integration</p>
           <p class="card-description">Check a Maya scene, run Arnold renders and verify the output files in one repeatable workflow.</p><p class="card-tools">Python · Maya · Arnold · OpenImageIO</p>
+        </a>
+        <a data-category="pipeline" class="project-card asset-publisher-card" id="asset-publisher-project" href="projects/asset-publisher.html">
+          <div class="card-media">
+            <img src="images/asset-publisher-0101/01-maya-publish-v002.png" alt="Asset Publisher in Maya showing the Master Sword preview and a verified v002 publication" width="1707" height="1019" loading="lazy" decoding="async">
+            <span class="category-tag">USD ASSET PIPELINE</span><span class="card-arrow" aria-hidden="true">↗</span>
+          </div>
+          <div class="card-copy">
+            <div class="card-heading"><h3>Asset Publisher &amp; Loader</h3><span class="project-number">07</span></div>
+            <p class="card-role"><span>My role</span> Pipeline architecture · Python development · Maya &amp; Katana integration</p>
+            <p class="card-description">Publish versioned USD assets, review changes and update a Katana shot while preserving its lighting and shaders.</p>
+            <p class="card-tools">Python · USD · Maya 2026 · Katana 9.0v3</p>
+          </div>
         </a>
       </div>
       <p class="evidence-note">The case studies distinguish implemented features, documented tests and integrations that remain simulated or unverified.</p>

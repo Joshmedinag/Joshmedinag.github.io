@@ -26,7 +26,7 @@ Neutral surfaces do not alter the render. No CSS brightness/saturation/contrast,
 - Hero: readable text beside an undimmed real frame on desktop, text then image on mobile. No text-overlay hero, mandatory intro or full-viewport empty stage.
 - Showreel follows the introduction, with clear Play and visible external fallback.
 - Recruiter scan: a compact introduction and prominent real frame lead to the reel and curated work. The reel uses a different genuine shot from the hero; repeated project-link lists are omitted.
-- Four visual projects plus two technical projects create discoverable parallel paths. More Work is a native disclosure, not a hidden second half of the profile.
+- Four visual projects plus three technical projects create discoverable parallel paths. More Work is a native disclosure, not a hidden second half of the profile.
 - Visual cards show actual image, contribution, concrete scope and tools. Case study imagery keeps its proportions; thumbnails may use deliberate cover framing while the original remains accessible.
 - Case studies put a short contribution and the finished image before toolkit, production context and section navigation. Cinematography preserves its reel-first entrance. Technical case studies lead with real visual evidence, a plain production problem and visible authorship; detailed implementation and workflows use native disclosures.
 - About is concise and connects cinematography, CG craft and tool building. Detailed tools are optional disclosure content, avoiding three repeated skills presentations.
@@ -46,3 +46,5 @@ Neutral surfaces do not alter the render. No CSS brightness/saturation/contrast,
 ## Maintenance
 
 Shared values live in site-config.js and shared styles. Headers/footers stay in static HTML across the homepage, case studies and translated editions; a reproducible check enforces consistency without introducing a build system. Tokens do not justify replacing original imagery with generated work. Existing source documents and CV are preserved.
+
+The Asset Publisher & Loader card spans the technical grid below AOVGuard and FarmFlow, with its native Publisher image beside the contribution and scope. On mobile it returns to the existing vertical card layout. The case reuses the shared identity and native image viewer; cursor cleanup is declared as a presentation edit.

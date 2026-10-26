@@ -249,3 +249,21 @@ La interfaz utiliza Roboto Regular, Medium, Bold e Italic desde `assets/fonts/ro
 - `thumbs/aovguard-sequence-table-2559-lossless.webp` conserva toda la resolución de `aovguard-sequence-table.png`. Esta captura de texto comprime mejor a resolución completa que las variantes intermedias, por lo que se utiliza la copia de 2559 × 1527.
 - La codificación WebP es sin pérdida. En cada derivado a resolución completa se compararon los píxeles RGBA decodificados con su PNG: coincidencia exacta en los trece originales convertidos. Las variantes más pequeñas se remuestrearon proporcionalmente, sin filtros de color, contraste, saturación ni regradación. Una versión reducida no contiene el mismo detalle que el original; por eso se conservan el acceso a tamaño completo y las descripciones textuales.
 - Los scripts de generación y el detalle de tamaños/condiciones están en `.verification/20261017-audit/`. No requieren dependencias nuevas: utilizan el procesador de imágenes ya disponible en el entorno. Los resultados de transferencia se documentan como mediciones locales, no como métricas de campo.
+
+
+## Asset Publisher & Loader — English 0.10.1
+Las ocho capturas de `asset-publisher-0101/` proceden de la aceptación real de la interfaz en inglés de Maya 2026 y Katana 9.0v3 con el Master Sword de Zelda. Se copiaron exactamente del paquete de presentación validado del 26 de octubre de 2026, sin nuevos recortes, reescalados, filtros ni gradación. Los enlaces de galería conservan estas resoluciones completas.
+Siete copias de presentación eliminan el cursor y su halo mediante áreas limpias de capturas nativas de la misma sesión. Se conservaron los glifos del valor actual de roughness 0.25 y se retiró su tinte azul. No se utilizaron píxeles generados por IA en las imágenes finales. Cada píxel RGB decodificado fuera de las regiones declaradas de edición coincide con su captura original; las originales permanecen en la evidencia de aceptación. La captura 04 es el JPG original sin cambios. El mapa completo de procedencia forma parte del ZIP del caso de estudio.
+| Archivo | SHA-256 |
+| --- | --- |
+| `01-maya-publish-v002.png` | `b831b3d2c4e60a0ae3f33150f0df32313d5ebd87a2b95cdddf5426b589bb3dd5` |
+| `02-katana-version-library.png` | `8630a036c4551acbb7d6e09f4cc64f4f134f2a150ec72f002e0bc552fefc7c66` |
+| `03-semantic-impact-review.png` | `2258b9c93bdc84e758ce380c56c897b34916ecaca9b6d4b7f0bc78b07fd5795e` |
+| `04-update-pending-verification.jpg` | `7a7de01fe3689cc3d5228499fa6c03a6e66710650ed7f9919ce83513632e276a` |
+| `05-shot-light-exposure.png` | `626c1b0d27c57c4dc4edde2719b0da4d45779896bc9f086eee3ce59b2f6d5a0d` |
+| `06-shot-shader-roughness.png` | `7823794f4f1f5cb15ecb29eee6c8dc5cd2571d02dc2eff57e7670b09dae55b7f` |
+| `07-update-and-rollback-persisted.png` | `e4d10e8785e9f4d12560be3789a859dc6cd01fb0c27d5827e83dea2a814f9936` |
+| `08-final-loader-v001.png` | `79c25ddbca6482f5ab5b4f8b83d457dc9de5d7ae4feeb80e5bc7e43e5f47a95a` |
+
+El ZIP público `../assets/documents/asset-publisher-case-study-0.10.1-cursor-free.zip` es el artículo completo, imágenes y referencias de evidencia; no es el instalador de la herramienta. SHA-256: `9727d29d352893b973211cfdd053e50cd89ba9f740764f0d54639603c58de576`; 2.960.588 bytes.
+La aceptación GUI nueva se limita a frame 1, una instancia de Master Sword, seed camera, 39 nodos nativos y el contrato RenderMan 27.3 definido sobre NTFS local. Update y rollback guardados/reabiertos alcanzaron PERSISTED; exposure 1 y roughness 0.25 se conservaron. Las cifras 1.297 pruebas y 69 subpruebas corresponden al informe de la herramienta, no a pruebas ejecutadas al integrar esta página. Dos pruebas se omitieron por privilegios de symlink de Windows. SMB permanece pendiente y las escrituras de producción sobre depósitos de red están deshabilitadas. Los resultados ampliados 0.10.0 dentro del ZIP mantienen su atribución histórica. No se afirma nueva equivalencia de píxeles renderizados, paridad con Arnold, certificación de cámara animada ni benchmark de rendimiento.

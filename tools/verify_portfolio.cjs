@@ -54,8 +54,8 @@ const prepare = async context => {
     });
     await check('Visual and technical routes are visible together', async () => {
       assert.equal(await page.locator('#project-grid .project-card:visible').count(), 4);
-      assert.equal(await page.locator('.technical-grid .project-card:visible').count(), 2);
-      for (const href of ['aovguard.html', 'farmflow.html']) assert.equal(await page.locator(`.technical-grid a[href$="${href}"]`).count(), 1);
+      assert.equal(await page.locator('.technical-grid .project-card:visible').count(), 3);
+      for (const href of ['aovguard.html', 'farmflow.html', 'asset-publisher.html']) assert.equal(await page.locator(`.technical-grid a[href$="${href}"]`).count(), 1);
       assert.equal(await page.locator('#more-work').getAttribute('open'), null);
     });
     await check('Hero is manual initially; metadata follows Next', async () => {
@@ -79,13 +79,13 @@ const prepare = async context => {
       assert.equal(await page.locator('#more-work .project-card:visible').count(), 7);
       await page.locator('#more-work [data-filter="lighting"]').click();
       assert.equal(await page.locator('#project-grid .project-card:visible').count(), 4);
-      assert.equal(await page.locator('.technical-grid .project-card:visible').count(), 2);
+      assert.equal(await page.locator('.technical-grid .project-card:visible').count(), 3);
       assert.equal(await page.locator('#more-work .project-card:visible').count(), 3);
       await page.locator('#more-work [data-filter="all"]').click();
     });
     await check('Legacy category URL exposes the same technical projects', async () => {
       await page.goto(new URL('index.html?category=pipeline#home', base).href, { waitUntil: 'domcontentloaded' }); await settle(page);
-      assert.equal(await page.locator('.technical-grid .project-card:visible').count(), 2);
+      assert.equal(await page.locator('.technical-grid .project-card:visible').count(), 3);
     });
     await check('Comparators offer keyboard, presets and mobile vertical scrolling', async () => {
       for (const slider of await page.locator('[data-compare]').all()) {
@@ -141,7 +141,7 @@ const prepare = async context => {
           await page.goto(new URL(name, base).href, { waitUntil: 'domcontentloaded' }); await settle(page);
           const layout = await page.evaluate(() => ({ width: innerWidth, scrollWidth: document.documentElement.scrollWidth, overflow: document.documentElement.scrollWidth > innerWidth + 1 }));
           report.layouts.push({ page: name, ...layout });
-          if ((width === 1440 || width === 390) && ['index.html', 'projects/venator.html', 'projects/aovguard.html', 'projects/aovguard-es.html', 'projects/farmflow.html'].includes(name)) await screenshot(page, `after-${path.basename(name, '.html')}-${width}.png`);
+          if ((width === 1440 || width === 390) && ['index.html', 'projects/venator.html', 'projects/aovguard.html', 'projects/aovguard-es.html', 'projects/farmflow.html', 'projects/asset-publisher.html'].includes(name)) await screenshot(page, `after-${path.basename(name, '.html')}-${width}.png`);
         }
       }
       const failed = report.layouts.filter(r => r.overflow); assert.equal(failed.length, 0, JSON.stringify(failed));
@@ -175,7 +175,7 @@ const prepare = async context => {
     await check('Essential content and native More Work work without JavaScript', async () => {
       const nojs = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } }); await prepare(nojs); const p = await nojs.newPage();
       await p.goto(base.href, { waitUntil: 'domcontentloaded' }); await settle(p);
-      assert.equal(await p.locator('#project-grid .project-card:visible').count(), 4); assert.equal(await p.locator('.technical-grid .project-card:visible').count(), 2);
+      assert.equal(await p.locator('#project-grid .project-card:visible').count(), 4); assert.equal(await p.locator('.technical-grid .project-card:visible').count(), 3);
       await p.locator('#more-work > summary').click(); assert.equal(await p.locator('#more-work .project-card:visible').count(), 7);
       assert(await p.locator('a[href^="mailto:"]:visible').count()); assert.equal(await p.locator('[data-copy-email]').isVisible(), false); assert(await p.locator('a[data-reel-link]:visible').count());
       await screenshot(p, 'after-nojs-390.png'); await nojs.close();
