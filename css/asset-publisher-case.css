@@ -1,9 +1,5 @@
 /* Asset Publisher: presentation within the existing portfolio design system. */
-.asset-publisher-case .project-title-row { gap: 32px; }
-.asset-publisher-case .project-title-row h1 { font-size: clamp(2.25rem,4vw,3.8rem); letter-spacing: -.03em; line-height: 1.1; }
-.asset-publisher-case .project-contribution { margin-top: 16px; font-size: .875rem; line-height: 1.65; color: var(--text-primary); }
-.asset-publisher-case .project-contribution span { color: var(--accent-gold); margin-right: 10px; }
-.asset-publisher-case .publisher-meta { margin-bottom: 32px; }
+.asset-publisher-case .publisher-meta { margin-bottom: 8px; }
 .asset-publisher-case .publisher-meta .project-context { font-family: var(--font-body); line-height: 1.7; }
 .asset-publisher-case .project-story { align-items: start; }
 .asset-publisher-case .project-story h2 { margin-bottom: 0; }
@@ -35,8 +31,6 @@
 .publisher-scope-list p { color: var(--text-secondary); line-height: 1.8; }
 .asset-publisher-case .project-actions { margin-top: 24px; }
 @media (max-width:760px) {
-  .asset-publisher-case .project-title-row h1 { font-size: clamp(2rem,8vw,3rem); }
-  .asset-publisher-case .project-contribution span { display: block; margin-bottom: 4px; }
   .publisher-decisions > div { grid-template-columns: 1fr; gap: 12px; }
   .publisher-workflow { grid-template-columns: 1fr; gap: 22px; }
   .publisher-table { min-width: 580px; }

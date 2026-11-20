@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#09090b">
+  <meta name="theme-color" content="#151411">
   <meta name="description" content="Joshua Medina — Lighting TD, Compositor, Technical Artist and Pipeline TD. Lighting and compositing connected with procedural shading and Python tools.">
   <title>Joshua Medina — Lighting TD / Compositor / Technical Artist / Pipeline TD</title>
   <link rel="canonical" href="https://joshmedinag.github.io/">
@@ -17,14 +17,15 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/roboto/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="css/style.css?v=20261017-editorial">
-  <link rel="stylesheet" href="css/site-system.css?v=20261023-portfolio">
-  <link rel="stylesheet" href="css/home-experience.css?v=20261023-portfolio">
-  <link rel="stylesheet" href="css/asset-publisher-home.css?v=20261026">
+  <link rel="stylesheet" href="css/site-system.css?v=20261120-editorial">
+  <link rel="stylesheet" href="css/home-experience.css?v=20261120-editorial">
+  <link rel="stylesheet" href="css/shot-comparison.css?v=20261120-editorial">
   <script src="js/site-config.js?v=20261004-main-reel" defer></script>
-  <script src="js/main.js?v=20261017-editorial" defer></script>
+  <script src="js/main.js?v=20261120-editorial" defer></script>
   <script src="js/site-experience.js?v=20261017-editorial" defer></script>
   <script src="js/video-experience.js?v=20261023-portfolio" defer></script>
-  <script src="js/home-experience.js?v=20261017-editorial" defer></script>
+  <script src="js/home-experience.js?v=20261120-editorial" defer></script>
+  <script src="js/shot-comparison.js?v=20261120-editorial" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -42,42 +43,42 @@
   <main id="main">
     <section class="hero wrap" id="home" aria-labelledby="hero-title">
       <div class="hero-content">
-        <h1 id="hero-title">Joshua<br>Medina</h1>
-        <p class="hero-specialties">Lighting TD / Compositor<br>Technical Artist / Pipeline TD</p>
-        <p class="hero-description">Cinematic lighting, final composites and Python tools for visual effects.</p>
+        <div>
+          <h1 id="hero-title">Joshua Medina</h1>
+          <p class="hero-specialties">Lighting TD · Compositor · Technical Artist</p>
+        </div>
         <div class="hero-actions">
-          <a class="button button-primary" href="#showreel">Watch Showreel <svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7Z"/></svg></a>
-          <a class="inline-link" href="#work">Explore my work <span aria-hidden="true">↘</span></a>
+          <a class="button button-primary" href="#showreel"><svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m9 5 11 7-11 7Z"/></svg>Watch showreel</a>
+          <a class="hero-cv" href="assets/documents/Joshua_Medina_Lighting_Artist_CV_2026.pdf" target="_blank" rel="noopener noreferrer">View CV <svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg><span class="sr-only"> (PDF, opens in a new tab)</span></a>
         </div>
       </div>
       <div class="hero-artwork">
-      <div class="hero-carousel" data-hero-carousel data-interval="8000" aria-hidden="true">
-        <img class="hero-image hero-image--wide hero-image--venator is-active" src="images/venator/cover-from-breakdown.webp" srcset="images/thumbs/cover-from-breakdown-1200.webp 1200w, images/venator/cover-from-breakdown.webp 1920w" sizes="(max-width:1050px) calc(100vw - 32px), 58vw" alt="" width="1920" height="810" fetchpriority="high" decoding="async" data-scene="ORBIT OVER CORUSCANT" data-pipeline="LIGHTING / LOOK DEVELOPMENT" data-render="KATANA + RENDERMAN" data-project-tools="KATANA / RENDERMAN / NUKE" data-project-title="Venator Above Coruscant" data-project-role="Lighting · look development · rendering · compositing" data-project-href="projects/venator.html" style="--hero-focus:50%">
-        <template data-carousel-slides>
-          <img class="hero-image hero-image--wide hero-image--spaceship" src="images/spaceship-main.png?v=20261004-breakdown2" srcset="images/thumbs/spaceship-main-1200.webp?v=20261004-breakdown2 1200w, images/spaceship-main.png?v=20261004-breakdown2 1920w" sizes="(max-width:1050px) calc(100vw - 32px), 58vw" alt="" width="1920" height="810" decoding="async" data-scene="ORBITAL STATION" data-pipeline="USD PIPELINE" data-render="KATANA + RENDERMAN" data-project-tools="USD / KATANA / RENDERMAN / NUKE" data-project-title="Spaceship" data-project-role="Look development · lighting · rendering · compositing" data-project-href="projects/spaceship.html" style="--hero-focus:42%">
-          <img class="hero-image hero-image--wide hero-image--r2d2" src="images/r2d2-main.jpg?v=20260914-colour" srcset="images/thumbs/r2d2-main-1200.webp 1200w, images/r2d2-main.jpg 1800w" sizes="(max-width:1050px) calc(100vw - 32px), 58vw" alt="" width="1800" height="765" decoding="async" data-scene="TATOOINE CANYON" data-pipeline="PROCEDURAL SHADING" data-render="OSL + NUKE" data-project-tools="MAYA / KATANA / RENDERMAN / NUKE" data-project-title="R2-D2 Desert Look Development" data-project-role="Look development · lighting · rendering · compositing" data-project-href="projects/r2d2-lighting.html" style="--hero-focus:50%">
-        </template>
-      </div>
+        <div class="hero-carousel" id="featured-frame" data-hero-carousel>
+          <img class="hero-image hero-image--venator is-active" src="images/venator/cover-from-breakdown.webp" srcset="images/thumbs/cover-from-breakdown-640.webp 640w, images/thumbs/cover-from-breakdown-1200.webp 1200w, images/venator/cover-from-breakdown.webp 1920w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1600px) calc(100vw - 6vw), 1504px" alt="Warm sunset catches the hull of the Venator above the lights of Coruscant" width="1920" height="810" fetchpriority="high" decoding="async" data-project-title="Venator Above Coruscant" data-project-role="Lighting, look development and compositing" data-project-href="projects/venator.html">
+          <template data-carousel-slides>
+            <img class="hero-image hero-image--spaceship" src="images/thumbs/spaceship-main-1200.webp" srcset="images/thumbs/spaceship-main-640.webp 640w, images/thumbs/spaceship-main-1200.webp 1200w, images/spaceship-main.png?v=20261004-breakdown2 1920w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1600px) calc(100vw - 6vw), 1504px" alt="A ring-shaped station beside the cratered face of the Moon" width="1920" height="810" decoding="async" aria-hidden="true" data-project-title="Spaceship" data-project-role="Look development, lighting and compositing" data-project-href="projects/spaceship.html">
+            <img class="hero-image hero-image--r2d2" src="images/thumbs/r2d2-main-1200.webp" srcset="images/thumbs/r2d2-main-640.webp 640w, images/thumbs/r2d2-main-1200.webp 1200w, images/r2d2-main.jpg?v=20260914-colour 1800w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1600px) calc(100vw - 6vw), 1504px" alt="A weathered R2-D2 stands in a sunlit desert canyon" width="1800" height="765" decoding="async" aria-hidden="true" data-project-title="R2-D2 Desert Look Development" data-project-role="Procedural weathering, lighting and compositing" data-project-href="projects/r2d2-lighting.html">
+          </template>
+        </div>
         <div class="hero-caption">
-        <a class="hero-project-link" data-carousel-project href="projects/venator.html">
-          <strong data-carousel-project-title>Venator Above Coruscant</strong>
-          <small data-carousel-project-role>Lighting · look development · rendering · compositing</small>
-          <span class="hero-project-arrow" aria-hidden="true">↗</span>
-        </a>
-        <div class="carousel-controls" role="group" aria-label="Featured projects" hidden>
-          <button type="button" data-carousel-prev aria-label="Previous featured project">←</button>
-          <span class="carousel-count" data-carousel-count aria-hidden="true">01 / 03</span>
-          <button type="button" data-carousel-next aria-label="Next featured project">→</button>
-          <button type="button" data-carousel-pause aria-label="Pause featured project slideshow" aria-pressed="false">Pause</button>
+          <a class="hero-project-link" data-carousel-project href="projects/venator.html">
+            <strong data-carousel-project-title>Venator Above Coruscant</strong>
+            <svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg>
+            <small data-carousel-project-role>Lighting, look development and compositing</small>
+          </a>
+          <div class="carousel-controls" role="group" aria-label="Choose a featured frame" hidden>
+            <button type="button" data-carousel-pick="0" aria-pressed="true" aria-controls="featured-frame"><img src="images/thumbs/cover-from-breakdown-640.webp" alt="" width="640" height="270"><span>Venator</span></button>
+            <button type="button" data-carousel-pick="1" aria-pressed="false" aria-controls="featured-frame"><img src="images/thumbs/spaceship-main-640.webp" alt="" width="640" height="270"><span>Spaceship</span></button>
+            <button type="button" data-carousel-pick="2" aria-pressed="false" aria-controls="featured-frame"><img src="images/thumbs/r2d2-main-640.webp" alt="" width="640" height="272"><span>R2-D2</span></button>
+          </div>
+          <p class="sr-only" data-carousel-status role="status"></p>
         </div>
-        </div>
-      <div class="hero-telemetry" aria-hidden="true"><span data-carousel-scene>[SCENE: 01 // ORBIT OVER CORUSCANT]</span><span data-carousel-pipeline>[LIGHTING / LOOK DEVELOPMENT]</span><span data-carousel-tools>[KATANA + RENDERMAN]</span><span data-carousel-format>[FRAME: 1920 × 810]</span></div>
       </div>
     </section>
 
     <section class="section reel-section wrap" id="showreel" aria-labelledby="reel-title">
       <div class="section-heading reel-heading">
-        <div><h2 id="reel-title">Showreel<span class="muted-dot">.</span></h2></div>
+        <h2 id="reel-title">Showreel</h2>
         <p class="section-intro">Lighting, look development and compositing in motion.</p>
       </div>
       <div class="reel-theater" data-reel-theater>
@@ -86,100 +87,116 @@
           <div class="reel-fallback" data-vimeo-fallback hidden><img src="images/thumbs/spaceship-main-1200.webp" alt="" width="1920" height="810" loading="lazy"><div class="reel-fallback-copy"><p>The embedded player is unavailable. Watch the principal showreel on Vimeo.</p><a class="button button-primary" data-reel-link href="https://vimeo.com/1232872369" target="_blank" rel="noopener noreferrer">Watch on Vimeo <span aria-hidden="true">↗</span></a></div></div>
         </div>
         <div class="reel-rail">
-          <span>Principal reel · 2026</span>
+          <a class="reel-source" data-reel-link href="https://vimeo.com/1232872369" target="_blank" rel="noopener noreferrer">Watch on Vimeo <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
           <span class="reel-shortcuts"><kbd>Space</kbd> Play / pause <kbd>F</kbd> Fullscreen <kbd>J</kbd><kbd>L</kbd> −/+ 5 sec</span>
-          <button class="theater-toggle" type="button" data-theater-toggle aria-pressed="false">Darkroom mode</button>
+          <button class="theater-toggle" type="button" data-theater-toggle aria-pressed="false">Theater view</button>
         </div>
       </div>
-      <div class="reel-links"><a class="inline-link" data-reel-link href="https://vimeo.com/1232872369" target="_blank" rel="noopener noreferrer">Watch on Vimeo <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
     </section>
 
     <section class="section work-section wrap" id="work" aria-labelledby="work-title">
       <div class="section-heading">
-        <h2 id="work-title">Selected work</h2>
+        <h2 id="work-title">Lighting &amp; compositing</h2>
+        <a class="section-jump" href="#pipeline-lab">Technical art &amp; pipeline <svg class="ui-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 4v15m-6-6 6 6 6-6"/></svg></a>
       </div>
-      <nav class="work-paths" aria-label="Explore selected work"><a href="#visual-work">Lighting &amp; Compositing</a><a href="#pipeline-lab">Technical Art &amp; Pipeline <span aria-hidden="true">↓</span></a></nav>
       <p class="project-keyboard-hint" id="project-keyboard-hint" data-keyboard-hint hidden><kbd>←</kbd> <kbd>→</kbd> Browse projects · <kbd>Enter</kbd> Open</p>
       <div id="visual-work" class="work-gallery"><div class="project-grid" id="project-grid" role="group" aria-label="Lighting and compositing projects" aria-describedby="project-keyboard-hint">
         <a data-category="lighting rendering" class="project-card venator-card" href="projects/venator.html">
           <div class="card-media">
             <img src="images/venator/cover-from-breakdown.webp" srcset="images/thumbs/cover-from-breakdown-640.webp 640w, images/thumbs/cover-from-breakdown-1200.webp 1200w, images/venator/cover-from-breakdown.webp 1920w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Final Venator and Coruscant composite, captured from the project breakdown video" width="1920" height="810" loading="lazy">
-            <span class="category-tag">LIGHTING · LOOK DEVELOPMENT</span><span class="card-arrow" aria-hidden="true">↗</span>
+
           </div>
-          <div class="card-heading"><h3>Venator Above Coruscant</h3><span class="project-number">01</span></div>
-          <p class="card-role"><span>My role</span> Lighting · look development · rendering · compositing</p>
-          <p class="card-description">A single-frame sunset study, from material and light diagnostics to the final Nuke composite.</p><p class="card-tools">Katana · RenderMan · Nuke</p>
+          <div class="card-heading"><h3>Venator Above Coruscant</h3><svg class="ui-icon card-link-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg></div>
+          <p class="card-description">I shaped the sunset lighting and finished the ship and city in Nuke.</p>
         </a>
         <a data-category="lighting rendering" class="project-card spaceship-card" href="projects/spaceship.html">
           <div class="card-media">
             <img src="images/spaceship-main.png?v=20261004-breakdown2" srcset="images/thumbs/spaceship-main-640.webp?v=20261004-breakdown2 640w, images/thumbs/spaceship-main-1200.webp?v=20261004-breakdown2 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="A detailed ring-shaped space station travelling beside the Moon in Joshua Medina's final Spaceship composition" width="1920" height="810" loading="lazy">
-            <span class="category-tag">LIGHTING TD · LOOK DEVELOPMENT</span><span class="card-arrow" aria-hidden="true">↗</span>
+
           </div>
-          <div class="card-heading"><h3>Spaceship</h3><span class="project-number">02</span></div>
-          <p class="card-role"><span>My role</span> Look development · lighting · rendering · compositing</p>
-          <p class="card-description">A 360-frame USD shot with RenderMan AOVs, production diagnostics and a controlled Nuke finish.</p><p class="card-tools">Blender · USD · Katana · RenderMan · Nuke · Python</p>
+          <div class="card-heading"><h3>Spaceship</h3><svg class="ui-icon card-link-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg></div>
+          <p class="card-description">I lit the station and composited its lunar flyby from RenderMan passes.</p>
         </a>
         <a data-category="lighting rendering" class="project-card" href="projects/r2d2-lighting.html">
           <div class="card-media">
             <img src="images/r2d2-main.jpg?v=20260914-colour" srcset="images/thumbs/r2d2-main-640.webp 640w, images/thumbs/r2d2-main-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="R2-D2 integrated into a desert canyon through Joshua Medina's look development, lighting and colour-corrected final composition" width="1800" height="765" loading="lazy">
-            <span class="category-tag">LIGHTING TD · LOOK DEVELOPMENT</span><span class="card-arrow" aria-hidden="true">↗</span>
+
           </div>
-          <div class="card-heading"><h3>R2-D2 Desert Look Development</h3><span class="project-number">03</span></div>
-          <p class="card-role"><span>My role</span> Look development · lighting · rendering · compositing</p>
-          <p class="card-description">A complete shot workflow with procedural weathering, RenderMan AOVs and a controlled Nuke finish.</p><p class="card-tools">Maya · Katana · RenderMan · OSL · Nuke · Python</p>
+          <div class="card-heading"><h3>R2-D2 Desert Look Development</h3><svg class="ui-icon card-link-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg></div>
+          <p class="card-description">I built the procedural weathering and lit and composited the desert shot.</p>
         </a>
         <a data-category="lighting rendering" class="project-card zelda-card" href="projects/zelda.html">
           <div class="card-media">
             <img src="images/zelda/final-shot-1200.webp" srcset="images/zelda/final-shot-640.webp 640w, images/zelda/final-shot-1200.webp 1200w, images/zelda/final-shot.webp 1920w" sizes="(max-width:760px) calc(100vw - 32px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Zelda holding the decayed Master Sword against a cyan sky, with stylized lighting and materials by Joshua Medina" width="1920" height="1080" loading="lazy" decoding="async">
-            <span class="card-arrow" aria-hidden="true">↗</span>
+
           </div>
-          <div class="card-heading"><h3>Zelda</h3><span class="project-number">04</span></div>
-          <p class="card-role"><span>My role</span> Lighting · look development · compositing</p>
-          <p class="card-description">A stylized character study with shaped shadows, controlled sword reflections and a Nuke finish.</p><p class="card-tools">Maya · Arnold · Nuke</p>
+          <div class="card-heading"><h3>Zelda</h3><svg class="ui-icon card-link-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg></div>
+          <p class="card-description">I shaped the character lighting, stylized materials and sword reflections.</p>
         </a>
       </div></div>
     </section>
 
+    <section class="shot-comparison wrap" id="comparisons" aria-labelledby="shot-comparison-title">
+      <div class="shot-comparison-copy">
+        <h2 id="shot-comparison-title">Lighting Zelda</h2>
+        <p id="shot-comparison-description">I used a soft cream fill to lift the shadows on her face and hands while keeping the shape of the warm key. Blade reflections and rendered atmosphere complete the shot.</p>
+        <a class="shot-comparison-link" href="projects/zelda.html">See the full breakdown <span aria-hidden="true">↗</span></a>
+      </div>
+      <figure class="shot-comparison-figure">
+        <div class="shot-comparison-stage" id="zelda-comparison-frame" data-shot-stage>
+          <img class="shot-comparison-final" src="images/zelda/final-shot-1200.webp" srcset="images/zelda/final-shot-640.webp 640w, images/zelda/final-shot-1200.webp 1200w, images/zelda/final-shot.webp 1920w" sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1550px) 67vw, 1000px" alt="Final composite of Zelda holding the Master Sword against a turquoise sky" width="1920" height="1080" loading="lazy" decoding="async">
+        </div>
+        <figcaption class="shot-comparison-caption">
+          <div class="shot-comparison-controls" data-shot-controls hidden>
+            <button type="button" data-shot-preset="0" aria-controls="zelda-comparison-frame">Warm key</button>
+            <label for="zelda-comparison-range" class="sr-only">Compare the warm key and final composite</label>
+            <input type="range" id="zelda-comparison-range" min="0" max="100" value="100" aria-controls="zelda-comparison-frame" aria-describedby="shot-comparison-description">
+            <button type="button" data-shot-preset="100" aria-controls="zelda-comparison-frame">Final composite</button>
+          </div>
+          <details class="shot-comparison-fallback" data-shot-fallback>
+            <summary>View the warm key frame</summary>
+            <img data-shot-key src="images/zelda/warm-key-light-960.webp" srcset="images/zelda/warm-key-light-960.webp 960w, images/zelda/warm-key-light-1920.webp 1920w" sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1550px) 67vw, 1000px" alt="Warm key light on Zelda and the Master Sword before the soft fill, dedicated blade reflections and atmosphere" width="1920" height="984" loading="lazy" decoding="async">
+          </details>
+        </figcaption>
+      </figure>
+    </section>
+
     <section class="section pipeline-lab wrap" id="pipeline-lab" aria-labelledby="pipeline-title">
-      <div class="section-heading"><h2 id="pipeline-title">Technical Art &amp; Pipeline</h2><p class="section-intro">Tools for render validation, verified rendering and versioned USD handoff between applications.</p></div>
+      <div class="section-heading"><h2 id="pipeline-title">Technical art &amp; pipeline</h2></div>
       <div class="project-grid technical-grid" role="group" aria-label="Technical art and pipeline projects">
         <a data-category="pipeline" class="project-card aovguard-card" href="projects/aovguard.html">
           <div class="card-media">
             <img src="images/aovguard-rc1-20261019/02-venator-metricas.png" alt="Automated AOVGuard 1.4.0rc1 acceptance showing 144 processed Venator master frames and two expected warnings" width="1460" height="908" loading="lazy">
-            <span class="category-tag">PIPELINE DEVELOPMENT</span><span class="card-arrow" aria-hidden="true">↗</span>
+
           </div>
-          <div class="card-heading"><h3>AOVGuard</h3><span class="project-number">05</span></div>
-          <p class="card-role"><span>My role</span> Product design · pipeline architecture · Python development</p>
-          <p class="card-description">Checks EXR structure and AOV values, then links findings to the exact frame.</p><p class="card-tools">Python · OpenEXR · NumPy · PySide6 · pytest</p>
+          <div class="card-copy">
+            <div class="card-heading"><h3>AOVGuard</h3><svg class="ui-icon card-link-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg></div>
+            <p class="card-description">I built an EXR validator that links issues in render passes to the exact frame.</p>
+            <p class="card-tools">Python · OpenEXR · NumPy · PySide6 · pytest</p>
+          </div>
         </a>
         <a data-category="pipeline" class="project-card farmflow-cover-card" href="projects/farmflow.html">
           <div class="card-media">
-            <div class="farmflow-production-cover" role="img" aria-label="Actual FarmFlow production material showing the Maya wireframe, Arnold beauty render and verified EXR output">
-              <span class="farmflow-production-frame scene"><img src="images/farmflow-wireframe.png" srcset="images/thumbs/farmflow-wireframe-640.webp 640w, images/thumbs/farmflow-wireframe-1200.webp 1200w" sizes="(max-width:760px) 25vw, 16vw" alt="" width="1413" height="1038" loading="lazy" decoding="async"><small>01 · MAYA SCENE</small></span>
-              <span class="farmflow-production-frame beauty"><img src="images/farmflow-beauty.png" srcset="images/thumbs/farmflow-beauty-640.webp 640w, images/thumbs/farmflow-beauty-960.webp 960w" sizes="(max-width:760px) 45vw, 28vw" alt="" width="960" height="540" loading="lazy" decoding="async"><small>02 · ARNOLD BEAUTY</small></span>
-              <span class="farmflow-production-frame verified"><img src="images/thumbs/farmflow-sequence-verified-1200-lossless.webp" srcset="images/thumbs/farmflow-sequence-verified-640-lossless.webp 640w, images/thumbs/farmflow-sequence-verified-1200-lossless.webp 1200w, images/thumbs/farmflow-sequence-verified-2559-lossless.webp 2559w" sizes="(max-width:760px) 25vw, 16vw" alt="" width="2559" height="1524" loading="lazy" decoding="async"><small>03 · EXR VERIFIED</small></span>
-            </div>
-            <strong class="cover-title">FARMFLOW</strong>
-            <span class="category-tag">LIGHTING TD PIPELINE</span><span class="card-arrow" aria-hidden="true">↗</span>
+            <img src="images/thumbs/farmflow-sequence-verified-1200-lossless.webp" srcset="images/thumbs/farmflow-sequence-verified-640-lossless.webp 640w, images/thumbs/farmflow-sequence-verified-1200-lossless.webp 1200w" sizes="(max-width:760px) calc(100vw - 32px), 45vw" alt="FarmFlow running in Maya after verifying a ten-frame Arnold render sequence" width="2559" height="1524" loading="lazy" decoding="async">
           </div>
-          <div class="card-heading"><h3>FarmFlow</h3><span class="project-number">06</span></div>
-          <p class="card-role"><span>My role</span> Python development · Maya integration</p>
-          <p class="card-description">Check a Maya scene, run Arnold renders and verify the output files in one repeatable workflow.</p><p class="card-tools">Python · Maya · Arnold · OpenImageIO</p>
+          <div class="card-copy">
+            <div class="card-heading"><h3>FarmFlow</h3><svg class="ui-icon card-link-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg></div>
+            <p class="card-description">I built a Maya tool that checks scenes, runs Arnold renders and verifies the output.</p>
+            <p class="card-tools">Python · Maya · Arnold · OpenImageIO</p>
+          </div>
         </a>
         <a data-category="pipeline" class="project-card asset-publisher-card" id="asset-publisher-project" href="projects/asset-publisher.html">
           <div class="card-media">
             <img src="images/asset-publisher-0101/01-maya-publish-v002.png" alt="Asset Publisher in Maya showing the Master Sword preview and a verified v002 publication" width="1707" height="1019" loading="lazy" decoding="async">
-            <span class="category-tag">USD ASSET PIPELINE</span><span class="card-arrow" aria-hidden="true">↗</span>
+
           </div>
           <div class="card-copy">
-            <div class="card-heading"><h3>Asset Publisher &amp; Loader</h3><span class="project-number">07</span></div>
-            <p class="card-role"><span>My role</span> Pipeline architecture · Python development · Maya &amp; Katana integration</p>
-            <p class="card-description">Publish versioned USD assets, review changes and update a Katana shot while preserving its lighting and shaders.</p>
+            <div class="card-heading"><h3>Asset Publisher &amp; Loader</h3><svg class="ui-icon card-link-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg></div>
+            <p class="card-description">I built a versioned USD handoff from Maya to Katana and verified a rollback that preserved shot lighting and shader edits.</p>
             <p class="card-tools">Python · USD · Maya 2026 · Katana 9.0v3</p>
           </div>
         </a>
       </div>
-      <p class="evidence-note">The case studies distinguish implemented features, documented tests and integrations that remain simulated or unverified.</p>
     </section>
 
     <section class="section more-work-section wrap" aria-labelledby="more-work-title">
@@ -193,63 +210,63 @@
         <a data-category="lighting" class="project-card" href="projects/lighting.html">
           <div class="card-media">
             <img src="images/lighting-main.jpg" srcset="images/thumbs/lighting-main-640.webp 640w, images/thumbs/lighting-main-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Broken Horizons: stone sculptures and red flowers in a moody quarry landscape, lit and framed by Joshua Medina" width="1920" height="1080" loading="lazy">
-            <span class="category-tag">LIGHTING &amp; LOOK DEVELOPMENT</span><span class="card-arrow" aria-hidden="true">↗</span>
+
           </div>
-          <div class="card-heading"><h3>Broken Horizons</h3><span class="project-number">07</span></div>
+          <div class="card-heading"><h3>Broken Horizons</h3><svg class="ui-icon card-link-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg></div>
           <p class="card-role"><span>My role</span> Lighting · cinematography · rendering</p>
           <p class="card-description">A group cinematic exploring overcast light, atmospheric depth and visual storytelling.</p><p class="card-tools">Unreal Engine · Lumen · Movie Render Queue</p>
         </a>
         <a data-category="rendering" class="project-card" href="projects/renderman.html">
           <div class="card-media">
             <img src="images/renderman-main.png" srcset="images/thumbs/renderman-main-640.webp 640w, images/thumbs/renderman-main-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Refined procedural RenderMan orange with detailed peel, warm highlights and a soft tabletop shadow" width="1920" height="1080" loading="lazy">
-            <span class="category-tag">LIGHTING &amp; RENDERING</span><span class="card-arrow" aria-hidden="true">↗</span>
+
           </div>
-          <div class="card-heading"><h3>RenderMan — Orange Study</h3><span class="project-number">08</span></div>
+          <div class="card-heading"><h3>RenderMan — Orange Study</h3><svg class="ui-icon card-link-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg></div>
           <p class="card-role"><span>My role</span> Procedural geometry · materials · lighting</p>
           <p class="card-description">Exploring realism through surface detail, materials and light.</p><p class="card-tools">Python · RenderMan · RIB · HDRI</p>
         </a>
         <a data-category="rendering" class="project-card" href="projects/raytracer.html">
           <div class="card-media">
             <img src="images/raytracer-main.png" srcset="images/thumbs/raytracer-main-640.webp 640w, images/thumbs/raytracer-main-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Gold Triforce rendered by Joshua Medina's physically based CPU ray tracer" width="1920" height="1080" loading="lazy">
-            <span class="category-tag">RENDERING ENGINEERING</span><span class="card-arrow" aria-hidden="true">↗</span>
+
           </div>
-          <div class="card-heading"><h3>CPU Raytracer — Triforce</h3><span class="project-number">09</span></div>
+          <div class="card-heading"><h3>CPU Raytracer — Triforce</h3><svg class="ui-icon card-link-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg></div>
           <p class="card-role"><span>My role</span> Renderer development · PBR shading</p>
           <p class="card-description">A CPU renderer evolved into a physically based metallic look-development tool.</p><p class="card-tools">Python · NumPy · Numba · Cook–Torrance · HDRI</p>
         </a>
         <a data-category="lighting" class="project-card" href="projects/norwegian-lakeside.html">
           <div class="card-media">
             <img src="images/nordic-main.jpg" srcset="images/thumbs/nordic-main-640.webp 640w, images/thumbs/nordic-main-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Norwegian Lakeside cabin beside reflective water and forested mountains in warm natural light" width="1920" height="1080" loading="lazy">
-            <span class="category-tag">ENVIRONMENT LIGHTING</span><span class="card-arrow" aria-hidden="true">↗</span>
+
           </div>
-          <div class="card-heading"><h3>Norwegian Lakeside</h3><span class="project-number">10</span></div>
+          <div class="card-heading"><h3>Norwegian Lakeside</h3><svg class="ui-icon card-link-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg></div>
           <p class="card-role"><span>My role</span> Lighting · look development · composition</p>
           <p class="card-description">Natural daylight, reflective water and a warm visual rhythm across a Nordic retreat.</p><p class="card-tools">Lighting · Look Development · Composition</p>
         </a>
         <a data-category="lighting" class="project-card" href="projects/snow-environment.html">
           <div class="card-media">
             <img src="images/snow-breakdown.jpg" srcset="images/thumbs/snow-breakdown-640.webp 640w, images/thumbs/snow-breakdown-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Final Snowbound Environment shot with a snow-covered mountain valley, wooden fence and frozen lakeside landscape" width="1920" height="1080" loading="lazy">
-            <span class="category-tag">ENVIRONMENT LIGHTING</span><span class="card-arrow" aria-hidden="true">↗</span>
+
           </div>
-          <div class="card-heading"><h3>Snowbound Environment</h3><span class="project-number">11</span></div>
+          <div class="card-heading"><h3>Snowbound Environment</h3><svg class="ui-icon card-link-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg></div>
           <p class="card-role"><span>My role</span> Lighting · camera · colour correction</p>
           <p class="card-description">Winter daylight, atmospheric depth and a cinematic grade for a mountain landscape.</p><p class="card-tools">Unreal Engine · DaVinci Resolve</p>
         </a>
         <a data-category="rendering" class="project-card" href="projects/going-merry.html">
           <div class="card-media">
             <img src="images/going-merry-main.jpg" srcset="images/thumbs/going-merry-main-640.webp 640w, images/thumbs/going-merry-main-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Going Merry sailing through a rendered ocean at sunset, a frame from Joshua's project video" width="1920" height="1080" loading="lazy">
-            <span class="category-tag">FX &amp; SIMULATION</span><span class="card-arrow" aria-hidden="true">↗</span>
+
           </div>
-          <div class="card-heading"><h3>Going Merry Ocean Simulation</h3><span class="project-number">12</span></div>
+          <div class="card-heading"><h3>Going Merry Ocean Simulation</h3><svg class="ui-icon card-link-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg></div>
           <p class="card-role"><span>My role</span> FX simulation · lighting · scene assembly</p>
           <p class="card-description">Ship–water interaction, from a FLIP region to an open ocean.</p><p class="card-tools">Houdini · FLIP · Solaris · Karma</p>
         </a>
         <a data-category="cinematography" class="project-card" href="projects/cinematography.html">
           <div class="card-media">
             <img src="images/cinematography-blue-backlight.jpg" srcset="images/thumbs/cinematography-blue-backlight-640.webp 640w, images/thumbs/cinematography-blue-backlight-1200.webp 1200w" sizes="(max-width:760px) calc(100vw - 40px), (max-width:1432px) calc((100vw - 144px)/2), 644px" alt="Blue backlit portrait from Joshua Medina's live-action cinematography showreel" width="1920" height="1080" loading="lazy">
-            <span class="category-tag">LIVE-ACTION CINEMATOGRAPHY</span><span class="card-arrow" aria-hidden="true">↗</span>
+
           </div>
-          <div class="card-heading"><h3>Cinematography Showreel</h3><span class="project-number">13</span></div>
+          <div class="card-heading"><h3>Cinematography Showreel</h3><svg class="ui-icon card-link-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 18 18 6M7 6h11v11"/></svg></div>
           <p class="card-role"><span>My role</span> Director · Cinematographer · Camera Operator</p>
           <p class="card-description">Live-action work spanning natural-light portraits, low-key interiors and visual storytelling.</p><p class="card-tools">Camera · Composition · Light</p>
         </a>
@@ -257,49 +274,9 @@
       </details>
     </section>
 
-    <section class="section comparison-section wrap" id="comparisons" aria-labelledby="comparisons-title">
-      <div class="section-heading comparison-heading">
-        <div><h2 id="comparisons-title">From diagnostic<br>to final frame<span class="tungsten-dot">.</span></h2></div>
-        <p class="section-intro">Compare the final image with a diagnostic pass. Drag, tap a preset or use the arrow keys on each comparison.</p>
-      </div>
-      <div class="comparison-grid">
-        <article class="comparison-card comparison-card--wide">
-          <div class="shot-compare" data-compare style="--compare-position:50%" tabindex="0" role="slider" aria-label="Compare neutral clay and final Venator composite" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-            <img class="compare-before" src="images/venator/clay-neutral-1920.webp" alt="Neutral clay render of the Venator" width="1920" height="810" loading="lazy">
-            <div class="compare-after"><img src="images/venator/clean-master-1920.webp" alt="Final lit Venator composite above Coruscant" width="1920" height="810" loading="lazy"></div>
-            <span class="compare-label compare-label--before">[PASS: FINAL COMP]</span><span class="compare-label compare-label--after">[PASS: NEUTRAL CLAY]</span>
-            <span class="compare-handle" aria-hidden="true"><i></i></span>
-          </div>
-          <div class="compare-presets" role="group" aria-label="Comparison view" hidden><button type="button" data-compare-preset="96">Final composite</button><button type="button" data-compare-preset="50">Split view</button><button type="button" data-compare-preset="4">Diagnostic pass</button></div>
-          <div class="comparison-copy"><p><span>01</span> Venator Above Coruscant</p><a href="projects/venator.html">Open breakdown ↗</a></div>
-        </article>
-        <article class="comparison-card comparison-card--wide">
-          <div class="shot-compare" data-compare style="--compare-position:50%" tabindex="0" role="slider" aria-label="Compare clay and final Spaceship composite" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-            <img class="compare-before" src="images/thumbs/01-clay-1200-lossless.webp" srcset="images/thumbs/01-clay-640-lossless.webp 640w, images/thumbs/01-clay-1200-lossless.webp 1200w, images/thumbs/01-clay-1920-lossless.webp 1920w" sizes="(max-width:1050px) calc(100vw - 32px), 46vw" alt="Clay render of the Spaceship station" width="1920" height="858" loading="lazy">
-            <div class="compare-after"><img src="images/thumbs/09-final-composite-1200-lossless.webp" srcset="images/thumbs/09-final-composite-640-lossless.webp 640w, images/thumbs/09-final-composite-1200-lossless.webp 1200w, images/thumbs/09-final-composite-1920-lossless.webp 1920w" sizes="(max-width:1050px) calc(100vw - 32px), 46vw" alt="Final Spaceship and Moon composite" width="1920" height="858" loading="lazy"></div>
-            <span class="compare-label compare-label--before">[PASS: FINAL COMP]</span><span class="compare-label compare-label--after">[PASS: CLAY]</span>
-            <span class="compare-handle" aria-hidden="true"><i></i></span>
-          </div>
-          <div class="compare-presets" role="group" aria-label="Comparison view" hidden><button type="button" data-compare-preset="96">Final composite</button><button type="button" data-compare-preset="50">Split view</button><button type="button" data-compare-preset="4">Diagnostic pass</button></div>
-          <div class="comparison-copy"><p><span>02</span> Spaceship</p><a href="projects/spaceship.html">Open breakdown ↗</a></div>
-        </article>
-        <article class="comparison-card comparison-card--portrait">
-          <div class="shot-compare shot-compare--paired" data-compare style="--compare-position:50%" tabindex="0" role="slider" aria-label="Compare R2-D2 render and final composite" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-            <!-- Paired reference: left half is the render, right half is the composite. CSS aligns each half in this portrait frame. -->
-            <img class="compare-before" src="images/r2d2/render_vs_comp.jpg" alt="R2-D2 render before compositing" width="780" height="540" loading="lazy">
-            <div class="compare-after"><img src="images/r2d2/render_vs_comp.jpg" alt="R2-D2 final composite" width="780" height="540" loading="lazy"></div>
-            <span class="compare-label compare-label--before">[PASS: FINAL COMP]</span><span class="compare-label compare-label--after">[PASS: RAW RENDER]</span>
-            <span class="compare-handle" aria-hidden="true"><i></i></span>
-          </div>
-          <div class="compare-presets" role="group" aria-label="Comparison view" hidden><button type="button" data-compare-preset="96">Final composite</button><button type="button" data-compare-preset="50">Split view</button><button type="button" data-compare-preset="4">Diagnostic pass</button></div>
-          <div class="comparison-copy"><p><span>03</span> R2-D2 Desert Look Development</p><a href="projects/r2d2-lighting.html">Open breakdown ↗</a></div>
-        </article>
-      </div>
-    </section>
-
     <section class="section about-section" id="about" aria-labelledby="about-title">
       <div class="wrap about-grid">
-        <h2 id="about-title">Making images.<br>Building the tools<br>behind them.</h2>
+        <h2 id="about-title">About me</h2>
         <div class="about-copy"><p>I'm Joshua Medina — a Lighting TD, Compositor, Technical Artist and Pipeline TD. I approach image-making through light, composition and the practical systems that support a shot.</p><p>My cinematography background informs how I work with motivated light and framing. My CG projects connect look development and compositing with procedural shading, render diagnostics and Python tools.</p><p>I completed my MSc in Computer Animation &amp; Visual Effects at Bournemouth University, following specialised CG lighting study at Lost Boys.</p><div class="about-links"><a class="inline-link" href="projects/cinematography.html">Cinematography reel ↗</a><a class="inline-link" href="#education">Education ↓</a></div></div>
       </div>
     </section>
@@ -314,11 +291,11 @@
     </details>
 
     <section class="section education-section wrap" id="education" aria-labelledby="education-title">
-      <div><h2 id="education-title">Education<span class="muted-dot">.</span></h2></div>
+      <div><h2 id="education-title">Education</h2></div>
       <div class="education-list">
-        <article><span class="education-number">01</span><div><h3>MSc Computer Animation &amp; Visual Effects</h3><p>Bournemouth University</p><p class="education-meta">2025 – 2026 · Completed</p><details class="education-details"><summary>Relevant study areas</summary><ul><li>Animation Software Engineering</li><li>CGI Tools &amp; CGI Techniques</li><li>Simulation and Rendering</li><li>Pipeline and Technical Direction</li><li>Group Project &amp; Industry Brief</li><li>Master's Project</li></ul></details></div></article>
-        <article><span class="education-number">02</span><div><h3>Lighting Artist</h3><p>Lost Boys | School of VFX</p><p class="education-meta">2023 – 2024 · Completed</p><p class="education-tools">Six-month specialised programme · Katana · Arnold · Nuke</p></div></article>
-        <article><span class="education-number">03</span><div><h3>Bachelor's Degree in Engineering in Digital Communication Design</h3><p>Universidad Autónoma de Guadalajara (UAG)</p><p class="education-meta">August 2019 – December 2022 · Completed</p></div></article>
+        <article><div><h3>MSc Computer Animation &amp; Visual Effects</h3><p>Bournemouth University</p><p class="education-meta">2025 – 2026 · Completed</p><details class="education-details"><summary>Relevant study areas</summary><ul><li>Animation Software Engineering</li><li>CGI Tools &amp; CGI Techniques</li><li>Simulation and Rendering</li><li>Pipeline and Technical Direction</li><li>Group Project &amp; Industry Brief</li><li>Master's Project</li></ul></details></div></article>
+        <article><div><h3>Lighting Artist</h3><p>Lost Boys | School of VFX</p><p class="education-meta">2023 – 2024 · Completed</p><p class="education-tools">Six-month specialised programme · Katana · Arnold · Nuke</p></div></article>
+        <article><div><h3>Bachelor's Degree in Engineering in Digital Communication Design</h3><p>Universidad Autónoma de Guadalajara (UAG)</p><p class="education-meta">August 2019 – December 2022 · Completed</p></div></article>
       </div>
     </section>
 
@@ -335,8 +312,8 @@
 
     <section class="contact-section" id="contact" aria-labelledby="contact-title">
       <div class="wrap">
-        <h2 id="contact-title">Let’s create compelling images<br>and better tools.</h2>
-        <p class="contact-intro">Get in touch about lighting, compositing, technical art or pipeline opportunities.</p>
+        <h2 id="contact-title">Get in touch</h2>
+        <p class="contact-intro">For lighting, compositing and pipeline opportunities.</p>
         <p class="contact-address" data-email-address>Joshalexmedina@hotmail.com</p>
         <div class="contact-actions"><a class="button button-primary" data-email-link href="mailto:Joshalexmedina@hotmail.com">Email me <span aria-hidden="true">↗</span></a><button class="button button-secondary" type="button" data-copy-email data-email="Joshalexmedina@hotmail.com" hidden>Copy email</button></div>
         <div class="contact-links" data-contact-links><a data-profile="linkedin" href="https://www.linkedin.com/in/joshua-alexander-medina-gracia-3561981a3/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a data-profile="github" href="https://github.com/Joshmedinag" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a data-profile="vimeo" href="https://vimeo.com/1232872369" target="_blank" rel="noopener noreferrer">Vimeo ↗</a></div>

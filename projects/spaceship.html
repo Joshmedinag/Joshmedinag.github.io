@@ -15,10 +15,10 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/roboto/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../css/style.css?v=20261017-editorial">
-  <link rel="stylesheet" href="../css/site-system.css?v=20261023-portfolio">
-  <link rel="stylesheet" href="../css/project-experience.css?v=20261023-portfolio">
+  <link rel="stylesheet" href="../css/site-system.css?v=20261120-editorial">
+  <link rel="stylesheet" href="../css/project-experience.css?v=20261120-case">
   <script src="../js/site-config.js?v=20261017-editorial" defer></script>
-  <script src="../js/main.js?v=20261017-editorial" defer></script>
+  <script src="../js/main.js?v=20261120-editorial" defer></script>
   <script src="../js/site-experience.js?v=20261017-editorial" defer></script>
   <script src="../js/video-experience.js?v=20261023-portfolio" defer></script>
 </head>
@@ -38,18 +38,51 @@
 
   <main class="project-main" id="main">
     <div class="project-intro wrap">
-      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
+      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All work</a>
       <div class="project-title-row">
-        <div class="project-heading"><h1>Spaceship<span class="title-dot">.</span></h1><p class="project-discipline">LIGHTING TD · LOOK DEVELOPMENT</p></div>
-        <p class="project-lede">A 15-second station-and-Moon shot, from camera and motion design to RenderMan lighting and Nuke compositing.</p>
+        <div class="project-heading"><h1>Spaceship<span class="title-dot">.</span></h1><p class="project-discipline">Lighting TD · Look development</p></div>
+        <div class="project-intro-copy">
+          <p class="project-lede">A 15-second station-and-Moon shot, from camera and motion design to RenderMan lighting and Nuke compositing.</p>
+          <p class="project-contribution"><span>My contribution</span> Camera &amp; motion · look development · lighting · compositing</p>
+        </div>
       </div>
-      <p class="project-contribution"><span>My contribution</span> Camera &amp; motion · look development · lighting · compositing</p>
     </div>
 
     <figure class="project-hero wrap spaceship-shot project-lead-media">
       <a class="image-detail-link" href="../images/spaceship-main.png?v=20261004-breakdown2" target="_blank" rel="noopener noreferrer" aria-label="Open the final Spaceship composition at full size in a new tab"><img src="../images/spaceship-main.png?v=20261004-breakdown2" alt="Final Spaceship composition with a detailed ring station travelling beside the Moon" width="1920" height="810" fetchpriority="high"></a>
       <figcaption>Final composition from the updated breakdown · station rendered in RenderMan · Moon and star field integrated as a 2D Nuke plate.</figcaption>
     </figure>
+
+    <nav class="case-nav wrap" aria-label="On this project">
+      <a href="#final-shot-title">Final shot</a><a href="#breakdown-title">Breakdown</a><a href="#shot-design-title">Shot design</a><a href="#lookdev-title">Materials</a><a href="#delivery-title">Delivery</a>
+    </nav>
+
+    <div class="case-media-pair wrap">
+      <section class="featured-film" aria-labelledby="final-shot-title">
+        <h2 id="final-shot-title">Final shot</h2>
+        <p>The restrained camera and station motion keep the dense structure readable while the Moon establishes distance, direction and visual weight.</p>
+        <figure class="project-video spaceship-final-video">
+          <video controls playsinline preload="metadata" poster="../images/spaceship-main.png?v=20261004-breakdown2" width="1920" height="858" aria-label="Spaceship final 15-second shot by Joshua Medina">
+            <source src="../assets/video/spaceship-final.mp4?v=20260924-first" type="video/mp4">
+            Your browser does not support HTML video. <a href="../assets/video/spaceship-final.mp4?v=20260924-first">Open the final shot MP4</a>.
+          </video>
+          <figcaption>Final shot · 15 seconds · 360 frames · 1920 × 858 · 24 fps.</figcaption>
+          <a class="inline-link" href="../assets/video/spaceship-final.mp4?v=20260924-first" target="_blank" rel="noopener noreferrer">Open video directly <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+        </figure>
+      </section>
+      <section class="featured-film" aria-labelledby="breakdown-title">
+        <h2 id="breakdown-title">Shot breakdown</h2>
+        <p class="reference-intro">Nine stages trace the frame from neutral geometry to RenderMan materials, AOV compositing and the final Moon integration.</p>
+        <figure class="project-video spaceship-breakdown-video">
+          <video controls playsinline preload="metadata" poster="../images/thumbs/01-clay-1200-lossless.webp" width="1920" height="1080" aria-label="Spaceship lighting, look development and compositing breakdown">
+            <source src="../assets/video/spaceship-breakdown.mp4?v=20261004-v2" type="video/mp4">
+            Your browser does not support HTML video. <a href="../assets/video/spaceship-breakdown.mp4?v=20261004-v2">Open the Spaceship breakdown MP4</a>.
+          </video>
+          <figcaption>Updated shot breakdown supplied by Joshua Medina · 14 seconds · geometry through final composite.</figcaption>
+          <a class="inline-link" href="../assets/video/spaceship-breakdown.mp4?v=20261004-v2" target="_blank" rel="noopener noreferrer">Open breakdown directly <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+        </figure>
+      </section>
+    </div>
 
     <div class="project-details wrap">
       <div class="project-meta">
@@ -59,26 +92,8 @@
       <p class="project-context">Personal Lighting TD study · 15 seconds · 360 frames · 1920 × 858 · 24 fps</p>
     </div>
 
-    <nav class="case-nav wrap" aria-label="On this project">
-      <a href="#final-shot-title">Final shot</a><a href="#shot-design-title">Shot design</a><a href="#lookdev-title">Materials</a><a href="#breakdown-title">Breakdown</a><a href="#delivery-title">Delivery</a>
-    </nav>
-
-    <section class="featured-film wrap" aria-labelledby="final-shot-title">
-      <p class="eyebrow"><span class="section-index">/</span> FINAL SHOT</p>
-      <h2 id="final-shot-title">A slow orbital passage built for scale and silhouette.</h2>
-      <p>The restrained camera and station motion keep the dense structure readable while the Moon establishes distance, direction and visual weight.</p>
-      <figure class="project-video spaceship-final-video">
-        <video controls playsinline preload="metadata" poster="../images/spaceship-main.png?v=20261004-breakdown2" width="1920" height="858" aria-label="Spaceship final 15-second shot by Joshua Medina">
-          <source src="../assets/video/spaceship-final.mp4?v=20260924-first" type="video/mp4">
-          Your browser does not support HTML video. <a href="../assets/video/spaceship-final.mp4?v=20260924-first">Open the final shot MP4</a>.
-        </video>
-        <figcaption>Final shot · 15 seconds · 360 frames · 1920 × 858 · 24 fps.</figcaption>
-        <a class="inline-link" href="../assets/video/spaceship-final.mp4?v=20260924-first" target="_blank" rel="noopener noreferrer">Open video directly <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
-      </figure>
-    </section>
-
     <section class="project-story wrap" aria-labelledby="overview-title">
-      <div><p class="eyebrow"><span class="section-index">/</span> THE BRIEF</p></div>
+      <div><p class="eyebrow">The brief</p></div>
       <div class="story-copy">
         <h2 id="overview-title">Give a dense asset a clear cinematic read.</h2>
         <p>The station contains hundreds of interlocking forms, repeated structures and reflective surfaces. I designed a controlled side-on composition that preserves the circular silhouette and creates a strong scale relationship with the Moon.</p>
@@ -87,7 +102,6 @@
     </section>
 
     <section class="project-evidence wrap" aria-labelledby="shot-design-title">
-      <p class="eyebrow"><span class="section-index">/</span> SHOT DESIGN &amp; USD</p>
       <h2 id="shot-design-title">Small motion, large scale.</h2>
       <p class="reference-intro">A 140 mm camera compresses depth and keeps the station graphic against negative space. Across the shot, the station rotates seven degrees on its local longitudinal axis and advances while the camera follows 42 percent of its translation with a two-unit dolly.</p>
       <div class="evidence-grid">
@@ -103,7 +117,6 @@
     </section>
 
     <section class="project-evidence wrap" aria-labelledby="lookdev-title">
-      <p class="eyebrow"><span class="section-index">/</span> LOOK DEVELOPMENT</p>
       <h2 id="lookdev-title">Separate material families without losing cohesion.</h2>
       <p class="reference-intro">I rebuilt the RenderMan response in Katana because the source FBX did not carry the original vendor shader graph. PxrSurface networks define painted metal, brushed iron, structural weave and solar panels; PxrCurvature introduces controlled edge wear and cavity dirt.</p>
       <figure class="r2d2-wide-figure spaceship-stage-board">
@@ -126,26 +139,12 @@
     </section>
 
     <section class="project-story wrap" aria-labelledby="lighting-title">
-      <div><p class="eyebrow"><span class="section-index">/</span> LIGHTING &amp; RENDERING</p></div>
+      <div><p class="eyebrow">Lighting &amp; rendering</p></div>
       <div class="story-copy">
         <h2 id="lighting-title">Warm direction, cool separation and efficient diagnostics.</h2>
         <p>A warm key defines the station's large forms, a cooler edge separates the silhouette, and localized fill preserves machinery inside the rings. Small emissions create scale cues without competing with the principal lighting.</p>
         <p>RenderMan produced a beauty, a multichannel AOV file and an object Cryptomatte for every frame: 1,080 EXRs across the 360-frame shot. The package includes albedo, diffuse, specular, emission, normal, depth and motion-vector data for controlled downstream work.</p>
       </div>
-    </section>
-
-    <section class="project-evidence wrap" aria-labelledby="breakdown-title">
-      <p class="eyebrow"><span class="section-index">/</span> BREAKDOWN</p>
-      <h2 id="breakdown-title">One frame, nine traceable stages.</h2>
-      <p class="reference-intro">The updated breakdown follows one composition from neutral geometry and material zones through roughness, final RenderMan shading, AOV compositing, Moon integration and the finished shot.</p>
-      <figure class="project-video spaceship-breakdown-video">
-        <video controls playsinline preload="metadata" poster="../images/spaceship-main.png?v=20261004-breakdown2" aria-label="Spaceship lighting, look development and compositing breakdown">
-          <source src="../assets/video/spaceship-breakdown.mp4?v=20261004-v2" type="video/mp4">
-          Your browser does not support HTML video. <a href="../assets/video/spaceship-breakdown.mp4?v=20261004-v2">Open the Spaceship breakdown MP4</a>.
-        </video>
-        <figcaption>Updated shot breakdown supplied by Joshua Medina · 14 seconds · geometry through final composite.</figcaption>
-        <a class="inline-link" href="../assets/video/spaceship-breakdown.mp4?v=20261004-v2" target="_blank" rel="noopener noreferrer">Open breakdown directly <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
-      </figure>
     </section>
 
     <section class="project-gallery wrap spaceship-gallery" aria-label="Spaceship fixed-frame progression">
@@ -161,7 +160,7 @@
     </section>
 
     <section class="project-story wrap" aria-labelledby="comp-title">
-      <div><p class="eyebrow"><span class="section-index">/</span> NUKE FINISH</p></div>
+      <div><p class="eyebrow">Nuke finish</p></div>
       <div class="story-copy">
         <h2 id="comp-title">AOV control without rewriting the render.</h2>
         <p>The composite uses the real diffuse, specular and emission components in linear space. Light wrap, highlight control, vignette and grain integrate the station with a static Moon-and-stars EXR plate created in Nuke.</p>
@@ -170,7 +169,6 @@
     </section>
 
     <section class="project-evidence wrap" aria-labelledby="delivery-title">
-      <p class="eyebrow"><span class="section-index">/</span> DELIVERY &amp; QA</p>
       <h2 id="delivery-title">A resumable render and a verified delivery.</h2>
       <div class="evidence-grid">
         <div><dt>Render outputs</dt><dd>1,080 EXRs</dd></div>
@@ -190,7 +188,7 @@
     <a class="next-project wrap" href="r2d2-lighting.html"><div><small>NEXT PROJECT</small><h2>R2-D2 Desert Look Development</h2></div><span aria-hidden="true">↗</span></a>
 
     <section class="project-contact wrap" aria-labelledby="project-contact-title">
-      <div><h2 id="project-contact-title">Let’s create compelling images and better tools.</h2><p>Get in touch about lighting, compositing, technical art or pipeline opportunities.</p></div>
+      <div><h2 id="project-contact-title">Get in touch</h2><p>Lighting, compositing, technical art and pipeline opportunities.</p></div>
       <div class="project-contact-actions">
         <p class="contact-address" data-email-address>Joshalexmedina@hotmail.com</p>
         <div class="contact-actions"><a class="button button-primary" href="mailto:Joshalexmedina@hotmail.com" data-email-link>Email me <span aria-hidden="true">↗</span></a><button class="button button-secondary" type="button" data-copy-email hidden data-email="Joshalexmedina@hotmail.com">Copy email</button></div>

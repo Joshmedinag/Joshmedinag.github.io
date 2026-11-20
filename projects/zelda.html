@@ -18,10 +18,10 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/roboto/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../css/style.css?v=20261017-editorial">
-  <link rel="stylesheet" href="../css/site-system.css?v=20261023-portfolio">
-  <link rel="stylesheet" href="../css/project-experience.css?v=20261023-portfolio">
+  <link rel="stylesheet" href="../css/site-system.css?v=20261120-editorial">
+  <link rel="stylesheet" href="../css/project-experience.css?v=20261120-case">
   <script src="../js/site-config.js?v=20261017-editorial" defer></script>
-  <script src="../js/main.js?v=20261019-aovguard-i18n" defer></script>
+  <script src="../js/main.js?v=20261120-editorial" defer></script>
   <script src="../js/site-experience.js?v=20261019-aovguard-i18n" defer></script>
   <script src="../js/video-experience.js?v=20261023-portfolio" defer></script>
 </head>
@@ -41,12 +41,14 @@
 
   <main class="project-main" id="main">
     <div class="project-intro wrap">
-      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
+      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All work</a>
       <div class="project-title-row">
         <div class="project-heading"><h1>Zelda<span class="title-dot">.</span></h1><p class="project-discipline">Lighting &amp; look development</p></div>
-        <p class="project-lede">A serene character portrait built through shaped shadows, warm light and a controlled Nuke finish.</p>
+        <div class="project-intro-copy">
+          <p class="project-lede">A serene character portrait built through shaped shadows, warm light and a controlled Nuke finish.</p>
+          <p class="project-contribution"><span>My contribution</span> Pose &amp; contact adjustments · lighting · look development · compositing</p>
+        </div>
       </div>
-      <p class="project-contribution"><span>My contribution</span> Pose &amp; contact adjustments · lighting · look development · compositing</p>
     </div>
 
     <figure class="project-hero wrap project-lead-media">
@@ -56,23 +58,17 @@
       <figcaption>Final composite, 1920 × 1080. Personal fan-art lighting and look-development study using externally sourced base geometry and textures.</figcaption>
     </figure>
 
-    <div class="project-details wrap">
-      <div class="project-meta">
-        <div><span class="meta-label">Production scope</span><p>Pose and hand contact, NPR materials, lighting, rendered atmosphere and final compositing.</p></div>
-        <div><span class="meta-label">Workflow</span><p>Maya · Arnold CPU → ACEScg EXRs → Nuke Non-Commercial</p></div>
-      </div>
-      <p class="project-context">Fixed-camera study · 4K foreground and AOV render · 1080p composite</p>
-    </div>
-
     <nav class="case-nav wrap" aria-label="On this project">
       <a href="#breakdown-title">Breakdown</a><a href="#decisions-title">Key decisions</a><a href="#stages-title">Lighting stages</a><a href="#workflow-title">Workflow</a><a href="#credits-title">Scope &amp; credits</a>
     </nav>
 
-    <section class="featured-film wrap" aria-labelledby="breakdown-title">
-      <h2 id="breakdown-title">From clay to the final composite.</h2>
-      <p>A reconstruction of the approved lighting setup, showing the contribution of individual lights, reflections and atmosphere. The stages explain the final shot rather than a chronological production history.</p>
+    <section class="featured-film case-film wrap" aria-labelledby="breakdown-title">
+      <div class="case-film-copy">
+        <h2 id="breakdown-title">Lighting breakdown</h2>
+        <p>A reconstruction of the approved lighting setup, showing the contribution of individual lights, reflections and atmosphere. The stages explain the final shot rather than a chronological production history.</p>
+      </div>
       <figure class="project-video">
-        <video controls playsinline preload="metadata" poster="../images/zelda/final-shot.webp" width="1920" height="1080" aria-label="Zelda lighting and compositing breakdown">
+        <video controls playsinline preload="metadata" poster="../images/zelda/clay-render-960.webp" width="1920" height="1080" aria-label="Zelda lighting and compositing breakdown">
           <source src="../assets/video/zelda-breakdown.mp4" type="video/mp4">
           Your browser does not support HTML video. <a href="../assets/video/zelda-breakdown.mp4">Open the breakdown MP4</a>.
         </video>
@@ -80,6 +76,14 @@
         <a class="inline-link" href="../assets/video/zelda-breakdown.mp4" target="_blank" rel="noopener noreferrer">Open video directly <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
       </figure>
     </section>
+
+    <div class="project-details wrap">
+      <div class="project-meta">
+        <div><span class="meta-label">Production scope</span><p>Pose and hand contact, NPR materials, lighting, rendered atmosphere and final compositing.</p></div>
+        <div><span class="meta-label">Workflow</span><p>Maya · Arnold CPU → ACEScg EXRs → Nuke Non-Commercial</p></div>
+      </div>
+      <p class="project-context">Fixed-camera study · 4K foreground and AOV render · 1080p composite</p>
+    </div>
 
     <section class="project-evidence wrap" aria-labelledby="decisions-title">
       <h2 id="decisions-title">Three decisions behind the image.</h2>
@@ -142,7 +146,7 @@
     <a class="next-project wrap" href="lighting.html"><div><small>NEXT PROJECT</small><h2>Broken Horizons</h2></div><span aria-hidden="true">↗</span></a>
 
     <section class="project-contact wrap" aria-labelledby="project-contact-title">
-      <div><h2 id="project-contact-title">Let’s create compelling images and better tools.</h2><p>Get in touch about lighting, compositing, technical art or pipeline opportunities.</p></div>
+      <div><h2 id="project-contact-title">Get in touch</h2><p>Lighting, compositing, technical art and pipeline opportunities.</p></div>
       <div class="project-contact-actions"><p class="contact-address" data-email-address>Joshalexmedina@hotmail.com</p><div class="contact-actions"><a class="button button-primary" href="mailto:Joshalexmedina@hotmail.com" data-email-link>Email me <span aria-hidden="true">↗</span></a><button class="button button-secondary" type="button" data-copy-email hidden data-email="Joshalexmedina@hotmail.com">Copy email</button></div></div>
     </section>
   </main>

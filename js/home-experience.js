@@ -1,95 +1,61 @@
 (() => {
   'use strict';
 
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const telemetry = document.querySelector('.hero-telemetry');
-  const heroCarousel = document.querySelector('[data-hero-carousel]');
-  let telemetryFade;
-  const syncTelemetry = (slide, index, animate = false) => {
-    if (!telemetry || !slide) return;
-    telemetryFade?.cancel();
-    telemetry.querySelector('[data-carousel-scene]').textContent = `[SCENE: ${String(index + 1).padStart(2,'0')} // ${slide.dataset.scene}]`;
-    telemetry.querySelector('[data-carousel-pipeline]').textContent = `[${slide.dataset.pipeline}]`;
-    telemetry.querySelector('[data-carousel-tools]').textContent = `[${slide.dataset.render}]`;
-    telemetry.querySelector('[data-carousel-format]').textContent = `[FRAME: ${slide.getAttribute('width')} × ${slide.getAttribute('height')}]`;
-    if (animate && !reduceMotion.matches) telemetryFade = telemetry.animate([{opacity:0},{opacity:1}], {duration:200,easing:getComputedStyle(telemetry).getPropertyValue('--spring-snappy').trim()});
-  };
-  syncTelemetry(heroCarousel?.querySelector('.is-active'),0);
-  document.addEventListener('portfolio:slidechange', event => syncTelemetry(event.detail.slide,event.detail.index,event.detail.animate));
+  const carousel = document.querySelector('[data-hero-carousel]');
+  if (carousel) {
+    const template = carousel.querySelector('[data-carousel-slides]');
+    const slides = [carousel.querySelector('.hero-image'), ...template.content.querySelectorAll('.hero-image')];
+    const controls = document.querySelector('.carousel-controls');
+    const picks = Array.from(controls.querySelectorAll('[data-carousel-pick]'));
+    const caption = document.querySelector('[data-carousel-project]');
+    const title = caption.querySelector('[data-carousel-project-title]');
+    const role = caption.querySelector('[data-carousel-project-role]');
+    const status = document.querySelector('[data-carousel-status]');
+    let current = 0;
+    let selection = 0;
 
-  document.querySelectorAll('[data-compare]').forEach(compare => {
-    let dragging = false;
-    let activePointer;
-    let target = 50;
-    let current = 50;
-    let velocity = 0;
-    let animationFrame = 0;
-    const finalLabel = compare.querySelector('.compare-label--before');
-    const technicalLabel = compare.querySelector('.compare-label--after');
-    const paint = value => {
-      value = Math.min(96,Math.max(4,value));
-      compare.style.setProperty('--compare-position', `${value}%`);
-      compare.setAttribute('aria-valuenow', String(Math.round(value)));
-      finalLabel.style.opacity = String(Math.min(1,(value - 4) / 46));
-      technicalLabel.style.opacity = String(Math.min(1,(96 - value) / 46));
-      finalLabel.classList.toggle('is-dominant',value >= 50);
-      technicalLabel.classList.toggle('is-dominant',value <= 50);
-      compare.setAttribute('aria-valuetext',`${Math.round(value)}% final composite, ${Math.round(100-value)}% ${technicalLabel.textContent.replace(/\[PASS: |\]/g,'').toLowerCase()}`);
-    };
-    const animate = () => {
-      velocity = (velocity + (target - current) * .24) * .68;
-      current += velocity;
-      paint(current);
-      if (Math.abs(target - current) > .02 || Math.abs(velocity) > .02) animationFrame = requestAnimationFrame(animate);
-      else { current = target; paint(current); animationFrame = 0; }
-    };
-    const setPosition = (value, immediate = false) => {
-      target = Math.min(96, Math.max(4, value));
-      compare.setAttribute('aria-valuenow', String(Math.round(target)));
-      if (reduceMotion.matches || immediate) {
-        cancelAnimationFrame(animationFrame);
-        animationFrame = 0;
-        velocity = 0;
-        current = target;
-        paint(current);
+    const showFrame = async (index) => {
+      const request = ++selection;
+      if (index === current) return;
+      const next = slides[index];
+      if (!next.isConnected) carousel.append(next);
+      try {
+        await next.decode();
+      } catch {
+        if (request === selection) status.textContent = 'This frame could not load. The full shot is available in Selected work.';
         return;
       }
-      if (!animationFrame) animationFrame = requestAnimationFrame(animate);
+      if (request !== selection) return;
+
+      slides[current].classList.remove('is-active');
+      slides[current].setAttribute('aria-hidden', 'true');
+      next.classList.add('is-active');
+      next.removeAttribute('aria-hidden');
+      current = index;
+      picks.forEach((button, i) => button.setAttribute('aria-pressed', String(i === current)));
+      caption.href = next.dataset.projectHref;
+      title.textContent = next.dataset.projectTitle;
+      role.textContent = next.dataset.projectRole;
+      status.textContent = `Showing ${next.dataset.projectTitle}`;
     };
-    const fromPointer = event => {
-      const rect = compare.getBoundingClientRect();
-      setPosition(((event.clientX - rect.left) / rect.width) * 100);
-    };
-    compare.addEventListener('pointerdown', event => {
-      if (dragging || event.button !== 0) return;
-      dragging = true;
-      activePointer = event.pointerId;
-      compare.setPointerCapture(event.pointerId);
-      fromPointer(event);
+
+    picks.forEach((button, index) => button.addEventListener('click', () => showFrame(index)));
+    controls.addEventListener('keydown', event => {
+      if (!picks.includes(event.target)) return;
+      const index = picks.indexOf(event.target);
+      const next = {
+        ArrowLeft: (index - 1 + picks.length) % picks.length,
+        ArrowRight: (index + 1) % picks.length,
+        Home: 0,
+        End: picks.length - 1
+      }[event.key];
+      if (next === undefined) return;
+      event.preventDefault();
+      picks[next].focus();
+      showFrame(next);
     });
-    compare.addEventListener('pointermove', event => { if (dragging && event.pointerId === activePointer) fromPointer(event); });
-    compare.addEventListener('pointerup', event => {
-      if (event.pointerId !== activePointer) return;
-      dragging = false;
-      if (compare.hasPointerCapture(event.pointerId)) compare.releasePointerCapture(event.pointerId);
-    });
-    compare.addEventListener('pointercancel', () => { dragging = false; });
-    compare.addEventListener('lostpointercapture', () => { dragging = false; });
-    compare.addEventListener('keydown', event => {
-      const nextFrom = target;
-      const step = event.shiftKey ? 10 : 2;
-      if (event.key === 'ArrowLeft') { event.preventDefault(); setPosition(nextFrom - step,true); }
-      if (event.key === 'ArrowRight') { event.preventDefault(); setPosition(nextFrom + step,true); }
-      if (event.key === 'Home') { event.preventDefault(); setPosition(4,true); }
-      if (event.key === 'End') { event.preventDefault(); setPosition(96,true); }
-    });
-    const presets = compare.parentElement.querySelector('.compare-presets');
-    if (presets) {
-      presets.hidden = false;
-      presets.querySelectorAll('[data-compare-preset]').forEach(button => button.addEventListener('click', () => setPosition(Number(button.dataset.comparePreset),true)));
-    }
-    paint(current);
-  });
+    controls.hidden = false;
+  }
 
   document.querySelectorAll('[data-keyboard-hint]').forEach(hint => { hint.hidden = false; });
   document.querySelectorAll('.project-grid').forEach(projectGrid => {
@@ -125,7 +91,7 @@
     const active = !reelSection?.classList.contains('is-darkroom');
     reelSection?.classList.toggle('is-darkroom', active);
     theaterToggle.setAttribute('aria-pressed', String(active));
-    theaterToggle.textContent = active ? 'Exit darkroom' : 'Darkroom mode';
+    theaterToggle.textContent = active ? 'Exit theater view' : 'Theater view';
   });
   if (reelSection && reelStage) {
     let reelInView = false;

@@ -18,11 +18,11 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/roboto/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../css/style.css?v=20261017-editorial">
-  <link rel="stylesheet" href="../css/site-system.css?v=20261017-editorial">
-  <link rel="stylesheet" href="../css/project-experience.css?v=20261017-editorial">
-  <link rel="stylesheet" href="../css/asset-publisher-case.css?v=20261026">
+  <link rel="stylesheet" href="../css/site-system.css?v=20261120-editorial">
+  <link rel="stylesheet" href="../css/project-experience.css?v=20261120-case">
+  <link rel="stylesheet" href="../css/asset-publisher-case.css?v=20261120-case">
   <script src="../js/site-config.js?v=20261017-editorial" defer></script>
-  <script src="../js/main.js?v=20261017-editorial" defer></script>
+  <script src="../js/main.js?v=20261120-editorial" defer></script>
   <script src="../js/site-experience.js?v=20261017-editorial" defer></script>
 </head>
 <body>
@@ -43,16 +43,24 @@
     <div class="project-intro wrap">
       <a class="back-link" href="../index.html#pipeline-lab"><span aria-hidden="true">←</span> Technical Art &amp; Pipeline</a>
       <div class="project-title-row">
-        <h1>Asset Publisher<br>&amp; Loader<span class="title-dot">.</span></h1>
-        <p class="project-lede">Move a versioned USD asset from Maya to Katana, review its changes and recover an earlier version while the shot keeps its lighting and shaders.</p>
+        <h1>Asset Publisher &amp; Loader<span class="title-dot">.</span></h1>
+        <div class="project-intro-copy">
+          <p class="project-lede">Move a versioned USD asset from Maya to Katana, review its changes and recover an earlier version while the shot keeps its lighting and shaders.</p>
+          <p class="project-contribution"><span>My contribution</span> Pipeline architecture · Python development · Maya &amp; Katana integration · validation</p>
+        </div>
       </div>
-      <p class="project-contribution"><span>My contribution</span> Pipeline architecture · Python development · Maya &amp; Katana integration · validation</p>
     </div>
 
-    <figure class="project-hero wrap">
-      <a class="image-detail-link" href="../images/asset-publisher-0101/01-maya-publish-v002.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Maya Publisher capture at full resolution"><img src="../images/asset-publisher-0101/01-maya-publish-v002.png" alt="Maya Publisher showing a verified v002 Master Sword publication, a change note, manifest hash and generated USD preview" width="1707" height="1019" fetchpriority="high" decoding="async"></a>
-      <figcaption>Publishing v002 from Maya. The package, captured source and reopened USD have been verified; its change note and preview travel with the publication.</figcaption>
-    </figure>
+    <div class="case-result-pair wrap">
+      <figure class="project-hero">
+        <a class="image-detail-link" href="../images/asset-publisher-0101/01-maya-publish-v002.png" target="_blank" rel="noopener noreferrer" aria-label="Open the Maya Publisher capture at full resolution"><img src="../images/asset-publisher-0101/01-maya-publish-v002.png" alt="Maya Publisher showing a verified v002 Master Sword publication, a change note, manifest hash and generated USD preview" width="1707" height="1019" fetchpriority="high" decoding="async"></a>
+        <figcaption><strong>Publishing v002 from Maya.</strong> The package, captured source and reopened USD have been verified; its change note and preview travel with the publication.</figcaption>
+      </figure>
+      <figure class="project-hero">
+        <a class="image-detail-link" href="../images/asset-publisher-0101/08-final-loader-v001.png" target="_blank" rel="noopener noreferrer" aria-label="Open the final v001 Loader state at full resolution"><img src="../images/asset-publisher-0101/08-final-loader-v001.png" alt="Final Katana Loader showing the Master Sword restored to v001 with verified references after rollback and Save and Verify" width="1707" height="1019" loading="lazy" decoding="async"></a>
+        <figcaption><strong>Verified rollback in Katana.</strong> The Loader returns to v001. The later light and shader adjustments remain in the saved, reopened shot.</figcaption>
+      </figure>
+    </div>
 
     <div class="project-details publisher-meta wrap">
       <div class="project-meta">
@@ -149,14 +157,10 @@
         </table>
       </div>
       <p class="publisher-method">All ten declared workflow steps passed in one Katana session. The two accepted transactions followed PREPARED → APPLYING → COMMITTED_IN_MEMORY → PERSISTED. Original source inputs remained unchanged. These are native state, dependency and reopening checks; no new pixel-render equivalence is claimed.</p>
-      <div class="project-gallery document-gallery publisher-result-images">
+      <div class="project-gallery publisher-single publisher-result-images">
         <figure>
           <a class="image-detail-link" href="../images/asset-publisher-0101/07-update-and-rollback-persisted.png" target="_blank" rel="noopener noreferrer" aria-label="Open the saved Update and rollback history at full resolution"><img src="../images/asset-publisher-0101/07-update-and-rollback-persisted.png" alt="Katana Recovery history with Update and rollback recorded as PERSISTED, alongside the separate ABORTED_RESTORED guard attempt" width="1707" height="1019" loading="lazy" decoding="async"></a>
           <figcaption><h3>Two verified saved transactions</h3><p>Update and rollback reached PERSISTED. The separate restored guard attempt remains visible and is not counted as a successful transaction.</p></figcaption>
-        </figure>
-        <figure>
-          <a class="image-detail-link" href="../images/asset-publisher-0101/08-final-loader-v001.png" target="_blank" rel="noopener noreferrer" aria-label="Open the final v001 Loader state at full resolution"><img src="../images/asset-publisher-0101/08-final-loader-v001.png" alt="Final Katana Loader showing the Master Sword restored to v001 with verified references after rollback and Save and Verify" width="1707" height="1019" loading="lazy" decoding="async"></a>
-          <figcaption><h3>The earlier asset, with the current shot work</h3><p>The Loader returns to v001. The later light and shader adjustments remain in the saved, reopened shot.</p></figcaption>
         </figure>
       </div>
     </section>
@@ -188,7 +192,7 @@
 
     <a class="next-project wrap" href="aovguard.html"><div><small>NEXT PROJECT</small><h2>AOVGuard</h2></div><span aria-hidden="true">↗</span></a>
     <section class="project-contact wrap" aria-labelledby="project-contact-title">
-      <div><h2 id="project-contact-title">Let’s create compelling images and better tools.</h2><p>Get in touch about lighting, compositing, technical art or pipeline opportunities.</p></div>
+      <div><h2 id="project-contact-title">Get in touch</h2><p>Lighting, compositing, technical art and pipeline opportunities.</p></div>
       <div class="project-contact-actions">
         <p class="contact-address" data-email-address>Joshalexmedina@hotmail.com</p>
         <div class="contact-actions"><a class="button button-primary" href="mailto:Joshalexmedina@hotmail.com" data-email-link>Email me <span aria-hidden="true">↗</span></a><button class="button button-secondary" type="button" data-copy-email hidden data-email="Joshalexmedina@hotmail.com">Copy email</button></div>

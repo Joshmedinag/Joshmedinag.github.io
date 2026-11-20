@@ -46,9 +46,10 @@ const prepare = async context => {
     await prepare(context);
     const page = await context.newPage();
     await page.goto(base.href, { waitUntil: 'domcontentloaded' }); await settle(page);
-    await check('Four specialties and completed MSc are explicit', async () => {
-      const hero = await page.locator('.hero').innerText();
-      for (const title of ['Lighting TD', 'Compositor', 'Technical Artist', 'Pipeline TD']) assert(hero.includes(title));
+    await check('Primary roles, pipeline experience and completed MSc are explicit', async () => {
+      const roles = await page.locator('.hero-specialties').textContent();
+      assert.equal(roles, 'Lighting TD · Compositor · Technical Artist');
+      assert.match(await page.locator('#about').innerText(), /Pipeline TD/);
       assert.match(await page.locator('#education').innerText(), /Completed/);
       assert.doesNotMatch(await page.locator('.site-header').innerText(), /Available/);
     });
@@ -58,12 +59,16 @@ const prepare = async context => {
       for (const href of ['aovguard.html', 'farmflow.html', 'asset-publisher.html']) assert.equal(await page.locator(`.technical-grid a[href$="${href}"]`).count(), 1);
       assert.equal(await page.locator('#more-work').getAttribute('open'), null);
     });
-    await check('Hero is manual initially; metadata follows Next', async () => {
-      assert.equal(await page.locator('[data-carousel-pause]').getAttribute('aria-pressed'), 'true');
-      await page.locator('[data-carousel-next]').click();
-      await page.waitForFunction(() => document.querySelector('.hero-image.is-active')?.dataset.scene === 'ORBITAL STATION');
-      assert.match(await page.locator('[data-carousel-scene]').textContent(), /ORBITAL STATION/);
-      await page.locator('[data-carousel-prev]').click();
+    await check('Featured frame opens at Venator and follows thumbnail selection', async () => {
+      const activePick = page.locator('[data-carousel-pick][aria-pressed="true"]');
+      assert.equal(await activePick.innerText(), 'Venator');
+      await activePick.focus(); await page.keyboard.press('ArrowRight');
+      await page.waitForFunction(() => document.querySelector('.hero-image.is-active')?.dataset.projectTitle === 'Spaceship');
+      assert.equal(await page.locator('[data-carousel-project]').getAttribute('href'), 'projects/spaceship.html');
+      await page.locator('[data-carousel-pick="2"]').click();
+      await page.waitForFunction(() => document.querySelector('[data-carousel-pick="2"]').getAttribute('aria-pressed') === 'true');
+      await page.locator('[data-carousel-pick="2"]').press('Home');
+      await page.waitForFunction(() => document.querySelector('[data-carousel-pick="0"]').getAttribute('aria-pressed') === 'true');
     });
     await check('Project arrows and Enter open the selected case study', async () => {
       await page.locator('#project-grid .project-card').first().focus();
@@ -87,14 +92,13 @@ const prepare = async context => {
       await page.goto(new URL('index.html?category=pipeline#home', base).href, { waitUntil: 'domcontentloaded' }); await settle(page);
       assert.equal(await page.locator('.technical-grid .project-card:visible').count(), 3);
     });
-    await check('Comparators offer keyboard, presets and mobile vertical scrolling', async () => {
-      for (const slider of await page.locator('[data-compare]').all()) {
-        await slider.focus(); await page.keyboard.press('Home'); assert.equal(await slider.getAttribute('aria-valuenow'), '4');
-        await page.keyboard.press('End'); assert.equal(await slider.getAttribute('aria-valuenow'), '96');
-        assert.match(await slider.evaluate(e => getComputedStyle(e).touchAction), /pan-y/);
-        const presets = slider.locator('..').locator('[data-compare-preset]');
-        assert((await presets.count()) >= 2); await presets.first().click();
-      }
+    await check('Zelda comparison opens at final and offers keyboard, presets and touch', async () => {
+      const slider = page.locator('#zelda-comparison-range');
+      assert.equal(await slider.inputValue(), '100');
+      await slider.press('Home'); assert.equal(await slider.getAttribute('aria-valuetext'), 'Warm key');
+      await slider.press('ArrowRight'); assert.equal(await slider.inputValue(), '1');
+      await page.locator('[data-shot-preset="100"]').click(); assert.equal(await slider.inputValue(), '100');
+      assert.equal(await page.locator('[data-shot-stage]').evaluate(e => getComputedStyle(e).touchAction), 'pan-y');
     });
     await check('Contact email and clipboard controls have different actions', async () => {
       const area = page.locator('#contact');
@@ -176,6 +180,7 @@ const prepare = async context => {
       const nojs = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } }); await prepare(nojs); const p = await nojs.newPage();
       await p.goto(base.href, { waitUntil: 'domcontentloaded' }); await settle(p);
       assert.equal(await p.locator('#project-grid .project-card:visible').count(), 4); assert.equal(await p.locator('.technical-grid .project-card:visible').count(), 3);
+      await p.locator('[data-shot-fallback] summary').click(); assert.equal(await p.locator('[data-shot-key]').isVisible(), true);
       await p.locator('#more-work > summary').click(); assert.equal(await p.locator('#more-work .project-card:visible').count(), 7);
       assert(await p.locator('a[href^="mailto:"]:visible').count()); assert.equal(await p.locator('[data-copy-email]').isVisible(), false); assert(await p.locator('a[data-reel-link]:visible').count());
       await screenshot(p, 'after-nojs-390.png'); await nojs.close();

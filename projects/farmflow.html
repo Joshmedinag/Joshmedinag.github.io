@@ -18,10 +18,10 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/roboto/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="../css/style.css?v=20261017-editorial">
-  <link rel="stylesheet" href="../css/site-system.css?v=20261023-portfolio">
-  <link rel="stylesheet" href="../css/project-experience.css?v=20261023-portfolio">
+  <link rel="stylesheet" href="../css/site-system.css?v=20261120-editorial">
+  <link rel="stylesheet" href="../css/project-experience.css?v=20261120-case">
   <script src="../js/site-config.js?v=20261017-editorial" defer></script>
-  <script src="../js/main.js?v=20261017-editorial" defer></script>
+  <script src="../js/main.js?v=20261120-editorial" defer></script>
   <script src="../js/site-experience.js?v=20261017-editorial" defer></script>
   <script src="../js/video-experience.js?v=20261023-portfolio" defer></script>
 </head>
@@ -41,12 +41,14 @@
 
   <main class="project-main" id="main">
     <div class="project-intro wrap">
-      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All selected work</a>
+      <a class="back-link" href="../index.html#work"><span aria-hidden="true">←</span> All work</a>
       <div class="project-title-row">
         <div class="project-heading"><h1>FarmFlow<span class="title-dot">.</span></h1><p class="project-discipline">LIGHTING TD PIPELINE</p></div>
-        <p class="project-lede">Check a Maya scene, render an Arnold sequence and verify its EXR outputs in one traceable workflow.</p>
+        <div class="project-intro-copy">
+          <p class="project-lede">Check a Maya scene, render an Arnold sequence and verify its EXR outputs in one traceable workflow.</p>
+          <p class="project-contribution"><span>My contribution</span> Python development · Maya integration · render workflow</p>
+        </div>
       </div>
-      <p class="project-contribution"><span>My contribution</span> Python development · Maya integration · render workflow</p>
     </div>
 
     <figure class="project-hero wrap project-lead-media">
@@ -67,7 +69,7 @@
     </nav>
 
     <section class="project-story wrap" aria-labelledby="overview-title">
-      <div><p class="eyebrow"><span class="section-index">/</span> OVERVIEW</p></div>
+      <div><p class="eyebrow">Overview</p></div>
       <div class="story-copy">
         <h2 id="overview-title">Catch the failure before the farm does.</h2>
         <p>A scene can work on an artist's workstation and still fail elsewhere because of missing textures, local paths, incomplete sequences, the wrong camera, unsupported render layers, incompatible Arnold settings or unexpected output names. FarmFlow turns those conditions into explicit checks before render time is spent. It is designed for a lighting artist preparing a render and for the technical person investigating a failed output.</p>
@@ -76,7 +78,6 @@
     </section>
 
     <section class="project-evidence wrap" aria-labelledby="maya-evidence-title">
-      <p class="eyebrow"><span class="section-index">/</span> IN MAYA</p>
       <h2 id="maya-evidence-title">Scene, render and verification.</h2>
       <p class="reference-intro">These production captures show the same test scene moving through FarmFlow inside Maya 2026: from scene inspection to Arnold output and sequence verification.</p>
       <div class="project-gallery evidence-gallery">
@@ -136,7 +137,6 @@
     </section>
 
     <section class="project-evidence wrap" aria-labelledby="evidence-title">
-      <p class="eyebrow"><span class="section-index">/</span> VERIFIED RESULTS</p>
       <h2 id="evidence-title">Measured, packaged and tested.</h2>
       <dl class="evidence-grid">
         <div><dt>Automated tests</dt><dd>753</dd></div>
@@ -147,7 +147,6 @@
     </section>
 
     <section class="project-evidence wrap" aria-labelledby="architecture-title">
-      <p class="eyebrow"><span class="section-index">/</span> PRODUCTION DESIGN</p>
       <h2 id="architecture-title">Built around the artist's scene.</h2>
       <div class="farmflow-capabilities">
         <article><h3>Preflight</h3><p>Errors block execution; warnings remain visible for an informed decision. FarmFlow reports the rule, evidence and a suggested correction without modifying the scene.</p></article>
@@ -166,7 +165,6 @@
     </section>
 
     <section class="project-evidence wrap" aria-labelledby="status-title">
-      <p class="eyebrow"><span class="section-index">/</span> VALIDATION SCOPE</p>
       <h2 id="status-title">Clear about what has been exercised.</h2>
       <div class="status-grid">
         <article class="status-card verified"><span class="status-label">VERIFIED</span><h3>Local Maya and Arnold flow</h3><p>Installation, plug-in loading, preflight, camera selection, Arnold sequence rendering, EXR checks, light-group assignment and state restoration.</p></article>
@@ -185,7 +183,7 @@
     <a class="next-project wrap" href="aovguard.html"><div><small>NEXT PROJECT</small><h2>AOVGuard</h2></div><span aria-hidden="true">↗</span></a>
 
     <section class="project-contact wrap" aria-labelledby="project-contact-title">
-      <div><h2 id="project-contact-title">Let’s create compelling images and better tools.</h2><p>Get in touch about lighting, compositing, technical art or pipeline opportunities.</p></div>
+      <div><h2 id="project-contact-title">Get in touch</h2><p>Lighting, compositing, technical art and pipeline opportunities.</p></div>
       <div class="project-contact-actions">
         <p class="contact-address" data-email-address>Joshalexmedina@hotmail.com</p>
         <div class="contact-actions"><a class="button button-primary" href="mailto:Joshalexmedina@hotmail.com" data-email-link>Email me <span aria-hidden="true">↗</span></a><button class="button button-secondary" type="button" data-copy-email hidden data-email="Joshalexmedina@hotmail.com">Copy email</button></div>
